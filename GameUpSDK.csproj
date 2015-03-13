@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3F3061EE-A238-4E0D-BF86-1EE3AB85652A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GameUp</RootNamespace>
+    <AssemblyName>GameUpSDK</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <ReleaseVersion>0.1.0</ReleaseVersion>
+    <Description>Unity SDK for the GameUp service.</Description>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\..\..\Applications\Unity\Unity.app\Contents\Frameworks\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GameUpSDK\AssemblyInfo.cs" />
+    <Compile Include="GameUpSDK\Client.cs" />
+    <Compile Include="GameUpSDK\SessionClient.cs" />
+    <Compile Include="GameUpSDK\ServerInfo.cs" />
+    <Compile Include="GameUpSDK\Game.cs" />
+    <Compile Include="GameUpSDK\AchievementList.cs" />
+    <Compile Include="GameUpSDK\Leaderboard.cs" />
+    <Compile Include="GameUpSDK\Gamer.cs" />
+    <Compile Include="GameUpSDK\Achievement.cs" />
+    <Compile Include="GameUpSDK\Rank.cs" />
+    <Compile Include="GameUpSDK\LeaderboardAndRank.cs" />
+    <Compile Include="SimpleJson.cs" />
+    <Compile Include="GameUpSDK\WWWRequest.cs" />
+    <Compile Include="GameUpSDK\SingletonMonoBehaviour.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="GameUpSDK\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>

@@ -1,5 +1,8 @@
 # Created by https://www.gitignore.io
 
+bin/
+packages/
+
 ### Unity ###
 [Ll]ibrary/
 [Tt]emp/

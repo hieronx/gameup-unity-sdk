@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameUp Unity SDK", "GameUpSDK.csproj", "{3F3061EE-A238-4E0D-BF86-1EE3AB85652A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F3061EE-A238-4E0D-BF86-1EE3AB85652A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F3061EE-A238-4E0D-BF86-1EE3AB85652A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F3061EE-A238-4E0D-BF86-1EE3AB85652A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F3061EE-A238-4E0D-BF86-1EE3AB85652A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = GameUpSDK.csproj
+		description = Unity SDK for the GameUp service.
+		version = 0.1.0
+	EndGlobalSection
+EndGlobal
