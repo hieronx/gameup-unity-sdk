@@ -21,19 +21,13 @@ namespace GameUp
   /// </summary>
   public class ServerInfo
   {
-    private readonly long time;
 
     /// <summary>
     /// The current time in UTC milliseconds according to the GameUp service.
     /// Note: This represents the time as it was when the server processed this
     ///	request and does not account for request round trip time.
     /// </summary>
-    public long Time { get { return time; } }
-
-    internal ServerInfo (long time)
-    {
-      this.time = time;
-    }
+    public long Time { get; set; }
   }
 }
 

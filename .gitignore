@@ -36,3 +36,9 @@ sysinfo.txt
 *.pidb
 *.resources
 test-results/
+
+#Unity Project Files
+GameUpTestScene/Temp
+
+
+.DS_Store

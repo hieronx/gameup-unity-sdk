@@ -24,29 +24,31 @@ namespace GameUp
   /// </summary>
   public class Leaderboard : IEnumerable<Leaderboard.Entry>
   {
-   
-    private readonly String name;
-    private readonly String publicId;
-    private readonly Sort sort;
-    private readonly Type type;
 
     /// <summary> Leaderboard display name. </summary>
-    public String Name { get { return name; } }
+    public String Name { get ; set ; }
 
     /// <summary> Leaderboard public identifier. </summary>
-    public String PublicId { get { return publicId; } }
+    public String PublicId { get ; set ; }
 
     /// <summary> Sort order indicator. </summary>
-    public Sort SortOrder { get { return sort; } }
+    public Sort SortOrder { get ; set ; }
 
     /// <summary> Type indicator. </summary>
-    public Type LeaderboardType { get { return type; } }
+    public Type LeaderboardType { get ; set ; }
+
+    /// <summary>
+    /// The top ranked gamers on this board, up to 50. Already sorted according
+    /// to the leaderboard sort settings.
+    /// </summary>
+    public Entry[] Entries { get ; set ; }
 
     /// <summary>
     /// Leaderboard sort order hint.
     /// </summary>
-    public enum Sort {
-      
+    public enum Sort
+    {
+
       /// <summary> Indicates the entries should be sorted ascending by score. </summary>
       ASC,
       
@@ -57,39 +59,25 @@ namespace GameUp
     /// <summary>
     /// Leaderboard type hint.
     /// </summary>
-    public enum Type {
+    public enum Type 
+    {
       
       /// <summary> Standard best score, one entry per gamer leaderboard type. </summary>
       RANK
     }
 
-    /// <summary>
-    /// The top ranked gamers on this board, up to 50. Already sorted according
-    /// to the leaderboard sort settings.
-    /// </summary>
-    private readonly List<Entry> entries;
-
-    public class Entry {
-
-      private readonly String name;
-      private readonly long score;
-      private readonly long scoreAt;
-
+    public class Entry 
+    {
+     
       ///<summary> Nickname, suitable for public display. </summary>
-      public String Name { get {return name; } }
+      public String Name { get ; set ; }
 
       ///<summary> Score. </summary>
-      public long Score { get {return score; } }
+      public long Score { get ; set ; }
       
       ///<summary> When the score was submitted to this leaderboard. </summary>
-      public long ScoreAt { get { return scoreAt; } }
-
-      internal Entry (String name, long score, long scoreAt)
-      {
-        this.name = name;
-        this.score = score;
-        this.scoreAt = scoreAt;
-      }
+      public long ScoreAt { get ; set ; }
+     
     }
 
     // Must also implement IEnumerable.GetEnumerator, but implement as a private method.
@@ -97,7 +85,7 @@ namespace GameUp
     // see https://msdn.microsoft.com/en-us/library/s793z9y2(v=vs.110).aspx
     public IEnumerator<Leaderboard.Entry> GetEnumerator ()
     {
-      return entries.GetEnumerator ();
+      return (new List<Entry>(Entries)).GetEnumerator ();
     }
     
     private IEnumerator GetEnumerator1 ()
@@ -108,15 +96,6 @@ namespace GameUp
     IEnumerator IEnumerable.GetEnumerator ()
     {
       return GetEnumerator1 ();
-    }
-
-    internal Leaderboard (String name, String publicId, Sort sort, Type type, List<Entry> enteries)
-    {
-      this.name = name;
-      this.publicId = publicId;
-      this.sort = sort;
-      this.type = type;
-      this.entries = enteries;
     }
   }
 }

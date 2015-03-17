@@ -20,61 +20,50 @@ namespace GameUp
   /// </summary>
   public class Achievement
   {
-    private readonly String publicId;
-    private readonly String name;
-    private readonly String description;
-    private readonly Type type;
-    private readonly int points;
-    private readonly State state;
-    private readonly int requiredCount;
-    private readonly int count;
-    private readonly long progressAt;
-    private readonly long completedAt;
-    
     /// <summary> Game-unique public identifier for this achievement. </summary>
-    public String PublicId { get { return  publicId; } }
+    public String PublicId { get ; set ; }
     
     /// <summary> Achievement name. </summary>
-    public String Name { get { return  name; } }
+    public String Name { get ; set ;}
     
     /// <summary> Achievement description or instructions. </summary>
-    public String Description { get { return description; } }
+    public String Description { get ; set ; }
     
     /// <summary> The type of the achievement, referring to gamer interaction model. </summary>
-    public Type achievementType { get { return type; } }
+    public Type AchievementType { get ; set ;}
     
     /// <summary>
     /// Number of points that will be awarded for completing this achievement,
     /// or have already been awarded if it is already complete.
     /// </summary>
-    public int Points { get { return points ; } }
+    public int Points { get ; set ; }
     
     /// <summary> The state of this achievement, referring to display logic. </summary>
-    public State AchievementState { get { return state; } }
+    public State AchievementState { get ; set ; }
     
     /// <summary>
     /// Required number of actions to complete this achievement, subject to game
     /// logic. For "normal"-type achievements this will always be 1.
     /// </summary>
-    public int RequiredCount { get { return requiredCount ; } }
+    public int RequiredCount { get ; set ; }
     
     /// <summary>
     /// Current gamer progress towards the required count of this achievement,
     /// subject to the same game logic as the requiredCount field.
     /// </summary>
-    public int Count { get { return count; } }
+    public int Count { get ; set ; }
     
     /// <summary>
     /// UTC timestamp in milliseconds when the gamer last made any progress
     /// towards this achievement, or 0 if no progress ever.
     /// </summary>
-    public long ProgressAt { get { return progressAt; } }
+    public long ProgressAt { get ; set ; }
     
     /// <summary>
     /// UTC timestamp in milliseconds when the gamer completed this achievement,
     /// or 0 if it has not yet been completed.
     /// </summary>
-    public long CompletedAt { get { return completedAt; } }
+    public long CompletedAt { get ; set ; }
     
     /// <returns> 
     /// true if the gamer has completed this achievement,
@@ -82,7 +71,7 @@ namespace GameUp
     /// </returns>
     public bool IsCompleted ()
     {
-      return completedAt > 0L;
+      return CompletedAt > 0L;
     }
 
     /// <summary>
@@ -120,20 +109,6 @@ namespace GameUp
       /// </summary>
       HIDDEN
       
-    }
-
-    internal Achievement (String publicId, String name, String description, Type type, int points, State state, int requiredCount, int count, long progressAt, long completedAt)
-    {
-      this.publicId = publicId;
-      this.name = name;
-      this.description = description;
-      this.type = type;
-      this.points = points;
-      this.state = state;
-      this.requiredCount = requiredCount;
-      this.count = count;
-      this.progressAt = progressAt;
-      this.completedAt = completedAt;
     }
   }
 }

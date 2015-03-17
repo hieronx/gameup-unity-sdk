@@ -21,40 +21,25 @@ namespace GameUp
   /// </summary>
   public class Gamer
   {
-    private readonly String nickname;
-    private readonly String name;
-    private readonly short timezone;
-    private readonly String location;
-    private readonly String locale;
-    private readonly long createdAt;
-    
+
     /// <summary> Nickname, intended for easy public display. </summary>
-    public String Nickname { get { return nickname; } }
+    public String Nickname { get ; set ; }
     
     /// <summary> A real name, if one was provided when the gamer signed up. </summary>
-    public String Name { get { return name; } }
+    public String Name { get ; set ; }
     
     /// <summary> Time zone of the gamer. </summary>
-    public short Timezone { get { return timezone; } }
+    public short Timezone { get ; set ; }
     
     /// <summary> Location of the gamer. </summary>
-    public String Location { get { return location; } }
+    public String Location { get ; set ; }
     
     /// <summary> Locale string for this gamer. </summary>
-    public String Locale { get { return locale; } }
+    public String Locale { get ; set ; }
     
     /// <summary> When the gamer first registered with GameUp. </summary>
-    public long CreatedAt { get { return createdAt ; } }
+    public long CreatedAt { get ; set ; }
 
-    internal Gamer (String nickname, String name, short timezone, String location, String locale, long createdAt)
-    {
-      this.nickname = nickname;
-      this.name = name;
-      this.timezone = timezone;
-      this.location = location;
-      this.locale = locale;
-      this.createdAt = createdAt;
-    }
   }
 }
 

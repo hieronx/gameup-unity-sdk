@@ -24,6 +24,8 @@ namespace GameUp
   /// </summary>
   public class SessionClient
   {
+    private readonly IJsonSerializerStrategy serializerStrategy = new GameUpPocoJsonSerializerStrategy();
+
     private readonly string apiKey;
     private readonly string token;
     private readonly long createdAt;
@@ -40,7 +42,7 @@ namespace GameUp
 
     public delegate void GamerCallback (Gamer gamer);
 
-    public delegate void StorageGetCallback (IDictionary<String, object> data);
+    public delegate void StorageGetCallback (IDictionary<String, string> data);
 
     public delegate void AchievementCallback ();
 
@@ -77,7 +79,7 @@ namespace GameUp
       UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, "/v0/gamer");
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", apiKey, token);
       wwwRequest.OnSuccess = (String jsonResponse) => {
-        success(SimpleJson.DeserializeObject<Gamer> (jsonResponse));
+        success(SimpleJson.DeserializeObject<Gamer> (jsonResponse, serializerStrategy));
       };
       wwwRequest.OnFailure = (int statusCode, string reason) => {
         error (statusCode, reason);
@@ -92,12 +94,12 @@ namespace GameUp
     /// <param name="data">The data dictionary to store.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
-    public void StoragePut (string key, IDictionary<String, object> data, Client.SuccessCallback success, Client.ErrorCallback error)
+    public void StoragePut (string key, IDictionary<string, string> data, Client.SuccessCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/storage/" + Uri.EscapeUriString (key);
       UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "PUT", apiKey, token);
-
+      wwwRequest.SetBody (SimpleJson.SerializeObject (data));
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success ();
       };
@@ -120,7 +122,10 @@ namespace GameUp
       UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", apiKey, token);
       wwwRequest.OnSuccess = (String jsonResponse) => {
-        success(SimpleJson.DeserializeObject<IDictionary<String, object>> (jsonResponse));
+        IDictionary<string, string> rawResponse = SimpleJson.DeserializeObject<IDictionary<String, string>> (jsonResponse);
+        string data;
+        rawResponse.TryGetValue("value", out data);
+        success(SimpleJson.DeserializeObject<Dictionary<string, string>>(data));
       };
       wwwRequest.OnFailure = (int statusCode, string reason) => {
         error (statusCode, reason);
@@ -171,9 +176,7 @@ namespace GameUp
       string path = "/v0/gamer/achievement/" + achievementId;
       UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", apiKey, token);
-
-      wwwRequest.SetBody("{'count':'" + System.Convert.ToString (count) + "'}");
-
+      wwwRequest.SetBody("{\"count\":" + count + "}");
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success();
       };
@@ -194,7 +197,7 @@ namespace GameUp
       UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, "/v0/gamer/achievement");
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", apiKey, token);
       wwwRequest.OnSuccess = (String jsonResponse) => {
-        success(SimpleJson.DeserializeObject<AchievementList> (jsonResponse));
+        success(SimpleJson.DeserializeObject<AchievementList> (jsonResponse, serializerStrategy));
       };
       wwwRequest.OnFailure = (int statusCode, string reason) => {
         error (statusCode, reason);
@@ -217,10 +220,10 @@ namespace GameUp
       UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", apiKey, token);
 
-      wwwRequest.SetBody("{'score':'" + System.Convert.ToString (score) + "'}");
+      wwwRequest.SetBody("{\"score\":" + score + "}");
 
       wwwRequest.OnSuccess = (String jsonResponse) => {
-        success(SimpleJson.DeserializeObject<Rank> (jsonResponse));
+        success(SimpleJson.DeserializeObject<Rank> (jsonResponse, serializerStrategy));
       };
       wwwRequest.OnFailure = (int statusCode, string reason) => {
         error (statusCode, reason);
@@ -241,8 +244,7 @@ namespace GameUp
       UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", apiKey, token);
       wwwRequest.OnSuccess = (String jsonResponse) => {
-        LeaderboardAndRank rank = SimpleJson.DeserializeObject<LeaderboardAndRank> (jsonResponse);
-        success(rank);
+        success(SimpleJson.DeserializeObject<LeaderboardAndRank> (jsonResponse, serializerStrategy));
       };
       wwwRequest.OnFailure = (int statusCode, string reason) => {
         error (statusCode, reason);

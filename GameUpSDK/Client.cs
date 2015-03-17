@@ -25,6 +25,8 @@ namespace GameUp
   {
     // TODO add support for web view login options
 
+    private readonly static IJsonSerializerStrategy serializerStrategy = new GameUpPocoJsonSerializerStrategy();
+
     public static readonly string SCHEME = "https";
     public static readonly int PORT = 443;
     public static readonly string ACCOUNTS_SERVER = "accounts.gameup.io";
@@ -92,7 +94,7 @@ namespace GameUp
       UriBuilder b = new UriBuilder (SCHEME, API_SERVER, PORT, "/v0/server");
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, "");
       wwwRequest.OnSuccess = (String jsonResponse) => {
-        success(SimpleJson.DeserializeObject<ServerInfo> (jsonResponse));
+        success(SimpleJson.DeserializeObject<ServerInfo> (jsonResponse, serializerStrategy));
       };
       wwwRequest.OnFailure = (int statusCode, string reason) => {
         error (statusCode, reason);
@@ -111,7 +113,7 @@ namespace GameUp
       UriBuilder b = new UriBuilder (SCHEME, API_SERVER, PORT, "/v0/game");
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, "");
       wwwRequest.OnSuccess = (String jsonResponse) => {
-        success(SimpleJson.DeserializeObject<Game> (jsonResponse));
+        success(SimpleJson.DeserializeObject<Game> (jsonResponse, serializerStrategy));
       };
       wwwRequest.OnFailure = (int statusCode, string reason) => {
         error (statusCode, reason);
@@ -131,7 +133,7 @@ namespace GameUp
       UriBuilder b = new UriBuilder (SCHEME, API_SERVER, PORT, "/v0/game/achievement");
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, "");
       wwwRequest.OnSuccess = (String jsonResponse) => {
-        success (SimpleJson.DeserializeObject<AchievementList> (jsonResponse));
+        success (SimpleJson.DeserializeObject<AchievementList> (jsonResponse, serializerStrategy));
       };
       wwwRequest.OnFailure = (int statusCode, string reason) => {
         error (statusCode, reason);
@@ -152,7 +154,7 @@ namespace GameUp
       UriBuilder b = new UriBuilder (SCHEME, API_SERVER, PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, "");
       wwwRequest.OnSuccess = (String jsonResponse) => {
-        success(SimpleJson.DeserializeObject<Leaderboard> (jsonResponse));
+        success(SimpleJson.DeserializeObject<Leaderboard> (jsonResponse, serializerStrategy));
       };
       wwwRequest.OnFailure = (int statusCode, string reason) => {
         error (statusCode, reason);
@@ -170,8 +172,9 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void LoginAnonymous (string id, LoginCallback success, ErrorCallback error)
     {
-      UriBuilder b = new UriBuilder (SCHEME, API_SERVER, PORT, "/v0/gamer/login/anonymous");
+      UriBuilder b = new UriBuilder (SCHEME, ACCOUNTS_SERVER, PORT, "/v0/gamer/login/anonymous");
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, "");
+      wwwRequest.SetBody ("{\"id\": \"" + id + "\"}");
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success(createSessionClient(jsonResponse));
       };
@@ -233,11 +236,12 @@ namespace GameUp
 
     private static void LoginOAuth (string type, string accessToken, SessionClient session, LoginCallback success, ErrorCallback error)
     {
-      UriBuilder b = new UriBuilder (SCHEME, API_SERVER, PORT, "/v0/gamer/login/oauth2");
+      UriBuilder b = new UriBuilder (SCHEME, ACCOUNTS_SERVER, PORT, "/v0/gamer/login/oauth2");
       String token = session == null ? "" : session.Token;
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, token);
 
-      wwwRequest.SetBody ("{'type': '" + type + "', 'accessToken':'" + accessToken +"'}");
+      wwwRequest.SetBody ("{\"type\": \"" + type + "\", \"accessToken\":\"" + accessToken +"\"}");
+
 
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success(createSessionClient(jsonResponse));
@@ -249,7 +253,7 @@ namespace GameUp
     }
 
     private static SessionClient createSessionClient(String jsonResponse) {
-      JsonObject json = SimpleJson.DeserializeObject<JsonObject> (jsonResponse);
+      JsonObject json = SimpleJson.DeserializeObject<JsonObject> (jsonResponse, serializerStrategy);
       String token = System.Convert.ToString (json["token"]);
       return new SessionClient(ApiKey, token);
     }

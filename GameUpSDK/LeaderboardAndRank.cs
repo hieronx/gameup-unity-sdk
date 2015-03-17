@@ -21,20 +21,12 @@ namespace GameUp
   /// </summary>
   public class LeaderboardAndRank
   {
-    private readonly Rank rank;
-    private readonly Leaderboard leaderboard;
-
     /// <summary> The Rank portion of the response. </summary>
-    public Rank Rank { get { return rank; }}
+    public Rank Rank { get ; set ;}
     
     /// <summary> The Leaderboard portion of the response. </summary>
-    public Leaderboard Leaderboard { get { return leaderboard; }}
+    public Leaderboard Leaderboard { get ; set ;}
 
-    internal LeaderboardAndRank (Rank rank, Leaderboard leaderboard)
-    {
-      this.rank = rank;
-      this.leaderboard = leaderboard;
-    }
   }
 }
 

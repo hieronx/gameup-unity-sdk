@@ -21,30 +21,17 @@ namespace GameUp
   /// </summary>
   public class Game
   {
-    private readonly String name;
-    private readonly String description;
-    private readonly long createdAt;
-    private readonly long updatedAt;
-    
     /// <summary> Game's registered display name. </summary>
-    public String Name { get { return name; } }
+    public String Name { get ; set; }
     
     /// <summary> Game description text. </summary>
-    public String Description { get { return description; } }
+    public String Description { get ; set; }
     
     /// <summary> Timestamp when the game was created. </summary>
-    public long CreatedAt { get { return createdAt; } }
+    public long CreatedAt { get ; set; }
     
     /// <summary> Timestamp when game details were last changed or updated. </summary>
-    public long UpdatedAt { get { return updatedAt; } }
-
-    internal Game (String name, String description, long createdAt, long updatedAt)
-    {
-      this.name = name;
-      this.description = description;
-      this.createdAt = createdAt;
-      this.updatedAt = updatedAt;
-    }
+    public long UpdatedAt { get ; set; } 
   }
 }
 

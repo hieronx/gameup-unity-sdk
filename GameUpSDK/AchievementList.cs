@@ -23,20 +23,18 @@ namespace GameUp
   /// </summary>
   public class AchievementList : IEnumerable<Achievement>
   {
-    private readonly int count;
-
     /// <summary> The number of achievements returned as part of this response. </summary>
-    public int Count { get { return count; } }
+    public int Count { get ; set ; }
 
     /// <summary> The achievements themselves. </summary>
-    private readonly List<Achievement> achievements;
+    public Achievement[] Achievements { get; set; }
 
     // Must also implement IEnumerable.GetEnumerator, but implement as a private method.
     // When you implement IEnumerable(T), you must also implement IEnumerable and IEnumerator(T). 
     // see https://msdn.microsoft.com/en-us/library/s793z9y2(v=vs.110).aspx
     public IEnumerator<Achievement> GetEnumerator ()
     {
-      return achievements.GetEnumerator ();
+      return (new List<Achievement>(Achievements)).GetEnumerator ();
     }
 
     private IEnumerator GetEnumerator1 ()
@@ -49,10 +47,5 @@ namespace GameUp
       return GetEnumerator1 ();
     }
 
-    internal AchievementList (int count, List<Achievement> achievements)
-    {
-      this.count = count;
-      this.achievements = achievements;
-    }
   }
 }
