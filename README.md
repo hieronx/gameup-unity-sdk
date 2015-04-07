@@ -34,7 +34,7 @@ The starting point is the `Client` class. You need to instantiate the `ApiKey` f
 using UnityEngine;
 using GameUp;
 
-Client.ApiKey = "6fb004d4289748199cb858ab0905f657";
+Client.ApiKey = "your-api-key-here";
 
 // let's ping the server to validate the ApiKey...
 Client.Ping ((status, reason) => {
