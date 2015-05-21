@@ -240,7 +240,7 @@ namespace GameUp
       String token = session == null ? "" : session.Token;
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, token);
 
-      wwwRequest.SetBody ("{\"type\": \"" + type + "\", \"accessToken\":\"" + accessToken +"\"}");
+      wwwRequest.SetBody ("{\"type\": \"" + type + "\", \"access_token\":\"" + accessToken +"\"}");
 
 
       wwwRequest.OnSuccess = (String jsonResponse) => {
