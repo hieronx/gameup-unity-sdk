@@ -50,6 +50,15 @@ namespace GameUp
 
     public delegate void LeaderboardAndRankCallback (LeaderboardAndRank leaderboard);
 
+    public delegate void MatchesCallback (MatchList matches);
+    public delegate void MatchCallback (Match match);
+    public delegate void TurnCallback (MatchTurnList turns);
+    public delegate void TurnSubmitSuccessCallback ();
+    public delegate void MatchCreateCallback (Match match);
+    public delegate void MatchQueueCallback ();
+    public delegate void MatchEndCallback (String matchId);
+    public delegate void MatchLeaveCallback (String matchId);
+
     /// <summary>
     /// Ping the GameUp service to check it is reachable and the current session
     /// is still valid.
@@ -245,6 +254,166 @@ namespace GameUp
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", apiKey, token);
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success(SimpleJson.DeserializeObject<LeaderboardAndRank> (jsonResponse, serializerStrategy));
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Retrieve a list of matches the gamer is part of, along with the metadata for each match. 
+    /// </summary>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void GetAllMatches (MatchesCallback success, Client.ErrorCallback error)
+    {
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, "/v0/gamer/match");
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", apiKey, token);
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success(SimpleJson.DeserializeObject<MatchList> (jsonResponse, serializerStrategy));
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();  
+    }
+
+    /// <summary>
+    /// Retrieve a particular match's status and metadata.
+    /// </summary>
+    /// <param name="matchId">The match identifier</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void GetMatch (string matchId, MatchCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/gamer/match/" + matchId;
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", apiKey, token);
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success(SimpleJson.DeserializeObject<Match> (jsonResponse, serializerStrategy));
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Get turn data for a particular match, only returning turns newer than the identified one.
+    /// </summary>
+    /// <param name="matchId">The match identifier</param>
+    /// <param name="turnNumber">The turn number to start from, not inclusive. Use '0' to get all the turns in the match</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void GetTurnData (string matchId, int turnNumber, TurnCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/gamer/match/" + matchId + "/turn/" + turnNumber;
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", apiKey, token);
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success(SimpleJson.DeserializeObject<MatchTurnList> (jsonResponse, serializerStrategy));
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Submit turn data to the specified match.
+    /// </summary>
+    /// <param name="matchId">The match identifier</param>
+    /// <param name="turn">Last seen turn number - this is used as a basic consistency check</param>
+    /// <param name="nextGamer">Which gamer the next turn goes to</param>
+    /// <param name="turnData">Turn data to submit</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void SubmitTurn (string matchId, int turn, string nextGamer, string turnData, Client.SuccessCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/gamer/match/" + matchId + "/turn";
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", apiKey, token);
+      
+      wwwRequest.SetBody("{\"last_turn\":" + turn + "," +
+                         "\"next_gamer\":\"" + nextGamer + "\"," +
+                         "\"data\":\"" + turnData + "\"}");
+      
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success ();
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Request a new match. If there are not enough waiting gamers, the current gamer will be added to the queue instead.
+    /// </summary>
+    /// <param name="requiredGamers">The minimal required number of gamers needed to create a new match</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void CreateMatch (int requiredGamers, MatchCreateCallback success, MatchQueueCallback queued, Client.ErrorCallback error)
+    {
+      string path = "/v0/gamer/match/";
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", apiKey, token);
+      
+      wwwRequest.SetBody("{\"players\":" + requiredGamers + "}");
+      
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        if (jsonResponse.Length == 0) {
+          queued ();
+        } else {
+          success (SimpleJson.DeserializeObject<Match> (jsonResponse, serializerStrategy));
+        }
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// End match. This will only work if it's the current gamer's turn.
+    /// </summary>
+    /// <param name="matchId">The match identifier</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void EndMatch (string matchId, MatchEndCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/gamer/match/" + matchId;
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", apiKey, token);
+      
+      wwwRequest.SetBody("{\"action\":\"end\"}");
+      
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success(matchId);
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Leave match. This will only work if it's NOT the current gamer's turn.
+    /// </summary>
+    /// <param name="matchId">The match identifier</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void LeaveMatch (string matchId, MatchLeaveCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/gamer/match/" + matchId;
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", apiKey, token);
+      
+      wwwRequest.SetBody("{\"action\":\"leave\"}");
+      
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success(matchId);
       };
       wwwRequest.OnFailure = (int statusCode, string reason) => {
         error (statusCode, reason);

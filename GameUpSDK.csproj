@@ -53,6 +53,10 @@
     <Compile Include="GameUpSDK\WWWRequest.cs" />
     <Compile Include="GameUpSDK\SingletonMonoBehaviour.cs" />
     <Compile Include="GameUpSDK\GameUpPocoJsonSerializerStrategy.cs" />
+    <Compile Include="GameUpSDK\Match.cs" />
+    <Compile Include="GameUpSDK\MatchTurn.cs" />
+    <Compile Include="GameUpSDK\MatchList.cs" />
+    <Compile Include="GameUpSDK\MatchTurnList.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
