@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['points',['Points',['../class_game_up_1_1_achievement.html#af35f70f7118a67e73a7fdab7110f78b0',1,'GameUp::Achievement']]],
-  ['progressat',['ProgressAt',['../class_game_up_1_1_achievement.html#af30052977457700457f5366af0e7d19f',1,'GameUp::Achievement']]],
-  ['publicid',['PublicId',['../class_game_up_1_1_achievement.html#ac5c70b40a17fa8b5dda1fb06a75a1649',1,'GameUp.Achievement.PublicId()'],['../class_game_up_1_1_leaderboard.html#aa00082841fa00afb6a6f3d15eb33b25e',1,'GameUp.Leaderboard.PublicId()']]]
+  ['matches',['Matches',['../class_game_up_1_1_match_list.html#acbba32e21ad39088cfb76d508c6c6611',1,'GameUp::MatchList']]],
+  ['matchid',['MatchId',['../class_game_up_1_1_match.html#adc47bf38392c053e9b97d81a5e25cc65',1,'GameUp::Match']]],
+  ['matchturns',['MatchTurns',['../class_game_up_1_1_match_turn_list.html#a5efda64fad4ecf35b8ca031c4b650eb3',1,'GameUp::MatchTurnList']]]
 ];

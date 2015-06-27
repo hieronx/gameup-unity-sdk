@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['updatedat',['UpdatedAt',['../class_game_up_1_1_game.html#ac8befedee3c6871695ca8427af75b1e1',1,'GameUp::Game']]]
+  ['score',['Score',['../class_game_up_1_1_leaderboard_1_1_entry.html#a8fbf57f5fbff1130b11a8affd7931c71',1,'GameUp.Leaderboard.Entry.Score()'],['../class_game_up_1_1_rank.html#ad9165723430a1546b22c765326982766',1,'GameUp.Rank.Score()']]],
+  ['scoreat',['ScoreAt',['../class_game_up_1_1_leaderboard_1_1_entry.html#ad3e48139560020ad7111ce2de37d063d',1,'GameUp.Leaderboard.Entry.ScoreAt()'],['../class_game_up_1_1_rank.html#ae73d4b21bf374685802a21c3415b1b84',1,'GameUp.Rank.ScoreAt()']]],
+  ['sortorder',['SortOrder',['../class_game_up_1_1_leaderboard.html#a21255ee41b7e27614de547ea6ad25163',1,'GameUp::Leaderboard']]]
 ];

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['score',['Score',['../class_game_up_1_1_leaderboard_1_1_entry.html#a8fbf57f5fbff1130b11a8affd7931c71',1,'GameUp.Leaderboard.Entry.Score()'],['../class_game_up_1_1_rank.html#ad9165723430a1546b22c765326982766',1,'GameUp.Rank.Score()']]],
-  ['scoreat',['ScoreAt',['../class_game_up_1_1_leaderboard_1_1_entry.html#ad3e48139560020ad7111ce2de37d063d',1,'GameUp.Leaderboard.Entry.ScoreAt()'],['../class_game_up_1_1_rank.html#ae73d4b21bf374685802a21c3415b1b84',1,'GameUp.Rank.ScoreAt()']]],
-  ['sortorder',['SortOrder',['../class_game_up_1_1_leaderboard.html#a21255ee41b7e27614de547ea6ad25163',1,'GameUp::Leaderboard']]]
+  ['points',['Points',['../class_game_up_1_1_achievement.html#af35f70f7118a67e73a7fdab7110f78b0',1,'GameUp::Achievement']]],
+  ['progressat',['ProgressAt',['../class_game_up_1_1_achievement.html#af30052977457700457f5366af0e7d19f',1,'GameUp::Achievement']]],
+  ['publicid',['PublicId',['../class_game_up_1_1_achievement.html#ac5c70b40a17fa8b5dda1fb06a75a1649',1,'GameUp.Achievement.PublicId()'],['../class_game_up_1_1_leaderboard.html#aa00082841fa00afb6a6f3d15eb33b25e',1,'GameUp.Leaderboard.PublicId()']]]
 ];

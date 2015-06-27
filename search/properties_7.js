@@ -1,5 +1,11 @@
 var searchData=
 [
-  ['name',['Name',['../class_game_up_1_1_achievement.html#a528209e34122304a201b88c947ff24d4',1,'GameUp.Achievement.Name()'],['../class_game_up_1_1_game.html#a3935ceab5d8dced3e0dafc9eedc686d3',1,'GameUp.Game.Name()'],['../class_game_up_1_1_gamer.html#a4ea4688de157c04d080eb7ff5a29314f',1,'GameUp.Gamer.Name()'],['../class_game_up_1_1_leaderboard.html#a750ed0d050770f111a9612f69f66720f',1,'GameUp.Leaderboard.Name()'],['../class_game_up_1_1_leaderboard_1_1_entry.html#ac88a4b232130c75f3b1f339bfc8b5b10',1,'GameUp.Leaderboard.Entry.Name()'],['../class_game_up_1_1_rank.html#a87c2fb92164f76c88898eea8e71a82cf',1,'GameUp.Rank.Name()']]],
-  ['nickname',['Nickname',['../class_game_up_1_1_gamer.html#aa8223e0e56f214c72bfd661a95de9edf',1,'GameUp::Gamer']]]
+  ['lastrank',['LastRank',['../class_game_up_1_1_rank.html#a333d314f2260506cf0991094f857d681',1,'GameUp::Rank']]],
+  ['lastrankat',['LastRankAt',['../class_game_up_1_1_rank.html#a08cd99fc4fb46eeab73d163816f24ed5',1,'GameUp::Rank']]],
+  ['lastscore',['LastScore',['../class_game_up_1_1_rank.html#a3ad6c44204392457aeddfd502153df9e',1,'GameUp::Rank']]],
+  ['lastscoreat',['LastScoreAt',['../class_game_up_1_1_rank.html#a5c669a57f8058f4bd9ba999b05fa4c57',1,'GameUp::Rank']]],
+  ['leaderboard',['Leaderboard',['../class_game_up_1_1_leaderboard_and_rank.html#a049d839689f9cc1a9b30e7c51b7f6b97',1,'GameUp::LeaderboardAndRank']]],
+  ['leaderboardtype',['LeaderboardType',['../class_game_up_1_1_leaderboard.html#a6748232bf3ce9f12bb921befc8608d8c',1,'GameUp::Leaderboard']]],
+  ['locale',['Locale',['../class_game_up_1_1_gamer.html#a3add3762b33843b6df433fa5155910df',1,'GameUp::Gamer']]],
+  ['location',['Location',['../class_game_up_1_1_gamer.html#a3ec9373f1bfa8b3233de26aae1905d18',1,'GameUp::Gamer']]]
 ];

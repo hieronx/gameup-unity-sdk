@@ -11,6 +11,7 @@ var searchData=
   ['achievementscallback',['AchievementsCallback',['../class_game_up_1_1_client.html#a2f990874cd631a0bbd1f7a2e387a87ca',1,'GameUp::Client']]],
   ['achievementstate',['AchievementState',['../class_game_up_1_1_achievement.html#a2fe84e836e41a65a2743f0fd5a84047b',1,'GameUp::Achievement']]],
   ['achievementtype',['AchievementType',['../class_game_up_1_1_achievement.html#a3007f91ec4ffc1ab4eb3883a75b35bf6',1,'GameUp::Achievement']]],
+  ['active',['Active',['../class_game_up_1_1_match.html#a65af481e3ed1bb7564fe01f85b3434d6',1,'GameUp::Match']]],
   ['addheader',['AddHeader',['../class_game_up_1_1_w_w_w_request.html#a1bc321cb6d60e729bfdf8ce3efc0ddb9',1,'GameUp::WWWRequest']]],
   ['api_5fserver',['API_SERVER',['../class_game_up_1_1_client.html#a5514013b1d76161beda7734d5147be53',1,'GameUp::Client']]],
   ['apikey',['ApiKey',['../class_game_up_1_1_client.html#ad79122d0be015291a24b168c501e4785',1,'GameUp::Client']]],

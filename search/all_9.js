@@ -13,6 +13,7 @@ var searchData=
   ['leaderboardandrankcallback',['LeaderboardAndRankCallback',['../class_game_up_1_1_session_client.html#a50b1a4b3e8f166ebcf933d151d241539',1,'GameUp::SessionClient']]],
   ['leaderboardcallback',['LeaderboardCallback',['../class_game_up_1_1_client.html#a1d6815fe9153f9127266c4e8cc9cf869',1,'GameUp::Client']]],
   ['leaderboardtype',['LeaderboardType',['../class_game_up_1_1_leaderboard.html#a6748232bf3ce9f12bb921befc8608d8c',1,'GameUp::Leaderboard']]],
+  ['leavematch',['LeaveMatch',['../class_game_up_1_1_session_client.html#a698e7d290bab628e91fb8754f58a1bd0',1,'GameUp::SessionClient']]],
   ['locale',['Locale',['../class_game_up_1_1_gamer.html#a3add3762b33843b6df433fa5155910df',1,'GameUp::Gamer']]],
   ['location',['Location',['../class_game_up_1_1_gamer.html#a3ec9373f1bfa8b3233de26aae1905d18',1,'GameUp::Gamer']]],
   ['loginanonymous',['LoginAnonymous',['../class_game_up_1_1_client.html#a7968599517f9bced23d0be4f3f1daa42',1,'GameUp::Client']]],

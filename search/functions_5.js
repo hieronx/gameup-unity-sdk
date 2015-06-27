@@ -1,9 +1,11 @@
 var searchData=
 [
-  ['initialize',['Initialize',['../class_game_up_1_1_singleton_mono_behaviour.html#a4d631c70909c38905a33d39840df061d',1,'GameUp::SingletonMonoBehaviour']]],
-  ['iscompleted',['IsCompleted',['../class_game_up_1_1_achievement.html#ad3f5c6786708f9a7a2bfdde122e782f3',1,'GameUp::Achievement']]],
-  ['isnew',['isNew',['../class_game_up_1_1_rank.html#aa22276569fff4b9ea7b1de997ceb4bc2',1,'GameUp::Rank']]],
-  ['isnewbestrank',['isNewBestRank',['../class_game_up_1_1_rank.html#ae8809a28be793c84cabfbf70ad846d10',1,'GameUp::Rank']]],
-  ['isnewrank',['isNewRank',['../class_game_up_1_1_rank.html#ab08a08cd1e9a7ddf16dd1ff646db8ea9',1,'GameUp::Rank']]],
-  ['isnewscore',['isNewScore',['../class_game_up_1_1_rank.html#acd2eb949384a92120a379dff051c927f',1,'GameUp::Rank']]]
+  ['game',['Game',['../class_game_up_1_1_client.html#a060902bcdc01d4ebf8b7b87c10d7fd9a',1,'GameUp::Client']]],
+  ['gamecallback',['GameCallback',['../class_game_up_1_1_client.html#a8e2e5a8aa4fa3b925437959d1f36f01e',1,'GameUp::Client']]],
+  ['gamer',['Gamer',['../class_game_up_1_1_session_client.html#ab31eac3c65d22f2a8cd9e4f5696a4c59',1,'GameUp::SessionClient']]],
+  ['gamercallback',['GamerCallback',['../class_game_up_1_1_session_client.html#a0174bee390c58d30b2b125f09fa4e2dc',1,'GameUp::SessionClient']]],
+  ['getallmatches',['GetAllMatches',['../class_game_up_1_1_session_client.html#afeb84e968423d250f23a0a448940190d',1,'GameUp::SessionClient']]],
+  ['getenumerator',['GetEnumerator',['../class_game_up_1_1_achievement_list.html#a6361b0b4d3e9b17fe05863c4bf68a44d',1,'GameUp.AchievementList.GetEnumerator()'],['../class_game_up_1_1_leaderboard.html#a159642ab8a207849fb220fa51bac5a0f',1,'GameUp.Leaderboard.GetEnumerator()'],['../class_game_up_1_1_match_list.html#a7d651b9ad5714b3c5618abe2cf40f335',1,'GameUp.MatchList.GetEnumerator()'],['../class_game_up_1_1_match_turn_list.html#ae4d45f42c2eb088f62241ea30385451d',1,'GameUp.MatchTurnList.GetEnumerator()']]],
+  ['getmatch',['GetMatch',['../class_game_up_1_1_session_client.html#ae826444f626ce17b3be1b1ae7a9a2acb',1,'GameUp::SessionClient']]],
+  ['getturndata',['GetTurnData',['../class_game_up_1_1_session_client.html#abc088f588cc7bf4d21552c5faa83ee33',1,'GameUp::SessionClient']]]
 ];

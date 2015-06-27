@@ -1,4 +1,10 @@
 var searchData=
 [
-  ['ping',['Ping',['../class_game_up_1_1_client.html#af66ce6f08bfa91d43b773de4f14042b9',1,'GameUp.Client.Ping(ErrorCallback error)'],['../class_game_up_1_1_client.html#a53430e6ba11279bc0d10782ab893e45f',1,'GameUp.Client.Ping(SuccessCallback success, ErrorCallback error)'],['../class_game_up_1_1_session_client.html#a95508adc31bbe42c0df1221234e37618',1,'GameUp.SessionClient.Ping()']]]
+  ['mapclrmembernametojsonfieldname',['MapClrMemberNameToJsonFieldName',['../class_game_up_1_1_game_up_poco_json_serializer_strategy.html#a446e7a4ad60d3b816ed96b84ccd37256',1,'GameUp::GameUpPocoJsonSerializerStrategy']]],
+  ['matchcallback',['MatchCallback',['../class_game_up_1_1_session_client.html#ada16d6e7ebae9700784d44848717a9f3',1,'GameUp::SessionClient']]],
+  ['matchcreatecallback',['MatchCreateCallback',['../class_game_up_1_1_session_client.html#a1531b8802b444bb0a73cb80e695b2e55',1,'GameUp::SessionClient']]],
+  ['matchendcallback',['MatchEndCallback',['../class_game_up_1_1_session_client.html#abfd7fec810f20bf0160adac860eebb1e',1,'GameUp::SessionClient']]],
+  ['matchescallback',['MatchesCallback',['../class_game_up_1_1_session_client.html#a5417c1a474fad8ccc77ab74a7551084d',1,'GameUp::SessionClient']]],
+  ['matchleavecallback',['MatchLeaveCallback',['../class_game_up_1_1_session_client.html#a29a115f4ddbbb2f21e4e4c76dd584622',1,'GameUp::SessionClient']]],
+  ['matchqueuecallback',['MatchQueueCallback',['../class_game_up_1_1_session_client.html#a4a96fff8b23278b28fa1d623947ece01',1,'GameUp::SessionClient']]]
 ];

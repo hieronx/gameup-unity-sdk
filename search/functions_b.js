@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['wwwrequest',['WWWRequest',['../class_game_up_1_1_w_w_w_request.html#a2cc90d1f8b745cd5f89596e89d283679',1,'GameUp.WWWRequest.WWWRequest(Uri uri, string requestType, string username, string password)'],['../class_game_up_1_1_w_w_w_request.html#a1a57e95827d4d3e26edc87e3bc3cd2e1',1,'GameUp.WWWRequest.WWWRequest(MonoBehaviour monoBehaviour, Uri uri, string requestType, string username, string password)']]]
+  ['turncallback',['TurnCallback',['../class_game_up_1_1_session_client.html#a27953dab719d8d055c00bffc673d475c',1,'GameUp::SessionClient']]],
+  ['turnsubmitsuccesscallback',['TurnSubmitSuccessCallback',['../class_game_up_1_1_session_client.html#a8f93abc106543f6f63234ac9a241a9a9',1,'GameUp::SessionClient']]]
 ];

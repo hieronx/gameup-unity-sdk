@@ -26,6 +26,18 @@ var dir_7f64c52b790ab03de056d8658f99aa4e =
     [ "LeaderboardAndRank.cs", "_leaderboard_and_rank_8cs.html", [
       [ "LeaderboardAndRank", "class_game_up_1_1_leaderboard_and_rank.html", "class_game_up_1_1_leaderboard_and_rank" ]
     ] ],
+    [ "Match.cs", "_match_8cs.html", [
+      [ "Match", "class_game_up_1_1_match.html", "class_game_up_1_1_match" ]
+    ] ],
+    [ "MatchList.cs", "_match_list_8cs.html", [
+      [ "MatchList", "class_game_up_1_1_match_list.html", "class_game_up_1_1_match_list" ]
+    ] ],
+    [ "MatchTurn.cs", "_match_turn_8cs.html", [
+      [ "MatchTurn", "class_game_up_1_1_match_turn.html", "class_game_up_1_1_match_turn" ]
+    ] ],
+    [ "MatchTurnList.cs", "_match_turn_list_8cs.html", [
+      [ "MatchTurnList", "class_game_up_1_1_match_turn_list.html", "class_game_up_1_1_match_turn_list" ]
+    ] ],
     [ "Rank.cs", "_rank_8cs.html", [
       [ "Rank", "class_game_up_1_1_rank.html", "class_game_up_1_1_rank" ]
     ] ],

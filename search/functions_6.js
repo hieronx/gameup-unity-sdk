@@ -1,11 +1,9 @@
 var searchData=
 [
-  ['leaderboard',['Leaderboard',['../class_game_up_1_1_client.html#ac4d26d1895c1bae76d60e42bb84e0b06',1,'GameUp::Client']]],
-  ['leaderboardandrank',['LeaderboardAndRank',['../class_game_up_1_1_session_client.html#a4056c4b5db6a63dc8f8f02ee201c99e6',1,'GameUp::SessionClient']]],
-  ['leaderboardandrankcallback',['LeaderboardAndRankCallback',['../class_game_up_1_1_session_client.html#a50b1a4b3e8f166ebcf933d151d241539',1,'GameUp::SessionClient']]],
-  ['leaderboardcallback',['LeaderboardCallback',['../class_game_up_1_1_client.html#a1d6815fe9153f9127266c4e8cc9cf869',1,'GameUp::Client']]],
-  ['loginanonymous',['LoginAnonymous',['../class_game_up_1_1_client.html#a7968599517f9bced23d0be4f3f1daa42',1,'GameUp::Client']]],
-  ['logincallback',['LoginCallback',['../class_game_up_1_1_client.html#a3723cffa494f5195a340ad4d382fa379',1,'GameUp::Client']]],
-  ['loginoauthfacebook',['LoginOAuthFacebook',['../class_game_up_1_1_client.html#a0fae6f42eefd0e81ce95409474e17db0',1,'GameUp.Client.LoginOAuthFacebook(string accessToken, LoginCallback success, ErrorCallback error)'],['../class_game_up_1_1_client.html#a9b04b0a38ea27c85de6fb36539393180',1,'GameUp.Client.LoginOAuthFacebook(string accessToken, SessionClient session, LoginCallback success, ErrorCallback error)']]],
-  ['loginoauthgoogle',['LoginOAuthGoogle',['../class_game_up_1_1_client.html#ac6774be553693a13f768ca7b52538133',1,'GameUp.Client.LoginOAuthGoogle(string accessToken, LoginCallback success, ErrorCallback error)'],['../class_game_up_1_1_client.html#a8c27644520a5c04a376baebf5e17c83d',1,'GameUp.Client.LoginOAuthGoogle(string accessToken, SessionClient session, LoginCallback success, ErrorCallback error)']]]
+  ['initialize',['Initialize',['../class_game_up_1_1_singleton_mono_behaviour.html#a4d631c70909c38905a33d39840df061d',1,'GameUp::SingletonMonoBehaviour']]],
+  ['iscompleted',['IsCompleted',['../class_game_up_1_1_achievement.html#ad3f5c6786708f9a7a2bfdde122e782f3',1,'GameUp::Achievement']]],
+  ['isnew',['isNew',['../class_game_up_1_1_rank.html#aa22276569fff4b9ea7b1de997ceb4bc2',1,'GameUp::Rank']]],
+  ['isnewbestrank',['isNewBestRank',['../class_game_up_1_1_rank.html#ae8809a28be793c84cabfbf70ad846d10',1,'GameUp::Rank']]],
+  ['isnewrank',['isNewRank',['../class_game_up_1_1_rank.html#ab08a08cd1e9a7ddf16dd1ff646db8ea9',1,'GameUp::Rank']]],
+  ['isnewscore',['isNewScore',['../class_game_up_1_1_rank.html#acd2eb949384a92120a379dff051c927f',1,'GameUp::Rank']]]
 ];
