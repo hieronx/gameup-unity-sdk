@@ -11,11 +11,7 @@ The service provides the features and functionality provided by game servers tod
 For the full list of features check out our [main documentation](https://gameup.io/docs/).
 
 ### Setup
-The client SDK is available on the [Asset Store](https://www.assetstore.unity3d.com/#!/content/32782)
-
-It is fully compatible with Unity Personal (Free) and Professional (Pro) editions.
-
-### Direct Download
+The client SDK is fully compatible with Unity Personal (Free) and Professional (Pro) editions.
 
 * [Download the latest SDK DLL file](https://github.com/gameup-io/gameup-unity-sdk/releases)
 * Copy the file into your project's `asset` folder.
