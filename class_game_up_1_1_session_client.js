@@ -1,9 +1,10 @@
 var class_game_up_1_1_session_client =
 [
-    [ "Achievement", "class_game_up_1_1_session_client.html#a4ebeeab76e05470422be48b1fa030c6e", null ],
-    [ "Achievement", "class_game_up_1_1_session_client.html#a8cfeb37b66ea44131306af656e0715d6", null ],
+    [ "Achievement", "class_game_up_1_1_session_client.html#a38572d4027234acd21a42bf8589004dd", null ],
+    [ "Achievement", "class_game_up_1_1_session_client.html#afd5297bd5c30fff3be47ae9b3d1a6d1f", null ],
     [ "AchievementCallback", "class_game_up_1_1_session_client.html#ae7f9f4abc0800b2535cc599561a4ba85", null ],
     [ "Achievements", "class_game_up_1_1_session_client.html#ab6d5187816cc7290db3c86d0162159d2", null ],
+    [ "AchievementUnlockedCallback", "class_game_up_1_1_session_client.html#ae7bfb4b59e277bdb1bd195e4f31b2247", null ],
     [ "CreateMatch", "class_game_up_1_1_session_client.html#a1dee1894e9d438afde3935cad1cda4df", null ],
     [ "EndMatch", "class_game_up_1_1_session_client.html#a3edd7376d79765be45521db20b7e7ccc", null ],
     [ "Gamer", "class_game_up_1_1_session_client.html#ab31eac3c65d22f2a8cd9e4f5696a4c59", null ],
@@ -27,6 +28,7 @@ var class_game_up_1_1_session_client =
     [ "StorageGetCallback", "class_game_up_1_1_session_client.html#a21bc2e2146cd932662f0916e1fff3614", null ],
     [ "StoragePut", "class_game_up_1_1_session_client.html#a27bd6a589123b6b05ab9d12c8ac553cf", null ],
     [ "SubmitTurn", "class_game_up_1_1_session_client.html#acfe428b1b7fc4a9ce68920b6ba224e92", null ],
+    [ "SubscribePush", "class_game_up_1_1_session_client.html#aea9f61c95d28b6192abd728cea53ddc7", null ],
     [ "TurnCallback", "class_game_up_1_1_session_client.html#a27953dab719d8d055c00bffc673d475c", null ],
     [ "TurnSubmitSuccessCallback", "class_game_up_1_1_session_client.html#a8f93abc106543f6f63234ac9a241a9a9", null ],
     [ "UpdateLeaderboard", "class_game_up_1_1_session_client.html#a62b5016f168549592561f07f8607eadc", null ],
