@@ -45,6 +45,7 @@ namespace GameUp
     public delegate void StorageGetCallback (IDictionary<String, string> data);
 
     public delegate void AchievementCallback ();
+    public delegate void AchievementUnlockedCallback (Achievement achievement);
 
     public delegate void UpdateLeaderboardCallback (Rank rank);
 
@@ -167,10 +168,11 @@ namespace GameUp
     /// </summary>
     /// <param name="id">The ID of the achievement.</param>
     /// <param name="success">The callback to execute on success.</param>
+    /// <param name="successUnlocked">The callback to execute on success and unlock of an achievement</param>
     /// <param name="error">The callback to execute on error.</param>
-    public void Achievement (string id, AchievementCallback success, Client.ErrorCallback error)
+    public void Achievement (string id, AchievementCallback success, AchievementUnlockedCallback successUnlock, Client.ErrorCallback error)
     {
-      Achievement (id, 1, success, error);
+      Achievement (id, 1, success, successUnlock, error);
     }
 
     /// <summary>
@@ -179,15 +181,20 @@ namespace GameUp
     /// <param name="achievementId">The ID of the achievement.</param>
     /// <param name="count">The progress count to submit for the achievement.</param>
     /// <param name="success">The callback to execute on success.</param>
+    /// <param name="successUnlocked">The callback to execute on success and unlock of an achievement</param>
     /// <param name="error">The callback to execute on error.</param>
-    public void Achievement (string achievementId, int count, AchievementCallback success, Client.ErrorCallback error)
+    public void Achievement (string achievementId, int count, AchievementCallback success, AchievementUnlockedCallback successUnlock, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/achievement/" + achievementId;
       UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", apiKey, token);
       wwwRequest.SetBody("{\"count\":" + count + "}");
       wwwRequest.OnSuccess = (String jsonResponse) => {
-        success();
+        if (jsonResponse.Length == 0) {
+          success();
+        } else {
+          successUnlock(SimpleJson.DeserializeObject<Achievement> (jsonResponse, serializerStrategy));
+        }
       };
       wwwRequest.OnFailure = (int statusCode, string reason) => {
         error (statusCode, reason);
@@ -414,6 +421,51 @@ namespace GameUp
       
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success(matchId);
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Subscribes to the GameUp Push Notification using a Device Token.
+    /// It will automatically detect whether the device is Android or iOS (default).
+    /// </summary>
+    /// <param name="deviceToken">The device token</param>
+    /// <param name="segments">List of Segments to subscribe to. An empty list is acceptable.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void SubscribePush (String deviceToken, String[] segments, Client.SuccessCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/gamer/push/";
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "PUT", apiKey, token);
+
+      String segmentsString = "[" ;
+      if (segments.Length > 0) {
+        segmentsString += segments[0];
+        for (int i = 1; i < segments.Length; i++) {
+          segmentsString += "," + segments[i] ;
+        }
+      }
+      segmentsString += "]" ;
+
+      String platform = "ios" ;
+      #if UNITY_ANDROID
+        platform = "android" ;
+      #endif
+
+      String requestBody = "{" +
+                            "\"platform\":\"" + platform +"\"," +
+                            "\"id\":\"" + deviceToken +"\"," +
+                            "\"multiplayer\":false," +
+                            "\"segments\":" + segmentsString +
+                            "}";
+      wwwRequest.SetBody(requestBody);
+      
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success();
       };
       wwwRequest.OnFailure = (int statusCode, string reason) => {
         error (statusCode, reason);

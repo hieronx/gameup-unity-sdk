@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### 0.3.0
+
+* Added Push Notification support.
+* Fixed callback handler for Achievement responses.
+
 ### 0.2.0
 
 * Add turn-based multiplayer features.

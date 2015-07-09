@@ -82,7 +82,9 @@ public class GameUpTest : MonoBehaviour
       Debug.Log ("AchievementUpdate...");
       session.Achievement (achievementId, 5, () => {
         Debug.Log ("Successfully updated achievement");
-      }, failure);
+      }, (Achievement a) => {
+		    Debug.Log ("Successfully unlocked achievement");
+	    }, failure);
 
       Debug.Log ("Achievements...");
       session.Achievements ((AchievementList al) => {
@@ -142,6 +144,12 @@ public class GameUpTest : MonoBehaviour
           }, failure);
         }
       }
+
+		  Debug.Log ("Attempting to subscribe to Push Notifications. This will fail due to a fake-device-token.");
+		  String[] segments = {};
+		  session.SubscribePush("fake-device-token", segments, () => {
+			  Debug.Log ("Successfully subscribed to push notifications");
+		  }, failure);
 
       Debug.Log ("Facebook OAuth Login");
       Client.LoginOAuthFacebook (facebookToken, session, (SessionClient facebookSession) => {
