@@ -14,6 +14,12 @@ public class GameUpTest : MonoBehaviour
   readonly string facebookToken = "invalid-token-1234";
   readonly string storage_key = "profile_info";
 
+	SessionClient session;
+
+	#if UNITY_IOS
+	bool tokenSent = false;
+	#endif
+
   void Start ()
   {
     string deviceId = SystemInfo.deviceUniqueIdentifier;
@@ -51,7 +57,8 @@ public class GameUpTest : MonoBehaviour
     }, failure);
 
     Debug.Log ("Anonymous Login with Id : " + deviceId + " ...");
-    Client.LoginAnonymous (deviceId, (SessionClient session) => {
+    Client.LoginAnonymous (deviceId, (SessionClient s) => {
+			session = s;
       Debug.Log ("Successfully logged in anonymously: " + session.Token);
 
       Debug.Log ("Gamer...");
@@ -145,11 +152,9 @@ public class GameUpTest : MonoBehaviour
         }
       }
 
-		  Debug.Log ("Attempting to subscribe to Push Notifications. This will fail due to a fake-device-token.");
-		  String[] segments = {};
-		  session.SubscribePush("fake-device-token", segments, () => {
-			  Debug.Log ("Successfully subscribed to push notifications");
-		  }, failure);
+			#if UNITY_IOS
+			UnityEngine.iOS.NotificationServices.RegisterForNotifications(UnityEngine.iOS.NotificationType.Alert |  UnityEngine.iOS.NotificationType.Badge |  UnityEngine.iOS.NotificationType.Sound);
+			#endif
 
       Debug.Log ("Facebook OAuth Login");
       Client.LoginOAuthFacebook (facebookToken, session, (SessionClient facebookSession) => {
@@ -165,4 +170,22 @@ public class GameUpTest : MonoBehaviour
   {
 
   }
+
+	#if UNITY_IOS
+  void FixedUpdate () {
+		if (!tokenSent && session != null) { // tokenSent needs to be defined somewhere global so this code is trigged everytime (bool tokenSent = false)
+			byte[] token = UnityEngine.iOS.NotificationServices.deviceToken;
+			if(token != null) {
+				tokenSent = true;
+				string tokenString = System.BitConverter.ToString(token).Replace("-", "").ToLower();
+				
+				Debug.Log ("Attempting to subscribe to Push Notifications.");
+				String[] segments = {};
+				session.SubscribePush(tokenString, segments, () => {
+					Debug.Log ("Successfully subscribed to push notifications");
+				}, failure);
+	  	}
+		}
+  }
+	#endif
 }
