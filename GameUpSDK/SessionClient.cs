@@ -60,6 +60,8 @@ namespace GameUp
     public delegate void MatchEndCallback (String matchId);
     public delegate void MatchLeaveCallback (String matchId);
 
+    public delegate void PurchaseVerifyCallback (PurchaseVerification purchaseVerification);
+
     /// <summary>
     /// Ping the GameUp service to check it is reachable and the current session
     /// is still valid.
@@ -466,6 +468,72 @@ namespace GameUp
       
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success();
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Verify an Apple purchase with the remote service.
+    /// </summary>
+    /// <param name="receipt">The encoded receipt data returned by the purchase.</param>
+    /// <param name="productId">The ID of the product that was purchased.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void PurchaseVerifyApple (string receipt, string productId, PurchaseVerifyCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/gamer/purchase/verify/apple";
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", apiKey, token);
+      wwwRequest.SetBody("{\"product_id\":\"" + productId + "\",\"receipt_data\":\"" + receipt + "\"}");
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success(SimpleJson.DeserializeObject<PurchaseVerification> (jsonResponse, serializerStrategy));
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Verify a Google product purchase with the remote service.
+    /// </summary>
+    /// <param name="token">The purchase token returned by the purchase.</param>
+    /// <param name="productId">The ID of the product that was purchased.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void PurchaseVerifyGoogleProduct (string token, string productId, PurchaseVerifyCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/gamer/purchase/verify/google";
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", apiKey, token);
+      wwwRequest.SetBody("{\"product_id\":\"" + productId + "\",\"purchase_token\":\"" + token + "\",\"type\":\"product\"}");
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success(SimpleJson.DeserializeObject<PurchaseVerification> (jsonResponse, serializerStrategy));
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Verify a Google subscription purchase with the remote service.
+    /// </summary>
+    /// <param name="token">The purchase token returned by the purchase.</param>
+    /// <param name="subscriptionId">The ID of the subscription that was purchased.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void PurchaseVerifyGoogleSubscription (string token, string subscriptionId, PurchaseVerifyCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/gamer/purchase/verify/google";
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", apiKey, token);
+      wwwRequest.SetBody("{\"product_id\":\"" + subscriptionId + "\",\"purchase_token\":\"" + token + "\",\"type\":\"subscription\"}");
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success(SimpleJson.DeserializeObject<PurchaseVerification> (jsonResponse, serializerStrategy));
       };
       wwwRequest.OnFailure = (int statusCode, string reason) => {
         error (statusCode, reason);
