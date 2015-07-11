@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### 0.4.0
+
+* Add In-App Purchase Verification support.
+* Fix use of `new` with `WWWRequest` and `SingletonMonoBehaviour`.
+
 ### 0.3.0
 
 * Added Push Notification support.
