@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['wwwrequest',['WWWRequest',['../class_game_up_1_1_w_w_w_request.html',1,'GameUp']]]
+  ['serverinfo',['ServerInfo',['../class_game_up_1_1_server_info.html',1,'GameUp']]],
+  ['sessionclient',['SessionClient',['../class_game_up_1_1_session_client.html',1,'GameUp']]],
+  ['singletonmonobehaviour',['SingletonMonoBehaviour',['../class_game_up_1_1_singleton_mono_behaviour.html',1,'GameUp']]],
+  ['singletonmonobehaviour_3c_20wwwrequestexecutor_20_3e',['SingletonMonoBehaviour&lt; WWWRequestExecutor &gt;',['../class_game_up_1_1_singleton_mono_behaviour.html',1,'GameUp']]]
 ];

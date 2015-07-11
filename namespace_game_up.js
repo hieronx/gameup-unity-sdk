@@ -12,9 +12,11 @@ var namespace_game_up =
     [ "MatchList", "class_game_up_1_1_match_list.html", "class_game_up_1_1_match_list" ],
     [ "MatchTurn", "class_game_up_1_1_match_turn.html", "class_game_up_1_1_match_turn" ],
     [ "MatchTurnList", "class_game_up_1_1_match_turn_list.html", "class_game_up_1_1_match_turn_list" ],
+    [ "PurchaseVerification", "class_game_up_1_1_purchase_verification.html", "class_game_up_1_1_purchase_verification" ],
     [ "Rank", "class_game_up_1_1_rank.html", "class_game_up_1_1_rank" ],
     [ "ServerInfo", "class_game_up_1_1_server_info.html", "class_game_up_1_1_server_info" ],
     [ "SessionClient", "class_game_up_1_1_session_client.html", "class_game_up_1_1_session_client" ],
     [ "SingletonMonoBehaviour", "class_game_up_1_1_singleton_mono_behaviour.html", "class_game_up_1_1_singleton_mono_behaviour" ],
-    [ "WWWRequest", "class_game_up_1_1_w_w_w_request.html", "class_game_up_1_1_w_w_w_request" ]
+    [ "WWWRequest", "class_game_up_1_1_w_w_w_request.html", "class_game_up_1_1_w_w_w_request" ],
+    [ "WWWRequestExecutor", "class_game_up_1_1_w_w_w_request_executor.html", null ]
 ];

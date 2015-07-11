@@ -38,6 +38,9 @@ var dir_7f64c52b790ab03de056d8658f99aa4e =
     [ "MatchTurnList.cs", "_match_turn_list_8cs.html", [
       [ "MatchTurnList", "class_game_up_1_1_match_turn_list.html", "class_game_up_1_1_match_turn_list" ]
     ] ],
+    [ "PurchaseVerification.cs", "_purchase_verification_8cs.html", [
+      [ "PurchaseVerification", "class_game_up_1_1_purchase_verification.html", "class_game_up_1_1_purchase_verification" ]
+    ] ],
     [ "Rank.cs", "_rank_8cs.html", [
       [ "Rank", "class_game_up_1_1_rank.html", "class_game_up_1_1_rank" ]
     ] ],
@@ -52,5 +55,8 @@ var dir_7f64c52b790ab03de056d8658f99aa4e =
     ] ],
     [ "WWWRequest.cs", "_w_w_w_request_8cs.html", [
       [ "WWWRequest", "class_game_up_1_1_w_w_w_request.html", "class_game_up_1_1_w_w_w_request" ]
+    ] ],
+    [ "WWWRequestExecutor.cs", "_w_w_w_request_executor_8cs.html", [
+      [ "WWWRequestExecutor", "class_game_up_1_1_w_w_w_request_executor.html", null ]
     ] ]
 ];

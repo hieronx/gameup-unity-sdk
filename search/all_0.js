@@ -17,5 +17,6 @@ var searchData=
   ['api_5fserver',['API_SERVER',['../class_game_up_1_1_client.html#a5514013b1d76161beda7734d5147be53',1,'GameUp::Client']]],
   ['apikey',['ApiKey',['../class_game_up_1_1_client.html#ad79122d0be015291a24b168c501e4785',1,'GameUp::Client']]],
   ['asc',['ASC',['../class_game_up_1_1_leaderboard.html#a4dc47343e687dbfb328bba84d57da0cdac6e421eaad140c1bc1a39980502df80c',1,'GameUp::Leaderboard']]],
-  ['assemblyinfo_2ecs',['AssemblyInfo.cs',['../_assembly_info_8cs.html',1,'']]]
+  ['assemblyinfo_2ecs',['AssemblyInfo.cs',['../_assembly_info_8cs.html',1,'']]],
+  ['authheader',['AuthHeader',['../class_game_up_1_1_w_w_w_request.html#ab8180c4efa9c18d645238aad4a47058c',1,'GameUp::WWWRequest']]]
 ];

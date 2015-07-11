@@ -4,6 +4,7 @@ var searchData=
   ['score',['Score',['../class_game_up_1_1_leaderboard_1_1_entry.html#a8fbf57f5fbff1130b11a8affd7931c71',1,'GameUp.Leaderboard.Entry.Score()'],['../class_game_up_1_1_rank.html#ad9165723430a1546b22c765326982766',1,'GameUp.Rank.Score()']]],
   ['scoreat',['ScoreAt',['../class_game_up_1_1_leaderboard_1_1_entry.html#ad3e48139560020ad7111ce2de37d063d',1,'GameUp.Leaderboard.Entry.ScoreAt()'],['../class_game_up_1_1_rank.html#ae73d4b21bf374685802a21c3415b1b84',1,'GameUp.Rank.ScoreAt()']]],
   ['secret',['SECRET',['../class_game_up_1_1_achievement.html#a54a0591233f73b5f4e333bdafceb508ba44c7be48226ebad5dca8216674cad62b',1,'GameUp::Achievement']]],
+  ['seenbefore',['SeenBefore',['../class_game_up_1_1_purchase_verification.html#a6a8ea889db2aeb56baf545cfff884f06',1,'GameUp::PurchaseVerification']]],
   ['serialize',['Serialize',['../class_game_up_1_1_session_client.html#adce874e3a4435d488ac7589754578281',1,'GameUp::SessionClient']]],
   ['server',['Server',['../class_game_up_1_1_client.html#a8b649c1dadb1028d49ed6b76a529d4e1',1,'GameUp::Client']]],
   ['servercallback',['ServerCallback',['../class_game_up_1_1_client.html#a1b088cb8ef5c105baba08b6d16faeec5',1,'GameUp::Client']]],
@@ -14,7 +15,7 @@ var searchData=
   ['setbody',['SetBody',['../class_game_up_1_1_w_w_w_request.html#a47052207d221f5d63dd2460b692f913b',1,'GameUp::WWWRequest']]],
   ['singletonmonobehaviour',['SingletonMonoBehaviour',['../class_game_up_1_1_singleton_mono_behaviour.html',1,'GameUp']]],
   ['singletonmonobehaviour_2ecs',['SingletonMonoBehaviour.cs',['../_singleton_mono_behaviour_8cs.html',1,'']]],
-  ['singletonmonobehaviour_3c_20wwwrequest_20_3e',['SingletonMonoBehaviour&lt; WWWRequest &gt;',['../class_game_up_1_1_singleton_mono_behaviour.html',1,'GameUp']]],
+  ['singletonmonobehaviour_3c_20wwwrequestexecutor_20_3e',['SingletonMonoBehaviour&lt; WWWRequestExecutor &gt;',['../class_game_up_1_1_singleton_mono_behaviour.html',1,'GameUp']]],
   ['sort',['Sort',['../class_game_up_1_1_leaderboard.html#a4dc47343e687dbfb328bba84d57da0cd',1,'GameUp::Leaderboard']]],
   ['sortorder',['SortOrder',['../class_game_up_1_1_leaderboard.html#a21255ee41b7e27614de547ea6ad25163',1,'GameUp::Leaderboard']]],
   ['state',['State',['../class_game_up_1_1_achievement.html#a54a0591233f73b5f4e333bdafceb508b',1,'GameUp::Achievement']]],
@@ -24,5 +25,6 @@ var searchData=
   ['storageput',['StoragePut',['../class_game_up_1_1_session_client.html#a27bd6a589123b6b05ab9d12c8ac553cf',1,'GameUp::SessionClient']]],
   ['submitturn',['SubmitTurn',['../class_game_up_1_1_session_client.html#acfe428b1b7fc4a9ce68920b6ba224e92',1,'GameUp::SessionClient']]],
   ['subscribepush',['SubscribePush',['../class_game_up_1_1_session_client.html#aea9f61c95d28b6192abd728cea53ddc7',1,'GameUp::SessionClient']]],
+  ['success',['Success',['../class_game_up_1_1_purchase_verification.html#a6d5989c18747f41d1edc9d75c462eee6',1,'GameUp::PurchaseVerification']]],
   ['successcallback',['SuccessCallback',['../class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc',1,'GameUp.Client.SuccessCallback()'],['../class_game_up_1_1_w_w_w_request.html#a1764ce0a9df1fddba88c21513b07e801',1,'GameUp.WWWRequest.SuccessCallback()']]]
 ];

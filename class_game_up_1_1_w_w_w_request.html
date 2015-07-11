@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameUpSDK
-   &#160;<span id="projectnumber">0.3.0</span>
+   &#160;<span id="projectnumber">0.4.0</span>
    </div>
    <div id="projectbrief">Unity SDK for the GameUp service</div>
   </td>
@@ -110,27 +110,17 @@ $(document).ready(function(){initNavTree('class_game_up_1_1_w_w_w_request.html',
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#properties">Properties</a> &#124;
 <a href="class_game_up_1_1_w_w_w_request-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">GameUp.WWWRequest Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for GameUp.WWWRequest:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="class_game_up_1_1_w_w_w_request.png" usemap="#GameUp.WWWRequest_map" alt=""/>
-  <map id="GameUp.WWWRequest_map" name="GameUp.WWWRequest_map">
-<area href="class_game_up_1_1_singleton_mono_behaviour.html" alt="GameUp.SingletonMonoBehaviour&lt; WWWRequest &gt;" shape="rect" coords="0,0,306,24"/>
-</map>
- </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2cc90d1f8b745cd5f89596e89d283679"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_w_w_w_request.html#a2cc90d1f8b745cd5f89596e89d283679">WWWRequest</a> (Uri uri, string requestType, string username, string password)</td></tr>
-<tr class="separator:a2cc90d1f8b745cd5f89596e89d283679"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a57e95827d4d3e26edc87e3bc3cd2e1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_w_w_w_request.html#a1a57e95827d4d3e26edc87e3bc3cd2e1">WWWRequest</a> (MonoBehaviour monoBehaviour, Uri uri, string requestType, string username, string password)</td></tr>
-<tr class="separator:a1a57e95827d4d3e26edc87e3bc3cd2e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f926a91d0b4998f682842f525c3ed36"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_w_w_w_request.html#a8f926a91d0b4998f682842f525c3ed36">WWWRequest</a> (<a class="el" href="class_game_up_1_1_w_w_w_request.html#a8752cd435503ded043385bce74bb1eed">Uri</a> uri, string method, string username, string password)</td></tr>
+<tr class="separator:a8f926a91d0b4998f682842f525c3ed36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1764ce0a9df1fddba88c21513b07e801"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_w_w_w_request.html#a1764ce0a9df1fddba88c21513b07e801">SuccessCallback</a> (String jsonResponse)</td></tr>
 <tr class="separator:a1764ce0a9df1fddba88c21513b07e801"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe26df422bf59cd74231a91b0a96c845"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_w_w_w_request.html#abe26df422bf59cd74231a91b0a96c845">FailureCallback</a> (int statusCode, string reason)</td></tr>
@@ -139,6 +129,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a47052207d221f5d63dd2460b692f913b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1bc321cb6d60e729bfdf8ce3efc0ddb9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_w_w_w_request.html#a1bc321cb6d60e729bfdf8ce3efc0ddb9">AddHeader</a> (string name, string val)</td></tr>
 <tr class="separator:a1bc321cb6d60e729bfdf8ce3efc0ddb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c12d151b60711a493cd3b9e6e72b296"><td class="memItemLeft" align="right" valign="top">Dictionary&lt; string, string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_w_w_w_request.html#a8c12d151b60711a493cd3b9e6e72b296">GetHeaders</a> ()</td></tr>
+<tr class="separator:a8c12d151b60711a493cd3b9e6e72b296"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02e7196c1eeed5d00d01ac3f7b76bb70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_w_w_w_request.html#a02e7196c1eeed5d00d01ac3f7b76bb70">Execute</a> ()</td></tr>
 <tr class="separator:a02e7196c1eeed5d00d01ac3f7b76bb70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -149,77 +141,33 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a5106266def161c9a18424a057f92c41d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_up_1_1_w_w_w_request.html#abe26df422bf59cd74231a91b0a96c845">FailureCallback</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_w_w_w_request.html#a5106266def161c9a18424a057f92c41d">OnFailure</a></td></tr>
 <tr class="separator:a5106266def161c9a18424a057f92c41d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_methods_class_game_up_1_1_singleton_mono_behaviour"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_game_up_1_1_singleton_mono_behaviour')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_game_up_1_1_singleton_mono_behaviour.html">GameUp.SingletonMonoBehaviour&lt; WWWRequest &gt;</a></td></tr>
-<tr class="memitem:a4d631c70909c38905a33d39840df061d inherit pro_methods_class_game_up_1_1_singleton_mono_behaviour"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_singleton_mono_behaviour.html#a4d631c70909c38905a33d39840df061d">Initialize</a> ()</td></tr>
-<tr class="separator:a4d631c70909c38905a33d39840df061d inherit pro_methods_class_game_up_1_1_singleton_mono_behaviour"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header properties_class_game_up_1_1_singleton_mono_behaviour"><td colspan="2" onclick="javascript:toggleInherit('properties_class_game_up_1_1_singleton_mono_behaviour')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_game_up_1_1_singleton_mono_behaviour.html">GameUp.SingletonMonoBehaviour&lt; WWWRequest &gt;</a></td></tr>
-<tr class="memitem:adc280daf3726105b7e114cda5e45f513 inherit properties_class_game_up_1_1_singleton_mono_behaviour"><td class="memItemLeft" align="right" valign="top">static T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_singleton_mono_behaviour.html#adc280daf3726105b7e114cda5e45f513">Instance</a><code> [get]</code></td></tr>
-<tr class="separator:adc280daf3726105b7e114cda5e45f513 inherit properties_class_game_up_1_1_singleton_mono_behaviour"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3257e157ab7483baaa7b724f676ca0e inherit properties_class_game_up_1_1_singleton_mono_behaviour"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_singleton_mono_behaviour.html#ad3257e157ab7483baaa7b724f676ca0e">Initialized</a><code> [get, set]</code></td></tr>
-<tr class="separator:ad3257e157ab7483baaa7b724f676ca0e inherit properties_class_game_up_1_1_singleton_mono_behaviour"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a8752cd435503ded043385bce74bb1eed"><td class="memItemLeft" align="right" valign="top">Uri&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_w_w_w_request.html#a8752cd435503ded043385bce74bb1eed">Uri</a><code> [get]</code></td></tr>
+<tr class="separator:a8752cd435503ded043385bce74bb1eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae48f4be8e0740928ef0e16f7d9823a5c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_w_w_w_request.html#ae48f4be8e0740928ef0e16f7d9823a5c">Method</a><code> [get]</code></td></tr>
+<tr class="separator:ae48f4be8e0740928ef0e16f7d9823a5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8180c4efa9c18d645238aad4a47058c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_w_w_w_request.html#ab8180c4efa9c18d645238aad4a47058c">AuthHeader</a><code> [get]</code></td></tr>
+<tr class="separator:ab8180c4efa9c18d645238aad4a47058c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e3f8319dae56647e32e2454b01c43b3"><td class="memItemLeft" align="right" valign="top">byte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_w_w_w_request.html#a1e3f8319dae56647e32e2454b01c43b3">Body</a><code> [get]</code></td></tr>
+<tr class="separator:a1e3f8319dae56647e32e2454b01c43b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a2cc90d1f8b745cd5f89596e89d283679"></a>
+<a class="anchor" id="a8f926a91d0b4998f682842f525c3ed36"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">GameUp.WWWRequest.WWWRequest </td>
           <td>(</td>
-          <td class="paramtype">Uri&#160;</td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_w_w_w_request.html#a8752cd435503ded043385bce74bb1eed">Uri</a>&#160;</td>
           <td class="paramname"><em>uri</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>requestType</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>username</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>password</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a1a57e95827d4d3e26edc87e3bc3cd2e1"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">GameUp.WWWRequest.WWWRequest </td>
-          <td>(</td>
-          <td class="paramtype">MonoBehaviour&#160;</td>
-          <td class="paramname"><em>monoBehaviour</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Uri&#160;</td>
-          <td class="paramname"><em>uri</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>requestType</em>, </td>
+          <td class="paramname"><em>method</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -311,6 +259,21 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a8c12d151b60711a493cd3b9e6e72b296"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Dictionary&lt;string, string&gt; GameUp.WWWRequest.GetHeaders </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a47052207d221f5d63dd2460b692f913b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -368,6 +331,87 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="ab8180c4efa9c18d645238aad4a47058c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string GameUp.WWWRequest.AuthHeader</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1e3f8319dae56647e32e2454b01c43b3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte [] GameUp.WWWRequest.Body</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae48f4be8e0740928ef0e16f7d9823a5c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string GameUp.WWWRequest.Method</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8752cd435503ded043385bce74bb1eed"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Uri GameUp.WWWRequest.Uri</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>GameUpSDK/<a class="el" href="_w_w_w_request_8cs.html">WWWRequest.cs</a></li>
 </ul>
@@ -377,7 +421,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_game_up.html">GameUp</a></li><li class="navelem"><a class="el" href="class_game_up_1_1_w_w_w_request.html">WWWRequest</a></li>
-    <li class="footer">Generated on Wed Jul 8 2015 17:44:52 for GameUpSDK by
+    <li class="footer">Generated on Fri Jul 10 2015 20:29:20 for GameUpSDK by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

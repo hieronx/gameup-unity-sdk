@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameUpSDK
-   &#160;<span id="projectnumber">0.3.0</span>
+   &#160;<span id="projectnumber">0.4.0</span>
    </div>
    <div id="projectbrief">Unity SDK for the GameUp service</div>
   </td>
@@ -150,6 +150,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:abfd7fec810f20bf0160adac860eebb1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29a115f4ddbbb2f21e4e4c76dd584622"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a29a115f4ddbbb2f21e4e4c76dd584622">MatchLeaveCallback</a> (String matchId)</td></tr>
 <tr class="separator:a29a115f4ddbbb2f21e4e4c76dd584622"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b4d6eef9963fd5b6fd166113545608e"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a7b4d6eef9963fd5b6fd166113545608e">PurchaseVerifyCallback</a> (<a class="el" href="class_game_up_1_1_purchase_verification.html">PurchaseVerification</a> purchaseVerification)</td></tr>
+<tr class="separator:a7b4d6eef9963fd5b6fd166113545608e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95508adc31bbe42c0df1221234e37618"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a95508adc31bbe42c0df1221234e37618">Ping</a> (<a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">Client.SuccessCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:a95508adc31bbe42c0df1221234e37618"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ping the <a class="el" href="namespace_game_up.html">GameUp</a> service to check it is reachable and the current session is still valid.  <a href="#a95508adc31bbe42c0df1221234e37618">More...</a><br /></td></tr>
 <tr class="separator:a95508adc31bbe42c0df1221234e37618"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -204,6 +206,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aea9f61c95d28b6192abd728cea53ddc7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#aea9f61c95d28b6192abd728cea53ddc7">SubscribePush</a> (String deviceToken, String[] segments, <a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">Client.SuccessCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:aea9f61c95d28b6192abd728cea53ddc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribes to the <a class="el" href="namespace_game_up.html">GameUp</a> Push Notification using a Device Token. It will automatically detect whether the device is Android or iOS (default).  <a href="#aea9f61c95d28b6192abd728cea53ddc7">More...</a><br /></td></tr>
 <tr class="separator:aea9f61c95d28b6192abd728cea53ddc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88bcbefb98bf40a69341158ebbd72b9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a88bcbefb98bf40a69341158ebbd72b9c">PurchaseVerifyApple</a> (string receipt, string productId, <a class="el" href="class_game_up_1_1_session_client.html#a7b4d6eef9963fd5b6fd166113545608e">PurchaseVerifyCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:a88bcbefb98bf40a69341158ebbd72b9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify an Apple purchase with the remote service.  <a href="#a88bcbefb98bf40a69341158ebbd72b9c">More...</a><br /></td></tr>
+<tr class="separator:a88bcbefb98bf40a69341158ebbd72b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa670d26c896a658639cf18be6d7567b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#aa670d26c896a658639cf18be6d7567b7">PurchaseVerifyGoogleProduct</a> (string token, string productId, <a class="el" href="class_game_up_1_1_session_client.html#a7b4d6eef9963fd5b6fd166113545608e">PurchaseVerifyCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:aa670d26c896a658639cf18be6d7567b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify a Google product purchase with the remote service.  <a href="#aa670d26c896a658639cf18be6d7567b7">More...</a><br /></td></tr>
+<tr class="separator:aa670d26c896a658639cf18be6d7567b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ab8269738bff5138bcc49d5313b22cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a5ab8269738bff5138bcc49d5313b22cf">PurchaseVerifyGoogleSubscription</a> (string token, string subscriptionId, <a class="el" href="class_game_up_1_1_session_client.html#a7b4d6eef9963fd5b6fd166113545608e">PurchaseVerifyCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:a5ab8269738bff5138bcc49d5313b22cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify a Google subscription purchase with the remote service.  <a href="#a5ab8269738bff5138bcc49d5313b22cf">More...</a><br /></td></tr>
+<tr class="separator:a5ab8269738bff5138bcc49d5313b22cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adce874e3a4435d488ac7589754578281"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#adce874e3a4435d488ac7589754578281">Serialize</a> ()</td></tr>
 <tr class="separator:adce874e3a4435d488ac7589754578281"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -914,6 +925,169 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a88bcbefb98bf40a69341158ebbd72b9c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUp.SessionClient.PurchaseVerifyApple </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>receipt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>productId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_session_client.html#a7b4d6eef9963fd5b6fd166113545608e">PurchaseVerifyCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verify an Apple purchase with the remote service. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">receipt</td><td>The encoded receipt data returned by the purchase.</td></tr>
+    <tr><td class="paramname">productId</td><td>The ID of the product that was purchased.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7b4d6eef9963fd5b6fd166113545608e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">delegate void GameUp.SessionClient.PurchaseVerifyCallback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_purchase_verification.html">PurchaseVerification</a>&#160;</td>
+          <td class="paramname"><em>purchaseVerification</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa670d26c896a658639cf18be6d7567b7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUp.SessionClient.PurchaseVerifyGoogleProduct </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>token</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>productId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_session_client.html#a7b4d6eef9963fd5b6fd166113545608e">PurchaseVerifyCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verify a Google product purchase with the remote service. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">token</td><td>The purchase token returned by the purchase.</td></tr>
+    <tr><td class="paramname">productId</td><td>The ID of the product that was purchased.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5ab8269738bff5138bcc49d5313b22cf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUp.SessionClient.PurchaseVerifyGoogleSubscription </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>token</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>subscriptionId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_session_client.html#a7b4d6eef9963fd5b6fd166113545608e">PurchaseVerifyCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verify a Google subscription purchase with the remote service. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">token</td><td>The purchase token returned by the purchase.</td></tr>
+    <tr><td class="paramname">subscriptionId</td><td>The ID of the subscription that was purchased.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="adce874e3a4435d488ac7589754578281"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1337,7 +1511,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_game_up.html">GameUp</a></li><li class="navelem"><a class="el" href="class_game_up_1_1_session_client.html">SessionClient</a></li>
-    <li class="footer">Generated on Wed Jul 8 2015 17:44:52 for GameUpSDK by
+    <li class="footer">Generated on Fri Jul 10 2015 20:29:20 for GameUpSDK by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

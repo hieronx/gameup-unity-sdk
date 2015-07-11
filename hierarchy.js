@@ -20,10 +20,12 @@ var hierarchy =
     [ "PocoJsonSerializerStrategy", null, [
       [ "GameUp.GameUpPocoJsonSerializerStrategy", "class_game_up_1_1_game_up_poco_json_serializer_strategy.html", null ]
     ] ],
+    [ "GameUp.PurchaseVerification", "class_game_up_1_1_purchase_verification.html", null ],
     [ "GameUp.Rank", "class_game_up_1_1_rank.html", null ],
     [ "GameUp.ServerInfo", "class_game_up_1_1_server_info.html", null ],
     [ "GameUp.SessionClient", "class_game_up_1_1_session_client.html", null ],
-    [ "GameUp.SingletonMonoBehaviour< WWWRequest >", "class_game_up_1_1_singleton_mono_behaviour.html", [
-      [ "GameUp.WWWRequest", "class_game_up_1_1_w_w_w_request.html", null ]
-    ] ]
+    [ "GameUp.SingletonMonoBehaviour< WWWRequestExecutor >", "class_game_up_1_1_singleton_mono_behaviour.html", [
+      [ "GameUp.WWWRequestExecutor", "class_game_up_1_1_w_w_w_request_executor.html", null ]
+    ] ],
+    [ "GameUp.WWWRequest", "class_game_up_1_1_w_w_w_request.html", null ]
 ];
