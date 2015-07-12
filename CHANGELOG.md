@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.4.1
+
+* Regenerate the SDK DLL.
+
 ### 0.4.0
 
 * Add In-App Purchase Verification support.
