@@ -60,6 +60,16 @@ public class GameUpTest : MonoBehaviour
     Client.LoginAnonymous (deviceId, (SessionClient s) => {
       session = s;
       Debug.Log ("Successfully logged in anonymously: " + session.Token);
+
+      Client.CreateGameUpAccount("unitysdk@gameup.io", "password", "password", "UnitySDK Test", session, (SessionClient gus) => {
+        session = gus;
+        Debug.Log ("Successfully created GameUp Account: " + session.Token);
+      }, (status, reason) => { 
+        Client.LoginGameUp("unitysdk@gameup.io", "password", session, (SessionClient gus) => {
+          session = gus;
+          Debug.Log ("Successfully logged in with GameUp Account: " + session.Token);
+        }, failure);
+      });
       
       Debug.Log ("Gamer...");
       session.Gamer ((Gamer gamer) => {

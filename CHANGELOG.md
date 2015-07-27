@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.5.0
+
+* Add JSON Endpoints for Login, Create and Password Reset of GameUp Accounts
+
 ### 0.4.1
 
 * Regenerate the SDK DLL.

@@ -185,6 +185,110 @@ namespace GameUp
     }
 
     /// <summary>
+    /// Login a gamer using a GameUp Email / Password combination.
+    /// </summary>
+    /// <param name="email">Gamer's Email.</param>
+    /// <param name="password">Gamer's Password.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void LoginGameUp (string email, string password, LoginCallback success, ErrorCallback error)
+    {
+      LoginGameUp(email, password, null, success, error);
+    }
+
+    /// <summary>
+    /// Login a gamer using a GameUp Email / Password combination and link an existing gamer token.
+    /// </summary>
+    /// <param name="email">Gamer's Email.</param>
+    /// <param name="password">Gamer's Password.</param>
+    /// <param name="session">An existing session client.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void LoginGameUp (string email, string password, SessionClient session, LoginCallback success, ErrorCallback error)
+    {
+      UriBuilder b = new UriBuilder (SCHEME, ACCOUNTS_SERVER, PORT, "/v0/gamer/login/gameup");
+      String token = session == null ? "" : session.Token;
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, token);
+
+      wwwRequest.SetBody ("{\"email\": \"" + email + "\", \"password\":\"" + password +"\"}");
+
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success(createSessionClient(jsonResponse));
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Create a new account for the gamer using a GameUp Email / Password combination and link an existing gamer token.
+    /// </summary>
+    /// <param name="email">Gamer's Email.</param>
+    /// <param name="password">Gamer's Password.</param>
+    /// <param name="confirm_password">Gamer's Password Confirmation</param>
+    /// <param name="name">Gamer's Name - Optional</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void CreateGameUpAccount (string email, string password, string confirm_password, string name, LoginCallback success, ErrorCallback error)
+    {
+      CreateGameUpAccount(email, password, confirm_password, name, null, success, error);
+    }
+
+    /// <summary>
+    /// Create a new account for the gamer using a GameUp Email / Password combination and link an existing gamer token.
+    /// </summary>
+    /// <param name="email">Gamer's Email.</param>
+    /// <param name="password">Gamer's Password.</param>
+    /// <param name="confirm_password">Gamer's Password Confirmation</param>
+    /// <param name="name">Gamer's Name</param>
+    /// <param name="session">An existing session client.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void CreateGameUpAccount (string email, string password, string confirm_password, string name, SessionClient session, LoginCallback success, ErrorCallback error)
+    {
+      UriBuilder b = new UriBuilder (SCHEME, ACCOUNTS_SERVER, PORT, "/v0/gamer/account/gameup/create");
+      String token = session == null ? "" : session.Token;
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, token);
+
+      wwwRequest.SetBody ("{\"email\": \"" + email + "\", \"password\":\"" + password + "\", \"confirm_password\":\"" + confirm_password + "\"}");
+      if (name.Trim().Length > 0) {
+        wwwRequest.SetBody ("{\"email\": \"" + email + "\", \"password\":\"" + password + "\", \"confirm_password\":\"" + confirm_password + "\", \"name\":\"" + name + "\"}");
+      }
+
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success(createSessionClient(jsonResponse));
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Send a password recovery email to the gamer
+    /// </summary>
+    /// <param name="email">Gamer's Email.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void ResetEmailGameUp (string email, SuccessCallback success, ErrorCallback error)
+    {
+      UriBuilder b = new UriBuilder (SCHEME, ACCOUNTS_SERVER, PORT, "/v0/gamer/account/gameup/reset/send");
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, "");
+
+      wwwRequest.SetBody ("{\"email\": \"" + email + "\"}");
+
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success();
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();  
+    }
+
+
+    /// <summary>
     /// Login a gamer using a Facebook OAuth Token. An OAuth token can be obtained from the
     /// Facebook SDK.
     /// </summary>
@@ -241,7 +345,6 @@ namespace GameUp
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, token);
 
       wwwRequest.SetBody ("{\"type\": \"" + type + "\", \"access_token\":\"" + accessToken +"\"}");
-
 
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success(createSessionClient(jsonResponse));
