@@ -30,9 +30,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="GameUp_Logo_Small_fill.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameUpSDK
-   &#160;<span id="projectnumber">0.4.0</span>
+   &#160;<span id="projectnumber">0.5.0</span>
    </div>
    <div id="projectbrief">Unity SDK for the GameUp service</div>
   </td>
@@ -119,6 +120,8 @@ $(document).ready(function(){initNavTree('class_game_up_1_1_client.html','');});
   <tr class="even"><td class="entry"><a class="el" href="class_game_up_1_1_client.html#a2f990874cd631a0bbd1f7a2e387a87ca">AchievementsCallback</a>(AchievementList achievements)</td><td class="entry"><a class="el" href="class_game_up_1_1_client.html">GameUp.Client</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_game_up_1_1_client.html#a5514013b1d76161beda7734d5147be53">API_SERVER</a></td><td class="entry"><a class="el" href="class_game_up_1_1_client.html">GameUp.Client</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_game_up_1_1_client.html#ad79122d0be015291a24b168c501e4785">ApiKey</a></td><td class="entry"><a class="el" href="class_game_up_1_1_client.html">GameUp.Client</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_game_up_1_1_client.html#a3b13d98f6d1a73fa7915a1cb2c27546c">CreateGameUpAccount</a>(string email, string password, string confirm_password, string name, LoginCallback success, ErrorCallback error)</td><td class="entry"><a class="el" href="class_game_up_1_1_client.html">GameUp.Client</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_game_up_1_1_client.html#a4e0e89d0d5616464cc3bb9118530cd4f">CreateGameUpAccount</a>(string email, string password, string confirm_password, string name, SessionClient session, LoginCallback success, ErrorCallback error)</td><td class="entry"><a class="el" href="class_game_up_1_1_client.html">GameUp.Client</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a>(int statusCode, string reason)</td><td class="entry"><a class="el" href="class_game_up_1_1_client.html">GameUp.Client</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_game_up_1_1_client.html#a060902bcdc01d4ebf8b7b87c10d7fd9a">Game</a>(GameCallback success, ErrorCallback error)</td><td class="entry"><a class="el" href="class_game_up_1_1_client.html">GameUp.Client</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_game_up_1_1_client.html#a8e2e5a8aa4fa3b925437959d1f36f01e">GameCallback</a>(Game game)</td><td class="entry"><a class="el" href="class_game_up_1_1_client.html">GameUp.Client</a></td><td class="entry"></td></tr>
@@ -126,6 +129,8 @@ $(document).ready(function(){initNavTree('class_game_up_1_1_client.html','');});
   <tr><td class="entry"><a class="el" href="class_game_up_1_1_client.html#a1d6815fe9153f9127266c4e8cc9cf869">LeaderboardCallback</a>(Leaderboard leaderboard)</td><td class="entry"><a class="el" href="class_game_up_1_1_client.html">GameUp.Client</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_game_up_1_1_client.html#a7968599517f9bced23d0be4f3f1daa42">LoginAnonymous</a>(string id, LoginCallback success, ErrorCallback error)</td><td class="entry"><a class="el" href="class_game_up_1_1_client.html">GameUp.Client</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_game_up_1_1_client.html#a3723cffa494f5195a340ad4d382fa379">LoginCallback</a>(SessionClient session)</td><td class="entry"><a class="el" href="class_game_up_1_1_client.html">GameUp.Client</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_game_up_1_1_client.html#a696daf06fc6c6a43b865fa09388cc2b4">LoginGameUp</a>(string email, string password, LoginCallback success, ErrorCallback error)</td><td class="entry"><a class="el" href="class_game_up_1_1_client.html">GameUp.Client</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_game_up_1_1_client.html#a707d477be7f59b965640abd0eef6e30f">LoginGameUp</a>(string email, string password, SessionClient session, LoginCallback success, ErrorCallback error)</td><td class="entry"><a class="el" href="class_game_up_1_1_client.html">GameUp.Client</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_game_up_1_1_client.html#a0fae6f42eefd0e81ce95409474e17db0">LoginOAuthFacebook</a>(string accessToken, LoginCallback success, ErrorCallback error)</td><td class="entry"><a class="el" href="class_game_up_1_1_client.html">GameUp.Client</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_game_up_1_1_client.html#a9b04b0a38ea27c85de6fb36539393180">LoginOAuthFacebook</a>(string accessToken, SessionClient session, LoginCallback success, ErrorCallback error)</td><td class="entry"><a class="el" href="class_game_up_1_1_client.html">GameUp.Client</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_game_up_1_1_client.html#ac6774be553693a13f768ca7b52538133">LoginOAuthGoogle</a>(string accessToken, LoginCallback success, ErrorCallback error)</td><td class="entry"><a class="el" href="class_game_up_1_1_client.html">GameUp.Client</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
@@ -133,16 +138,17 @@ $(document).ready(function(){initNavTree('class_game_up_1_1_client.html','');});
   <tr class="even"><td class="entry"><a class="el" href="class_game_up_1_1_client.html#af66ce6f08bfa91d43b773de4f14042b9">Ping</a>(ErrorCallback error)</td><td class="entry"><a class="el" href="class_game_up_1_1_client.html">GameUp.Client</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_game_up_1_1_client.html#a53430e6ba11279bc0d10782ab893e45f">Ping</a>(SuccessCallback success, ErrorCallback error)</td><td class="entry"><a class="el" href="class_game_up_1_1_client.html">GameUp.Client</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_game_up_1_1_client.html#ac2fba0fd6cb665e4058c52737cd19b83">PORT</a></td><td class="entry"><a class="el" href="class_game_up_1_1_client.html">GameUp.Client</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_game_up_1_1_client.html#a022e933fe57e2a7d0c61dac4ab48e2f2">SCHEME</a></td><td class="entry"><a class="el" href="class_game_up_1_1_client.html">GameUp.Client</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_game_up_1_1_client.html#a8b649c1dadb1028d49ed6b76a529d4e1">Server</a>(ServerCallback success, ErrorCallback error)</td><td class="entry"><a class="el" href="class_game_up_1_1_client.html">GameUp.Client</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_game_up_1_1_client.html#a1b088cb8ef5c105baba08b6d16faeec5">ServerCallback</a>(ServerInfo info)</td><td class="entry"><a class="el" href="class_game_up_1_1_client.html">GameUp.Client</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">SuccessCallback</a>()</td><td class="entry"><a class="el" href="class_game_up_1_1_client.html">GameUp.Client</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_game_up_1_1_client.html#a2ca0e36182a92ee6062917641d374acb">ResetEmailGameUp</a>(string email, SuccessCallback success, ErrorCallback error)</td><td class="entry"><a class="el" href="class_game_up_1_1_client.html">GameUp.Client</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_game_up_1_1_client.html#a022e933fe57e2a7d0c61dac4ab48e2f2">SCHEME</a></td><td class="entry"><a class="el" href="class_game_up_1_1_client.html">GameUp.Client</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_game_up_1_1_client.html#a8b649c1dadb1028d49ed6b76a529d4e1">Server</a>(ServerCallback success, ErrorCallback error)</td><td class="entry"><a class="el" href="class_game_up_1_1_client.html">GameUp.Client</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_game_up_1_1_client.html#a1b088cb8ef5c105baba08b6d16faeec5">ServerCallback</a>(ServerInfo info)</td><td class="entry"><a class="el" href="class_game_up_1_1_client.html">GameUp.Client</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">SuccessCallback</a>()</td><td class="entry"><a class="el" href="class_game_up_1_1_client.html">GameUp.Client</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Jul 10 2015 20:29:20 for GameUpSDK by
+    <li class="footer">Generated on Sun Aug 2 2015 20:31:00 for GameUpSDK by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

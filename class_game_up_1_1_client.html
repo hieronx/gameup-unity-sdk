@@ -30,9 +30,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="GameUp_Logo_Small_fill.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameUpSDK
-   &#160;<span id="projectnumber">0.4.0</span>
+   &#160;<span id="projectnumber">0.5.0</span>
    </div>
    <div id="projectbrief">Unity SDK for the GameUp service</div>
   </td>
@@ -161,6 +162,21 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a7968599517f9bced23d0be4f3f1daa42"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a7968599517f9bced23d0be4f3f1daa42">LoginAnonymous</a> (string id, <a class="el" href="class_game_up_1_1_client.html#a3723cffa494f5195a340ad4d382fa379">LoginCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:a7968599517f9bced23d0be4f3f1daa42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use a unique ID to generate an account for a gamer. This ID should be cached on the gaming device so it can be re-used to re-login the gamer to the same account. See the documentation for more information.  <a href="#a7968599517f9bced23d0be4f3f1daa42">More...</a><br /></td></tr>
 <tr class="separator:a7968599517f9bced23d0be4f3f1daa42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a696daf06fc6c6a43b865fa09388cc2b4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a696daf06fc6c6a43b865fa09388cc2b4">LoginGameUp</a> (string email, string password, <a class="el" href="class_game_up_1_1_client.html#a3723cffa494f5195a340ad4d382fa379">LoginCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:a696daf06fc6c6a43b865fa09388cc2b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Login a gamer using a <a class="el" href="namespace_game_up.html">GameUp</a> Email / Password combination.  <a href="#a696daf06fc6c6a43b865fa09388cc2b4">More...</a><br /></td></tr>
+<tr class="separator:a696daf06fc6c6a43b865fa09388cc2b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a707d477be7f59b965640abd0eef6e30f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a707d477be7f59b965640abd0eef6e30f">LoginGameUp</a> (string email, string password, <a class="el" href="class_game_up_1_1_session_client.html">SessionClient</a> session, <a class="el" href="class_game_up_1_1_client.html#a3723cffa494f5195a340ad4d382fa379">LoginCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:a707d477be7f59b965640abd0eef6e30f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Login a gamer using a <a class="el" href="namespace_game_up.html">GameUp</a> Email / Password combination and link an existing gamer token.  <a href="#a707d477be7f59b965640abd0eef6e30f">More...</a><br /></td></tr>
+<tr class="separator:a707d477be7f59b965640abd0eef6e30f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b13d98f6d1a73fa7915a1cb2c27546c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a3b13d98f6d1a73fa7915a1cb2c27546c">CreateGameUpAccount</a> (string email, string password, string confirm_password, string name, <a class="el" href="class_game_up_1_1_client.html#a3723cffa494f5195a340ad4d382fa379">LoginCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:a3b13d98f6d1a73fa7915a1cb2c27546c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new account for the gamer using a <a class="el" href="namespace_game_up.html">GameUp</a> Email / Password combination and link an existing gamer token.  <a href="#a3b13d98f6d1a73fa7915a1cb2c27546c">More...</a><br /></td></tr>
+<tr class="separator:a3b13d98f6d1a73fa7915a1cb2c27546c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e0e89d0d5616464cc3bb9118530cd4f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a4e0e89d0d5616464cc3bb9118530cd4f">CreateGameUpAccount</a> (string email, string password, string confirm_password, string name, <a class="el" href="class_game_up_1_1_session_client.html">SessionClient</a> session, <a class="el" href="class_game_up_1_1_client.html#a3723cffa494f5195a340ad4d382fa379">LoginCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:a4e0e89d0d5616464cc3bb9118530cd4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new account for the gamer using a <a class="el" href="namespace_game_up.html">GameUp</a> Email / Password combination and link an existing gamer token.  <a href="#a4e0e89d0d5616464cc3bb9118530cd4f">More...</a><br /></td></tr>
+<tr class="separator:a4e0e89d0d5616464cc3bb9118530cd4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ca0e36182a92ee6062917641d374acb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a2ca0e36182a92ee6062917641d374acb">ResetEmailGameUp</a> (string email, <a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">SuccessCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:a2ca0e36182a92ee6062917641d374acb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a password recovery email to the gamer  <a href="#a2ca0e36182a92ee6062917641d374acb">More...</a><br /></td></tr>
+<tr class="separator:a2ca0e36182a92ee6062917641d374acb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fae6f42eefd0e81ce95409474e17db0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a0fae6f42eefd0e81ce95409474e17db0">LoginOAuthFacebook</a> (string accessToken, <a class="el" href="class_game_up_1_1_client.html#a3723cffa494f5195a340ad4d382fa379">LoginCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:a0fae6f42eefd0e81ce95409474e17db0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Login a gamer using a Facebook OAuth Token. An OAuth token can be obtained from the Facebook SDK.  <a href="#a0fae6f42eefd0e81ce95409474e17db0">More...</a><br /></td></tr>
 <tr class="separator:a0fae6f42eefd0e81ce95409474e17db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -250,6 +266,155 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3b13d98f6d1a73fa7915a1cb2c27546c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void GameUp.Client.CreateGameUpAccount </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>email</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>password</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>confirm_password</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#a3723cffa494f5195a340ad4d382fa379">LoginCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create a new account for the gamer using a <a class="el" href="namespace_game_up.html">GameUp</a> Email / Password combination and link an existing gamer token. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">email</td><td><a class="el" href="class_game_up_1_1_gamer.html" title="Represents a gamer in the GameUp service. ">Gamer</a>'s Email.</td></tr>
+    <tr><td class="paramname">password</td><td><a class="el" href="class_game_up_1_1_gamer.html" title="Represents a gamer in the GameUp service. ">Gamer</a>'s Password.</td></tr>
+    <tr><td class="paramname">confirm_password</td><td><a class="el" href="class_game_up_1_1_gamer.html" title="Represents a gamer in the GameUp service. ">Gamer</a>'s Password Confirmation</td></tr>
+    <tr><td class="paramname">name</td><td><a class="el" href="class_game_up_1_1_gamer.html" title="Represents a gamer in the GameUp service. ">Gamer</a>'s Name - Optional</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4e0e89d0d5616464cc3bb9118530cd4f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void GameUp.Client.CreateGameUpAccount </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>email</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>password</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>confirm_password</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_session_client.html">SessionClient</a>&#160;</td>
+          <td class="paramname"><em>session</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#a3723cffa494f5195a340ad4d382fa379">LoginCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create a new account for the gamer using a <a class="el" href="namespace_game_up.html">GameUp</a> Email / Password combination and link an existing gamer token. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">email</td><td><a class="el" href="class_game_up_1_1_gamer.html" title="Represents a gamer in the GameUp service. ">Gamer</a>'s Email.</td></tr>
+    <tr><td class="paramname">password</td><td><a class="el" href="class_game_up_1_1_gamer.html" title="Represents a gamer in the GameUp service. ">Gamer</a>'s Password.</td></tr>
+    <tr><td class="paramname">confirm_password</td><td><a class="el" href="class_game_up_1_1_gamer.html" title="Represents a gamer in the GameUp service. ">Gamer</a>'s Password Confirmation</td></tr>
+    <tr><td class="paramname">name</td><td><a class="el" href="class_game_up_1_1_gamer.html" title="Represents a gamer in the GameUp service. ">Gamer</a>'s Name</td></tr>
+    <tr><td class="paramname">session</td><td>An existing session client.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -467,6 +632,127 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a696daf06fc6c6a43b865fa09388cc2b4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void GameUp.Client.LoginGameUp </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>email</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>password</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#a3723cffa494f5195a340ad4d382fa379">LoginCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Login a gamer using a <a class="el" href="namespace_game_up.html">GameUp</a> Email / Password combination. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">email</td><td><a class="el" href="class_game_up_1_1_gamer.html" title="Represents a gamer in the GameUp service. ">Gamer</a>'s Email.</td></tr>
+    <tr><td class="paramname">password</td><td><a class="el" href="class_game_up_1_1_gamer.html" title="Represents a gamer in the GameUp service. ">Gamer</a>'s Password.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a707d477be7f59b965640abd0eef6e30f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void GameUp.Client.LoginGameUp </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>email</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>password</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_session_client.html">SessionClient</a>&#160;</td>
+          <td class="paramname"><em>session</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#a3723cffa494f5195a340ad4d382fa379">LoginCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Login a gamer using a <a class="el" href="namespace_game_up.html">GameUp</a> Email / Password combination and link an existing gamer token. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">email</td><td><a class="el" href="class_game_up_1_1_gamer.html" title="Represents a gamer in the GameUp service. ">Gamer</a>'s Email.</td></tr>
+    <tr><td class="paramname">password</td><td><a class="el" href="class_game_up_1_1_gamer.html" title="Represents a gamer in the GameUp service. ">Gamer</a>'s Password.</td></tr>
+    <tr><td class="paramname">session</td><td>An existing session client.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -759,6 +1045,56 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a2ca0e36182a92ee6062917641d374acb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void GameUp.Client.ResetEmailGameUp </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>email</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">SuccessCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Send a password recovery email to the gamer </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">email</td><td><a class="el" href="class_game_up_1_1_gamer.html" title="Represents a gamer in the GameUp service. ">Gamer</a>'s Email.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a8b649c1dadb1028d49ed6b76a529d4e1"></a>
 <div class="memitem">
 <div class="memproto">
@@ -947,7 +1283,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_game_up.html">GameUp</a></li><li class="navelem"><a class="el" href="class_game_up_1_1_client.html">Client</a></li>
-    <li class="footer">Generated on Fri Jul 10 2015 20:29:20 for GameUpSDK by
+    <li class="footer">Generated on Sun Aug 2 2015 20:31:00 for GameUpSDK by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>
