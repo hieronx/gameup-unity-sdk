@@ -15,7 +15,7 @@ var searchData=
   ['active',['Active',['../class_game_up_1_1_match.html#a65af481e3ed1bb7564fe01f85b3434d6',1,'GameUp::Match']]],
   ['addheader',['AddHeader',['../class_game_up_1_1_w_w_w_request.html#a1bc321cb6d60e729bfdf8ce3efc0ddb9',1,'GameUp::WWWRequest']]],
   ['api_5fserver',['API_SERVER',['../class_game_up_1_1_client.html#a5514013b1d76161beda7734d5147be53',1,'GameUp::Client']]],
-  ['apikey',['ApiKey',['../class_game_up_1_1_client.html#ad79122d0be015291a24b168c501e4785',1,'GameUp::Client']]],
+  ['apikey',['ApiKey',['../class_game_up_1_1_client.html#ad79122d0be015291a24b168c501e4785',1,'GameUp.Client.ApiKey()'],['../class_game_up_1_1_session_client.html#a4101c8e3ad9af8e626859e741b4e2bb6',1,'GameUp.SessionClient.ApiKey()']]],
   ['asc',['ASC',['../class_game_up_1_1_leaderboard.html#a4dc47343e687dbfb328bba84d57da0cdac6e421eaad140c1bc1a39980502df80c',1,'GameUp::Leaderboard']]],
   ['assemblyinfo_2ecs',['AssemblyInfo.cs',['../_assembly_info_8cs.html',1,'']]],
   ['authheader',['AuthHeader',['../class_game_up_1_1_w_w_w_request.html#ab8180c4efa9c18d645238aad4a47058c',1,'GameUp::WWWRequest']]]

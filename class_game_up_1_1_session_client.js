@@ -1,5 +1,6 @@
 var class_game_up_1_1_session_client =
 [
+    [ "SessionClient", "class_game_up_1_1_session_client.html#a2f12e3ed78d3ac79bda31762f67f9aef", null ],
     [ "Achievement", "class_game_up_1_1_session_client.html#a38572d4027234acd21a42bf8589004dd", null ],
     [ "Achievement", "class_game_up_1_1_session_client.html#afd5297bd5c30fff3be47ae9b3d1a6d1f", null ],
     [ "AchievementCallback", "class_game_up_1_1_session_client.html#ae7f9f4abc0800b2535cc599561a4ba85", null ],
@@ -29,14 +30,18 @@ var class_game_up_1_1_session_client =
     [ "Serialize", "class_game_up_1_1_session_client.html#adce874e3a4435d488ac7589754578281", null ],
     [ "StorageDelete", "class_game_up_1_1_session_client.html#a266468bd2359ee8275e72c00bb65d741", null ],
     [ "StorageGet", "class_game_up_1_1_session_client.html#ae477074d0f4d8edf3004f000ffe3a949", null ],
+    [ "StorageGet", "class_game_up_1_1_session_client.html#a8adc7271b698af4df2135ebd0eb005b2", null ],
     [ "StorageGetCallback", "class_game_up_1_1_session_client.html#a21bc2e2146cd932662f0916e1fff3614", null ],
+    [ "StorageGetRawCallback", "class_game_up_1_1_session_client.html#af45eb613fc12cec6d8ed90e42f7f5991", null ],
     [ "StoragePut", "class_game_up_1_1_session_client.html#a27bd6a589123b6b05ab9d12c8ac553cf", null ],
+    [ "StoragePut", "class_game_up_1_1_session_client.html#a78ad00a716d285333e773082b5797488", null ],
     [ "SubmitTurn", "class_game_up_1_1_session_client.html#acfe428b1b7fc4a9ce68920b6ba224e92", null ],
     [ "SubscribePush", "class_game_up_1_1_session_client.html#aea9f61c95d28b6192abd728cea53ddc7", null ],
     [ "TurnCallback", "class_game_up_1_1_session_client.html#a27953dab719d8d055c00bffc673d475c", null ],
     [ "TurnSubmitSuccessCallback", "class_game_up_1_1_session_client.html#a8f93abc106543f6f63234ac9a241a9a9", null ],
     [ "UpdateLeaderboard", "class_game_up_1_1_session_client.html#a62b5016f168549592561f07f8607eadc", null ],
     [ "UpdateLeaderboardCallback", "class_game_up_1_1_session_client.html#abd05eb0427409723703d323adf8ae2ba", null ],
+    [ "ApiKey", "class_game_up_1_1_session_client.html#a4101c8e3ad9af8e626859e741b4e2bb6", null ],
     [ "CreatedAt", "class_game_up_1_1_session_client.html#a1397fe24ad9073a2fa360e5cc4291993", null ],
     [ "Token", "class_game_up_1_1_session_client.html#a8df5b1b640553470d13f253566129eaf", null ]
 ];

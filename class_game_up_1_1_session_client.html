@@ -33,7 +33,7 @@
   <td id="projectlogo"><img alt="Logo" src="GameUp_Logo_Small_fill.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameUpSDK
-   &#160;<span id="projectnumber">0.5.0</span>
+   &#160;<span id="projectnumber">0.3.0</span>
    </div>
    <div id="projectbrief">Unity SDK for the GameUp service</div>
   </td>
@@ -123,10 +123,14 @@ $(document).ready(function(){initNavTree('class_game_up_1_1_session_client.html'
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a2f12e3ed78d3ac79bda31762f67f9aef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a2f12e3ed78d3ac79bda31762f67f9aef">SessionClient</a> ()</td></tr>
+<tr class="separator:a2f12e3ed78d3ac79bda31762f67f9aef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0174bee390c58d30b2b125f09fa4e2dc"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a0174bee390c58d30b2b125f09fa4e2dc">GamerCallback</a> (<a class="el" href="class_game_up_1_1_gamer.html">Gamer</a> gamer)</td></tr>
 <tr class="separator:a0174bee390c58d30b2b125f09fa4e2dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21bc2e2146cd932662f0916e1fff3614"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a21bc2e2146cd932662f0916e1fff3614">StorageGetCallback</a> (IDictionary&lt; String, string &gt; data)</td></tr>
 <tr class="separator:a21bc2e2146cd932662f0916e1fff3614"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af45eb613fc12cec6d8ed90e42f7f5991"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#af45eb613fc12cec6d8ed90e42f7f5991">StorageGetRawCallback</a> (string value)</td></tr>
+<tr class="separator:af45eb613fc12cec6d8ed90e42f7f5991"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7f9f4abc0800b2535cc599561a4ba85"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#ae7f9f4abc0800b2535cc599561a4ba85">AchievementCallback</a> ()</td></tr>
 <tr class="separator:ae7f9f4abc0800b2535cc599561a4ba85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7bfb4b59e277bdb1bd195e4f31b2247"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#ae7bfb4b59e277bdb1bd195e4f31b2247">AchievementUnlockedCallback</a> (<a class="el" href="class_game_up_1_1_achievement.html">Achievement</a> achievement)</td></tr>
@@ -160,11 +164,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab31eac3c65d22f2a8cd9e4f5696a4c59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information about the current logged in gamer.  <a href="#ab31eac3c65d22f2a8cd9e4f5696a4c59">More...</a><br /></td></tr>
 <tr class="separator:ab31eac3c65d22f2a8cd9e4f5696a4c59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27bd6a589123b6b05ab9d12c8ac553cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a27bd6a589123b6b05ab9d12c8ac553cf">StoragePut</a> (string key, IDictionary&lt; string, string &gt; data, <a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">Client.SuccessCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
-<tr class="memdesc:a27bd6a589123b6b05ab9d12c8ac553cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store the supplied object with the given key into Cloud Storage.  <a href="#a27bd6a589123b6b05ab9d12c8ac553cf">More...</a><br /></td></tr>
+<tr class="memdesc:a27bd6a589123b6b05ab9d12c8ac553cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store the supplied IDictionary with the given key into Cloud Storage.  <a href="#a27bd6a589123b6b05ab9d12c8ac553cf">More...</a><br /></td></tr>
 <tr class="separator:a27bd6a589123b6b05ab9d12c8ac553cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78ad00a716d285333e773082b5797488"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a78ad00a716d285333e773082b5797488">StoragePut</a> (string key, string value, <a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">Client.SuccessCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:a78ad00a716d285333e773082b5797488"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store the supplied value with the given key into Cloud Storage.  <a href="#a78ad00a716d285333e773082b5797488">More...</a><br /></td></tr>
+<tr class="separator:a78ad00a716d285333e773082b5797488"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae477074d0f4d8edf3004f000ffe3a949"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#ae477074d0f4d8edf3004f000ffe3a949">StorageGet</a> (string key, <a class="el" href="class_game_up_1_1_session_client.html#a21bc2e2146cd932662f0916e1fff3614">StorageGetCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:ae477074d0f4d8edf3004f000ffe3a949"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch the object for the given key from Cloud Storage.  <a href="#ae477074d0f4d8edf3004f000ffe3a949">More...</a><br /></td></tr>
 <tr class="separator:ae477074d0f4d8edf3004f000ffe3a949"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8adc7271b698af4df2135ebd0eb005b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a8adc7271b698af4df2135ebd0eb005b2">StorageGet</a> (string key, <a class="el" href="class_game_up_1_1_session_client.html#af45eb613fc12cec6d8ed90e42f7f5991">StorageGetRawCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:a8adc7271b698af4df2135ebd0eb005b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch the string object for the given key from Cloud Storage.  <a href="#a8adc7271b698af4df2135ebd0eb005b2">More...</a><br /></td></tr>
+<tr class="separator:a8adc7271b698af4df2135ebd0eb005b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a266468bd2359ee8275e72c00bb65d741"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a266468bd2359ee8275e72c00bb65d741">StorageDelete</a> (string key, <a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">Client.SuccessCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:a266468bd2359ee8275e72c00bb65d741"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the object with the supplied key from Cloud Storage.  <a href="#a266468bd2359ee8275e72c00bb65d741">More...</a><br /></td></tr>
 <tr class="separator:a266468bd2359ee8275e72c00bb65d741"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -226,14 +236,32 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a1397fe24ad9073a2fa360e5cc4291993"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a1397fe24ad9073a2fa360e5cc4291993">CreatedAt</a><code> [get]</code></td></tr>
+<tr class="memitem:a1397fe24ad9073a2fa360e5cc4291993"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a1397fe24ad9073a2fa360e5cc4291993">CreatedAt</a><code> [get, set]</code></td></tr>
 <tr class="separator:a1397fe24ad9073a2fa360e5cc4291993"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8df5b1b640553470d13f253566129eaf"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a8df5b1b640553470d13f253566129eaf">Token</a><code> [get]</code></td></tr>
+<tr class="memitem:a8df5b1b640553470d13f253566129eaf"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a8df5b1b640553470d13f253566129eaf">Token</a><code> [get, set]</code></td></tr>
 <tr class="separator:a8df5b1b640553470d13f253566129eaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4101c8e3ad9af8e626859e741b4e2bb6"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a4101c8e3ad9af8e626859e741b4e2bb6">ApiKey</a><code> [get, set]</code></td></tr>
+<tr class="separator:a4101c8e3ad9af8e626859e741b4e2bb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A session client for gamer actions in the <a class="el" href="namespace_game_up.html">GameUp</a> service. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a2f12e3ed78d3ac79bda31762f67f9aef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameUp.SessionClient.SessionClient </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a38572d4027234acd21a42bf8589004dd"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1180,7 +1208,48 @@ Properties</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">key</td><td>The name of the key.</td></tr>
-    <tr><td class="paramname">type</td><td>The type to deserialize the JSON into.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8adc7271b698af4df2135ebd0eb005b2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUp.SessionClient.StorageGet </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_session_client.html#af45eb613fc12cec6d8ed90e42f7f5991">StorageGetRawCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fetch the string object for the given key from Cloud Storage. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The name of the key.</td></tr>
     <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
     <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
   </table>
@@ -1198,6 +1267,22 @@ Properties</h2></td></tr>
           <td>(</td>
           <td class="paramtype">IDictionary&lt; String, string &gt;&#160;</td>
           <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af45eb613fc12cec6d8ed90e42f7f5991"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">delegate void GameUp.SessionClient.StorageGetRawCallback </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1241,11 +1326,60 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Store the supplied object with the given key into Cloud Storage. </p>
+<p>Store the supplied IDictionary with the given key into Cloud Storage. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">key</td><td>The name of the key.</td></tr>
     <tr><td class="paramname">data</td><td>The data dictionary to store.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a78ad00a716d285333e773082b5797488"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUp.SessionClient.StoragePut </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">Client.SuccessCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Store the supplied value with the given key into Cloud Storage. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The name of the key.</td></tr>
+    <tr><td class="paramname">value</td><td>The string value to store.</td></tr>
     <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
     <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
   </table>
@@ -1463,6 +1597,26 @@ Properties</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="a4101c8e3ad9af8e626859e741b4e2bb6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string GameUp.SessionClient.ApiKey</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a1397fe24ad9073a2fa360e5cc4291993"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1476,7 +1630,7 @@ Properties</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1496,7 +1650,7 @@ Properties</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1512,7 +1666,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_game_up.html">GameUp</a></li><li class="navelem"><a class="el" href="class_game_up_1_1_session_client.html">SessionClient</a></li>
-    <li class="footer">Generated on Sun Aug 2 2015 20:31:00 for GameUpSDK by
+    <li class="footer">Generated on Tue Aug 4 2015 13:00:11 for GameUpSDK by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>
