@@ -70,7 +70,17 @@ public class GameUpTest : MonoBehaviour
           Debug.Log ("Successfully logged in with GameUp Account: " + session.Token);
         }, failure);
       });
-      
+
+      //Let's assume that we are about to save the session 
+      //for later usage without having to re-login the user.
+      String serializedSession = session.Serialize();
+      Debug.Log ("Saved session: " + serializedSession);
+
+      //Let's assume that some time has passed and
+      //that we are about to restore the session 
+      s = SessionClient.Deserialize(serializedSession);
+      Debug.Log ("Restored session: " + s.Token);
+
       Debug.Log ("Gamer...");
       session.Gamer ((Gamer gamer) => {
         Debug.Log ("Gamer Name: " + gamer.Name);

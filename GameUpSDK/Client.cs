@@ -358,7 +358,10 @@ namespace GameUp
     private static SessionClient createSessionClient(String jsonResponse) {
       JsonObject json = SimpleJson.DeserializeObject<JsonObject> (jsonResponse, serializerStrategy);
       String token = System.Convert.ToString (json["token"]);
-      return new SessionClient(ApiKey, token);
+      SessionClient sessionClient = new SessionClient();
+      sessionClient.ApiKey = ApiKey;
+      sessionClient.Token = token;
+      return sessionClient;
     }
   }
 }

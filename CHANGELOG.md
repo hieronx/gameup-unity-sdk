@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### 0.5.1
+
+* Fix `SessionClient.Deserialize (string)`.
+* Add methods to retrieve (raw) string response from Cloud Storage requests.
+
 ### 0.5.0
 
 * Add JSON-based login, create and password reset for GameUp accounts.
