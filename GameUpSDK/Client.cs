@@ -23,8 +23,6 @@ namespace GameUp
   /// </summary>
   public class Client
   {
-    // TODO add support for web view login options
-
     private readonly static IJsonSerializerStrategy serializerStrategy = new GameUpPocoJsonSerializerStrategy();
 
     public static readonly string SCHEME = "https";
@@ -48,11 +46,15 @@ namespace GameUp
 
     public delegate void AchievementsCallback (AchievementList achievements);
 
+    public delegate void LeaderboardsCallback (LeaderboardList leaderboards);
+
     public delegate void LeaderboardCallback (Leaderboard leaderboard);
 
     public delegate void LoginCallback (SessionClient session);
 
     public delegate void SuccessCallback ();
+
+    public delegate void GenericSuccessCallback<T> (T data);
 
     public delegate void ErrorCallback (int statusCode, string reason);
 
@@ -142,6 +144,24 @@ namespace GameUp
     }
 
     /// <summary>
+    /// Retrieve the list of available leaderboards for this game.
+    /// </summary>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void Leaderboards (LeaderboardsCallback success, ErrorCallback error)
+    {
+      UriBuilder b = new UriBuilder (SCHEME, API_SERVER, PORT, "/v0/game/leaderboard");
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, "");
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success (SimpleJson.DeserializeObject<LeaderboardList> (jsonResponse, serializerStrategy));
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
     /// Get the leaderboard with the supplied ID; this will contain the top ranked
     /// gamers on the leaderboard.
     /// </summary>
@@ -150,8 +170,25 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void Leaderboard (string id, LeaderboardCallback success, ErrorCallback error)
     {
+      Leaderboard(id, 0, 50, false, success, error);
+    }
+
+    /// <summary>
+    /// Get the leaderboard with the supplied ID; this will contain the top ranked
+    /// gamers on the leaderboard.
+    /// </summary>
+    /// <param name="id">The ID of the Leaderboard.</param>
+    /// <param name="limit">Number of entries to return. Default is 50.</param>
+    /// <param name="offset">Entries to start from with the leaderboard list. Default is 0.</param>
+    /// <param name="withScoretags">Include Scoretags in the leaderboard entries.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void Leaderboard (string id, int limit, int offset, bool withScoretags, LeaderboardCallback success, ErrorCallback error)
+    {
       string path = "/v0/game/leaderboard/" + id;
-      UriBuilder b = new UriBuilder (SCHEME, API_SERVER, PORT, path);
+      string queryParam = "?offset=" + offset + "&limit=" + limit + "&with_scoretags=" + withScoretags;
+      // HttpUtility.ParseQueryString is not available in Unity.
+      UriBuilder b = new UriBuilder (SCHEME, API_SERVER, PORT, path, queryParam);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, "");
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success(SimpleJson.DeserializeObject<Leaderboard> (jsonResponse, serializerStrategy));
@@ -348,6 +385,28 @@ namespace GameUp
 
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success(createSessionClient(jsonResponse));
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Make a generic request with pre-set ApiKey.
+    /// </summary>
+    /// <param name="uri">The URI for the request.</param>
+    /// <param name="method">The method for the request.</param>
+    /// <param name="body">The body for the request, may be null.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void MakeRequest <T>(Uri uri, string method, string body, GenericSuccessCallback<T> success, ErrorCallback error)
+    {
+      WWWRequest wwwRequest = new WWWRequest (uri, method, ApiKey, "");
+      wwwRequest.SetBody(body);
+      
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success(SimpleJson.DeserializeObject<T> (jsonResponse, serializerStrategy));
       };
       wwwRequest.OnFailure = (int statusCode, string reason) => {
         error (statusCode, reason);

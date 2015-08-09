@@ -24,6 +24,8 @@ namespace GameUp
   /// </summary>
   public class Leaderboard : IEnumerable<Leaderboard.Entry>
   {
+    /// <summary> Leaderboard ID. </summary>
+    public String LeaderboardId { get ; set ; }
 
     /// <summary> Leaderboard display name. </summary>
     public String Name { get ; set ; }
@@ -36,6 +38,21 @@ namespace GameUp
 
     /// <summary> Type indicator. </summary>
     public Type LeaderboardType { get ; set ; }
+
+    /// <summary> Leaderboard display hint. </summary>
+    public String DisplayHint { get ; set ; }
+
+    /// <summary> Leaderboard tags. </summary>
+    public String[] Tags { get ; set ; }
+
+    /// <summary> Leaderboard limit. </summary>
+    public long Limit { get ; set ; }
+
+    /// <summary> Leaderboard creation unix time. </summary>
+    public long CreatedAt { get ; set ; }
+
+    /// <summary> Leaderboard Reset configuration. </summary>
+    public Reset LeaderboardReset {get ; set ;}
 
     /// <summary>
     /// The top ranked gamers on this board, up to 50. Already sorted according
@@ -51,48 +68,92 @@ namespace GameUp
 
       /// <summary> Indicates the entries should be sorted ascending by score. </summary>
       ASC,
-      
+
       /// <summary> Indicates the entries should be sorted descending by score. </summary>
       DESC
     }
-    
+
     /// <summary>
-    /// Leaderboard type hint.
+    /// The type of a leaderboard.
     /// </summary>
-    public enum Type 
+    public enum Type
     {
-      
       /// <summary> Standard best score, one entry per gamer leaderboard type. </summary>
       RANK
     }
 
-    public class Entry 
+    /// <summary>
+    /// An entry for a player in a leaderboard.
+    /// </summary>
+    public class Entry
     {
-     
-      ///<summary> Nickname, suitable for public display. </summary>
+      /// <summary> The rank in a player's entry. </summary>
+      public long Rank { get ; set ; }
+
+      /// <summary> Nickname, suitable for public display. </summary>
       public String Name { get ; set ; }
 
-      ///<summary> Score. </summary>
+      /// <summary> The score in a player's entry. </summary>
       public long Score { get ; set ; }
-      
-      ///<summary> When the score was submitted to this leaderboard. </summary>
+
+      /// <summary> When the score was submitted to this leaderboard. </summary>
       public long ScoreAt { get ; set ; }
-     
+
+      /// <summary> Scoretags in this entry. </summary>
+      public IDictionary<String, Object> Scoretags { get ; set ; }
+
+      /// <summary> Convert Scoretags to the specified user defined data type. </summary>
+      public T ConvertScoretags<T>() {
+        string json = SimpleJson.SerializeObject(Scoretags);
+        return SimpleJson.DeserializeObject<T>(json, null);
+      }
     }
 
-    // Must also implement IEnumerable.GetEnumerator, but implement as a private method.
-    // When you implement IEnumerable(T), you must also implement IEnumerable and IEnumerator(T). 
-    // see https://msdn.microsoft.com/en-us/library/s793z9y2(v=vs.110).aspx
+    /// <summary>
+    /// The reset information for a daily, weekly, or monthly leaderboard.
+    /// </summary>
+    public class Reset
+    {
+
+      /// <summary>
+      /// The reset type for the leaderboard.
+      /// </summary>
+      public enum Type
+      {
+        /// <summary> Daily value. </summary>
+        DAILY,
+
+        /// <summary> Weekly value. </summary>
+        WEEKLY,
+
+        /// <summary> Monthly value. </summary>
+        MONTHLY,
+      }
+
+      /// <summary> Nickname, suitable for public display. </summary>
+      public Reset.Type type { get ; set ; }
+
+      /// <summary> Leaderboard Reset UTC Hour </summary>
+      public long UtcHour { get ; set ; }
+
+      /// <summary> Leaderboard Reset Day in a week; will be 0 if unset. </summary>
+      public int DayOfWeek { get ; set ; }
+
+      /// <summary> Leaderboard Reset Day in a month; will be 0 if unset. </summary>
+      public int DayOfMonth { get ; set ; }
+
+    }
+
     public IEnumerator<Leaderboard.Entry> GetEnumerator ()
     {
       return (new List<Entry>(Entries)).GetEnumerator ();
     }
-    
+
     private IEnumerator GetEnumerator1 ()
     {
       return this.GetEnumerator ();
     }
-    
+
     IEnumerator IEnumerable.GetEnumerator ()
     {
       return GetEnumerator1 ();

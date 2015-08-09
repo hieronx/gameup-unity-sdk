@@ -104,6 +104,18 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public void StoragePut (string key, IDictionary<string, string> data, Client.SuccessCallback success, Client.ErrorCallback error)
     {
+      StoragePut (key, data, success, error);
+    }
+
+    /// <summary>
+    /// Store the supplied object with the given key into Cloud Storage.
+    /// </summary>
+    /// <param name="key">The name of the key.</param>
+    /// <param name="data">The data object to store.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void StoragePut<T> (string key, T data, Client.SuccessCallback success, Client.ErrorCallback error)
+    {
       string value = SimpleJson.SerializeObject (data);
       StoragePut (key, value, success, error);
     }
@@ -259,6 +271,7 @@ namespace GameUp
     /// Submit the supplied score to the specified leaderboard. The new score will only
     /// overwrite the previous score if it is "better" according to the sorting rules;
     /// nevertheless the current gamer's rank will always be returned.
+    /// This sets the Scoretags associated with the gamer's rank to 'null'
     /// </summary>
     /// <param name="id">The ID of the leaderboard.</param>
     /// <param name="score">The new score to submit to the leaderboard.</param>
@@ -266,12 +279,51 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public void UpdateLeaderboard (string id, long score, UpdateLeaderboardCallback success, Client.ErrorCallback error)
     {
+      UpdateLeaderboard(id, score, null, success, error);
+    }
+
+    /// <summary>
+    /// Submit the supplied score to the specified leaderboard. The new score will only
+    /// overwrite the previous score if it is "better" according to the sorting rules;
+    /// nevertheless the current gamer's rank will always be returned.
+    /// </summary>
+    /// <param name="id">The ID of the leaderboard.</param>
+    /// <param name="score">The new score to submit to the leaderboard.</param>
+    /// <param name="scoreTags">Tags to persist with this leaderboard update</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void UpdateLeaderboard<T> (string id, long score, T scoreTags, UpdateLeaderboardCallback success, Client.ErrorCallback error) 
+    {
+      string tags = null;
+      if (scoreTags != null) {
+        tags = SimpleJson.SerializeObject(scoreTags);
+      }
+      UpdateLeaderboard(id, score, tags, success, error) ;
+    }
+
+    /// <summary>
+    /// Submit the supplied score to the specified leaderboard. The new score will only
+    /// overwrite the previous score if it is "better" according to the sorting rules;
+    /// nevertheless the current gamer's rank will always be returned.
+    /// </summary>
+    /// <param name="id">The ID of the leaderboard.</param>
+    /// <param name="score">The new score to submit to the leaderboard.</param>
+    /// <param name="scoreTags">Tags to persist with this leaderboard update - must be a valid json object or null</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void UpdateLeaderboard (string id, long score, string scoreTags, UpdateLeaderboardCallback success, Client.ErrorCallback error) 
+    {
       string path = "/v0/gamer/leaderboard/" + id;
       UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, Token);
 
-      wwwRequest.SetBody("{\"score\":" + score + "}");
+      if (scoreTags == null) {
+        scoreTags = "null";
+      }
 
+      String body = "{\"score\":" + score + ", \"scoretags\":" + scoreTags + "}";
+      wwwRequest.SetBody(body);
+      
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success(SimpleJson.DeserializeObject<Rank> (jsonResponse, serializerStrategy));
       };
@@ -290,8 +342,44 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public void LeaderboardAndRank (string id, LeaderboardAndRankCallback success, Client.ErrorCallback error)
     {
+      LeaderboardAndRank(id, 50, 0, false, success, error);
+    }
+
+    /// <summary>
+    /// Fetch the leaderboard with the ranked gamers. Automatically finds the offset
+    /// of the current gamer's rank based on the limit given.
+    ///
+    /// For example, if the limit is 50, and the current gamer's rank is 153,
+    /// result will be ranks between 150-200, with the 3rd entry belonging to the current gamer.
+    ///
+    /// </summary>
+    /// <param name="id">The ID of the leaderboard.</param>
+    /// <param name="limit">Number of entries to return. Integer between 10 and 50 inclusive</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void LeaderboardAndRank (string id, int limit, LeaderboardAndRankCallback success, Client.ErrorCallback error)
+    {
+      LeaderboardAndRank(id, 50, 0, true, success, error);
+    }
+
+    /// <summary>
+    /// Fetch the leaderboard with the the number of ranked gamers by limit with the offset
+    /// from the top of the leaderboard ranking.
+    /// </summary>
+    /// <param name="id">The ID of the leaderboard.</param>
+    /// <param name="limit">Number of entries to return. Integer between 10 and 50 inclusive.</param>
+    /// <param name="offset">Starting point to return ranking. Positive integer required.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void LeaderboardAndRank (string id, int limit, int offset, LeaderboardAndRankCallback success, Client.ErrorCallback error) {
+      LeaderboardAndRank(id, limit, offset, false, success, error);
+    }
+
+    private void LeaderboardAndRank (string id, int limit, int offset, Boolean autoOffset, LeaderboardAndRankCallback success, Client.ErrorCallback error)
+    {
       string path = "/v0/gamer/leaderboard/" + id;
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      string queryParam = "?offset=" + offset + "&limit=" + limit + "&auto_offset=" + autoOffset;
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path, queryParam);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success(SimpleJson.DeserializeObject<LeaderboardAndRank> (jsonResponse, serializerStrategy));
@@ -566,6 +654,28 @@ namespace GameUp
       wwwRequest.SetBody("{\"product_id\":\"" + subscriptionId + "\",\"purchase_token\":\"" + token + "\",\"type\":\"subscription\"}");
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success(SimpleJson.DeserializeObject<PurchaseVerification> (jsonResponse, serializerStrategy));
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Make a generic request with pre-set ApiKey and Token.
+    /// </summary>
+    /// <param name="uri">The URI to send request to.</param>
+    /// <param name="method">The method type of the request.</param>
+    /// <param name="body">The body of the request.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void MakeRequest <T>(Uri uri, string method, string body, Client.GenericSuccessCallback<T> success, Client.ErrorCallback error)
+    {
+      WWWRequest wwwRequest = new WWWRequest (uri, method, ApiKey, Token);
+      wwwRequest.SetBody(body);
+      
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success(SimpleJson.DeserializeObject<T> (jsonResponse, serializerStrategy));
       };
       wwwRequest.OnFailure = (int statusCode, string reason) => {
         error (statusCode, reason);

@@ -7,7 +7,11 @@ using System;
 public class GameUpTest : MonoBehaviour
 {
   Client.ErrorCallback failure = (status, reason) => {
-    Debug.LogError (status + " " + reason);
+    if (status >= 500) {
+      Debug.LogError (status + ": " + reason);
+    } else {
+      Debug.LogWarning (status + ": " + reason);
+    }
   };
   readonly string achievementId = "70c99a8e6dff4a6fac7e517a8dd4e83f";
   readonly string leaderboardId = "6ded1e8dbf104faba384bb659069ea69";
@@ -47,9 +51,18 @@ public class GameUpTest : MonoBehaviour
       
       Debug.Log ("Achievements Count: " + a.Count + " " + en.Current.Name);
     }, failure);
-    
-    Debug.Log ("Leaderboard...");
-    Client.Leaderboard (leaderboardId, (Leaderboard l) => {
+
+    Debug.Log ("All Leaderboards...");
+    Client.Leaderboards ((LeaderboardList list) => {
+      IEnumerator<Leaderboard> en = list.GetEnumerator ();
+      en.MoveNext ();
+      Leaderboard l = en.Current;
+
+      Debug.Log ("Leaderboard Name: " + l.Name + " " + l.PublicId + " " + l.SortOrder + " " + l.LeaderboardType + " " + en.Current.Name);
+    }, failure);
+
+    Debug.Log ("Single Leaderboard with 10 entries and 20 offset...");
+    Client.Leaderboard (leaderboardId, 10, 20, (Leaderboard l) => {
       IEnumerator<Leaderboard.Entry> en = l.GetEnumerator ();
       en.MoveNext ();
       
@@ -122,11 +135,38 @@ public class GameUpTest : MonoBehaviour
       session.UpdateLeaderboard (leaderboardId, DateTime.Now.Millisecond, (Rank r) => {
         Debug.Log ("Updated leaderboard. New rank " + r.Ranking + " for " + r.Name);
       }, failure);
+
+      Debug.Log ("LeaderboardUpdate with scoretags...");
+      ScoretagTest scoretagtest = new ScoretagTest();
+      scoretagtest.Datetime = DateTime.Now.Millisecond;
+      session.UpdateLeaderboard (leaderboardId, DateTime.Now.Millisecond, scoretagtest, (Rank r) => {
+        Debug.Log ("Updated leaderboard with scoretags. New rank " + r.Ranking + " for " + r.Name + " with tags " + r.Scoretags.ToString());
+      }, failure);
       
       Debug.Log ("LeaderboardAndRank...");
       session.LeaderboardAndRank (leaderboardId, (LeaderboardAndRank lr) => {
-        Debug.Log ("Retrieved Leaderboard and Rank. " + lr.Leaderboard.Name);
-        Debug.Log ("Retrieved Leaderboard and Rank. " + lr.Rank.Name);
+        Debug.Log ("1-Retrieved Leaderboard and Rank: " + lr.Leaderboard.Name);
+        Debug.Log ("1-Retrieved Leaderboard and Rank: " + lr.Rank.Name + " " + lr.Rank.Ranking);
+      }, failure);
+
+      Debug.Log ("LeaderboardAndRank of 10 with autooffset...");
+      session.LeaderboardAndRank (leaderboardId, 10, (LeaderboardAndRank lr) => {
+        Debug.Log ("2-Retrieved Leaderboard Entries count:  " + lr.Leaderboard.Entries.Length);
+        Debug.Log ("2-Retrieved Leaderboard and Rank: " + lr.Leaderboard.Name);
+        Debug.Log ("2-Retrieved Leaderboard and Rank: " + lr.Rank.Name);
+        if (lr.Rank.Scoretags != null) {
+          Debug.Log ("2-ScoreTags: " + lr.Rank.Scoretags.ToString());
+        }
+      }, failure);
+
+      Debug.Log ("LeaderboardAndRank of 10 starting from position 20 (offset)...");
+      session.LeaderboardAndRank (leaderboardId, 10, 20, (LeaderboardAndRank lr) => {
+        Debug.Log ("3-Retrieved Leaderboard Entries count:  " + lr.Leaderboard.Entries.Length);
+        Debug.Log ("3-Retrieved Leaderboard and Rank: " + lr.Leaderboard.Name);
+        Debug.Log ("3-Retrieved Leaderboard and Rank: " + lr.Rank.Name);
+        if (lr.Rank.Scoretags != null) {
+          Debug.Log ("3-ScoreTags: " + lr.Rank.Scoretags.ToString());
+        }
       }, failure);
       
       Debug.Log ("Get All Matches...");
@@ -208,4 +248,8 @@ public class GameUpTest : MonoBehaviour
     }
   }
   #endif
+}
+
+class ScoretagTest {
+  public long Datetime { get ; set ; }
 }

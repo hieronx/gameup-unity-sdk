@@ -59,6 +59,7 @@
     <Compile Include="GameUpSDK\MatchTurnList.cs" />
     <Compile Include="GameUpSDK\PurchaseVerification.cs" />
     <Compile Include="GameUpSDK\WWWRequestExecutor.cs" />
+    <Compile Include="GameUpSDK\LeaderboardList.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

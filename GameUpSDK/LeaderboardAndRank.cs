@@ -23,7 +23,7 @@ namespace GameUp
   {
     /// <summary> The Rank portion of the response. </summary>
     public Rank Rank { get ; set ;}
-    
+
     /// <summary> The Leaderboard portion of the response. </summary>
     public Leaderboard Leaderboard { get ; set ;}
 
