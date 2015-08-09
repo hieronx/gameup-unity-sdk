@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+### 0.6.0
+
+* Add methods for the [Advanced Leaderboards](https://gameup.io/blog/2015/07/31/advanced-leaderboards/) feature.
+* Add method to deserialise into user defined type with Cloud Storage.
+* Add method to make custom API requests.
+
 ### 0.5.1
 
 * Fix `SessionClient.Deserialize (string)`.
