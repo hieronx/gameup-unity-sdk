@@ -33,7 +33,7 @@
   <td id="projectlogo"><img alt="Logo" src="GameUp_Logo_Small_fill.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameUpSDK
-   &#160;<span id="projectnumber">0.3.0</span>
+   &#160;<span id="projectnumber">0.6.1</span>
    </div>
    <div id="projectbrief">Unity SDK for the GameUp service</div>
   </td>
@@ -166,6 +166,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a27bd6a589123b6b05ab9d12c8ac553cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a27bd6a589123b6b05ab9d12c8ac553cf">StoragePut</a> (string key, IDictionary&lt; string, string &gt; data, <a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">Client.SuccessCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:a27bd6a589123b6b05ab9d12c8ac553cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store the supplied IDictionary with the given key into Cloud Storage.  <a href="#a27bd6a589123b6b05ab9d12c8ac553cf">More...</a><br /></td></tr>
 <tr class="separator:a27bd6a589123b6b05ab9d12c8ac553cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47ebda9bc336ba6460dfa78deb8464ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a47ebda9bc336ba6460dfa78deb8464ea">StoragePut&lt; T &gt;</a> (string key, T data, <a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">Client.SuccessCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:a47ebda9bc336ba6460dfa78deb8464ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store the supplied object with the given key into Cloud Storage.  <a href="#a47ebda9bc336ba6460dfa78deb8464ea">More...</a><br /></td></tr>
+<tr class="separator:a47ebda9bc336ba6460dfa78deb8464ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78ad00a716d285333e773082b5797488"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a78ad00a716d285333e773082b5797488">StoragePut</a> (string key, string value, <a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">Client.SuccessCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:a78ad00a716d285333e773082b5797488"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store the supplied value with the given key into Cloud Storage.  <a href="#a78ad00a716d285333e773082b5797488">More...</a><br /></td></tr>
 <tr class="separator:a78ad00a716d285333e773082b5797488"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -188,11 +191,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab6d5187816cc7290db3c86d0162159d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a list of achievements available in the game; with the gamer's progress and any completed achievements.  <a href="#ab6d5187816cc7290db3c86d0162159d2">More...</a><br /></td></tr>
 <tr class="separator:ab6d5187816cc7290db3c86d0162159d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62b5016f168549592561f07f8607eadc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a62b5016f168549592561f07f8607eadc">UpdateLeaderboard</a> (string id, long score, <a class="el" href="class_game_up_1_1_session_client.html#abd05eb0427409723703d323adf8ae2ba">UpdateLeaderboardCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
-<tr class="memdesc:a62b5016f168549592561f07f8607eadc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Submit the supplied score to the specified leaderboard. The new score will only overwrite the previous score if it is "better" according to the sorting rules; nevertheless the current gamer's rank will always be returned.  <a href="#a62b5016f168549592561f07f8607eadc">More...</a><br /></td></tr>
+<tr class="memdesc:a62b5016f168549592561f07f8607eadc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Submit the supplied score to the specified leaderboard. The new score will only overwrite the previous score if it is "better" according to the sorting rules; nevertheless the current gamer's rank will always be returned. This sets the Scoretags associated with the gamer's rank to 'null'  <a href="#a62b5016f168549592561f07f8607eadc">More...</a><br /></td></tr>
 <tr class="separator:a62b5016f168549592561f07f8607eadc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6f2db354ebb62b9a4c59bdcd87f3d24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#ac6f2db354ebb62b9a4c59bdcd87f3d24">UpdateLeaderboard&lt; T &gt;</a> (string id, long score, T scoreTags, <a class="el" href="class_game_up_1_1_session_client.html#abd05eb0427409723703d323adf8ae2ba">UpdateLeaderboardCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:ac6f2db354ebb62b9a4c59bdcd87f3d24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Submit the supplied score to the specified leaderboard. The new score will only overwrite the previous score if it is "better" according to the sorting rules; nevertheless the current gamer's rank will always be returned.  <a href="#ac6f2db354ebb62b9a4c59bdcd87f3d24">More...</a><br /></td></tr>
+<tr class="separator:ac6f2db354ebb62b9a4c59bdcd87f3d24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a679f301d7fbe9064923b0f8ac79c28d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a679f301d7fbe9064923b0f8ac79c28d0">UpdateLeaderboard</a> (string id, long score, string scoreTags, <a class="el" href="class_game_up_1_1_session_client.html#abd05eb0427409723703d323adf8ae2ba">UpdateLeaderboardCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:a679f301d7fbe9064923b0f8ac79c28d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Submit the supplied score to the specified leaderboard. The new score will only overwrite the previous score if it is "better" according to the sorting rules; nevertheless the current gamer's rank will always be returned.  <a href="#a679f301d7fbe9064923b0f8ac79c28d0">More...</a><br /></td></tr>
+<tr class="separator:a679f301d7fbe9064923b0f8ac79c28d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4056c4b5db6a63dc8f8f02ee201c99e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a4056c4b5db6a63dc8f8f02ee201c99e6">LeaderboardAndRank</a> (string id, <a class="el" href="class_game_up_1_1_session_client.html#a50b1a4b3e8f166ebcf933d151d241539">LeaderboardAndRankCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:a4056c4b5db6a63dc8f8f02ee201c99e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch the leaderboard with the top 50 ranked gamers and the current gamer's ranking.  <a href="#a4056c4b5db6a63dc8f8f02ee201c99e6">More...</a><br /></td></tr>
 <tr class="separator:a4056c4b5db6a63dc8f8f02ee201c99e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace2d6ada0bb8f107cac9ee10682e6383"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#ace2d6ada0bb8f107cac9ee10682e6383">LeaderboardAndRank</a> (string id, int limit, <a class="el" href="class_game_up_1_1_session_client.html#a50b1a4b3e8f166ebcf933d151d241539">LeaderboardAndRankCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:ace2d6ada0bb8f107cac9ee10682e6383"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch the leaderboard with the ranked gamers. Automatically finds the offset of the current gamer's rank based on the limit given.  <a href="#ace2d6ada0bb8f107cac9ee10682e6383">More...</a><br /></td></tr>
+<tr class="separator:ace2d6ada0bb8f107cac9ee10682e6383"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7e6d526523b2be3185fa864c4d19e75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#ad7e6d526523b2be3185fa864c4d19e75">LeaderboardAndRank</a> (string id, int limit, int offset, <a class="el" href="class_game_up_1_1_session_client.html#a50b1a4b3e8f166ebcf933d151d241539">LeaderboardAndRankCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:ad7e6d526523b2be3185fa864c4d19e75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch the leaderboard with the the number of ranked gamers by limit with the offset from the top of the leaderboard ranking.  <a href="#ad7e6d526523b2be3185fa864c4d19e75">More...</a><br /></td></tr>
+<tr class="separator:ad7e6d526523b2be3185fa864c4d19e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afeb84e968423d250f23a0a448940190d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#afeb84e968423d250f23a0a448940190d">GetAllMatches</a> (<a class="el" href="class_game_up_1_1_session_client.html#a5417c1a474fad8ccc77ab74a7551084d">MatchesCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:afeb84e968423d250f23a0a448940190d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a list of matches the gamer is part of, along with the metadata for each match.  <a href="#afeb84e968423d250f23a0a448940190d">More...</a><br /></td></tr>
 <tr class="separator:afeb84e968423d250f23a0a448940190d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -226,6 +241,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5ab8269738bff5138bcc49d5313b22cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a5ab8269738bff5138bcc49d5313b22cf">PurchaseVerifyGoogleSubscription</a> (string token, string subscriptionId, <a class="el" href="class_game_up_1_1_session_client.html#a7b4d6eef9963fd5b6fd166113545608e">PurchaseVerifyCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:a5ab8269738bff5138bcc49d5313b22cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify a Google subscription purchase with the remote service.  <a href="#a5ab8269738bff5138bcc49d5313b22cf">More...</a><br /></td></tr>
 <tr class="separator:a5ab8269738bff5138bcc49d5313b22cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1250c96f2b769dcbed7a92b92730692b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a1250c96f2b769dcbed7a92b92730692b">MakeRequest&lt; T &gt;</a> (Uri uri, string method, string body, Client.GenericSuccessCallback&lt; T &gt; success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:a1250c96f2b769dcbed7a92b92730692b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a generic request with pre-set ApiKey and Token.  <a href="#a1250c96f2b769dcbed7a92b92730692b">More...</a><br /></td></tr>
+<tr class="separator:a1250c96f2b769dcbed7a92b92730692b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adce874e3a4435d488ac7589754578281"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#adce874e3a4435d488ac7589754578281">Serialize</a> ()</td></tr>
 <tr class="separator:adce874e3a4435d488ac7589754578281"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -766,6 +784,112 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ace2d6ada0bb8f107cac9ee10682e6383"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUp.SessionClient.LeaderboardAndRank </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>limit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_session_client.html#a50b1a4b3e8f166ebcf933d151d241539">LeaderboardAndRankCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fetch the leaderboard with the ranked gamers. Automatically finds the offset of the current gamer's rank based on the limit given. </p>
+<p>For example, if the limit is 50, and the current gamer's rank is 153, result will be ranks between 150-200, with the 3rd entry belonging to the current gamer.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>The ID of the leaderboard.</td></tr>
+    <tr><td class="paramname">limit</td><td>Number of entries to return. Integer between 10 and 50 inclusive</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad7e6d526523b2be3185fa864c4d19e75"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUp.SessionClient.LeaderboardAndRank </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>limit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_session_client.html#a50b1a4b3e8f166ebcf933d151d241539">LeaderboardAndRankCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fetch the leaderboard with the the number of ranked gamers by limit with the offset from the top of the leaderboard ranking. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>The ID of the leaderboard.</td></tr>
+    <tr><td class="paramname">limit</td><td>Number of entries to return. Integer between 10 and 50 inclusive.</td></tr>
+    <tr><td class="paramname">offset</td><td>Starting point to return ranking. Positive integer required.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a50b1a4b3e8f166ebcf933d151d241539"></a>
 <div class="memitem">
 <div class="memproto">
@@ -816,6 +940,62 @@ Properties</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">matchId</td><td>The match identifier</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1250c96f2b769dcbed7a92b92730692b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUp.SessionClient.MakeRequest&lt; T &gt; </td>
+          <td>(</td>
+          <td class="paramtype">Uri&#160;</td>
+          <td class="paramname"><em>uri</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>method</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>body</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Client.GenericSuccessCallback&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Make a generic request with pre-set ApiKey and Token. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uri</td><td>The URI to send request to.</td></tr>
+    <tr><td class="paramname">method</td><td>The method type of the request.</td></tr>
+    <tr><td class="paramname">body</td><td>The body of the request.</td></tr>
     <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
     <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
   </table>
@@ -1388,6 +1568,55 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a47ebda9bc336ba6460dfa78deb8464ea"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_game_up_1_1_session_client.html#a27bd6a589123b6b05ab9d12c8ac553cf">GameUp.SessionClient.StoragePut</a>&lt; T &gt; </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">Client.SuccessCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Store the supplied object with the given key into Cloud Storage. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The name of the key.</td></tr>
+    <tr><td class="paramname">data</td><td>The data object to store.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="acfe428b1b7fc4a9ce68920b6ba224e92"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1567,11 +1796,123 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Submit the supplied score to the specified leaderboard. The new score will only overwrite the previous score if it is "better" according to the sorting rules; nevertheless the current gamer's rank will always be returned. This sets the Scoretags associated with the gamer's rank to 'null' </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>The ID of the leaderboard.</td></tr>
+    <tr><td class="paramname">score</td><td>The new score to submit to the leaderboard.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a679f301d7fbe9064923b0f8ac79c28d0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUp.SessionClient.UpdateLeaderboard </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>score</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>scoreTags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_session_client.html#abd05eb0427409723703d323adf8ae2ba">UpdateLeaderboardCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 <p>Submit the supplied score to the specified leaderboard. The new score will only overwrite the previous score if it is "better" according to the sorting rules; nevertheless the current gamer's rank will always be returned. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">id</td><td>The ID of the leaderboard.</td></tr>
     <tr><td class="paramname">score</td><td>The new score to submit to the leaderboard.</td></tr>
+    <tr><td class="paramname">scoreTags</td><td>Tags to persist with this leaderboard update - must be a valid json object or null</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac6f2db354ebb62b9a4c59bdcd87f3d24"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_game_up_1_1_session_client.html#a62b5016f168549592561f07f8607eadc">GameUp.SessionClient.UpdateLeaderboard</a>&lt; T &gt; </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>score</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>scoreTags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_session_client.html#abd05eb0427409723703d323adf8ae2ba">UpdateLeaderboardCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Submit the supplied score to the specified leaderboard. The new score will only overwrite the previous score if it is "better" according to the sorting rules; nevertheless the current gamer's rank will always be returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>The ID of the leaderboard.</td></tr>
+    <tr><td class="paramname">score</td><td>The new score to submit to the leaderboard.</td></tr>
+    <tr><td class="paramname">scoreTags</td><td>Tags to persist with this leaderboard update</td></tr>
     <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
     <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
   </table>
@@ -1666,7 +2007,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_game_up.html">GameUp</a></li><li class="navelem"><a class="el" href="class_game_up_1_1_session_client.html">SessionClient</a></li>
-    <li class="footer">Generated on Tue Aug 4 2015 13:00:11 for GameUpSDK by
+    <li class="footer">Generated on Tue Aug 11 2015 22:14:14 for GameUpSDK by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

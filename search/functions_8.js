@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['makerequest_3c_20t_20_3e',['MakeRequest&lt; T &gt;',['../class_game_up_1_1_client.html#a11370cf8fcdd3853140ebf57a5829b03',1,'GameUp.Client.MakeRequest&lt; T &gt;()'],['../class_game_up_1_1_session_client.html#a1250c96f2b769dcbed7a92b92730692b',1,'GameUp.SessionClient.MakeRequest&lt; T &gt;()']]],
   ['mapclrmembernametojsonfieldname',['MapClrMemberNameToJsonFieldName',['../class_game_up_1_1_game_up_poco_json_serializer_strategy.html#a446e7a4ad60d3b816ed96b84ccd37256',1,'GameUp::GameUpPocoJsonSerializerStrategy']]],
   ['matchcallback',['MatchCallback',['../class_game_up_1_1_session_client.html#ada16d6e7ebae9700784d44848717a9f3',1,'GameUp::SessionClient']]],
   ['matchcreatecallback',['MatchCreateCallback',['../class_game_up_1_1_session_client.html#a1531b8802b444bb0a73cb80e695b2e55',1,'GameUp::SessionClient']]],

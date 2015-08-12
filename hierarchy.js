@@ -8,6 +8,7 @@ var hierarchy =
     [ "IEnumerable", null, [
       [ "GameUp.AchievementList", "class_game_up_1_1_achievement_list.html", null ],
       [ "GameUp.Leaderboard", "class_game_up_1_1_leaderboard.html", null ],
+      [ "GameUp.LeaderboardList", "class_game_up_1_1_leaderboard_list.html", null ],
       [ "GameUp.MatchList", "class_game_up_1_1_match_list.html", null ],
       [ "GameUp.MatchTurnList", "class_game_up_1_1_match_turn_list.html", null ]
     ] ],
@@ -22,6 +23,7 @@ var hierarchy =
     ] ],
     [ "GameUp.PurchaseVerification", "class_game_up_1_1_purchase_verification.html", null ],
     [ "GameUp.Rank", "class_game_up_1_1_rank.html", null ],
+    [ "GameUp.Leaderboard.Reset", "class_game_up_1_1_leaderboard_1_1_reset.html", null ],
     [ "GameUp.ServerInfo", "class_game_up_1_1_server_info.html", null ],
     [ "GameUp.SessionClient", "class_game_up_1_1_session_client.html", null ],
     [ "GameUp.SingletonMonoBehaviour< WWWRequestExecutor >", "class_game_up_1_1_singleton_mono_behaviour.html", [

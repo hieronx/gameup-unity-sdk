@@ -21,10 +21,14 @@ var dir_7f64c52b790ab03de056d8658f99aa4e =
     ] ],
     [ "Leaderboard.cs", "_leaderboard_8cs.html", [
       [ "Leaderboard", "class_game_up_1_1_leaderboard.html", "class_game_up_1_1_leaderboard" ],
-      [ "Entry", "class_game_up_1_1_leaderboard_1_1_entry.html", "class_game_up_1_1_leaderboard_1_1_entry" ]
+      [ "Entry", "class_game_up_1_1_leaderboard_1_1_entry.html", "class_game_up_1_1_leaderboard_1_1_entry" ],
+      [ "Reset", "class_game_up_1_1_leaderboard_1_1_reset.html", "class_game_up_1_1_leaderboard_1_1_reset" ]
     ] ],
     [ "LeaderboardAndRank.cs", "_leaderboard_and_rank_8cs.html", [
       [ "LeaderboardAndRank", "class_game_up_1_1_leaderboard_and_rank.html", "class_game_up_1_1_leaderboard_and_rank" ]
+    ] ],
+    [ "LeaderboardList.cs", "_leaderboard_list_8cs.html", [
+      [ "LeaderboardList", "class_game_up_1_1_leaderboard_list.html", "class_game_up_1_1_leaderboard_list" ]
     ] ],
     [ "Match.cs", "_match_8cs.html", [
       [ "Match", "class_game_up_1_1_match.html", "class_game_up_1_1_match" ]

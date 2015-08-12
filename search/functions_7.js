@@ -1,9 +1,11 @@
 var searchData=
 [
-  ['leaderboard',['Leaderboard',['../class_game_up_1_1_client.html#ac4d26d1895c1bae76d60e42bb84e0b06',1,'GameUp::Client']]],
-  ['leaderboardandrank',['LeaderboardAndRank',['../class_game_up_1_1_session_client.html#a4056c4b5db6a63dc8f8f02ee201c99e6',1,'GameUp::SessionClient']]],
+  ['leaderboard',['Leaderboard',['../class_game_up_1_1_client.html#ac4d26d1895c1bae76d60e42bb84e0b06',1,'GameUp.Client.Leaderboard(string id, LeaderboardCallback success, ErrorCallback error)'],['../class_game_up_1_1_client.html#a36f06487839ccea545a62df16ad7d4b6',1,'GameUp.Client.Leaderboard(string id, int limit, int offset, bool withScoretags, LeaderboardCallback success, ErrorCallback error)']]],
+  ['leaderboardandrank',['LeaderboardAndRank',['../class_game_up_1_1_session_client.html#a4056c4b5db6a63dc8f8f02ee201c99e6',1,'GameUp.SessionClient.LeaderboardAndRank(string id, LeaderboardAndRankCallback success, Client.ErrorCallback error)'],['../class_game_up_1_1_session_client.html#ace2d6ada0bb8f107cac9ee10682e6383',1,'GameUp.SessionClient.LeaderboardAndRank(string id, int limit, LeaderboardAndRankCallback success, Client.ErrorCallback error)'],['../class_game_up_1_1_session_client.html#ad7e6d526523b2be3185fa864c4d19e75',1,'GameUp.SessionClient.LeaderboardAndRank(string id, int limit, int offset, LeaderboardAndRankCallback success, Client.ErrorCallback error)']]],
   ['leaderboardandrankcallback',['LeaderboardAndRankCallback',['../class_game_up_1_1_session_client.html#a50b1a4b3e8f166ebcf933d151d241539',1,'GameUp::SessionClient']]],
   ['leaderboardcallback',['LeaderboardCallback',['../class_game_up_1_1_client.html#a1d6815fe9153f9127266c4e8cc9cf869',1,'GameUp::Client']]],
+  ['leaderboards',['Leaderboards',['../class_game_up_1_1_client.html#a14e70126522e80a212d9d5e95699d77b',1,'GameUp::Client']]],
+  ['leaderboardscallback',['LeaderboardsCallback',['../class_game_up_1_1_client.html#a213774596821c8064bccaae8f371d7bb',1,'GameUp::Client']]],
   ['leavematch',['LeaveMatch',['../class_game_up_1_1_session_client.html#a698e7d290bab628e91fb8754f58a1bd0',1,'GameUp::SessionClient']]],
   ['loginanonymous',['LoginAnonymous',['../class_game_up_1_1_client.html#a7968599517f9bced23d0be4f3f1daa42',1,'GameUp::Client']]],
   ['logincallback',['LoginCallback',['../class_game_up_1_1_client.html#a3723cffa494f5195a340ad4d382fa379',1,'GameUp::Client']]],

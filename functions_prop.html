@@ -33,7 +33,7 @@
   <td id="projectlogo"><img alt="Logo" src="GameUp_Logo_Small_fill.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameUpSDK
-   &#160;<span id="projectnumber">0.3.0</span>
+   &#160;<span id="projectnumber">0.6.1</span>
    </div>
    <div id="projectbrief">Unity SDK for the GameUp service</div>
   </td>
@@ -183,12 +183,14 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 <li>Count
 : <a class="el" href="class_game_up_1_1_achievement.html#a1188ea3396ae8443081359db6a44bf88">GameUp.Achievement</a>
 , <a class="el" href="class_game_up_1_1_achievement_list.html#a0018057ede66deb20835702e8801dec4">GameUp.AchievementList</a>
+, <a class="el" href="class_game_up_1_1_leaderboard_list.html#a927c04d5697a70c652450b287e5ccbf0">GameUp.LeaderboardList</a>
 , <a class="el" href="class_game_up_1_1_match_list.html#ae0065b5cba76d430dff42a3d1fa05268">GameUp.MatchList</a>
 , <a class="el" href="class_game_up_1_1_match_turn_list.html#a84f812f089c4048bf348822feb7f7a88">GameUp.MatchTurnList</a>
 </li>
 <li>CreatedAt
 : <a class="el" href="class_game_up_1_1_game.html#a9ae8c662407c092f47e879659782d40e">GameUp.Game</a>
 , <a class="el" href="class_game_up_1_1_gamer.html#a0b088bc8350261ec9196fce7d00f7639">GameUp.Gamer</a>
+, <a class="el" href="class_game_up_1_1_leaderboard.html#a048f7a03bdfd90affec9dbe7f9c1d70e">GameUp.Leaderboard</a>
 , <a class="el" href="class_game_up_1_1_match.html#aa3fa86da8a381313c198c294474cb730">GameUp.Match</a>
 , <a class="el" href="class_game_up_1_1_match_turn.html#a021789ea8c8322165543f4332e220327">GameUp.MatchTurn</a>
 , <a class="el" href="class_game_up_1_1_session_client.html#a1397fe24ad9073a2fa360e5cc4291993">GameUp.SessionClient</a>
@@ -201,9 +203,18 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 : <a class="el" href="class_game_up_1_1_match_turn.html#acf642889029c9ddd26d3cef6cde25d2e">GameUp.MatchTurn</a>
 , <a class="el" href="class_game_up_1_1_purchase_verification.html#a84e1ff4a6915a63a11ab2ab077ba7ad2">GameUp.PurchaseVerification</a>
 </li>
+<li>DayOfMonth
+: <a class="el" href="class_game_up_1_1_leaderboard_1_1_reset.html#aeb8e451e29b3418c790e2267849fec3d">GameUp.Leaderboard.Reset</a>
+</li>
+<li>DayOfWeek
+: <a class="el" href="class_game_up_1_1_leaderboard_1_1_reset.html#aa47e6fee76cc0f3649d7849a13863868">GameUp.Leaderboard.Reset</a>
+</li>
 <li>Description
 : <a class="el" href="class_game_up_1_1_achievement.html#a3ee3c1db4fb0fddb4c4868c68d779b10">GameUp.Achievement</a>
 , <a class="el" href="class_game_up_1_1_game.html#af254d99af3d46c8630b2cc30dbd9cca9">GameUp.Game</a>
+</li>
+<li>DisplayHint
+: <a class="el" href="class_game_up_1_1_leaderboard.html#a8d6151f645cf98f36b6a678d590bb2e2">GameUp.Leaderboard</a>
 </li>
 </ul>
 
@@ -251,8 +262,20 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 <li>Leaderboard
 : <a class="el" href="class_game_up_1_1_leaderboard_and_rank.html#a049d839689f9cc1a9b30e7c51b7f6b97">GameUp.LeaderboardAndRank</a>
 </li>
+<li>LeaderboardId
+: <a class="el" href="class_game_up_1_1_leaderboard.html#a08a3f463e9a981bcc03a207d99718718">GameUp.Leaderboard</a>
+</li>
+<li>LeaderboardReset
+: <a class="el" href="class_game_up_1_1_leaderboard.html#a171fb2774eccdba66065103a94e20f78">GameUp.Leaderboard</a>
+</li>
+<li>Leaderboards
+: <a class="el" href="class_game_up_1_1_leaderboard_list.html#ac71cd64215c3312c95eb1a2444390f27">GameUp.LeaderboardList</a>
+</li>
 <li>LeaderboardType
 : <a class="el" href="class_game_up_1_1_leaderboard.html#a6748232bf3ce9f12bb921befc8608d8c">GameUp.Leaderboard</a>
+</li>
+<li>Limit
+: <a class="el" href="class_game_up_1_1_leaderboard.html#aeba595730a59c65a195dbe0f0f97905a">GameUp.Leaderboard</a>
 </li>
 <li>Locale
 : <a class="el" href="class_game_up_1_1_gamer.html#a3add3762b33843b6df433fa5155910df">GameUp.Gamer</a>
@@ -269,9 +292,6 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 </li>
 <li>MatchId
 : <a class="el" href="class_game_up_1_1_match.html#adc47bf38392c053e9b97d81a5e25cc65">GameUp.Match</a>
-</li>
-<li>MatchTurns
-: <a class="el" href="class_game_up_1_1_match_turn_list.html#a5efda64fad4ecf35b8ca031c4b650eb3">GameUp.MatchTurnList</a>
 </li>
 <li>Message
 : <a class="el" href="class_game_up_1_1_purchase_verification.html#a511cd4d5519722f7597482713637bf9a">GameUp.PurchaseVerification</a>
@@ -316,7 +336,8 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 
 <h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
 <li>Rank
-: <a class="el" href="class_game_up_1_1_leaderboard_and_rank.html#a214c643866f458d594ab0837c7fce27b">GameUp.LeaderboardAndRank</a>
+: <a class="el" href="class_game_up_1_1_leaderboard_1_1_entry.html#a15a166655a2a59ffb64cbdb476df38d0">GameUp.Leaderboard.Entry</a>
+, <a class="el" href="class_game_up_1_1_leaderboard_and_rank.html#a214c643866f458d594ab0837c7fce27b">GameUp.LeaderboardAndRank</a>
 </li>
 <li>RankAt
 : <a class="el" href="class_game_up_1_1_rank.html#a7555ba08a7cbbf8eda4ed0348eb2417f">GameUp.Rank</a>
@@ -339,6 +360,10 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 : <a class="el" href="class_game_up_1_1_leaderboard_1_1_entry.html#ad3e48139560020ad7111ce2de37d063d">GameUp.Leaderboard.Entry</a>
 , <a class="el" href="class_game_up_1_1_rank.html#ae73d4b21bf374685802a21c3415b1b84">GameUp.Rank</a>
 </li>
+<li>Scoretags
+: <a class="el" href="class_game_up_1_1_leaderboard_1_1_entry.html#a19c13a7e897bedf503eca421f8789936">GameUp.Leaderboard.Entry</a>
+, <a class="el" href="class_game_up_1_1_rank.html#a5546c5040a885e0e2ef07b6833b08749">GameUp.Rank</a>
+</li>
 <li>SeenBefore
 : <a class="el" href="class_game_up_1_1_purchase_verification.html#a6a8ea889db2aeb56baf545cfff884f06">GameUp.PurchaseVerification</a>
 </li>
@@ -352,6 +377,9 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 
 
 <h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
+<li>Tags
+: <a class="el" href="class_game_up_1_1_leaderboard.html#abb70fc3f626f792a5eec45034dd0ee29">GameUp.Leaderboard</a>
+</li>
 <li>Time
 : <a class="el" href="class_game_up_1_1_server_info.html#a15e5d6330fb9c6e3c4bd645a1fd165d9">GameUp.ServerInfo</a>
 </li>
@@ -370,6 +398,12 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 <li>TurnNumber
 : <a class="el" href="class_game_up_1_1_match_turn.html#a99ada3c498d8d202af9e674f1a1afeab">GameUp.MatchTurn</a>
 </li>
+<li>Turns
+: <a class="el" href="class_game_up_1_1_match_turn_list.html#aff89cedbbf3e232a357b194de3ffed81">GameUp.MatchTurnList</a>
+</li>
+<li>type
+: <a class="el" href="class_game_up_1_1_leaderboard_1_1_reset.html#a171e92c130e6e6c7fc859a7241154364">GameUp.Leaderboard.Reset</a>
+</li>
 <li>Type
 : <a class="el" href="class_game_up_1_1_match_turn.html#abe542e49c044e0b02eb1a1dcaab401b6">GameUp.MatchTurn</a>
 </li>
@@ -383,12 +417,15 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 <li>Uri
 : <a class="el" href="class_game_up_1_1_w_w_w_request.html#a8752cd435503ded043385bce74bb1eed">GameUp.WWWRequest</a>
 </li>
+<li>UtcHour
+: <a class="el" href="class_game_up_1_1_leaderboard_1_1_reset.html#a60e9e8eebc84da00701cadacc7bbdb06">GameUp.Leaderboard.Reset</a>
+</li>
 </ul>
 
 
 <h3><a class="anchor" id="index_w"></a>- w -</h3><ul>
-<li>WhoAmI
-: <a class="el" href="class_game_up_1_1_match.html#a2f52a8d2ae503b0e8e1bfae1e8ed8804">GameUp.Match</a>
+<li>Whoami
+: <a class="el" href="class_game_up_1_1_match.html#a67bb43700cfe715fd6ed78193af1e49d">GameUp.Match</a>
 </li>
 </ul>
 </div><!-- contents -->
@@ -396,7 +433,7 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Aug 4 2015 13:00:12 for GameUpSDK by
+    <li class="footer">Generated on Tue Aug 11 2015 22:14:14 for GameUpSDK by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

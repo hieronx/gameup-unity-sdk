@@ -33,7 +33,7 @@
   <td id="projectlogo"><img alt="Logo" src="GameUp_Logo_Small_fill.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameUpSDK
-   &#160;<span id="projectnumber">0.3.0</span>
+   &#160;<span id="projectnumber">0.6.1</span>
    </div>
    <div id="projectbrief">Unity SDK for the GameUp service</div>
   </td>
@@ -129,7 +129,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab08a08cd1e9a7ddf16dd1ff646db8ea9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_rank.html#ab08a08cd1e9a7ddf16dd1ff646db8ea9">isNewRank</a> ()</td></tr>
 <tr class="separator:ab08a08cd1e9a7ddf16dd1ff646db8ea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8809a28be793c84cabfbf70ad846d10"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_rank.html#ae8809a28be793c84cabfbf70ad846d10">isNewBestRank</a> ()</td></tr>
+<tr class="memdesc:ae8809a28be793c84cabfbf70ad846d10"><td class="mdescLeft">&#160;</td><td class="mdescRight">summary&gt; Scoretags of this entry.  <a href="#ae8809a28be793c84cabfbf70ad846d10">More...</a><br /></td></tr>
 <tr class="separator:ae8809a28be793c84cabfbf70ad846d10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab18316be34af4dfc6de16856043c1fac"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_rank.html#ab18316be34af4dfc6de16856043c1fac">ConvertScoretags&lt; T &gt;</a> ()</td></tr>
+<tr class="separator:ab18316be34af4dfc6de16856043c1fac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -166,10 +169,28 @@ Properties</h2></td></tr>
 <tr class="memitem:ae1b0b33bcdf8efbe2abfc6a2c852dbbf"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_rank.html#ae1b0b33bcdf8efbe2abfc6a2c852dbbf">BestRankAt</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:ae1b0b33bcdf8efbe2abfc6a2c852dbbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">When the highest rank was recorded.  <a href="#ae1b0b33bcdf8efbe2abfc6a2c852dbbf">More...</a><br /></td></tr>
 <tr class="separator:ae1b0b33bcdf8efbe2abfc6a2c852dbbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5546c5040a885e0e2ef07b6833b08749"><td class="memItemLeft" align="right" valign="top">IDictionary&lt; String, Object &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_rank.html#a5546c5040a885e0e2ef07b6833b08749">Scoretags</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a5546c5040a885e0e2ef07b6833b08749"><td class="mdescLeft">&#160;</td><td class="mdescRight">summary&gt; Convert Scoretags to the specified user defined data type.  <a href="#a5546c5040a885e0e2ef07b6833b08749">More...</a><br /></td></tr>
+<tr class="separator:a5546c5040a885e0e2ef07b6833b08749"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a gamer's detailed standing on a leaderboard. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ab18316be34af4dfc6de16856043c1fac"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">T GameUp.Rank.ConvertScoretags&lt; T &gt; </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="aa22276569fff4b9ea7b1de997ceb4bc2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -198,6 +219,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>summary&gt; Scoretags of this entry. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if this response contains a new all-time best rank on this leaderboard, false otherwise. </dd></dl>
 
 </div>
@@ -477,6 +500,28 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a5546c5040a885e0e2ef07b6833b08749"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IDictionary&lt;String, Object&gt; GameUp.Rank.Scoretags</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>summary&gt; Convert Scoretags to the specified user defined data type. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>GameUpSDK/<a class="el" href="_rank_8cs.html">Rank.cs</a></li>
 </ul>
@@ -486,7 +531,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_game_up.html">GameUp</a></li><li class="navelem"><a class="el" href="class_game_up_1_1_rank.html">Rank</a></li>
-    <li class="footer">Generated on Tue Aug 4 2015 13:00:11 for GameUpSDK by
+    <li class="footer">Generated on Tue Aug 11 2015 22:14:14 for GameUpSDK by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

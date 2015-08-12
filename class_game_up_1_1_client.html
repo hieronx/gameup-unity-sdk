@@ -33,7 +33,7 @@
   <td id="projectlogo"><img alt="Logo" src="GameUp_Logo_Small_fill.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameUpSDK
-   &#160;<span id="projectnumber">0.3.0</span>
+   &#160;<span id="projectnumber">0.6.1</span>
    </div>
    <div id="projectbrief">Unity SDK for the GameUp service</div>
   </td>
@@ -130,12 +130,16 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8e2e5a8aa4fa3b925437959d1f36f01e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f990874cd631a0bbd1f7a2e387a87ca"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a2f990874cd631a0bbd1f7a2e387a87ca">AchievementsCallback</a> (<a class="el" href="class_game_up_1_1_achievement_list.html">AchievementList</a> achievements)</td></tr>
 <tr class="separator:a2f990874cd631a0bbd1f7a2e387a87ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a213774596821c8064bccaae8f371d7bb"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a213774596821c8064bccaae8f371d7bb">LeaderboardsCallback</a> (<a class="el" href="class_game_up_1_1_leaderboard_list.html">LeaderboardList</a> leaderboards)</td></tr>
+<tr class="separator:a213774596821c8064bccaae8f371d7bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d6815fe9153f9127266c4e8cc9cf869"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a1d6815fe9153f9127266c4e8cc9cf869">LeaderboardCallback</a> (<a class="el" href="class_game_up_1_1_leaderboard.html">Leaderboard</a> leaderboard)</td></tr>
 <tr class="separator:a1d6815fe9153f9127266c4e8cc9cf869"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3723cffa494f5195a340ad4d382fa379"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a3723cffa494f5195a340ad4d382fa379">LoginCallback</a> (<a class="el" href="class_game_up_1_1_session_client.html">SessionClient</a> session)</td></tr>
 <tr class="separator:a3723cffa494f5195a340ad4d382fa379"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab32c8f6685ddc086270ba2948122b6bc"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">SuccessCallback</a> ()</td></tr>
 <tr class="separator:ab32c8f6685ddc086270ba2948122b6bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c16970bc26318d56e6e127bdbcc7551"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a6c16970bc26318d56e6e127bdbcc7551">GenericSuccessCallback&lt; T &gt;</a> (T data)</td></tr>
+<tr class="separator:a6c16970bc26318d56e6e127bdbcc7551"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3bc248d211737e0e3aebbd0403ba878"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> (int statusCode, string reason)</td></tr>
 <tr class="separator:ae3bc248d211737e0e3aebbd0403ba878"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -156,9 +160,15 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a3e2f8ba4d571bd9f969e2e81172347e2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a3e2f8ba4d571bd9f969e2e81172347e2">Achievements</a> (<a class="el" href="class_game_up_1_1_client.html#a2f990874cd631a0bbd1f7a2e387a87ca">AchievementsCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:a3e2f8ba4d571bd9f969e2e81172347e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a list of achievements available in the game. This excludes any gamer information for the achievements; their progress or completion timestamps. See <a class="el" href="class_game_up_1_1_session_client.html#ab6d5187816cc7290db3c86d0162159d2" title="Get a list of achievements available in the game; with the gamer&#39;s progress and any completed achieve...">SessionClient.Achievements</a> (...) for <a class="el" href="class_game_up_1_1_gamer.html" title="Represents a gamer in the GameUp service. ">Gamer</a> information.  <a href="#a3e2f8ba4d571bd9f969e2e81172347e2">More...</a><br /></td></tr>
 <tr class="separator:a3e2f8ba4d571bd9f969e2e81172347e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14e70126522e80a212d9d5e95699d77b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a14e70126522e80a212d9d5e95699d77b">Leaderboards</a> (<a class="el" href="class_game_up_1_1_client.html#a213774596821c8064bccaae8f371d7bb">LeaderboardsCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:a14e70126522e80a212d9d5e95699d77b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the list of available leaderboards for this game.  <a href="#a14e70126522e80a212d9d5e95699d77b">More...</a><br /></td></tr>
+<tr class="separator:a14e70126522e80a212d9d5e95699d77b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4d26d1895c1bae76d60e42bb84e0b06"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#ac4d26d1895c1bae76d60e42bb84e0b06">Leaderboard</a> (string id, <a class="el" href="class_game_up_1_1_client.html#a1d6815fe9153f9127266c4e8cc9cf869">LeaderboardCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:ac4d26d1895c1bae76d60e42bb84e0b06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the leaderboard with the supplied ID; this will contain the top ranked gamers on the leaderboard.  <a href="#ac4d26d1895c1bae76d60e42bb84e0b06">More...</a><br /></td></tr>
 <tr class="separator:ac4d26d1895c1bae76d60e42bb84e0b06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36f06487839ccea545a62df16ad7d4b6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a36f06487839ccea545a62df16ad7d4b6">Leaderboard</a> (string id, int limit, int offset, bool withScoretags, <a class="el" href="class_game_up_1_1_client.html#a1d6815fe9153f9127266c4e8cc9cf869">LeaderboardCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:a36f06487839ccea545a62df16ad7d4b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the leaderboard with the supplied ID; this will contain the top ranked gamers on the leaderboard.  <a href="#a36f06487839ccea545a62df16ad7d4b6">More...</a><br /></td></tr>
+<tr class="separator:a36f06487839ccea545a62df16ad7d4b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7968599517f9bced23d0be4f3f1daa42"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a7968599517f9bced23d0be4f3f1daa42">LoginAnonymous</a> (string id, <a class="el" href="class_game_up_1_1_client.html#a3723cffa494f5195a340ad4d382fa379">LoginCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:a7968599517f9bced23d0be4f3f1daa42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use a unique ID to generate an account for a gamer. This ID should be cached on the gaming device so it can be re-used to re-login the gamer to the same account. See the documentation for more information.  <a href="#a7968599517f9bced23d0be4f3f1daa42">More...</a><br /></td></tr>
 <tr class="separator:a7968599517f9bced23d0be4f3f1daa42"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -189,6 +199,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a8c27644520a5c04a376baebf5e17c83d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a8c27644520a5c04a376baebf5e17c83d">LoginOAuthGoogle</a> (string accessToken, <a class="el" href="class_game_up_1_1_session_client.html">SessionClient</a> session, <a class="el" href="class_game_up_1_1_client.html#a3723cffa494f5195a340ad4d382fa379">LoginCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:a8c27644520a5c04a376baebf5e17c83d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Login a gamer using a Google OAuth token; or link a Google account to their current session.  <a href="#a8c27644520a5c04a376baebf5e17c83d">More...</a><br /></td></tr>
 <tr class="separator:a8c27644520a5c04a376baebf5e17c83d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11370cf8fcdd3853140ebf57a5829b03"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a11370cf8fcdd3853140ebf57a5829b03">MakeRequest&lt; T &gt;</a> (Uri uri, string method, string body, GenericSuccessCallback&lt; T &gt; success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:a11370cf8fcdd3853140ebf57a5829b03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a generic request with pre-set ApiKey.  <a href="#a11370cf8fcdd3853140ebf57a5829b03">More...</a><br /></td></tr>
+<tr class="separator:a11370cf8fcdd3853140ebf57a5829b03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -503,6 +516,22 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a6c16970bc26318d56e6e127bdbcc7551"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">delegate void GameUp.Client.GenericSuccessCallback&lt; T &gt; </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ac4d26d1895c1bae76d60e42bb84e0b06"></a>
 <div class="memitem">
 <div class="memproto">
@@ -553,6 +582,77 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a36f06487839ccea545a62df16ad7d4b6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void GameUp.Client.Leaderboard </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>limit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>withScoretags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#a1d6815fe9153f9127266c4e8cc9cf869">LeaderboardCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the leaderboard with the supplied ID; this will contain the top ranked gamers on the leaderboard. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>The ID of the <a class="el" href="class_game_up_1_1_leaderboard.html" title="Represents a GameUp leaderboard metadata and top ranked gamers. ">Leaderboard</a>.</td></tr>
+    <tr><td class="paramname">limit</td><td>Number of entries to return. Default is 50.</td></tr>
+    <tr><td class="paramname">offset</td><td>Entries to start from with the leaderboard list. Default is 0.</td></tr>
+    <tr><td class="paramname">withScoretags</td><td>Include Scoretags in the leaderboard entries.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a1d6815fe9153f9127266c4e8cc9cf869"></a>
 <div class="memitem">
 <div class="memproto">
@@ -562,6 +662,65 @@ Properties</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_game_up_1_1_leaderboard.html">Leaderboard</a>&#160;</td>
           <td class="paramname"><em>leaderboard</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a14e70126522e80a212d9d5e95699d77b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void GameUp.Client.Leaderboards </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#a213774596821c8064bccaae8f371d7bb">LeaderboardsCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the list of available leaderboards for this game. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a213774596821c8064bccaae8f371d7bb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">delegate void GameUp.Client.LeaderboardsCallback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_leaderboard_list.html">LeaderboardList</a>&#160;</td>
+          <td class="paramname"><em>leaderboards</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -970,6 +1129,70 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a11370cf8fcdd3853140ebf57a5829b03"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void GameUp.Client.MakeRequest&lt; T &gt; </td>
+          <td>(</td>
+          <td class="paramtype">Uri&#160;</td>
+          <td class="paramname"><em>uri</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>method</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>body</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GenericSuccessCallback&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Make a generic request with pre-set ApiKey. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uri</td><td>The URI for the request.</td></tr>
+    <tr><td class="paramname">method</td><td>The method for the request.</td></tr>
+    <tr><td class="paramname">body</td><td>The body for the request, may be null.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="af66ce6f08bfa91d43b773de4f14042b9"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1283,7 +1506,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_game_up.html">GameUp</a></li><li class="navelem"><a class="el" href="class_game_up_1_1_client.html">Client</a></li>
-    <li class="footer">Generated on Tue Aug 4 2015 13:00:11 for GameUpSDK by
+    <li class="footer">Generated on Tue Aug 11 2015 22:14:14 for GameUpSDK by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

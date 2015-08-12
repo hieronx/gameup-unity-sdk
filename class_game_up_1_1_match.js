@@ -6,5 +6,5 @@ var class_game_up_1_1_match =
     [ "MatchId", "class_game_up_1_1_match.html#adc47bf38392c053e9b97d81a5e25cc65", null ],
     [ "Turn", "class_game_up_1_1_match.html#a80c5930c6417291b9a571ec24e093d77", null ],
     [ "TurnCount", "class_game_up_1_1_match.html#ad0fbe8baf40d248b7b42501a845629e7", null ],
-    [ "WhoAmI", "class_game_up_1_1_match.html#a2f52a8d2ae503b0e8e1bfae1e8ed8804", null ]
+    [ "Whoami", "class_game_up_1_1_match.html#a67bb43700cfe715fd6ed78193af1e49d", null ]
 ];

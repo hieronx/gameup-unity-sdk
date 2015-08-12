@@ -8,6 +8,7 @@ var namespace_game_up =
     [ "GameUpPocoJsonSerializerStrategy", "class_game_up_1_1_game_up_poco_json_serializer_strategy.html", "class_game_up_1_1_game_up_poco_json_serializer_strategy" ],
     [ "Leaderboard", "class_game_up_1_1_leaderboard.html", "class_game_up_1_1_leaderboard" ],
     [ "LeaderboardAndRank", "class_game_up_1_1_leaderboard_and_rank.html", "class_game_up_1_1_leaderboard_and_rank" ],
+    [ "LeaderboardList", "class_game_up_1_1_leaderboard_list.html", "class_game_up_1_1_leaderboard_list" ],
     [ "Match", "class_game_up_1_1_match.html", "class_game_up_1_1_match" ],
     [ "MatchList", "class_game_up_1_1_match_list.html", "class_game_up_1_1_match_list" ],
     [ "MatchTurn", "class_game_up_1_1_match_turn.html", "class_game_up_1_1_match_turn" ],

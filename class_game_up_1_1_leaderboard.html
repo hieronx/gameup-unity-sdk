@@ -33,7 +33,7 @@
   <td id="projectlogo"><img alt="Logo" src="GameUp_Logo_Small_fill.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameUpSDK
-   &#160;<span id="projectnumber">0.3.0</span>
+   &#160;<span id="projectnumber">0.6.1</span>
    </div>
    <div id="projectbrief">Unity SDK for the GameUp service</div>
   </td>
@@ -133,6 +133,10 @@ Inheritance diagram for GameUp.Leaderboard:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_leaderboard_1_1_entry.html">Entry</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An entry for a player in a leaderboard.  <a href="class_game_up_1_1_leaderboard_1_1_entry.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_leaderboard_1_1_reset.html">Reset</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The reset information for a daily, weekly, or monthly leaderboard.  <a href="class_game_up_1_1_leaderboard_1_1_reset.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
@@ -144,7 +148,7 @@ Public Types</h2></td></tr>
 <tr class="separator:a4dc47343e687dbfb328bba84d57da0cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0515ffb258dce26939aa7cd4110560c4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_leaderboard.html#a0515ffb258dce26939aa7cd4110560c4">Type</a> { <a class="el" href="class_game_up_1_1_leaderboard.html#a0515ffb258dce26939aa7cd4110560c4a4405408e2b5d5cd5cd870ae4dc4fd023">Type.RANK</a>
  }</td></tr>
-<tr class="memdesc:a0515ffb258dce26939aa7cd4110560c4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_up_1_1_leaderboard.html" title="Represents a GameUp leaderboard metadata and top ranked gamers. ">Leaderboard</a> type hint.  <a href="class_game_up_1_1_leaderboard.html#a0515ffb258dce26939aa7cd4110560c4">More...</a><br /></td></tr>
+<tr class="memdesc:a0515ffb258dce26939aa7cd4110560c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of a leaderboard.  <a href="class_game_up_1_1_leaderboard.html#a0515ffb258dce26939aa7cd4110560c4">More...</a><br /></td></tr>
 <tr class="separator:a0515ffb258dce26939aa7cd4110560c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -154,6 +158,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
+<tr class="memitem:a08a3f463e9a981bcc03a207d99718718"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_leaderboard.html#a08a3f463e9a981bcc03a207d99718718">LeaderboardId</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a08a3f463e9a981bcc03a207d99718718"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_up_1_1_leaderboard.html" title="Represents a GameUp leaderboard metadata and top ranked gamers. ">Leaderboard</a> ID.  <a href="#a08a3f463e9a981bcc03a207d99718718">More...</a><br /></td></tr>
+<tr class="separator:a08a3f463e9a981bcc03a207d99718718"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a750ed0d050770f111a9612f69f66720f"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_leaderboard.html#a750ed0d050770f111a9612f69f66720f">Name</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a750ed0d050770f111a9612f69f66720f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_up_1_1_leaderboard.html" title="Represents a GameUp leaderboard metadata and top ranked gamers. ">Leaderboard</a> display name.  <a href="#a750ed0d050770f111a9612f69f66720f">More...</a><br /></td></tr>
 <tr class="separator:a750ed0d050770f111a9612f69f66720f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -166,6 +173,21 @@ Properties</h2></td></tr>
 <tr class="memitem:a6748232bf3ce9f12bb921befc8608d8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_up_1_1_leaderboard.html#a0515ffb258dce26939aa7cd4110560c4">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_leaderboard.html#a6748232bf3ce9f12bb921befc8608d8c">LeaderboardType</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a6748232bf3ce9f12bb921befc8608d8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type indicator.  <a href="#a6748232bf3ce9f12bb921befc8608d8c">More...</a><br /></td></tr>
 <tr class="separator:a6748232bf3ce9f12bb921befc8608d8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d6151f645cf98f36b6a678d590bb2e2"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_leaderboard.html#a8d6151f645cf98f36b6a678d590bb2e2">DisplayHint</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a8d6151f645cf98f36b6a678d590bb2e2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_up_1_1_leaderboard.html" title="Represents a GameUp leaderboard metadata and top ranked gamers. ">Leaderboard</a> display hint.  <a href="#a8d6151f645cf98f36b6a678d590bb2e2">More...</a><br /></td></tr>
+<tr class="separator:a8d6151f645cf98f36b6a678d590bb2e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb70fc3f626f792a5eec45034dd0ee29"><td class="memItemLeft" align="right" valign="top">String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_leaderboard.html#abb70fc3f626f792a5eec45034dd0ee29">Tags</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:abb70fc3f626f792a5eec45034dd0ee29"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_up_1_1_leaderboard.html" title="Represents a GameUp leaderboard metadata and top ranked gamers. ">Leaderboard</a> tags.  <a href="#abb70fc3f626f792a5eec45034dd0ee29">More...</a><br /></td></tr>
+<tr class="separator:abb70fc3f626f792a5eec45034dd0ee29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeba595730a59c65a195dbe0f0f97905a"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_leaderboard.html#aeba595730a59c65a195dbe0f0f97905a">Limit</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aeba595730a59c65a195dbe0f0f97905a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_up_1_1_leaderboard.html" title="Represents a GameUp leaderboard metadata and top ranked gamers. ">Leaderboard</a> limit.  <a href="#aeba595730a59c65a195dbe0f0f97905a">More...</a><br /></td></tr>
+<tr class="separator:aeba595730a59c65a195dbe0f0f97905a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a048f7a03bdfd90affec9dbe7f9c1d70e"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_leaderboard.html#a048f7a03bdfd90affec9dbe7f9c1d70e">CreatedAt</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a048f7a03bdfd90affec9dbe7f9c1d70e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_up_1_1_leaderboard.html" title="Represents a GameUp leaderboard metadata and top ranked gamers. ">Leaderboard</a> creation unix time.  <a href="#a048f7a03bdfd90affec9dbe7f9c1d70e">More...</a><br /></td></tr>
+<tr class="separator:a048f7a03bdfd90affec9dbe7f9c1d70e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a171fb2774eccdba66065103a94e20f78"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_up_1_1_leaderboard_1_1_reset.html">Reset</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_leaderboard.html#a171fb2774eccdba66065103a94e20f78">LeaderboardReset</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a171fb2774eccdba66065103a94e20f78"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_up_1_1_leaderboard.html" title="Represents a GameUp leaderboard metadata and top ranked gamers. ">Leaderboard</a> <a class="el" href="class_game_up_1_1_leaderboard_1_1_reset.html" title="The reset information for a daily, weekly, or monthly leaderboard. ">Reset</a> configuration.  <a href="#a171fb2774eccdba66065103a94e20f78">More...</a><br /></td></tr>
+<tr class="separator:a171fb2774eccdba66065103a94e20f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca48716846efa8fcf8e8b94693b92ec8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_up_1_1_leaderboard_1_1_entry.html">Entry</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_leaderboard.html#aca48716846efa8fcf8e8b94693b92ec8">Entries</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:aca48716846efa8fcf8e8b94693b92ec8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The top ranked gamers on this board, up to 50. Already sorted according to the leaderboard sort settings.  <a href="#aca48716846efa8fcf8e8b94693b92ec8">More...</a><br /></td></tr>
 <tr class="separator:aca48716846efa8fcf8e8b94693b92ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -205,7 +227,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_game_up_1_1_leaderboard.html" title="Represents a GameUp leaderboard metadata and top ranked gamers. ">Leaderboard</a> type hint. </p>
+<p>The type of a leaderboard. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a0515ffb258dce26939aa7cd4110560c4a4405408e2b5d5cd5cd870ae4dc4fd023"></a>RANK&#160;</td><td class="fielddoc">
 <p>Standard best score, one entry per gamer leaderboard type. </p>
@@ -231,6 +253,50 @@ Properties</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="a048f7a03bdfd90affec9dbe7f9c1d70e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long GameUp.Leaderboard.CreatedAt</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_game_up_1_1_leaderboard.html" title="Represents a GameUp leaderboard metadata and top ranked gamers. ">Leaderboard</a> creation unix time. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8d6151f645cf98f36b6a678d590bb2e2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String GameUp.Leaderboard.DisplayHint</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_game_up_1_1_leaderboard.html" title="Represents a GameUp leaderboard metadata and top ranked gamers. ">Leaderboard</a> display hint. </p>
+
+</div>
+</div>
 <a class="anchor" id="aca48716846efa8fcf8e8b94693b92ec8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -253,6 +319,50 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a08a3f463e9a981bcc03a207d99718718"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String GameUp.Leaderboard.LeaderboardId</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_game_up_1_1_leaderboard.html" title="Represents a GameUp leaderboard metadata and top ranked gamers. ">Leaderboard</a> ID. </p>
+
+</div>
+</div>
+<a class="anchor" id="a171fb2774eccdba66065103a94e20f78"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_game_up_1_1_leaderboard_1_1_reset.html">Reset</a> GameUp.Leaderboard.LeaderboardReset</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_game_up_1_1_leaderboard.html" title="Represents a GameUp leaderboard metadata and top ranked gamers. ">Leaderboard</a> <a class="el" href="class_game_up_1_1_leaderboard_1_1_reset.html" title="The reset information for a daily, weekly, or monthly leaderboard. ">Reset</a> configuration. </p>
+
+</div>
+</div>
 <a class="anchor" id="a6748232bf3ce9f12bb921befc8608d8c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -272,6 +382,28 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Type indicator. </p>
+
+</div>
+</div>
+<a class="anchor" id="aeba595730a59c65a195dbe0f0f97905a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long GameUp.Leaderboard.Limit</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_game_up_1_1_leaderboard.html" title="Represents a GameUp leaderboard metadata and top ranked gamers. ">Leaderboard</a> limit. </p>
 
 </div>
 </div>
@@ -341,6 +473,28 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="abb70fc3f626f792a5eec45034dd0ee29"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String [] GameUp.Leaderboard.Tags</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_game_up_1_1_leaderboard.html" title="Represents a GameUp leaderboard metadata and top ranked gamers. ">Leaderboard</a> tags. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>GameUpSDK/<a class="el" href="_leaderboard_8cs.html">Leaderboard.cs</a></li>
 </ul>
@@ -350,7 +504,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_game_up.html">GameUp</a></li><li class="navelem"><a class="el" href="class_game_up_1_1_leaderboard.html">Leaderboard</a></li>
-    <li class="footer">Generated on Tue Aug 4 2015 13:00:11 for GameUpSDK by
+    <li class="footer">Generated on Tue Aug 11 2015 22:14:14 for GameUpSDK by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

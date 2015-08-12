@@ -1,5 +1,6 @@
 var class_game_up_1_1_rank =
 [
+    [ "ConvertScoretags< T >", "class_game_up_1_1_rank.html#ab18316be34af4dfc6de16856043c1fac", null ],
     [ "isNew", "class_game_up_1_1_rank.html#aa22276569fff4b9ea7b1de997ceb4bc2", null ],
     [ "isNewBestRank", "class_game_up_1_1_rank.html#ae8809a28be793c84cabfbf70ad846d10", null ],
     [ "isNewRank", "class_game_up_1_1_rank.html#ab08a08cd1e9a7ddf16dd1ff646db8ea9", null ],
@@ -14,5 +15,6 @@ var class_game_up_1_1_rank =
     [ "RankAt", "class_game_up_1_1_rank.html#a7555ba08a7cbbf8eda4ed0348eb2417f", null ],
     [ "Ranking", "class_game_up_1_1_rank.html#ac0d3580bcc936f347d986253c0021a6b", null ],
     [ "Score", "class_game_up_1_1_rank.html#ad9165723430a1546b22c765326982766", null ],
-    [ "ScoreAt", "class_game_up_1_1_rank.html#ae73d4b21bf374685802a21c3415b1b84", null ]
+    [ "ScoreAt", "class_game_up_1_1_rank.html#ae73d4b21bf374685802a21c3415b1b84", null ],
+    [ "Scoretags", "class_game_up_1_1_rank.html#a5546c5040a885e0e2ef07b6833b08749", null ]
 ];

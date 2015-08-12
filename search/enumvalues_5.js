@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rank',['RANK',['../class_game_up_1_1_leaderboard.html#a0515ffb258dce26939aa7cd4110560c4a4405408e2b5d5cd5cd870ae4dc4fd023',1,'GameUp::Leaderboard']]]
+  ['normal',['NORMAL',['../class_game_up_1_1_achievement.html#a412349c3fdd137e961e0a49a9dba4236a1e23852820b9154316c7c06e2b7ba051',1,'GameUp::Achievement']]]
 ];
