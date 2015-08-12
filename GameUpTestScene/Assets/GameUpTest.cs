@@ -192,6 +192,12 @@ public class GameUpTest : MonoBehaviour
         Debug.Log ("Get turn data...");
         session.GetTurnData (matchId, 0, (MatchTurnList turns) => {
           Debug.Log ("Got Turns. Count is: " + turns.Count);
+          IEnumerator<MatchTurn> turnEnum = turns.GetEnumerator();
+          if (turnEnum.MoveNext()) {
+            Debug.Log ("Got data for " + turnEnum.Current.Gamer + ". Data: " + turnEnum.Current.Data);
+          } else {
+            Debug.Log ("No turn list available");
+          }
         }, failure);
         
         if (match.Turn.Equals(match.WhoAmI)) {
