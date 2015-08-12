@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.6.1
+
+* Fix deserialization of multiplayer entities.
+
 ### 0.6.0
 
 * Add methods for the [Advanced Leaderboards](https://gameup.io/blog/2015/07/31/advanced-leaderboards/) feature.
