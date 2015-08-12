@@ -25,7 +25,7 @@ namespace GameUp
     /// If the current gamer's nickname is changed after the match is setup, 
     /// the old nickname is still used hence the use of this 'whoami' field. 
     /// </summary>
-    public String WhoAmI { get ; set; }
+    public String Whoami { get ; set; }
     
     /// <summary> Match ID </summary>
     public String MatchId { get ; set; }

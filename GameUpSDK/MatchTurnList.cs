@@ -27,14 +27,14 @@ namespace GameUp
     public int Count { get ; set ; }
     
     /// <summary> The match turns themselves. </summary>
-    public MatchTurn[] MatchTurns { get; set; }
+    public MatchTurn[] Turns { get; set; }
     
     // Must also implement IEnumerable.GetEnumerator, but implement as a private method.
     // When you implement IEnumerable(T), you must also implement IEnumerable and IEnumerator(T). 
     // see https://msdn.microsoft.com/en-us/library/s793z9y2(v=vs.110).aspx
     public IEnumerator<MatchTurn> GetEnumerator ()
     {
-      return (new List<MatchTurn>(MatchTurns)).GetEnumerator ();
+      return (new List<MatchTurn>(Turns)).GetEnumerator ();
     }
     
     private IEnumerator GetEnumerator1 ()

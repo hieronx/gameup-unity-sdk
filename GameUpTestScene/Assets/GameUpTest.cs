@@ -27,8 +27,6 @@ public class GameUpTest : MonoBehaviour
   void Start ()
   {
     string deviceId = SystemInfo.deviceUniqueIdentifier;
-    Match match = null;
-    
     Client.ApiKey = "9e87fc40a177490f95e734750f6b513e";
     
     Debug.Log ("Ping...");
@@ -62,7 +60,7 @@ public class GameUpTest : MonoBehaviour
     }, failure);
 
     Debug.Log ("Single Leaderboard with 10 entries and 20 offset...");
-    Client.Leaderboard (leaderboardId, 10, 20, (Leaderboard l) => {
+    Client.Leaderboard (leaderboardId, 10, 20, false, (Leaderboard l) => {
       IEnumerator<Leaderboard.Entry> en = l.GetEnumerator ();
       en.MoveNext ();
       
@@ -175,35 +173,26 @@ public class GameUpTest : MonoBehaviour
       }, failure);
       
       Debug.Log ("Create match for 2...");
-      session.CreateMatch (2, (Match neMatch) => {
-        match = neMatch;
+      session.CreateMatch (2, (Match match) => {
         Debug.Log ("New match created. Match ID: " + match.MatchId);
-      }, () => {
-        Debug.Log ("Gamer queued");
-      }, failure);
-      
-      if (match != null) {
         String matchId = match.MatchId;
         Debug.Log ("Get match details...");
         session.GetMatch (matchId, (Match newMatch) => {
           Debug.Log ("Got match details. Match turn count: " + newMatch.TurnCount);
         }, failure);
-        
-        Debug.Log ("Get turn data...");
-        session.GetTurnData (matchId, 0, (MatchTurnList turns) => {
-          Debug.Log ("Got Turns. Count is: " + turns.Count);
-          IEnumerator<MatchTurn> turnEnum = turns.GetEnumerator();
-          if (turnEnum.MoveNext()) {
-            Debug.Log ("Got data for " + turnEnum.Current.Gamer + ". Data: " + turnEnum.Current.Data);
-          } else {
-            Debug.Log ("No turn list available");
-          }
-        }, failure);
-        
-        if (match.Turn.Equals(match.WhoAmI)) {
-          Debug.Log ("Submitting a turn...");
-          session.SubmitTurn (matchId, (int)match.TurnCount, match.WhoAmI, "Unity SDK Turn Data", () => {
-            Debug.Log ("Submitted turn");
+
+        if (match.Turn.Equals(match.Whoami)) {
+          Debug.Log ("Match details : " + match + ". Submitting a turn for " + match.Whoami);
+          session.SubmitTurn (matchId, (int)match.TurnCount, match.Whoami, "Unity SDK Turn Data", () => {
+            Debug.Log ("Submitted turn. Getting turn data...");
+            session.GetTurnData (matchId, 0, (MatchTurnList turns) => {
+              Debug.Log ("Got Turns. Count is: " + turns.Count);
+              foreach (MatchTurn matchTurn in turns) {
+                // we can update the match state to sync it with the most recent turns
+                Debug.LogFormat ("User '{0}' played turn number '{1}'.", matchTurn.Gamer, matchTurn.TurnNumber);
+                Debug.LogFormat ("Turn data: '{0}'.", matchTurn.Data);
+              }
+            }, failure);
           }, failure);
           
           Debug.Log ("Ending match...");
@@ -216,7 +205,10 @@ public class GameUpTest : MonoBehaviour
             Debug.Log ("Left match: " + id);
           }, failure);
         }
-      }
+
+      }, () => {
+        Debug.Log ("Gamer queued");
+      }, failure);
       
       #if UNITY_IOS
       UnityEngine.iOS.NotificationServices.RegisterForNotifications(UnityEngine.iOS.NotificationType.Alert |  UnityEngine.iOS.NotificationType.Badge |  UnityEngine.iOS.NotificationType.Sound);
