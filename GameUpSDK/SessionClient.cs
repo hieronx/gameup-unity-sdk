@@ -96,6 +96,26 @@ namespace GameUp
     }
 
     /// <summary>
+    /// Update nickname of the current logged in gamer.
+    /// </summary>
+    /// <param name="nickname">Current gamer's new nickname.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void UpdateGamer (string nickname, Client.SuccessCallback success, Client.ErrorCallback error)
+    {
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ACCOUNTS_SERVER, Client.PORT, "/v0/gamer");
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, Token);
+      wwwRequest.SetBody ("{\"nickname\":\"" + nickname + "\"}");
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success();
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
     /// Store the supplied IDictionary with the given key into Cloud Storage.
     /// </summary>
     /// <param name="key">The name of the key.</param>

@@ -96,6 +96,11 @@ public class GameUpTest : MonoBehaviour
       session.Gamer ((Gamer gamer) => {
         Debug.Log ("Gamer Name: " + gamer.Name);
       }, failure);
+
+      Debug.Log ("Updating Gamer Nickname...");
+      session.UpdateGamer ("UnitySDKTest", () => {
+        Debug.Log ("Successfully updated gamer's profile");
+      }, failure);
       
       Debug.Log ("Storage Delete...");
       session.StorageDelete (storage_key, () => {
