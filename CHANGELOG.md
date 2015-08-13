@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.7.0
+
+* Add method to update a gamer's nickname.
+
 ### 0.6.1
 
 * Fix deserialization of multiplayer entities.
@@ -31,8 +35,8 @@ CHANGELOG
 
 ### 0.3.0
 
-* Added Push Notification support.
-* Fixed callback handler for Achievement responses.
+* Add Push Notification support.
+* Fix callback handler for Achievement responses.
 
 ### 0.2.0
 
