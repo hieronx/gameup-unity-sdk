@@ -43,6 +43,7 @@ var class_game_up_1_1_session_client =
     [ "SubscribePush", "class_game_up_1_1_session_client.html#aea9f61c95d28b6192abd728cea53ddc7", null ],
     [ "TurnCallback", "class_game_up_1_1_session_client.html#a27953dab719d8d055c00bffc673d475c", null ],
     [ "TurnSubmitSuccessCallback", "class_game_up_1_1_session_client.html#a8f93abc106543f6f63234ac9a241a9a9", null ],
+    [ "UpdateGamer", "class_game_up_1_1_session_client.html#aa9eb9b6d026fa2050681faab1fe48e7d", null ],
     [ "UpdateLeaderboard", "class_game_up_1_1_session_client.html#a62b5016f168549592561f07f8607eadc", null ],
     [ "UpdateLeaderboard", "class_game_up_1_1_session_client.html#a679f301d7fbe9064923b0f8ac79c28d0", null ],
     [ "UpdateLeaderboard< T >", "class_game_up_1_1_session_client.html#ac6f2db354ebb62b9a4c59bdcd87f3d24", null ],

@@ -33,7 +33,7 @@
   <td id="projectlogo"><img alt="Logo" src="GameUp_Logo_Small_fill.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameUpSDK
-   &#160;<span id="projectnumber">0.6.1</span>
+   &#160;<span id="projectnumber">0.7.0</span>
    </div>
    <div id="projectbrief">Unity SDK for the GameUp service</div>
   </td>
@@ -163,6 +163,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab31eac3c65d22f2a8cd9e4f5696a4c59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#ab31eac3c65d22f2a8cd9e4f5696a4c59">Gamer</a> (<a class="el" href="class_game_up_1_1_session_client.html#a0174bee390c58d30b2b125f09fa4e2dc">GamerCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:ab31eac3c65d22f2a8cd9e4f5696a4c59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information about the current logged in gamer.  <a href="#ab31eac3c65d22f2a8cd9e4f5696a4c59">More...</a><br /></td></tr>
 <tr class="separator:ab31eac3c65d22f2a8cd9e4f5696a4c59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9eb9b6d026fa2050681faab1fe48e7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#aa9eb9b6d026fa2050681faab1fe48e7d">UpdateGamer</a> (string nickname, <a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">Client.SuccessCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:aa9eb9b6d026fa2050681faab1fe48e7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update nickname of the current logged in gamer.  <a href="#aa9eb9b6d026fa2050681faab1fe48e7d">More...</a><br /></td></tr>
+<tr class="separator:aa9eb9b6d026fa2050681faab1fe48e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27bd6a589123b6b05ab9d12c8ac553cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a27bd6a589123b6b05ab9d12c8ac553cf">StoragePut</a> (string key, IDictionary&lt; string, string &gt; data, <a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">Client.SuccessCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:a27bd6a589123b6b05ab9d12c8ac553cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store the supplied IDictionary with the given key into Cloud Storage.  <a href="#a27bd6a589123b6b05ab9d12c8ac553cf">More...</a><br /></td></tr>
 <tr class="separator:a27bd6a589123b6b05ab9d12c8ac553cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1760,6 +1763,48 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aa9eb9b6d026fa2050681faab1fe48e7d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUp.SessionClient.UpdateGamer </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>nickname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">Client.SuccessCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Update nickname of the current logged in gamer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nickname</td><td>Current gamer's new nickname.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a62b5016f168549592561f07f8607eadc"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2007,7 +2052,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_game_up.html">GameUp</a></li><li class="navelem"><a class="el" href="class_game_up_1_1_session_client.html">SessionClient</a></li>
-    <li class="footer">Generated on Tue Aug 11 2015 22:14:14 for GameUpSDK by
+    <li class="footer">Generated on Thu Aug 13 2015 20:39:00 for GameUpSDK by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>
