@@ -34,10 +34,10 @@ namespace GameUp
     public String PublicId { get ; set ; }
 
     /// <summary> Sort order indicator. </summary>
-    public Sort SortOrder { get ; set ; }
+    public LeaderboardSort Sort { get ; set ; }
 
     /// <summary> Type indicator. </summary>
-    public Type LeaderboardType { get ; set ; }
+    public LeaderboardType Type { get ; set ; }
 
     /// <summary> Leaderboard display hint. </summary>
     public String DisplayHint { get ; set ; }
@@ -52,7 +52,7 @@ namespace GameUp
     public long CreatedAt { get ; set ; }
 
     /// <summary> Leaderboard Reset configuration. </summary>
-    public Reset LeaderboardReset {get ; set ;}
+    public Reset LeaderboardReset { get ; set ;}
 
     /// <summary>
     /// The top ranked gamers on this board, up to 50. Already sorted according
@@ -63,7 +63,7 @@ namespace GameUp
     /// <summary>
     /// Leaderboard sort order hint.
     /// </summary>
-    public enum Sort
+    public enum LeaderboardSort
     {
 
       /// <summary> Indicates the entries should be sorted ascending by score. </summary>
@@ -76,7 +76,7 @@ namespace GameUp
     /// <summary>
     /// The type of a leaderboard.
     /// </summary>
-    public enum Type
+    public enum LeaderboardType
     {
       /// <summary> Standard best score, one entry per gamer leaderboard type. </summary>
       RANK
@@ -115,23 +115,8 @@ namespace GameUp
     public class Reset
     {
 
-      /// <summary>
-      /// The reset type for the leaderboard.
-      /// </summary>
-      public enum Type
-      {
-        /// <summary> Daily value. </summary>
-        DAILY,
-
-        /// <summary> Weekly value. </summary>
-        WEEKLY,
-
-        /// <summary> Monthly value. </summary>
-        MONTHLY,
-      }
-
-      /// <summary> Nickname, suitable for public display. </summary>
-      public Reset.Type type { get ; set ; }
+      /// <summary> Leaderboard Reset Type - daily, weekly or monthly. </summary>
+      public ResetType Type { get ; set ; }
 
       /// <summary> Leaderboard Reset UTC Hour </summary>
       public long UtcHour { get ; set ; }
@@ -142,6 +127,21 @@ namespace GameUp
       /// <summary> Leaderboard Reset Day in a month; will be 0 if unset. </summary>
       public int DayOfMonth { get ; set ; }
 
+      /// <summary>
+      /// The reset type for the leaderboard.
+      /// </summary>
+      public enum ResetType
+      {
+        
+        /// <summary> Daily value. </summary>
+        DAILY,
+        
+        /// <summary> Weekly value. </summary>
+        WEEKLY,
+        
+        /// <summary> Monthly value. </summary>
+        MONTHLY
+      }
     }
 
     public IEnumerator<Leaderboard.Entry> GetEnumerator ()

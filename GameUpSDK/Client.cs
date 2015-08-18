@@ -40,6 +40,8 @@ namespace GameUp
     {
     }
 
+    public delegate void PingCallback (PingInfo info);
+
     public delegate void ServerCallback (ServerInfo info);
 
     public delegate void GameCallback (Game game);
@@ -78,6 +80,24 @@ namespace GameUp
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, "");
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success ();
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Ping the GameUp service to check it is reachable.
+    /// </summary>
+    /// <param name="success">The callback to execute on success and returns available ping data.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void Ping (PingCallback success, ErrorCallback error)
+    {
+      UriBuilder b = new UriBuilder (SCHEME, API_SERVER, PORT, "/v0/");
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, "");
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success(SimpleJson.DeserializeObject<PingInfo> (jsonResponse, serializerStrategy));
       };
       wwwRequest.OnFailure = (int statusCode, string reason) => {
         error (statusCode, reason);

@@ -30,7 +30,7 @@ namespace GameUp
     public String Description { get ; set ; }
     
     /// <summary> The type of the achievement, referring to gamer interaction model. </summary>
-    public Type AchievementType { get ; set ;}
+    public AchievementType Type  { get ; set ;}
     
     /// <summary>
     /// Number of points that will be awarded for completing this achievement,
@@ -39,7 +39,7 @@ namespace GameUp
     public int Points { get ; set ; }
     
     /// <summary> The state of this achievement, referring to display logic. </summary>
-    public State AchievementState { get ; set ; }
+    public AchievementState State { get ; set ; }
     
     /// <summary>
     /// Required number of actions to complete this achievement, subject to game
@@ -77,7 +77,7 @@ namespace GameUp
     /// <summary>
     /// Achievement Type, referring to how gamer interaction must occur.
     /// </summary>
-    public enum Type
+    public enum AchievementType
     {
       /// <summary> Standard earned/unearned achievement. </summary>
       NORMAL,
@@ -92,7 +92,7 @@ namespace GameUp
     /// <summary>
     /// Achievement State, referring to how display should be handled.
     /// </summary>
-    public enum State
+    public enum AchievementState
     {
       /// <summary> The achievement and all its details are available to the gamer. </summary>
       VISIBLE,

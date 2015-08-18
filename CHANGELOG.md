@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### 0.7.1
+
+* BREAKING CHANGE: Due to limitations in SimpleJson, some fields in Achievement and Leaderboards had to be renamed so they could be parsed properly.
+* Add callback to get payload data from the Ping operation
+
 ### 0.7.0
 
 * Add method to update a gamer's nickname.

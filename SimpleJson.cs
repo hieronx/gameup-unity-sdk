@@ -1359,6 +1359,11 @@ namespace GameUp
 												return null;
                     }
                   
+                  if (type.IsEnum || (ReflectionUtils.IsNullableType(type) && Nullable.GetUnderlyingType(type).IsEnum)) 
+                  {
+                    return Enum.Parse(ReflectionUtils.IsNullableType(type) ? Nullable.GetUnderlyingType(type) : type, str, true);
+                  }
+
 									if (type == typeof(string))  
 										return str;
 
@@ -1466,7 +1471,7 @@ namespace GameUp
 
         protected virtual object SerializeEnum(Enum p)
         {
-            return Convert.ToDouble(p, CultureInfo.InvariantCulture);
+          return p.ToString();
         }
 
         [SuppressMessage("Microsoft.Design", "CA1007:UseGenericsWhereAppropriate", Justification="Need to support .NET 2")]

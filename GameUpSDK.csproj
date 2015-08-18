@@ -60,6 +60,7 @@
     <Compile Include="GameUpSDK\PurchaseVerification.cs" />
     <Compile Include="GameUpSDK\WWWRequestExecutor.cs" />
     <Compile Include="GameUpSDK\LeaderboardList.cs" />
+    <Compile Include="GameUpSDK\PingInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

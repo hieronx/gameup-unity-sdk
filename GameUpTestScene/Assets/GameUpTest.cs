@@ -23,17 +23,15 @@ public class GameUpTest : MonoBehaviour
   #if UNITY_IOS
   bool tokenSent = false;
   #endif
-  
+
   void Start ()
   {
+
     string deviceId = SystemInfo.deviceUniqueIdentifier;
     Client.ApiKey = "9e87fc40a177490f95e734750f6b513e";
     
-    Debug.Log ("Ping...");
-    Client.Ping (failure);
-    
-    Debug.Log ("Server Info...");
-    Client.Server ((ServerInfo server) => {
+    Debug.Log ("Ping Info...");
+    Client.Ping ((PingInfo server) => {
       Debug.Log ("Server Time: " + server.Time);
     }, failure);
     
@@ -52,11 +50,16 @@ public class GameUpTest : MonoBehaviour
 
     Debug.Log ("All Leaderboards...");
     Client.Leaderboards ((LeaderboardList list) => {
-      IEnumerator<Leaderboard> en = list.GetEnumerator ();
-      en.MoveNext ();
-      Leaderboard l = en.Current;
+      foreach (Leaderboard entry in list.Leaderboards) {
+        Debug.LogFormat ("Name: " + entry.Name + " sort: " + entry.Sort);
+        if (entry.LeaderboardReset != null) {
+          Debug.LogFormat ("Name: " + entry.Name + " reset type: " + entry.LeaderboardReset.Type + " reset hr: " + entry.LeaderboardReset.UtcHour );
+        } else {
+          Debug.LogFormat ("Name: " + entry.Name + " has no reset!");
+        }
 
-      Debug.Log ("Leaderboard Name: " + l.Name + " " + l.PublicId + " " + l.SortOrder + " " + l.LeaderboardType + " " + en.Current.Name);
+        // you could add each leaderboard entry to a UI element and show it
+      }
     }, failure);
 
     Debug.Log ("Single Leaderboard with 10 entries and 20 offset...");
@@ -64,7 +67,7 @@ public class GameUpTest : MonoBehaviour
       IEnumerator<Leaderboard.Entry> en = l.GetEnumerator ();
       en.MoveNext ();
       
-      Debug.Log ("Leaderboard Name: " + l.Name + " " + l.PublicId + " " + l.SortOrder + " " + l.LeaderboardType + " " + l.Entries.Length + " " + en.Current.Name);
+      Debug.Log ("Leaderboard Name: " + l.Name + " " + l.PublicId + " " + l.Sort + " " + l.Type + " " + l.Entries.Length + " " + en.Current.Name);
     }, failure);
     
     Debug.Log ("Anonymous Login with Id : " + deviceId + " ...");
@@ -132,6 +135,9 @@ public class GameUpTest : MonoBehaviour
       Debug.Log ("Achievements...");
       session.Achievements ((AchievementList al) => {
         Debug.Log ("Retrieved achievements " + al.Count);
+        foreach (Achievement entry in al.Achievements) {
+          Debug.LogFormat ("Name: " + entry.Name + " state: " + entry.State);
+        }
       }, failure);
       //
       Debug.Log ("LeaderboardUpdate...");
