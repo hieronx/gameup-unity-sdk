@@ -17,7 +17,8 @@
 // <website>https://github.com/facebook-csharp-sdk/simple-json</website>
 //-----------------------------------------------------------------------
 
-// VERSION: 0.38.0
+// VERSION: 0.38.1
+// Merged https://github.com/facebook-csharp-sdk/simple-json/pull/64
 
 // NOTE: uncomment the following line to make SimpleJson class internal.
 //#define SIMPLE_JSON_INTERNAL
