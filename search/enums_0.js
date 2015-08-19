@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['sort',['Sort',['../class_game_up_1_1_leaderboard.html#a4dc47343e687dbfb328bba84d57da0cd',1,'GameUp::Leaderboard']]],
-  ['state',['State',['../class_game_up_1_1_achievement.html#a54a0591233f73b5f4e333bdafceb508b',1,'GameUp::Achievement']]]
+  ['achievementstate',['AchievementState',['../class_game_up_1_1_achievement.html#a05f6caa30090613a78592ac63b17020a',1,'GameUp::Achievement']]],
+  ['achievementtype',['AchievementType',['../class_game_up_1_1_achievement.html#aac2fdd66845a9fdfda9aaafa9da4a26c',1,'GameUp::Achievement']]]
 ];

@@ -42,6 +42,9 @@ var dir_7f64c52b790ab03de056d8658f99aa4e =
     [ "MatchTurnList.cs", "_match_turn_list_8cs.html", [
       [ "MatchTurnList", "class_game_up_1_1_match_turn_list.html", "class_game_up_1_1_match_turn_list" ]
     ] ],
+    [ "PingInfo.cs", "_ping_info_8cs.html", [
+      [ "PingInfo", "class_game_up_1_1_ping_info.html", "class_game_up_1_1_ping_info" ]
+    ] ],
     [ "PurchaseVerification.cs", "_purchase_verification_8cs.html", [
       [ "PurchaseVerification", "class_game_up_1_1_purchase_verification.html", "class_game_up_1_1_purchase_verification" ]
     ] ],

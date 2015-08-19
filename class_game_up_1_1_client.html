@@ -33,7 +33,7 @@
   <td id="projectlogo"><img alt="Logo" src="GameUp_Logo_Small_fill.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameUpSDK
-   &#160;<span id="projectnumber">0.7.0</span>
+   &#160;<span id="projectnumber">0.8.0</span>
    </div>
    <div id="projectbrief">Unity SDK for the GameUp service</div>
   </td>
@@ -124,6 +124,8 @@ $(document).ready(function(){initNavTree('class_game_up_1_1_client.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a7050402e6f04bf8a69c43f11330d75dc"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a7050402e6f04bf8a69c43f11330d75dc">PingCallback</a> (<a class="el" href="class_game_up_1_1_ping_info.html">PingInfo</a> info)</td></tr>
+<tr class="separator:a7050402e6f04bf8a69c43f11330d75dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b088cb8ef5c105baba08b6d16faeec5"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a1b088cb8ef5c105baba08b6d16faeec5">ServerCallback</a> (<a class="el" href="class_game_up_1_1_server_info.html">ServerInfo</a> info)</td></tr>
 <tr class="separator:a1b088cb8ef5c105baba08b6d16faeec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e2e5a8aa4fa3b925437959d1f36f01e"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a8e2e5a8aa4fa3b925437959d1f36f01e">GameCallback</a> (<a class="el" href="class_game_up_1_1_game.html">Game</a> game)</td></tr>
@@ -151,6 +153,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a53430e6ba11279bc0d10782ab893e45f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a53430e6ba11279bc0d10782ab893e45f">Ping</a> (<a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">SuccessCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:a53430e6ba11279bc0d10782ab893e45f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ping the <a class="el" href="namespace_game_up.html">GameUp</a> service to check it is reachable.  <a href="#a53430e6ba11279bc0d10782ab893e45f">More...</a><br /></td></tr>
 <tr class="separator:a53430e6ba11279bc0d10782ab893e45f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a150ac66a912ca1e7cd22406ef3f8b647"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a150ac66a912ca1e7cd22406ef3f8b647">Ping</a> (<a class="el" href="class_game_up_1_1_client.html#a7050402e6f04bf8a69c43f11330d75dc">PingCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:a150ac66a912ca1e7cd22406ef3f8b647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ping the <a class="el" href="namespace_game_up.html">GameUp</a> service to check it is reachable.  <a href="#a150ac66a912ca1e7cd22406ef3f8b647">More...</a><br /></td></tr>
+<tr class="separator:a150ac66a912ca1e7cd22406ef3f8b647"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b649c1dadb1028d49ed6b76a529d4e1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a8b649c1dadb1028d49ed6b76a529d4e1">Server</a> (<a class="el" href="class_game_up_1_1_client.html#a1b088cb8ef5c105baba08b6d16faeec5">ServerCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:a8b649c1dadb1028d49ed6b76a529d4e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve global service information from <a class="el" href="namespace_game_up.html">GameUp</a>; includes server time and other information.  <a href="#a8b649c1dadb1028d49ed6b76a529d4e1">More...</a><br /></td></tr>
 <tr class="separator:a8b649c1dadb1028d49ed6b76a529d4e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1268,6 +1273,65 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a150ac66a912ca1e7cd22406ef3f8b647"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void GameUp.Client.Ping </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#a7050402e6f04bf8a69c43f11330d75dc">PingCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ping the <a class="el" href="namespace_game_up.html">GameUp</a> service to check it is reachable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">success</td><td>The callback to execute on success and returns available ping data.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7050402e6f04bf8a69c43f11330d75dc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">delegate void GameUp.Client.PingCallback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_ping_info.html">PingInfo</a>&#160;</td>
+          <td class="paramname"><em>info</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a2ca0e36182a92ee6062917641d374acb"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1506,7 +1570,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_game_up.html">GameUp</a></li><li class="navelem"><a class="el" href="class_game_up_1_1_client.html">Client</a></li>
-    <li class="footer">Generated on Thu Aug 13 2015 20:39:00 for GameUpSDK by
+    <li class="footer">Generated on Tue Aug 18 2015 17:59:17 for GameUpSDK by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

@@ -20,5 +20,5 @@ var searchData=
   ['matchturnlist_2ecs',['MatchTurnList.cs',['../_match_turn_list_8cs.html',1,'']]],
   ['message',['Message',['../class_game_up_1_1_purchase_verification.html#a511cd4d5519722f7597482713637bf9a',1,'GameUp::PurchaseVerification']]],
   ['method',['Method',['../class_game_up_1_1_w_w_w_request.html#ae48f4be8e0740928ef0e16f7d9823a5c',1,'GameUp::WWWRequest']]],
-  ['monthly',['MONTHLY',['../class_game_up_1_1_leaderboard_1_1_reset.html#ad31914b9a2b428ee95d1a7d3a67c3adbac107927c39e34b357b10099c2d852c75',1,'GameUp::Leaderboard::Reset']]]
+  ['monthly',['MONTHLY',['../class_game_up_1_1_leaderboard_1_1_reset.html#a02c1487babef053d6c7a20fb49b50ebeac107927c39e34b357b10099c2d852c75',1,'GameUp::Leaderboard::Reset']]]
 ];

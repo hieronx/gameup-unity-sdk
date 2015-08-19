@@ -33,7 +33,7 @@
   <td id="projectlogo"><img alt="Logo" src="GameUp_Logo_Small_fill.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameUpSDK
-   &#160;<span id="projectnumber">0.7.0</span>
+   &#160;<span id="projectnumber">0.8.0</span>
    </div>
    <div id="projectbrief">Unity SDK for the GameUp service</div>
   </td>
@@ -143,12 +143,6 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
 <li>Achievements
 : <a class="el" href="class_game_up_1_1_achievement_list.html#a7d461af262979fff293b45f1ab6dbd55">GameUp.AchievementList</a>
-</li>
-<li>AchievementState
-: <a class="el" href="class_game_up_1_1_achievement.html#a2fe84e836e41a65a2743f0fd5a84047b">GameUp.Achievement</a>
-</li>
-<li>AchievementType
-: <a class="el" href="class_game_up_1_1_achievement.html#a3007f91ec4ffc1ab4eb3883a75b35bf6">GameUp.Achievement</a>
 </li>
 <li>Active
 : <a class="el" href="class_game_up_1_1_match.html#a65af481e3ed1bb7564fe01f85b3434d6">GameUp.Match</a>
@@ -271,9 +265,6 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 <li>Leaderboards
 : <a class="el" href="class_game_up_1_1_leaderboard_list.html#ac71cd64215c3312c95eb1a2444390f27">GameUp.LeaderboardList</a>
 </li>
-<li>LeaderboardType
-: <a class="el" href="class_game_up_1_1_leaderboard.html#a6748232bf3ce9f12bb921befc8608d8c">GameUp.Leaderboard</a>
-</li>
 <li>Limit
 : <a class="el" href="class_game_up_1_1_leaderboard.html#aeba595730a59c65a195dbe0f0f97905a">GameUp.Leaderboard</a>
 </li>
@@ -367,8 +358,11 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 <li>SeenBefore
 : <a class="el" href="class_game_up_1_1_purchase_verification.html#a6a8ea889db2aeb56baf545cfff884f06">GameUp.PurchaseVerification</a>
 </li>
-<li>SortOrder
-: <a class="el" href="class_game_up_1_1_leaderboard.html#a21255ee41b7e27614de547ea6ad25163">GameUp.Leaderboard</a>
+<li>Sort
+: <a class="el" href="class_game_up_1_1_leaderboard.html#a65e8d4329c076bdf5416305c0c2a42f3">GameUp.Leaderboard</a>
+</li>
+<li>State
+: <a class="el" href="class_game_up_1_1_achievement.html#a6366f2bc2ad4e5653591b6f3284537e9">GameUp.Achievement</a>
 </li>
 <li>Success
 : <a class="el" href="class_game_up_1_1_purchase_verification.html#a6d5989c18747f41d1edc9d75c462eee6">GameUp.PurchaseVerification</a>
@@ -381,7 +375,8 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 : <a class="el" href="class_game_up_1_1_leaderboard.html#abb70fc3f626f792a5eec45034dd0ee29">GameUp.Leaderboard</a>
 </li>
 <li>Time
-: <a class="el" href="class_game_up_1_1_server_info.html#a15e5d6330fb9c6e3c4bd645a1fd165d9">GameUp.ServerInfo</a>
+: <a class="el" href="class_game_up_1_1_ping_info.html#a2f7bd266ae09fb15ee2954c1e37ec4d3">GameUp.PingInfo</a>
+, <a class="el" href="class_game_up_1_1_server_info.html#a15e5d6330fb9c6e3c4bd645a1fd165d9">GameUp.ServerInfo</a>
 </li>
 <li>Timezone
 : <a class="el" href="class_game_up_1_1_gamer.html#a7e891d076c6544bf313fe35d351511e5">GameUp.Gamer</a>
@@ -401,11 +396,11 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 <li>Turns
 : <a class="el" href="class_game_up_1_1_match_turn_list.html#aff89cedbbf3e232a357b194de3ffed81">GameUp.MatchTurnList</a>
 </li>
-<li>type
-: <a class="el" href="class_game_up_1_1_leaderboard_1_1_reset.html#a171e92c130e6e6c7fc859a7241154364">GameUp.Leaderboard.Reset</a>
-</li>
 <li>Type
-: <a class="el" href="class_game_up_1_1_match_turn.html#abe542e49c044e0b02eb1a1dcaab401b6">GameUp.MatchTurn</a>
+: <a class="el" href="class_game_up_1_1_achievement.html#ab7d89c22225c82f6655fe266fb5ce779">GameUp.Achievement</a>
+, <a class="el" href="class_game_up_1_1_leaderboard_1_1_reset.html#ab7b0f7bf0eea1fff8a0108f88f28951f">GameUp.Leaderboard.Reset</a>
+, <a class="el" href="class_game_up_1_1_leaderboard.html#acf6471f9bb743848f2c5fadfacab1269">GameUp.Leaderboard</a>
+, <a class="el" href="class_game_up_1_1_match_turn.html#abe542e49c044e0b02eb1a1dcaab401b6">GameUp.MatchTurn</a>
 </li>
 </ul>
 
@@ -433,7 +428,7 @@ $(document).ready(function(){initNavTree('functions_prop.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Aug 13 2015 20:39:00 for GameUpSDK by
+    <li class="footer">Generated on Tue Aug 18 2015 17:59:17 for GameUpSDK by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

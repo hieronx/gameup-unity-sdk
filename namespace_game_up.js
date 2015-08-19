@@ -13,6 +13,7 @@ var namespace_game_up =
     [ "MatchList", "class_game_up_1_1_match_list.html", "class_game_up_1_1_match_list" ],
     [ "MatchTurn", "class_game_up_1_1_match_turn.html", "class_game_up_1_1_match_turn" ],
     [ "MatchTurnList", "class_game_up_1_1_match_turn_list.html", "class_game_up_1_1_match_turn_list" ],
+    [ "PingInfo", "class_game_up_1_1_ping_info.html", "class_game_up_1_1_ping_info" ],
     [ "PurchaseVerification", "class_game_up_1_1_purchase_verification.html", "class_game_up_1_1_purchase_verification" ],
     [ "Rank", "class_game_up_1_1_rank.html", "class_game_up_1_1_rank" ],
     [ "ServerInfo", "class_game_up_1_1_server_info.html", "class_game_up_1_1_server_info" ],

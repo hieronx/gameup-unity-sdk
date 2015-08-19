@@ -18,6 +18,7 @@ var hierarchy =
     [ "MonoBehaviour", null, [
       [ "GameUp.SingletonMonoBehaviour< T >", "class_game_up_1_1_singleton_mono_behaviour.html", null ]
     ] ],
+    [ "GameUp.PingInfo", "class_game_up_1_1_ping_info.html", null ],
     [ "PocoJsonSerializerStrategy", null, [
       [ "GameUp.GameUpPocoJsonSerializerStrategy", "class_game_up_1_1_game_up_poco_json_serializer_strategy.html", null ]
     ] ],
