@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-### 0.7.1
+### 0.8.0
 
 * BREAKING CHANGE: Due to limitations in SimpleJson, some fields in Achievement and Leaderboards had to be renamed so they could be parsed properly.
 * Add callback to get payload data from the Ping operation
