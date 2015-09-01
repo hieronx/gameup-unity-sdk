@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.9.0
+
+* Add Shared Storage API.
+
 ### 0.8.0
 
 * BREAKING CHANGE: Due to limitations in SimpleJson, some fields in Achievement and Leaderboards had to be renamed so they could be parsed properly.
