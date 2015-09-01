@@ -61,6 +61,7 @@
     <Compile Include="GameUpSDK\WWWRequestExecutor.cs" />
     <Compile Include="GameUpSDK\LeaderboardList.cs" />
     <Compile Include="GameUpSDK\PingInfo.cs" />
+    <Compile Include="GameUpSDK\SharedStorageSearchResults.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

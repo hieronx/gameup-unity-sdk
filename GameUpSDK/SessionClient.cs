@@ -58,6 +58,10 @@ namespace GameUp
 
     public delegate void PurchaseVerifyCallback (PurchaseVerification purchaseVerification);
 
+    public delegate void SharedStorageCallback (SharedStorageObject sharedStorageObject);
+    public delegate void SharedStorageQueryCallback (SharedStorageSearchResults sharedStorageSearchResults);
+   
+
     /// <summary>
     /// Ping the GameUp service to check it is reachable and the current session
     /// is still valid.
@@ -674,6 +678,228 @@ namespace GameUp
       wwwRequest.SetBody("{\"product_id\":\"" + subscriptionId + "\",\"purchase_token\":\"" + token + "\",\"type\":\"subscription\"}");
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success(SimpleJson.DeserializeObject<PurchaseVerification> (jsonResponse, serializerStrategy));
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Get data in Shared Storage matching the query.
+    /// </summary>
+    /// <param name="luceneQuery">Lucene-like query used to match.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void SharedStorageSearchGet (string luceneQuery, SharedStorageQueryCallback success, Client.ErrorCallback error) 
+    {
+      SharedStorageSearchGet(luceneQuery, null, null, 10, 0, success, error);
+    }
+
+    /// <summary>
+    /// Get data in Shared Storage matching the query.
+    /// </summary>
+    /// <param name="luceneQuery">Lucene-like query used to match.</param>
+    /// <param name="filterKey">Key name to restrict searches to. Only results among those keys will be returned. Can be null.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void SharedStorageSearchGet (string luceneQuery, string filterKey, SharedStorageQueryCallback success, Client.ErrorCallback error) 
+    {
+      SharedStorageSearchGet(luceneQuery, filterKey, null, 10, 0, success, error);
+    }
+
+    /// <summary>
+    /// Get data in Shared Storage matching the query.
+    /// </summary>
+    /// <param name="luceneQuery">Lucene-like query used to match.</param>
+    /// <param name="filterKey">Key name to restrict searches to. Only results among those keys will be returned. Can be null.</param>
+    /// <param name="sort">Lucene-like sort clauses used to order search results. Can be null.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void SharedStorageSearchGet (string luceneQuery, string filterKey, string sort, SharedStorageQueryCallback success, Client.ErrorCallback error) 
+    {
+      SharedStorageSearchGet(luceneQuery, filterKey, sort, 10, 0, success, error);
+    }
+
+    /// <summary>
+    /// Get data in Shared Storage matching the query.
+    /// </summary>
+    /// <param name="luceneQuery">Lucene-like query used to match.</param>
+    /// <param name="filterKey">Key name to restrict searches to. Only results among those keys will be returned. Can be null.</param>
+    /// <param name="sort">Lucene-like sort clauses used to order search results. Can be null.</param>
+    /// <param name="limit">Maximum number of results to return.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void SharedStorageSearchGet (string luceneQuery, string filterKey, string sort, int limit, SharedStorageQueryCallback success, Client.ErrorCallback error) 
+    {
+      SharedStorageSearchGet(luceneQuery, filterKey, sort, 10, 0, success, error);
+    }
+
+    /// <summary>
+    /// Get data in Shared Storage matching the query. Use this to paginate the results.
+    /// </summary>
+    /// <param name="luceneQuery">Lucene-like query used to match.</param>
+    /// <param name="filterKey">Key name to restrict searches to. Only results among those keys will be returned. Can be null.</param>
+    /// <param name="sort">Lucene-like sort clauses used to order search results. Can be null.</param>
+    /// <param name="limit">Maximum number of results to return.</param>
+    /// <param name="offset">Starting position of the result.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void SharedStorageSearchGet (string luceneQuery, string filterKey, string sort, int limit, int offset, SharedStorageQueryCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/gamer/shared";
+      string queryParam = "?query=" + luceneQuery + "&limit=" + limit + "&offset=" + offset;
+      if (filterKey != null) {
+        queryParam += "&filter_key=" + filterKey;
+      } 
+      if (sort != null) {
+        queryParam += "&sort=" + sort;
+      }
+
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path, queryParam);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success(SimpleJson.DeserializeObject<SharedStorageSearchResults> (jsonResponse, serializerStrategy));
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Get data in SharedStorage matching the given key. 
+    /// </summary>
+    /// <param name="key">Data in shared storage in the given key.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void SharedStorageGet (string key, SharedStorageCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/gamer/shared/" + Uri.EscapeUriString( key );
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success(SimpleJson.DeserializeObject<SharedStorageObject> (jsonResponse, serializerStrategy));
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Get data in SharedStorage matching the given key. 
+    /// </summary>
+    /// <param name="key">Data in shared storage in the given key.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void SharedStorageGet (string key, StorageGetRawCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/gamer/shared/" + Uri.EscapeUriString( key );
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success(jsonResponse);
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Put data in SharedStorage for the given key. 
+    /// </summary>
+    /// <param name="key">Key to store data.</param>
+    /// <param name="data">Data to store in the key.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void SharedStoragePut<T> (string key, T data, Client.SuccessCallback success, Client.ErrorCallback error)
+    {
+      string value = SimpleJson.SerializeObject (data);
+      SharedStoragePut(key, value, success, error);
+    }
+
+    /// <summary>
+    /// Put data in SharedStorage for the given key. 
+    /// </summary>
+    /// <param name="key">Key to store data.</param>
+    /// <param name="data">Data to store in the key.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void SharedStoragePut (string key, string data, Client.SuccessCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/gamer/shared/" + Uri.EscapeUriString( key );
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "PUT", ApiKey, Token);
+
+      wwwRequest.SetBody ( data );
+
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success();
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Partially update data in SharedStorage for the given key. 
+    /// - If data doesn't exist, it will be added
+    /// - If data exists, then the matching portion will be overwritten
+    /// - If data exists, but new data is 'null' then the matching portion will be erased.
+    /// </summary>
+    /// <param name="key">Key to update data.</param>
+    /// <param name="data">Data to update in the key.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void SharedStorageUpdate<T> (string key, T data, Client.SuccessCallback success, Client.ErrorCallback error)
+    {
+      string value = SimpleJson.SerializeObject (data);
+      SharedStorageUpdate(key, value, success, error);
+    }
+
+    /// <summary>
+    /// Partially update data in SharedStorage for the given key. 
+    /// - If data doesn't exist, it will be added
+    /// - If data exists, then the matching portion will be overwritten
+    /// - If data exists, but new data is 'null' then the matching portion will be erased.
+    /// </summary>
+    /// <param name="key">Key to update data.</param>
+    /// <param name="data">Data to update in the key.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void SharedStorageUpdate (string key, string data, Client.SuccessCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/gamer/shared/" + Uri.EscapeUriString( key );
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "PATCH", ApiKey, Token);
+
+      wwwRequest.SetBody ( data );
+      
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success();
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Delete data in SharedStorage for the given key. 
+    /// </summary>
+    /// <param name="key">Key to delete data.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void SharedStorageDelete (string key, Client.SuccessCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/gamer/shared/" + Uri.EscapeUriString( key );
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "DELETE", ApiKey, Token);
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success();
       };
       wwwRequest.OnFailure = (int statusCode, string reason) => {
         error (statusCode, reason);
