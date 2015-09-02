@@ -748,16 +748,17 @@ namespace GameUp
     public void SharedStorageSearchGet (string luceneQuery, string filterKey, string sort, int limit, int offset, SharedStorageQueryCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/shared";
-      string queryParam = "?query=" + luceneQuery + "&limit=" + limit + "&offset=" + offset;
+      string queryParam = "?query=" + Uri.EscapeUriString( luceneQuery ) + "&limit=" + limit + "&offset=" + offset;
       if (filterKey != null) {
-        queryParam += "&filter_key=" + filterKey;
+        queryParam += "&filter_key=" + Uri.EscapeUriString( filterKey );
       } 
       if (sort != null) {
-        queryParam += "&sort=" + sort;
+        queryParam += "&sort=" + Uri.EscapeUriString( sort );
       }
 
       UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path, queryParam);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
+
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success(SimpleJson.DeserializeObject<SharedStorageSearchResults> (jsonResponse, serializerStrategy));
       };
@@ -770,7 +771,7 @@ namespace GameUp
     /// <summary>
     /// Get data in SharedStorage matching the given key. 
     /// </summary>
-    /// <param name="key">Data in shared storage in the given key.</param>
+    /// <param name="key">Data in shared storage in the given key. Alphanumeric characters only.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
     public void SharedStorageGet (string key, SharedStorageCallback success, Client.ErrorCallback error)
@@ -790,7 +791,7 @@ namespace GameUp
     /// <summary>
     /// Get data in SharedStorage matching the given key. 
     /// </summary>
-    /// <param name="key">Data in shared storage in the given key.</param>
+    /// <param name="key">Data in shared storage in the given key. Alphanumeric characters only.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
     public void SharedStorageGet (string key, StorageGetRawCallback success, Client.ErrorCallback error)
@@ -810,7 +811,7 @@ namespace GameUp
     /// <summary>
     /// Put data in SharedStorage for the given key. 
     /// </summary>
-    /// <param name="key">Key to store data.</param>
+    /// <param name="key">Key to store data. Alphanumeric characters only.</param>
     /// <param name="data">Data to store in the key.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
@@ -823,13 +824,13 @@ namespace GameUp
     /// <summary>
     /// Put data in SharedStorage for the given key. 
     /// </summary>
-    /// <param name="key">Key to store data.</param>
+    /// <param name="key">Key to store data. Alphanumeric characters only.</param>
     /// <param name="data">Data to store in the key.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
     public void SharedStoragePut (string key, string data, Client.SuccessCallback success, Client.ErrorCallback error)
     {
-      string path = "/v0/gamer/shared/" + Uri.EscapeUriString( key );
+      string path = "/v0/gamer/shared/" + Uri.EscapeUriString( key ) + "/public";
       UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "PUT", ApiKey, Token);
 
@@ -850,7 +851,7 @@ namespace GameUp
     /// - If data exists, then the matching portion will be overwritten
     /// - If data exists, but new data is 'null' then the matching portion will be erased.
     /// </summary>
-    /// <param name="key">Key to update data.</param>
+    /// <param name="key">Key to update data. Alphanumeric characters only.</param>
     /// <param name="data">Data to update in the key.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
@@ -866,13 +867,13 @@ namespace GameUp
     /// - If data exists, then the matching portion will be overwritten
     /// - If data exists, but new data is 'null' then the matching portion will be erased.
     /// </summary>
-    /// <param name="key">Key to update data.</param>
+    /// <param name="key">Key to update data. Alphanumeric characters only.</param>
     /// <param name="data">Data to update in the key.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
     public void SharedStorageUpdate (string key, string data, Client.SuccessCallback success, Client.ErrorCallback error)
     {
-      string path = "/v0/gamer/shared/" + Uri.EscapeUriString( key );
+      string path = "/v0/gamer/shared/" + Uri.EscapeUriString( key ) + "/public";
       UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "PATCH", ApiKey, Token);
 
@@ -895,7 +896,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public void SharedStorageDelete (string key, Client.SuccessCallback success, Client.ErrorCallback error)
     {
-      string path = "/v0/gamer/shared/" + Uri.EscapeUriString( key );
+      string path = "/v0/gamer/shared/" + Uri.EscapeUriString( key ) + "/public";
       UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "DELETE", ApiKey, Token);
       wwwRequest.OnSuccess = (String jsonResponse) => {

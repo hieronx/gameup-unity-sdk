@@ -40,21 +40,25 @@ namespace GameUp
     {
       // Server hack for Unity's broken WWW module
       string query = "_status=200";
-      if (req.Method.Equals ("PUT") || req.Method.Equals ("POST") || req.Method.Equals ("DELETE")) {
+      if (req.Method.Equals ("PUT") || req.Method.Equals ("POST") || req.Method.Equals ("PATCH") || req.Method.Equals ("DELETE")) {
         query = query + "&_method=" + req.Method;
       }
 
       UriBuilder b = new UriBuilder (req.Uri);
-      b.Query = query;
+      if (b.Query.Length > 0) {
+        // because Uri.query will have two "?" characters...
+        b.Query = b.Query.Remove(0, 1) + "&" + query;
+      } else {
+        b.Query = query;
+      }
 
       // Add necessary request headers
       req.AddHeader ("User-Agent", USER_AGENT);
       req.AddHeader ("Accept", "application/json");
       req.AddHeader ("Content-Type", "application/json");
-
       req.AddHeader ("Authorization", req.AuthHeader);
 
-      WWW www = new WWW (b.Uri.ToString (), req.Body, req.GetHeaders());
+      WWW www = new WWW (b.Uri.AbsoluteUri, req.Body, req.GetHeaders());
 
       yield return www;
 
