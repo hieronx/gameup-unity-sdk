@@ -57,6 +57,10 @@ var dir_7f64c52b790ab03de056d8658f99aa4e =
     [ "SessionClient.cs", "_session_client_8cs.html", [
       [ "SessionClient", "class_game_up_1_1_session_client.html", "class_game_up_1_1_session_client" ]
     ] ],
+    [ "SharedStorageSearchResults.cs", "_shared_storage_search_results_8cs.html", [
+      [ "SharedStorageSearchResults", "class_game_up_1_1_shared_storage_search_results.html", "class_game_up_1_1_shared_storage_search_results" ],
+      [ "SharedStorageObject", "class_game_up_1_1_shared_storage_object.html", "class_game_up_1_1_shared_storage_object" ]
+    ] ],
     [ "SingletonMonoBehaviour.cs", "_singleton_mono_behaviour_8cs.html", [
       [ "SingletonMonoBehaviour", "class_game_up_1_1_singleton_mono_behaviour.html", "class_game_up_1_1_singleton_mono_behaviour" ]
     ] ],

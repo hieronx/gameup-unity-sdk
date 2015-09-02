@@ -18,6 +18,8 @@ var namespace_game_up =
     [ "Rank", "class_game_up_1_1_rank.html", "class_game_up_1_1_rank" ],
     [ "ServerInfo", "class_game_up_1_1_server_info.html", "class_game_up_1_1_server_info" ],
     [ "SessionClient", "class_game_up_1_1_session_client.html", "class_game_up_1_1_session_client" ],
+    [ "SharedStorageObject", "class_game_up_1_1_shared_storage_object.html", "class_game_up_1_1_shared_storage_object" ],
+    [ "SharedStorageSearchResults", "class_game_up_1_1_shared_storage_search_results.html", "class_game_up_1_1_shared_storage_search_results" ],
     [ "SingletonMonoBehaviour", "class_game_up_1_1_singleton_mono_behaviour.html", "class_game_up_1_1_singleton_mono_behaviour" ],
     [ "WWWRequest", "class_game_up_1_1_w_w_w_request.html", "class_game_up_1_1_w_w_w_request" ],
     [ "WWWRequestExecutor", "class_game_up_1_1_w_w_w_request_executor.html", null ]

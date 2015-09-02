@@ -4,6 +4,7 @@ var searchData=
   ['time',['Time',['../class_game_up_1_1_ping_info.html#a2f7bd266ae09fb15ee2954c1e37ec4d3',1,'GameUp.PingInfo.Time()'],['../class_game_up_1_1_server_info.html#a15e5d6330fb9c6e3c4bd645a1fd165d9',1,'GameUp.ServerInfo.Time()']]],
   ['timezone',['Timezone',['../class_game_up_1_1_gamer.html#a7e891d076c6544bf313fe35d351511e5',1,'GameUp::Gamer']]],
   ['token',['Token',['../class_game_up_1_1_session_client.html#a8df5b1b640553470d13f253566129eaf',1,'GameUp::SessionClient']]],
+  ['totalcount',['TotalCount',['../class_game_up_1_1_shared_storage_search_results.html#a75ea6726b1c1110beddddfa9bc2d309e',1,'GameUp::SharedStorageSearchResults']]],
   ['turn',['Turn',['../class_game_up_1_1_match.html#a80c5930c6417291b9a571ec24e093d77',1,'GameUp::Match']]],
   ['turncallback',['TurnCallback',['../class_game_up_1_1_session_client.html#a27953dab719d8d055c00bffc673d475c',1,'GameUp::SessionClient']]],
   ['turncount',['TurnCount',['../class_game_up_1_1_match.html#ad0fbe8baf40d248b7b42501a845629e7',1,'GameUp::Match']]],

@@ -33,7 +33,7 @@
   <td id="projectlogo"><img alt="Logo" src="GameUp_Logo_Small_fill.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameUpSDK
-   &#160;<span id="projectnumber">0.8.0</span>
+   &#160;<span id="projectnumber">0.9.1</span>
    </div>
    <div id="projectbrief">Unity SDK for the GameUp service</div>
   </td>
@@ -157,6 +157,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a29a115f4ddbbb2f21e4e4c76dd584622"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b4d6eef9963fd5b6fd166113545608e"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a7b4d6eef9963fd5b6fd166113545608e">PurchaseVerifyCallback</a> (<a class="el" href="class_game_up_1_1_purchase_verification.html">PurchaseVerification</a> purchaseVerification)</td></tr>
 <tr class="separator:a7b4d6eef9963fd5b6fd166113545608e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70091bc0a3c1a5cd131d87642a65bb15"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a70091bc0a3c1a5cd131d87642a65bb15">SharedStorageCallback</a> (<a class="el" href="class_game_up_1_1_shared_storage_object.html">SharedStorageObject</a> sharedStorageObject)</td></tr>
+<tr class="separator:a70091bc0a3c1a5cd131d87642a65bb15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cf525cbf98855419f8746852133eccd"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a8cf525cbf98855419f8746852133eccd">SharedStorageQueryCallback</a> (<a class="el" href="class_game_up_1_1_shared_storage_search_results.html">SharedStorageSearchResults</a> sharedStorageSearchResults)</td></tr>
+<tr class="separator:a8cf525cbf98855419f8746852133eccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95508adc31bbe42c0df1221234e37618"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a95508adc31bbe42c0df1221234e37618">Ping</a> (<a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">Client.SuccessCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:a95508adc31bbe42c0df1221234e37618"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ping the <a class="el" href="namespace_game_up.html">GameUp</a> service to check it is reachable and the current session is still valid.  <a href="#a95508adc31bbe42c0df1221234e37618">More...</a><br /></td></tr>
 <tr class="separator:a95508adc31bbe42c0df1221234e37618"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -244,6 +248,42 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5ab8269738bff5138bcc49d5313b22cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a5ab8269738bff5138bcc49d5313b22cf">PurchaseVerifyGoogleSubscription</a> (string token, string subscriptionId, <a class="el" href="class_game_up_1_1_session_client.html#a7b4d6eef9963fd5b6fd166113545608e">PurchaseVerifyCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:a5ab8269738bff5138bcc49d5313b22cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify a Google subscription purchase with the remote service.  <a href="#a5ab8269738bff5138bcc49d5313b22cf">More...</a><br /></td></tr>
 <tr class="separator:a5ab8269738bff5138bcc49d5313b22cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaeba2cd851553ae89c2d78c28c5bf3e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#aaeba2cd851553ae89c2d78c28c5bf3e3">SharedStorageSearchGet</a> (string luceneQuery, <a class="el" href="class_game_up_1_1_session_client.html#a8cf525cbf98855419f8746852133eccd">SharedStorageQueryCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:aaeba2cd851553ae89c2d78c28c5bf3e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get data in Shared Storage matching the query.  <a href="#aaeba2cd851553ae89c2d78c28c5bf3e3">More...</a><br /></td></tr>
+<tr class="separator:aaeba2cd851553ae89c2d78c28c5bf3e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf0069d8a33d05ae065202dbcdd7ba9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#abf0069d8a33d05ae065202dbcdd7ba9c">SharedStorageSearchGet</a> (string luceneQuery, string filterKey, <a class="el" href="class_game_up_1_1_session_client.html#a8cf525cbf98855419f8746852133eccd">SharedStorageQueryCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:abf0069d8a33d05ae065202dbcdd7ba9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get data in Shared Storage matching the query.  <a href="#abf0069d8a33d05ae065202dbcdd7ba9c">More...</a><br /></td></tr>
+<tr class="separator:abf0069d8a33d05ae065202dbcdd7ba9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add71031b194c5bafa03a20020b8a2297"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#add71031b194c5bafa03a20020b8a2297">SharedStorageSearchGet</a> (string luceneQuery, string filterKey, string sort, <a class="el" href="class_game_up_1_1_session_client.html#a8cf525cbf98855419f8746852133eccd">SharedStorageQueryCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:add71031b194c5bafa03a20020b8a2297"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get data in Shared Storage matching the query.  <a href="#add71031b194c5bafa03a20020b8a2297">More...</a><br /></td></tr>
+<tr class="separator:add71031b194c5bafa03a20020b8a2297"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa197ea2c28ac2046ce8bc809fe05db51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#aa197ea2c28ac2046ce8bc809fe05db51">SharedStorageSearchGet</a> (string luceneQuery, string filterKey, string sort, int limit, <a class="el" href="class_game_up_1_1_session_client.html#a8cf525cbf98855419f8746852133eccd">SharedStorageQueryCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:aa197ea2c28ac2046ce8bc809fe05db51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get data in Shared Storage matching the query.  <a href="#aa197ea2c28ac2046ce8bc809fe05db51">More...</a><br /></td></tr>
+<tr class="separator:aa197ea2c28ac2046ce8bc809fe05db51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad04bf994713c403f773becdfc69c94d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#ad04bf994713c403f773becdfc69c94d9">SharedStorageSearchGet</a> (string luceneQuery, string filterKey, string sort, int limit, int offset, <a class="el" href="class_game_up_1_1_session_client.html#a8cf525cbf98855419f8746852133eccd">SharedStorageQueryCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:ad04bf994713c403f773becdfc69c94d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get data in Shared Storage matching the query. Use this to paginate the results.  <a href="#ad04bf994713c403f773becdfc69c94d9">More...</a><br /></td></tr>
+<tr class="separator:ad04bf994713c403f773becdfc69c94d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47521af3a365bef63cf6fe399f5ba646"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a47521af3a365bef63cf6fe399f5ba646">SharedStorageGet</a> (string key, <a class="el" href="class_game_up_1_1_session_client.html#a70091bc0a3c1a5cd131d87642a65bb15">SharedStorageCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:a47521af3a365bef63cf6fe399f5ba646"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get data in SharedStorage matching the given key.  <a href="#a47521af3a365bef63cf6fe399f5ba646">More...</a><br /></td></tr>
+<tr class="separator:a47521af3a365bef63cf6fe399f5ba646"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7426a4df4869210f359f2cb1c1a76c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#ae7426a4df4869210f359f2cb1c1a76c5">SharedStorageGet</a> (string key, <a class="el" href="class_game_up_1_1_session_client.html#af45eb613fc12cec6d8ed90e42f7f5991">StorageGetRawCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:ae7426a4df4869210f359f2cb1c1a76c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get data in SharedStorage matching the given key.  <a href="#ae7426a4df4869210f359f2cb1c1a76c5">More...</a><br /></td></tr>
+<tr class="separator:ae7426a4df4869210f359f2cb1c1a76c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed1ebdebe6e8dda6ecf00078235a13d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#aed1ebdebe6e8dda6ecf00078235a13d5">SharedStoragePut&lt; T &gt;</a> (string key, T data, <a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">Client.SuccessCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:aed1ebdebe6e8dda6ecf00078235a13d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put data in SharedStorage for the given key.  <a href="#aed1ebdebe6e8dda6ecf00078235a13d5">More...</a><br /></td></tr>
+<tr class="separator:aed1ebdebe6e8dda6ecf00078235a13d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a204b968828908d30061f9e0674e21ee7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a204b968828908d30061f9e0674e21ee7">SharedStoragePut</a> (string key, string data, <a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">Client.SuccessCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:a204b968828908d30061f9e0674e21ee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put data in SharedStorage for the given key.  <a href="#a204b968828908d30061f9e0674e21ee7">More...</a><br /></td></tr>
+<tr class="separator:a204b968828908d30061f9e0674e21ee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0f22a5af0433e58649ccfa0d2df67fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#aa0f22a5af0433e58649ccfa0d2df67fc">SharedStorageUpdate&lt; T &gt;</a> (string key, T data, <a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">Client.SuccessCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:aa0f22a5af0433e58649ccfa0d2df67fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Partially update data in SharedStorage for the given key.  <a href="#aa0f22a5af0433e58649ccfa0d2df67fc">More...</a><br /></td></tr>
+<tr class="separator:aa0f22a5af0433e58649ccfa0d2df67fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1e9f82069727e7ba48ff761d4999f62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#ac1e9f82069727e7ba48ff761d4999f62">SharedStorageUpdate</a> (string key, string data, <a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">Client.SuccessCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:ac1e9f82069727e7ba48ff761d4999f62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Partially update data in SharedStorage for the given key.  <a href="#ac1e9f82069727e7ba48ff761d4999f62">More...</a><br /></td></tr>
+<tr class="separator:ac1e9f82069727e7ba48ff761d4999f62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adad8558d75325705e2936bd6649c1550"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#adad8558d75325705e2936bd6649c1550">SharedStorageDelete</a> (string key, <a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">Client.SuccessCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:adad8558d75325705e2936bd6649c1550"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete data in SharedStorage for the given key.  <a href="#adad8558d75325705e2936bd6649c1550">More...</a><br /></td></tr>
+<tr class="separator:adad8558d75325705e2936bd6649c1550"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1250c96f2b769dcbed7a92b92730692b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a1250c96f2b769dcbed7a92b92730692b">MakeRequest&lt; T &gt;</a> (Uri uri, string method, string body, Client.GenericSuccessCallback&lt; T &gt; success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:a1250c96f2b769dcbed7a92b92730692b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a generic request with pre-set ApiKey and Token.  <a href="#a1250c96f2b769dcbed7a92b92730692b">More...</a><br /></td></tr>
 <tr class="separator:a1250c96f2b769dcbed7a92b92730692b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1315,6 +1355,650 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a70091bc0a3c1a5cd131d87642a65bb15"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">delegate void GameUp.SessionClient.SharedStorageCallback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_shared_storage_object.html">SharedStorageObject</a>&#160;</td>
+          <td class="paramname"><em>sharedStorageObject</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adad8558d75325705e2936bd6649c1550"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUp.SessionClient.SharedStorageDelete </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">Client.SuccessCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Delete data in SharedStorage for the given key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Key to delete data.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a47521af3a365bef63cf6fe399f5ba646"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUp.SessionClient.SharedStorageGet </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_session_client.html#a70091bc0a3c1a5cd131d87642a65bb15">SharedStorageCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get data in SharedStorage matching the given key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Data in shared storage in the given key. Alphanumeric characters only.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae7426a4df4869210f359f2cb1c1a76c5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUp.SessionClient.SharedStorageGet </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_session_client.html#af45eb613fc12cec6d8ed90e42f7f5991">StorageGetRawCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get data in SharedStorage matching the given key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Data in shared storage in the given key. Alphanumeric characters only.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a204b968828908d30061f9e0674e21ee7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUp.SessionClient.SharedStoragePut </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">Client.SuccessCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Put data in SharedStorage for the given key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Key to store data. Alphanumeric characters only.</td></tr>
+    <tr><td class="paramname">data</td><td>Data to store in the key.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aed1ebdebe6e8dda6ecf00078235a13d5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_game_up_1_1_session_client.html#a204b968828908d30061f9e0674e21ee7">GameUp.SessionClient.SharedStoragePut</a>&lt; T &gt; </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">Client.SuccessCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Put data in SharedStorage for the given key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Key to store data. Alphanumeric characters only.</td></tr>
+    <tr><td class="paramname">data</td><td>Data to store in the key.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8cf525cbf98855419f8746852133eccd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">delegate void GameUp.SessionClient.SharedStorageQueryCallback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_shared_storage_search_results.html">SharedStorageSearchResults</a>&#160;</td>
+          <td class="paramname"><em>sharedStorageSearchResults</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aaeba2cd851553ae89c2d78c28c5bf3e3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUp.SessionClient.SharedStorageSearchGet </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>luceneQuery</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_session_client.html#a8cf525cbf98855419f8746852133eccd">SharedStorageQueryCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get data in Shared Storage matching the query. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">luceneQuery</td><td>Lucene-like query used to match.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="abf0069d8a33d05ae065202dbcdd7ba9c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUp.SessionClient.SharedStorageSearchGet </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>luceneQuery</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>filterKey</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_session_client.html#a8cf525cbf98855419f8746852133eccd">SharedStorageQueryCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get data in Shared Storage matching the query. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">luceneQuery</td><td>Lucene-like query used to match.</td></tr>
+    <tr><td class="paramname">filterKey</td><td>Key name to restrict searches to. Only results among those keys will be returned. Can be null.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="add71031b194c5bafa03a20020b8a2297"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUp.SessionClient.SharedStorageSearchGet </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>luceneQuery</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>filterKey</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>sort</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_session_client.html#a8cf525cbf98855419f8746852133eccd">SharedStorageQueryCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get data in Shared Storage matching the query. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">luceneQuery</td><td>Lucene-like query used to match.</td></tr>
+    <tr><td class="paramname">filterKey</td><td>Key name to restrict searches to. Only results among those keys will be returned. Can be null.</td></tr>
+    <tr><td class="paramname">sort</td><td>Lucene-like sort clauses used to order search results. Can be null.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa197ea2c28ac2046ce8bc809fe05db51"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUp.SessionClient.SharedStorageSearchGet </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>luceneQuery</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>filterKey</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>sort</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>limit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_session_client.html#a8cf525cbf98855419f8746852133eccd">SharedStorageQueryCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get data in Shared Storage matching the query. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">luceneQuery</td><td>Lucene-like query used to match.</td></tr>
+    <tr><td class="paramname">filterKey</td><td>Key name to restrict searches to. Only results among those keys will be returned. Can be null.</td></tr>
+    <tr><td class="paramname">sort</td><td>Lucene-like sort clauses used to order search results. Can be null.</td></tr>
+    <tr><td class="paramname">limit</td><td>Maximum number of results to return.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad04bf994713c403f773becdfc69c94d9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUp.SessionClient.SharedStorageSearchGet </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>luceneQuery</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>filterKey</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>sort</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>limit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_session_client.html#a8cf525cbf98855419f8746852133eccd">SharedStorageQueryCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get data in Shared Storage matching the query. Use this to paginate the results. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">luceneQuery</td><td>Lucene-like query used to match.</td></tr>
+    <tr><td class="paramname">filterKey</td><td>Key name to restrict searches to. Only results among those keys will be returned. Can be null.</td></tr>
+    <tr><td class="paramname">sort</td><td>Lucene-like sort clauses used to order search results. Can be null.</td></tr>
+    <tr><td class="paramname">limit</td><td>Maximum number of results to return.</td></tr>
+    <tr><td class="paramname">offset</td><td>Starting position of the result.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac1e9f82069727e7ba48ff761d4999f62"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUp.SessionClient.SharedStorageUpdate </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">Client.SuccessCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Partially update data in SharedStorage for the given key. </p>
+<ul>
+<li>If data doesn't exist, it will be added</li>
+<li>If data exists, then the matching portion will be overwritten</li>
+<li>If data exists, but new data is 'null' then the matching portion will be erased. </li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Key to update data. Alphanumeric characters only.</td></tr>
+    <tr><td class="paramname">data</td><td>Data to update in the key.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa0f22a5af0433e58649ccfa0d2df67fc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_game_up_1_1_session_client.html#ac1e9f82069727e7ba48ff761d4999f62">GameUp.SessionClient.SharedStorageUpdate</a>&lt; T &gt; </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">Client.SuccessCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Partially update data in SharedStorage for the given key. </p>
+<ul>
+<li>If data doesn't exist, it will be added</li>
+<li>If data exists, then the matching portion will be overwritten</li>
+<li>If data exists, but new data is 'null' then the matching portion will be erased. </li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Key to update data. Alphanumeric characters only.</td></tr>
+    <tr><td class="paramname">data</td><td>Data to update in the key.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a266468bd2359ee8275e72c00bb65d741"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2052,7 +2736,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_game_up.html">GameUp</a></li><li class="navelem"><a class="el" href="class_game_up_1_1_session_client.html">SessionClient</a></li>
-    <li class="footer">Generated on Tue Aug 18 2015 17:59:17 for GameUpSDK by
+    <li class="footer">Generated on Wed Sep 2 2015 10:13:01 for GameUpSDK by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>
