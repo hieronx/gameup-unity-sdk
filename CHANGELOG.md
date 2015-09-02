@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.9.1
+
+* Escape query params and handle PATCH methods correctly.
+
 ### 0.9.0
 
 * Add Shared Storage API.
