@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.9.2
+
+* Small enhancements to Leaderboard queries.
+
 ### 0.9.1
 
 * Escape query params and handle PATCH methods correctly.
