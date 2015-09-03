@@ -392,14 +392,18 @@ namespace GameUp
     /// </summary>
     /// <param name="id">The ID of the leaderboard.</param>
     /// <param name="limit">Number of entries to return. Integer between 10 and 50 inclusive.</param>
-    /// <param name="offset">Starting point to return ranking. Positive integer required.</param>
+    /// <param name="offset">Starting point to return ranking. Must be positive, if negative it is treated as an "auto offset".</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
-    public void LeaderboardAndRank (string id, int limit, int offset, LeaderboardAndRankCallback success, Client.ErrorCallback error) {
-      LeaderboardAndRank(id, limit, offset, false, success, error);
+    public void LeaderboardAndRank (string id, int limit, long offset, LeaderboardAndRankCallback success, Client.ErrorCallback error) {
+      if (offset < 0) {
+        LeaderboardAndRank(id, limit, 0, true, success, error);
+      } else {
+        LeaderboardAndRank(id, limit, offset, false, success, error);
+      }
     }
 
-    private void LeaderboardAndRank (string id, int limit, int offset, Boolean autoOffset, LeaderboardAndRankCallback success, Client.ErrorCallback error)
+    private void LeaderboardAndRank (string id, int limit, long offset, Boolean autoOffset, LeaderboardAndRankCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/leaderboard/" + id;
       string queryParam = "?offset=" + offset + "&limit=" + limit + "&auto_offset=" + autoOffset;

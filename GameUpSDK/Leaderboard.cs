@@ -45,14 +45,20 @@ namespace GameUp
     /// <summary> Leaderboard tags. </summary>
     public String[] Tags { get ; set ; }
 
-    /// <summary> Leaderboard limit. </summary>
-    public long Limit { get ; set ; }
+    /// <summary> A leaderboard's score limit. </summary>
+    public long ScoreLimit { get ; set ; }
 
     /// <summary> Leaderboard creation unix time. </summary>
     public long CreatedAt { get ; set ; }
 
     /// <summary> Leaderboard Reset configuration. </summary>
     public Reset LeaderboardReset { get ; set ;}
+
+    /// <summary> The limit on entries in the leaderboard. </summary>
+    public int Limit { get ; set ; }
+
+    /// <summary> The current offset of the leaderboard entries. </summary>
+    public long Offset { get ; set ; }
 
     /// <summary>
     /// The top ranked gamers on this board, up to 50. Already sorted according

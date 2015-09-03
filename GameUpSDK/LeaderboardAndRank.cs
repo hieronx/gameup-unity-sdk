@@ -26,7 +26,6 @@ namespace GameUp
 
     /// <summary> The Leaderboard portion of the response. </summary>
     public Leaderboard Leaderboard { get ; set ;}
-
   }
 }
 
