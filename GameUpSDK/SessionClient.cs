@@ -359,19 +359,32 @@ namespace GameUp
 
     /// <summary>
     /// Fetch the leaderboard with the top 50 ranked gamers and the current gamer's
-    /// ranking.
+    /// ranking. Scoretags are not retrieved.
     /// </summary>
     /// <param name="id">The ID of the leaderboard.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
     public void LeaderboardAndRank (string id, LeaderboardAndRankCallback success, Client.ErrorCallback error)
     {
-      LeaderboardAndRank(id, 50, 0, false, success, error);
+      LeaderboardAndRank(id, false, 50, 0, false, success, error);
+    }
+
+    /// <summary>
+    /// Fetch the leaderboard with the top 50 ranked gamers and the current gamer's
+    /// ranking.
+    /// </summary>
+    /// <param name="id">The ID of the leaderboard.</param>
+    /// <param name="scoretags">Whether to retrieve scoretags or not.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void LeaderboardAndRank (string id, Boolean scoretags, LeaderboardAndRankCallback success, Client.ErrorCallback error)
+    {
+      LeaderboardAndRank(id, scoretags, 50, 0, false, success, error);
     }
 
     /// <summary>
     /// Fetch the leaderboard with the ranked gamers. Automatically finds the offset
-    /// of the current gamer's rank based on the limit given.
+    /// of the current gamer's rank based on the limit given. Scoretags are not retrieved.
     ///
     /// For example, if the limit is 50, and the current gamer's rank is 153,
     /// result will be ranks between 150-200, with the 3rd entry belonging to the current gamer.
@@ -383,12 +396,30 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public void LeaderboardAndRank (string id, int limit, LeaderboardAndRankCallback success, Client.ErrorCallback error)
     {
-      LeaderboardAndRank(id, 50, 0, true, success, error);
+      LeaderboardAndRank(id, false, 50, 0, true, success, error);
     }
 
     /// <summary>
-    /// Fetch the leaderboard with the the number of ranked gamers by limit with the offset
-    /// from the top of the leaderboard ranking.
+    /// Fetch the leaderboard with the ranked gamers. Automatically finds the offset
+    /// of the current gamer's rank based on the limit given.
+    ///
+    /// For example, if the limit is 50, and the current gamer's rank is 153,
+    /// result will be ranks between 150-200, with the 3rd entry belonging to the current gamer.
+    ///
+    /// </summary>
+    /// <param name="id">The ID of the leaderboard.</param>
+    /// <param name="scoretags">Whether to retrieve scoretags or not.</param>
+    /// <param name="limit">Number of entries to return. Integer between 10 and 50 inclusive</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void LeaderboardAndRank (string id, Boolean scoretags, int limit, LeaderboardAndRankCallback success, Client.ErrorCallback error)
+    {
+      LeaderboardAndRank(id, scoretags, 50, 0, true, success, error);
+    }
+
+    /// <summary>
+    /// Fetch the leaderboard with the number of ranked gamers by limit with the offset
+    /// from the top of the leaderboard ranking. Scoretags are not retrieved.
     /// </summary>
     /// <param name="id">The ID of the leaderboard.</param>
     /// <param name="limit">Number of entries to return. Integer between 10 and 50 inclusive.</param>
@@ -396,17 +427,31 @@ namespace GameUp
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
     public void LeaderboardAndRank (string id, int limit, long offset, LeaderboardAndRankCallback success, Client.ErrorCallback error) {
+      LeaderboardAndRank(id, false, limit, offset, success, error);
+    }
+
+    /// <summary>
+    /// Fetch the leaderboard with the the number of ranked gamers by limit with the offset
+    /// from the top of the leaderboard ranking.
+    /// </summary>
+    /// <param name="id">The ID of the leaderboard.</param>
+    /// <param name="scoretags">Whether to retrieve scoretags or not.</param>
+    /// <param name="limit">Number of entries to return. Integer between 10 and 50 inclusive.</param>
+    /// <param name="offset">Starting point to return ranking. Must be positive, if negative it is treated as an "auto offset".</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void LeaderboardAndRank (string id, Boolean scoretags, int limit, long offset, LeaderboardAndRankCallback success, Client.ErrorCallback error) {
       if (offset < 0) {
-        LeaderboardAndRank(id, limit, 0, true, success, error);
+        LeaderboardAndRank(id, scoretags, limit, 0, true, success, error);
       } else {
-        LeaderboardAndRank(id, limit, offset, false, success, error);
+        LeaderboardAndRank(id, scoretags, limit, offset, false, success, error);
       }
     }
 
-    private void LeaderboardAndRank (string id, int limit, long offset, Boolean autoOffset, LeaderboardAndRankCallback success, Client.ErrorCallback error)
+    private void LeaderboardAndRank (string id, Boolean withScoretags, int limit, long offset, Boolean autoOffset, LeaderboardAndRankCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/leaderboard/" + id;
-      string queryParam = "?offset=" + offset + "&limit=" + limit + "&auto_offset=" + autoOffset;
+      string queryParam = "?offset=" + offset + "&limit=" + limit + "&auto_offset=" + autoOffset + "&with_scoretags=" + withScoretags;
       UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path, queryParam);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
       wwwRequest.OnSuccess = (String jsonResponse) => {
