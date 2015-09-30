@@ -33,7 +33,7 @@
   <td id="projectlogo"><img alt="Logo" src="GameUp_Logo_Small_fill.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">GameUpSDK
-   &#160;<span id="projectnumber">0.9.1</span>
+   &#160;<span id="projectnumber">0.9.3</span>
    </div>
    <div id="projectbrief">Unity SDK for the GameUp service</div>
   </td>
@@ -207,14 +207,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a679f301d7fbe9064923b0f8ac79c28d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Submit the supplied score to the specified leaderboard. The new score will only overwrite the previous score if it is "better" according to the sorting rules; nevertheless the current gamer's rank will always be returned.  <a href="#a679f301d7fbe9064923b0f8ac79c28d0">More...</a><br /></td></tr>
 <tr class="separator:a679f301d7fbe9064923b0f8ac79c28d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4056c4b5db6a63dc8f8f02ee201c99e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a4056c4b5db6a63dc8f8f02ee201c99e6">LeaderboardAndRank</a> (string id, <a class="el" href="class_game_up_1_1_session_client.html#a50b1a4b3e8f166ebcf933d151d241539">LeaderboardAndRankCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
-<tr class="memdesc:a4056c4b5db6a63dc8f8f02ee201c99e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch the leaderboard with the top 50 ranked gamers and the current gamer's ranking.  <a href="#a4056c4b5db6a63dc8f8f02ee201c99e6">More...</a><br /></td></tr>
+<tr class="memdesc:a4056c4b5db6a63dc8f8f02ee201c99e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch the leaderboard with the top 50 ranked gamers and the current gamer's ranking. Scoretags are not retrieved.  <a href="#a4056c4b5db6a63dc8f8f02ee201c99e6">More...</a><br /></td></tr>
 <tr class="separator:a4056c4b5db6a63dc8f8f02ee201c99e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb38769c805d1f7f2541382e2206d80a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#aeb38769c805d1f7f2541382e2206d80a">LeaderboardAndRank</a> (string id, Boolean scoretags, <a class="el" href="class_game_up_1_1_session_client.html#a50b1a4b3e8f166ebcf933d151d241539">LeaderboardAndRankCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:aeb38769c805d1f7f2541382e2206d80a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch the leaderboard with the top 50 ranked gamers and the current gamer's ranking.  <a href="#aeb38769c805d1f7f2541382e2206d80a">More...</a><br /></td></tr>
+<tr class="separator:aeb38769c805d1f7f2541382e2206d80a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace2d6ada0bb8f107cac9ee10682e6383"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#ace2d6ada0bb8f107cac9ee10682e6383">LeaderboardAndRank</a> (string id, int limit, <a class="el" href="class_game_up_1_1_session_client.html#a50b1a4b3e8f166ebcf933d151d241539">LeaderboardAndRankCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
-<tr class="memdesc:ace2d6ada0bb8f107cac9ee10682e6383"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch the leaderboard with the ranked gamers. Automatically finds the offset of the current gamer's rank based on the limit given.  <a href="#ace2d6ada0bb8f107cac9ee10682e6383">More...</a><br /></td></tr>
+<tr class="memdesc:ace2d6ada0bb8f107cac9ee10682e6383"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch the leaderboard with the ranked gamers. Automatically finds the offset of the current gamer's rank based on the limit given. Scoretags are not retrieved.  <a href="#ace2d6ada0bb8f107cac9ee10682e6383">More...</a><br /></td></tr>
 <tr class="separator:ace2d6ada0bb8f107cac9ee10682e6383"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7e6d526523b2be3185fa864c4d19e75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#ad7e6d526523b2be3185fa864c4d19e75">LeaderboardAndRank</a> (string id, int limit, int offset, <a class="el" href="class_game_up_1_1_session_client.html#a50b1a4b3e8f166ebcf933d151d241539">LeaderboardAndRankCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
-<tr class="memdesc:ad7e6d526523b2be3185fa864c4d19e75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch the leaderboard with the the number of ranked gamers by limit with the offset from the top of the leaderboard ranking.  <a href="#ad7e6d526523b2be3185fa864c4d19e75">More...</a><br /></td></tr>
-<tr class="separator:ad7e6d526523b2be3185fa864c4d19e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae470f0eddcbc9050fa598fb08de54b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#aae470f0eddcbc9050fa598fb08de54b5">LeaderboardAndRank</a> (string id, Boolean scoretags, int limit, <a class="el" href="class_game_up_1_1_session_client.html#a50b1a4b3e8f166ebcf933d151d241539">LeaderboardAndRankCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:aae470f0eddcbc9050fa598fb08de54b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch the leaderboard with the ranked gamers. Automatically finds the offset of the current gamer's rank based on the limit given.  <a href="#aae470f0eddcbc9050fa598fb08de54b5">More...</a><br /></td></tr>
+<tr class="separator:aae470f0eddcbc9050fa598fb08de54b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6c966302ea8acb40f58c519b93f246f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#ab6c966302ea8acb40f58c519b93f246f">LeaderboardAndRank</a> (string id, int limit, long offset, <a class="el" href="class_game_up_1_1_session_client.html#a50b1a4b3e8f166ebcf933d151d241539">LeaderboardAndRankCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:ab6c966302ea8acb40f58c519b93f246f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch the leaderboard with the number of ranked gamers by limit with the offset from the top of the leaderboard ranking. Scoretags are not retrieved.  <a href="#ab6c966302ea8acb40f58c519b93f246f">More...</a><br /></td></tr>
+<tr class="separator:ab6c966302ea8acb40f58c519b93f246f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74494879c5fb47e7b59020cece97e509"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a74494879c5fb47e7b59020cece97e509">LeaderboardAndRank</a> (string id, Boolean scoretags, int limit, long offset, <a class="el" href="class_game_up_1_1_session_client.html#a50b1a4b3e8f166ebcf933d151d241539">LeaderboardAndRankCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:a74494879c5fb47e7b59020cece97e509"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch the leaderboard with the the number of ranked gamers by limit with the offset from the top of the leaderboard ranking.  <a href="#a74494879c5fb47e7b59020cece97e509">More...</a><br /></td></tr>
+<tr class="separator:a74494879c5fb47e7b59020cece97e509"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afeb84e968423d250f23a0a448940190d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#afeb84e968423d250f23a0a448940190d">GetAllMatches</a> (<a class="el" href="class_game_up_1_1_session_client.html#a5417c1a474fad8ccc77ab74a7551084d">MatchesCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:afeb84e968423d250f23a0a448940190d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a list of matches the gamer is part of, along with the metadata for each match.  <a href="#afeb84e968423d250f23a0a448940190d">More...</a><br /></td></tr>
 <tr class="separator:afeb84e968423d250f23a0a448940190d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -815,10 +824,59 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Fetch the leaderboard with the top 50 ranked gamers and the current gamer's ranking. Scoretags are not retrieved. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>The ID of the leaderboard.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aeb38769c805d1f7f2541382e2206d80a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUp.SessionClient.LeaderboardAndRank </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Boolean&#160;</td>
+          <td class="paramname"><em>scoretags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_session_client.html#a50b1a4b3e8f166ebcf933d151d241539">LeaderboardAndRankCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 <p>Fetch the leaderboard with the top 50 ranked gamers and the current gamer's ranking. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">id</td><td>The ID of the leaderboard.</td></tr>
+    <tr><td class="paramname">scoretags</td><td>Whether to retrieve scoretags or not.</td></tr>
     <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
     <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
   </table>
@@ -863,7 +921,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Fetch the leaderboard with the ranked gamers. Automatically finds the offset of the current gamer's rank based on the limit given. </p>
+<p>Fetch the leaderboard with the ranked gamers. Automatically finds the offset of the current gamer's rank based on the limit given. Scoretags are not retrieved. </p>
 <p>For example, if the limit is 50, and the current gamer's rank is 153, result will be ranks between 150-200, with the 3rd entry belonging to the current gamer.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -877,7 +935,64 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad7e6d526523b2be3185fa864c4d19e75"></a>
+<a class="anchor" id="aae470f0eddcbc9050fa598fb08de54b5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUp.SessionClient.LeaderboardAndRank </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Boolean&#160;</td>
+          <td class="paramname"><em>scoretags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>limit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_session_client.html#a50b1a4b3e8f166ebcf933d151d241539">LeaderboardAndRankCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fetch the leaderboard with the ranked gamers. Automatically finds the offset of the current gamer's rank based on the limit given. </p>
+<p>For example, if the limit is 50, and the current gamer's rank is 153, result will be ranks between 150-200, with the 3rd entry belonging to the current gamer.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>The ID of the leaderboard.</td></tr>
+    <tr><td class="paramname">scoretags</td><td>Whether to retrieve scoretags or not.</td></tr>
+    <tr><td class="paramname">limit</td><td>Number of entries to return. Integer between 10 and 50 inclusive</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab6c966302ea8acb40f58c519b93f246f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -896,7 +1011,69 @@ Properties</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_session_client.html#a50b1a4b3e8f166ebcf933d151d241539">LeaderboardAndRankCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fetch the leaderboard with the number of ranked gamers by limit with the offset from the top of the leaderboard ranking. Scoretags are not retrieved. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>The ID of the leaderboard.</td></tr>
+    <tr><td class="paramname">limit</td><td>Number of entries to return. Integer between 10 and 50 inclusive.</td></tr>
+    <tr><td class="paramname">offset</td><td>Starting point to return ranking. Must be positive, if negative it is treated as an "auto offset".</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a74494879c5fb47e7b59020cece97e509"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUp.SessionClient.LeaderboardAndRank </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Boolean&#160;</td>
+          <td class="paramname"><em>scoretags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>limit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
           <td class="paramname"><em>offset</em>, </td>
         </tr>
         <tr>
@@ -923,8 +1100,9 @@ Properties</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">id</td><td>The ID of the leaderboard.</td></tr>
+    <tr><td class="paramname">scoretags</td><td>Whether to retrieve scoretags or not.</td></tr>
     <tr><td class="paramname">limit</td><td>Number of entries to return. Integer between 10 and 50 inclusive.</td></tr>
-    <tr><td class="paramname">offset</td><td>Starting point to return ranking. Positive integer required.</td></tr>
+    <tr><td class="paramname">offset</td><td>Starting point to return ranking. Must be positive, if negative it is treated as an "auto offset".</td></tr>
     <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
     <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
   </table>
@@ -2736,7 +2914,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_game_up.html">GameUp</a></li><li class="navelem"><a class="el" href="class_game_up_1_1_session_client.html">SessionClient</a></li>
-    <li class="footer">Generated on Wed Sep 2 2015 10:13:01 for GameUpSDK by
+    <li class="footer">Generated on Wed Sep 30 2015 18:52:51 for GameUpSDK by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

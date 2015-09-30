@@ -3,6 +3,7 @@ var searchData=
   ['scheme',['SCHEME',['../class_game_up_1_1_client.html#a022e933fe57e2a7d0c61dac4ab48e2f2',1,'GameUp::Client']]],
   ['score',['Score',['../class_game_up_1_1_leaderboard_1_1_entry.html#a8fbf57f5fbff1130b11a8affd7931c71',1,'GameUp.Leaderboard.Entry.Score()'],['../class_game_up_1_1_rank.html#ad9165723430a1546b22c765326982766',1,'GameUp.Rank.Score()']]],
   ['scoreat',['ScoreAt',['../class_game_up_1_1_leaderboard_1_1_entry.html#ad3e48139560020ad7111ce2de37d063d',1,'GameUp.Leaderboard.Entry.ScoreAt()'],['../class_game_up_1_1_rank.html#ae73d4b21bf374685802a21c3415b1b84',1,'GameUp.Rank.ScoreAt()']]],
+  ['scorelimit',['ScoreLimit',['../class_game_up_1_1_leaderboard.html#a84d60be0f511b3953d6cc6d387a4a60b',1,'GameUp::Leaderboard']]],
   ['scoretags',['Scoretags',['../class_game_up_1_1_leaderboard_1_1_entry.html#a19c13a7e897bedf503eca421f8789936',1,'GameUp.Leaderboard.Entry.Scoretags()'],['../class_game_up_1_1_rank.html#a5546c5040a885e0e2ef07b6833b08749',1,'GameUp.Rank.Scoretags()']]],
   ['secret',['SECRET',['../class_game_up_1_1_achievement.html#a05f6caa30090613a78592ac63b17020aa44c7be48226ebad5dca8216674cad62b',1,'GameUp::Achievement']]],
   ['seenbefore',['SeenBefore',['../class_game_up_1_1_purchase_verification.html#a6a8ea889db2aeb56baf545cfff884f06',1,'GameUp::PurchaseVerification']]],

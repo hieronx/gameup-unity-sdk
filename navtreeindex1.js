@@ -1,5 +1,10 @@
 var NAVTREEINDEX1 =
 {
+"class_game_up_1_1_w_w_w_request.html#a02e7196c1eeed5d00d01ac3f7b76bb70":[1,0,0,21,2],
+"class_game_up_1_1_w_w_w_request.html#a1764ce0a9df1fddba88c21513b07e801":[1,0,0,21,6],
+"class_game_up_1_1_w_w_w_request.html#a1bc321cb6d60e729bfdf8ce3efc0ddb9":[1,0,0,21,1],
+"class_game_up_1_1_w_w_w_request.html#a1e3f8319dae56647e32e2454b01c43b3":[1,0,0,21,10],
+"class_game_up_1_1_w_w_w_request.html#a47052207d221f5d63dd2460b692f913b":[1,0,0,21,5],
 "class_game_up_1_1_w_w_w_request.html#a5106266def161c9a18424a057f92c41d":[1,0,0,21,7],
 "class_game_up_1_1_w_w_w_request.html#a7d3cbc3a57b32243d7d723608ded0624":[1,0,0,21,8],
 "class_game_up_1_1_w_w_w_request.html#a8752cd435503ded043385bce74bb1eed":[1,0,0,21,12],
@@ -12,8 +17,8 @@ var NAVTREEINDEX1 =
 "classes.html":[1,1],
 "dir_7f64c52b790ab03de056d8658f99aa4e.html":[2,0,0],
 "files.html":[2,0],
-"functions.html":[1,3,0,0],
 "functions.html":[1,3,0],
+"functions.html":[1,3,0,0],
 "functions_b.html":[1,3,0,1],
 "functions_c.html":[1,3,0,2],
 "functions_d.html":[1,3,0,3],

@@ -15,9 +15,11 @@ var class_game_up_1_1_leaderboard =
     [ "Entries", "class_game_up_1_1_leaderboard.html#aca48716846efa8fcf8e8b94693b92ec8", null ],
     [ "LeaderboardId", "class_game_up_1_1_leaderboard.html#a08a3f463e9a981bcc03a207d99718718", null ],
     [ "LeaderboardReset", "class_game_up_1_1_leaderboard.html#a171fb2774eccdba66065103a94e20f78", null ],
-    [ "Limit", "class_game_up_1_1_leaderboard.html#aeba595730a59c65a195dbe0f0f97905a", null ],
+    [ "Limit", "class_game_up_1_1_leaderboard.html#ac35a0fd13241806531b2884575121eaa", null ],
     [ "Name", "class_game_up_1_1_leaderboard.html#a750ed0d050770f111a9612f69f66720f", null ],
+    [ "Offset", "class_game_up_1_1_leaderboard.html#a1a1892b10bc96f73873fb995d1aeb825", null ],
     [ "PublicId", "class_game_up_1_1_leaderboard.html#aa00082841fa00afb6a6f3d15eb33b25e", null ],
+    [ "ScoreLimit", "class_game_up_1_1_leaderboard.html#a84d60be0f511b3953d6cc6d387a4a60b", null ],
     [ "Sort", "class_game_up_1_1_leaderboard.html#a65e8d4329c076bdf5416305c0c2a42f3", null ],
     [ "Tags", "class_game_up_1_1_leaderboard.html#abb70fc3f626f792a5eec45034dd0ee29", null ],
     [ "Type", "class_game_up_1_1_leaderboard.html#acf6471f9bb743848f2c5fadfacab1269", null ]
