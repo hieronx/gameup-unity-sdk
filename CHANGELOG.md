@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.9.3
+
+* Expose option to retrieve `scoretags` in Leaderboard entries.
+
 ### 0.9.2
 
 * Small enhancements to Leaderboard queries.
