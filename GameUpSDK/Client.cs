@@ -60,6 +60,10 @@ namespace GameUp
 
     public delegate void ErrorCallback (int statusCode, string reason);
 
+    public delegate void ScriptCallback (IDictionary<String, object> data);
+
+    public delegate void ScriptRawCallback (string data);
+
     /// <summary>
     /// Ping the GameUp service to check it is reachable.
     /// </summary>
@@ -212,6 +216,57 @@ namespace GameUp
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, "");
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success(SimpleJson.DeserializeObject<Leaderboard> (jsonResponse, serializerStrategy));
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Executes a script on the server. Payload can be null or any object.
+    /// </summary>
+    /// <param name="scriptId">Script ID to execute on the server</param>
+    /// <param name="payload">Payload that your script expects. Will be serialised to Json automatically. Can be set to null</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void executeScript<T> (string scriptId, T payload, ScriptCallback success, Client.ErrorCallback error)
+    {
+      string data = SimpleJson.SerializeObject (payload);
+      executeScript(scriptId, data, success, error);
+    }
+    
+    /// <summary>
+    /// Executes a script on the server. Payload can be null or an empty string.
+    /// </summary>
+    /// <param name="scriptId">Script ID to execute on the server</param>
+    /// <param name="payload">Payload that your script expects. Will be serialised to Json automatically. Can be set to null or an empty string</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void executeScript (string scriptId, string payload, ScriptCallback success, Client.ErrorCallback error)
+    {
+      executeScript(scriptId, payload, (string response) => {
+        success(SimpleJson.DeserializeObject<IDictionary<string, object>>(response));
+      }, error);
+    }
+
+    /// <summary>
+    /// Executes a script on the server. Payload can be null or an empty string.
+    /// </summary>
+    /// <param name="scriptId">Script ID to execute on the server</param>
+    /// <param name="payload">Payload that your script expects. Will be serialised to Json automatically. Can be set to null or an empty string</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void executeScript (string scriptId, string payload, ScriptRawCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/game/script/" + Uri.EscapeUriString(scriptId);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, "");
+      if (payload != null && payload.Length != 0) {
+        wwwRequest.SetBody ( payload );
+      }
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success(jsonResponse);
       };
       wwwRequest.OnFailure = (int statusCode, string reason) => {
         error (statusCode, reason);
