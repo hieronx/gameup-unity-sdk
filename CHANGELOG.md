@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.10.0
+
+* Add (unannounced) CloudScript feature for direct script execution.
+
 ### 0.9.3
 
 * Expose option to retrieve `scoretags` in Leaderboard entries.
