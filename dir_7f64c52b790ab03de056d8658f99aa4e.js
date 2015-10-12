@@ -42,6 +42,12 @@ var dir_7f64c52b790ab03de056d8658f99aa4e =
     [ "MatchTurnList.cs", "_match_turn_list_8cs.html", [
       [ "MatchTurnList", "class_game_up_1_1_match_turn_list.html", "class_game_up_1_1_match_turn_list" ]
     ] ],
+    [ "Message.cs", "_message_8cs.html", [
+      [ "Message", "class_game_up_1_1_message.html", "class_game_up_1_1_message" ]
+    ] ],
+    [ "MessageList.cs", "_message_list_8cs.html", [
+      [ "MessageList", "class_game_up_1_1_message_list.html", "class_game_up_1_1_message_list" ]
+    ] ],
     [ "PingInfo.cs", "_ping_info_8cs.html", [
       [ "PingInfo", "class_game_up_1_1_ping_info.html", "class_game_up_1_1_ping_info" ]
     ] ],

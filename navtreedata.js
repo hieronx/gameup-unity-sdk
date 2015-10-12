@@ -4,8 +4,8 @@ var NAVTREE =
     [ "Packages", null, [
       [ "Packages", "namespaces.html", "namespaces" ]
     ] ],
-    [ "Classes", null, [
-      [ "Class List", "annotated.html", "annotated" ],
+    [ "Classes", "annotated.html", [
+      [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
@@ -13,7 +13,6 @@ var NAVTREE =
         [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ],
         [ "Enumerations", "functions_enum.html", null ],
-        [ "Enumerator", "functions_eval.html", null ],
         [ "Properties", "functions_prop.html", null ]
       ] ]
     ] ],
@@ -26,7 +25,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_achievement_8cs.html",
-"class_game_up_1_1_w_w_w_request.html#a02e7196c1eeed5d00d01ac3f7b76bb70"
+"class_game_up_1_1_session_client.html#add71031b194c5bafa03a20020b8a2297"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

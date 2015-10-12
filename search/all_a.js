@@ -18,7 +18,18 @@ var searchData=
   ['matchturn_2ecs',['MatchTurn.cs',['../_match_turn_8cs.html',1,'']]],
   ['matchturnlist',['MatchTurnList',['../class_game_up_1_1_match_turn_list.html',1,'GameUp']]],
   ['matchturnlist_2ecs',['MatchTurnList.cs',['../_match_turn_list_8cs.html',1,'']]],
+  ['message',['Message',['../class_game_up_1_1_message.html',1,'GameUp']]],
   ['message',['Message',['../class_game_up_1_1_purchase_verification.html#a511cd4d5519722f7597482713637bf9a',1,'GameUp::PurchaseVerification']]],
+  ['message_2ecs',['Message.cs',['../_message_8cs.html',1,'']]],
+  ['messagecallback',['MessageCallback',['../class_game_up_1_1_session_client.html#a071372a47dcac7307caae126dde1021a',1,'GameUp::SessionClient']]],
+  ['messagedelete',['MessageDelete',['../class_game_up_1_1_session_client.html#ab254cc31850f2b2f892ab907d14626d1',1,'GameUp::SessionClient']]],
+  ['messageget',['MessageGet',['../class_game_up_1_1_session_client.html#a83d2267d174638ed6a19c52f0f1521ed',1,'GameUp::SessionClient']]],
+  ['messageid',['MessageId',['../class_game_up_1_1_message.html#aaf0a1cc7966da86bb7632acec847ae4e',1,'GameUp::Message']]],
+  ['messagelist',['MessageList',['../class_game_up_1_1_message_list.html',1,'GameUp']]],
+  ['messagelist',['MessageList',['../class_game_up_1_1_session_client.html#aa825392a256d1b40fdf4e6557a099aa2',1,'GameUp.SessionClient.MessageList(Boolean fetchBody, MessageListCallback success, Client.ErrorCallback error)'],['../class_game_up_1_1_session_client.html#a5b3ed2310c040b6be8ff46569188edcb',1,'GameUp.SessionClient.MessageList(Boolean fetchBody, long newerThanUtcMillis, MessageListCallback success, Client.ErrorCallback error)']]],
+  ['messagelist_2ecs',['MessageList.cs',['../_message_list_8cs.html',1,'']]],
+  ['messagelistcallback',['MessageListCallback',['../class_game_up_1_1_session_client.html#aa85595e33e9007431625f22e202daee3',1,'GameUp::SessionClient']]],
+  ['messages',['Messages',['../class_game_up_1_1_message_list.html#a3575664099970c1aafc6bee0c9a56a51',1,'GameUp::MessageList']]],
   ['method',['Method',['../class_game_up_1_1_w_w_w_request.html#ae48f4be8e0740928ef0e16f7d9823a5c',1,'GameUp::WWWRequest']]],
   ['monthly',['MONTHLY',['../class_game_up_1_1_leaderboard_1_1_reset.html#a02c1487babef053d6c7a20fb49b50ebeac107927c39e34b357b10099c2d852c75',1,'GameUp::Leaderboard::Reset']]]
 ];

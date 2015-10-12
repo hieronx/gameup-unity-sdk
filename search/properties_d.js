@@ -7,5 +7,6 @@ var searchData=
   ['seenbefore',['SeenBefore',['../class_game_up_1_1_purchase_verification.html#a6a8ea889db2aeb56baf545cfff884f06',1,'GameUp::PurchaseVerification']]],
   ['sort',['Sort',['../class_game_up_1_1_leaderboard.html#a65e8d4329c076bdf5416305c0c2a42f3',1,'GameUp::Leaderboard']]],
   ['state',['State',['../class_game_up_1_1_achievement.html#a6366f2bc2ad4e5653591b6f3284537e9',1,'GameUp::Achievement']]],
+  ['subject',['Subject',['../class_game_up_1_1_message.html#af87f899d30e645e73a19489bb513f8a9',1,'GameUp::Message']]],
   ['success',['Success',['../class_game_up_1_1_purchase_verification.html#a6d5989c18747f41d1edc9d75c462eee6',1,'GameUp::PurchaseVerification']]]
 ];
