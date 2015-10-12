@@ -61,6 +61,9 @@ namespace GameUp
     public delegate void SharedStorageCallback (SharedStorageObject sharedStorageObject);
     public delegate void SharedStorageQueryCallback (SharedStorageSearchResults sharedStorageSearchResults);
 
+    public delegate void MessageListCallback (MessageList messageList);
+    public delegate void MessageCallback (Message message);
+
     /// <summary>
     /// Ping the GameUp service to check it is reachable and the current session
     /// is still valid.
@@ -1000,6 +1003,79 @@ namespace GameUp
       }
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success(jsonResponse);
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Checks and retrieves all messages from the server.
+    /// </summary>
+    /// <param name="fetchBody">Whether to retrieve message body as well. Recommended false as response could be large.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void MessageList (Boolean fetchBody, MessageListCallback success, Client.ErrorCallback error)
+    {
+      this.MessageList(fetchBody, 0, success, error);
+    }
+
+    /// <summary>
+    /// Checks and retrieves all messages from the server since a given UTC timestamp in millisecond.
+    /// </summary>
+    /// <param name="fetchBody">Whether to retrieve message body as well. Recommended false as response could be large.</param>
+    /// <param name="newerThanUtcMillis">Get messages that are newer than this timestamp.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void MessageList (Boolean fetchBody, long newerThanUtcMillis, MessageListCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/gamer/message/?with_body=" + Uri.EscapeUriString(fetchBody.ToString()) + "&since=" + Uri.EscapeUriString(newerThanUtcMillis.ToString());
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success(SimpleJson.DeserializeObject<MessageList>(jsonResponse));
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Retrieves a message from the mailbox. This sets the message as READ.
+    /// </summary>
+    /// <param name="messageId">ID of the message to be retrieved from the player's mailbox.</param>
+    /// <param name="fetchBody">Whether to retrieve message body as well.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void MessageGet (string messageId, Boolean fetchBody, MessageCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/gamer/message/" + Uri.EscapeUriString(messageId) + "/?with_body=" + Uri.EscapeUriString(fetchBody.ToString());
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success(SimpleJson.DeserializeObject<Message>(jsonResponse));
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Deletes a message from the mailbox.
+    /// </summary>
+    /// <param name="messageId">ID of the message to be deleted from the player's mailbox.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void MessageDelete (string messageId, Client.SuccessCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/gamer/message/" + Uri.EscapeUriString(messageId);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "DELETE", ApiKey, Token);
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success();
       };
       wwwRequest.OnFailure = (int statusCode, string reason) => {
         error (statusCode, reason);
