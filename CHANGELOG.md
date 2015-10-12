@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.11.0
+
+* Add (unannounced) Mailbox feature.
+
 ### 0.10.0
 
 * Add (unannounced) CloudScript feature for direct script execution.
