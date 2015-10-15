@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.11.1
+
+* Use the SerializerStrategy with Message object deserialisation.
+
 ### 0.11.0
 
 * Add (unannounced) Mailbox feature.
