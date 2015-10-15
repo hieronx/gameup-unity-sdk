@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.11.3
+
+* Send an empty object to trick `WWW` into a POST request.
+
 ### 0.11.2
 
 * Send empty body on DELETE requests so `WWW` makes a POST request.
