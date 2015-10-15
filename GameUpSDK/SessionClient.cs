@@ -1034,7 +1034,7 @@ namespace GameUp
       UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
       wwwRequest.OnSuccess = (String jsonResponse) => {
-        success(SimpleJson.DeserializeObject<MessageList>(jsonResponse));
+        success(SimpleJson.DeserializeObject<MessageList>(jsonResponse, serializerStrategy));
       };
       wwwRequest.OnFailure = (int statusCode, string reason) => {
         error (statusCode, reason);
@@ -1055,7 +1055,7 @@ namespace GameUp
       UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
       wwwRequest.OnSuccess = (String jsonResponse) => {
-        success(SimpleJson.DeserializeObject<Message>(jsonResponse));
+        success(SimpleJson.DeserializeObject<Message>(jsonResponse, serializerStrategy));
       };
       wwwRequest.OnFailure = (int statusCode, string reason) => {
         error (statusCode, reason);
