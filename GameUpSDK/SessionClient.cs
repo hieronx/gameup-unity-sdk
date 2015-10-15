@@ -226,6 +226,7 @@ namespace GameUp
       string path = "/v0/gamer/storage/" + Uri.EscapeUriString (key);
       UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "DELETE", ApiKey, Token);
+      wwwRequest.SetBody ("");
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success ();
       };
@@ -950,6 +951,7 @@ namespace GameUp
       string path = "/v0/gamer/shared/" + Uri.EscapeUriString( key ) + "/public";
       UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "DELETE", ApiKey, Token);
+      wwwRequest.SetBody ("");
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success();
       };
@@ -1074,6 +1076,7 @@ namespace GameUp
       string path = "/v0/gamer/message/" + Uri.EscapeUriString(messageId);
       UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "DELETE", ApiKey, Token);
+      wwwRequest.SetBody ("");
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success();
       };
