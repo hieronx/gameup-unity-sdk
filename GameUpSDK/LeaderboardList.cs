@@ -18,25 +18,51 @@ namespace GameUp
   public class LeaderboardList : IEnumerable<Leaderboard>
   {
     /// <summary> The number of leaderboards returned. </summary>
-    public int Count { get ; set ; }
-    
+    public readonly long Count ;
+
     /// <summary> The leaderboard items. </summary>
-    public Leaderboard[] Leaderboards { get; set; }
+    public readonly Leaderboard[] Leaderboards ;
+
+    internal LeaderboardList (IDictionary<string, object> dict)
+    {
+      foreach (string key in dict.Keys) {
+        object value;
+        dict.TryGetValue (key, out value);
+        if (value == null) {
+          continue;
+        }
+
+        switch (key) {
+        case "count":
+          Count = (long)value;
+          break;
+        case "leaderboards":
+          List<Leaderboard> lList = new List<Leaderboard> ();
+          JsonArray leaderboardArray = (JsonArray)value;
+          foreach (object leaderboardObject in leaderboardArray) {
+            Leaderboard leaderboard = new Leaderboard ((IDictionary<string, object>)leaderboardObject);
+            lList.Add (leaderboard);
+          }
+          Leaderboards = lList.ToArray ();
+          break;
+        }
+      }
+    }
 
     public IEnumerator<Leaderboard> GetEnumerator ()
     {
-      return (new List<Leaderboard>(Leaderboards)).GetEnumerator ();
+      return (new List<Leaderboard> (Leaderboards)).GetEnumerator ();
     }
-    
+
     private IEnumerator GetEnumerator1 ()
     {
       return this.GetEnumerator ();
     }
-    
+
     IEnumerator IEnumerable.GetEnumerator ()
     {
       return GetEnumerator1 ();
     }
-    
+
   }
 }

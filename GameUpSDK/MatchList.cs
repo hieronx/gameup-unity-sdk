@@ -24,28 +24,51 @@ namespace GameUp
   public class MatchList : IEnumerable<Match>
   {
     /// <summary> The number of matches returned as part of this response. </summary>
-    public int Count { get ; set ; }
-    
+    public readonly long Count ;
+
     /// <summary> The matches themselves. </summary>
-    public Match[] Matches { get; set; }
-    
-    // Must also implement IEnumerable.GetEnumerator, but implement as a private method.
-    // When you implement IEnumerable(T), you must also implement IEnumerable and IEnumerator(T). 
-    // see https://msdn.microsoft.com/en-us/library/s793z9y2(v=vs.110).aspx
+    public readonly Match[] Matches ;
+
+    internal MatchList (IDictionary<string, object> dict)
+    {
+      foreach (string key in dict.Keys) {
+        object value;
+        dict.TryGetValue (key, out value);
+        if (value == null) {
+          continue;
+        }
+        
+        switch (key) {
+        case "count":
+          Count = (long)value;
+          break;
+        case "matches":
+          List<Match> mList = new List<Match> ();
+          JsonArray matchArray = (JsonArray)value;
+          foreach (object matchObject in matchArray) {
+            Match match = new Match ((IDictionary<string, object>)matchObject);
+            mList.Add (match);
+          }
+          Matches = mList.ToArray ();
+          break;
+        }
+      }
+    }
+
     public IEnumerator<Match> GetEnumerator ()
     {
-      return (new List<Match>(Matches)).GetEnumerator ();
+      return (new List<Match> (Matches)).GetEnumerator ();
     }
-    
+
     private IEnumerator GetEnumerator1 ()
     {
       return this.GetEnumerator ();
     }
-    
+
     IEnumerator IEnumerable.GetEnumerator ()
     {
       return GetEnumerator1 ();
     }
-    
+
   }
 }

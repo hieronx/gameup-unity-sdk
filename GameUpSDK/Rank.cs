@@ -11,7 +11,6 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 using System;
 using System.Collections.Generic;
 using System.Collections;
@@ -24,48 +23,52 @@ namespace GameUp
   public class Rank
   {
 
-    /// <summary> Nickname, suitable for public display. </summary>
-    public String Name { get ; set ; }
+    /// <summary> Nickname, suitable for public readonly display. </summary>
+    public readonly String Name ;
 
     /// <summary> Most up to date rank. </summary>
-    public long Ranking { get ; set ; }
+    public readonly long Ranking ;
 
     /// <summary> When the latest rank was calculated. </summary>
-    public long RankAt { get ; set ; }
+    public readonly long RankAt ;
 
     /// <summary> The best score the gamer has entered on this leaderboard. </summary>
-    public long Score { get ; set ; }
+    public readonly long Score ;
 
     /// <summary> When the best score was recorded. </summary>
-    public long ScoreAt { get ; set ; }
+    public readonly long ScoreAt ;
 
     /// <summary>
     /// If this data is in response to a leaderboard submission, and the score
     /// submitted replaces the previous one, this field will contain that
     /// previous value.
     /// </summary>
-    public long LastScore { get ; set ; }
+    public readonly long LastScore ;
 
     /// <summary> When the previous score was submitted. </summary>
-    public long LastScoreAt { get ; set ; }
+    public readonly long LastScoreAt ;
 
     /// <summary> What the rank on this leaderboard was when it was previously checked. </summary>
-    public long LastRank { get ; set ; }
+    public readonly long LastRank ;
 
     /// <summary> When the previous rank was calculated. </summary>
-    public long LastRankAt { get ; set ; }
+    public readonly long LastRankAt ;
 
     /// <summary> The highest rank this gamer has ever had on this leaderboard. </summary>
-    public long BestRank { get ; set ; }
+    public readonly long BestRank ;
 
     /// <summary> When the highest rank was recorded. </summary>
-    public long BestRankAt { get ; set ; }
+    public readonly long BestRankAt ;
+
+    ///<summary> Scoretags of this entry. </summary>
+    public readonly IDictionary<String, Object> Scoretags ;
 
     /// <returns>
     /// true if this is the first time the current gamer appears on this
     ///         leaderboard, false otherwise.
     /// </returns>
-    public bool isNew() {
+    public bool isNew ()
+    {
       return LastRank == 0;
     }
 
@@ -73,7 +76,8 @@ namespace GameUp
     /// true if the response indicates the gamer has a new best score on
     /// this leaderboard, false otherwise.
     /// </returns>
-    public bool isNewScore() {
+    public bool isNewScore ()
+    {
       return Score != LastScore;
     }
 
@@ -81,7 +85,8 @@ namespace GameUp
     /// true if the rank has changed since it was last checked,
     /// regardless if it's now higher or lower, false otherwise.
     /// </returns>
-    public bool isNewRank() {
+    public bool isNewRank ()
+    {
       return Ranking != LastRank;
     }
 
@@ -89,17 +94,66 @@ namespace GameUp
     /// true if this response contains a new all-time best rank on this
     /// leaderboard, false otherwise.
     /// </returns>
-    public bool isNewBestRank() {
+    public bool isNewBestRank ()
+    {
       return Ranking == BestRank && RankAt == BestRankAt;
     }
 
-    ///<summary> Scoretags of this entry. </summary>
-    public IDictionary<String, Object> Scoretags { get ; set ; }
-    
     ///<summary> Convert Scoretags to the specified user defined data type. </summary>
-    public T ConvertScoretags<T>() {
-      string json = SimpleJson.SerializeObject(Scoretags);
-      return SimpleJson.DeserializeObject<T>(json, null);
+    public T ConvertScoretags<T> ()
+    {
+      string json = SimpleJson.SerializeObject (Scoretags);
+      return SimpleJson.DeserializeObject<T> (json, null);
+    }
+
+    internal Rank (IDictionary<string, object> dict)
+    {
+      foreach (string key in dict.Keys) {
+        object value;
+        dict.TryGetValue (key, out value);
+        if (value == null) {
+          continue;
+        }
+        
+        switch (key) {
+        case "name":
+          Name = (string)value;
+          break;
+        case "rank":
+          Ranking = (long)value;
+          break;
+        case "rank_at":
+          RankAt = (long)value;
+          break;
+        case "score":
+          Score = (long)value;
+          break;
+        case "score_at":
+          ScoreAt = (long)value;
+          break;
+        case "last_score":
+          LastScore = (long)value;
+          break;
+        case "last_score_at":
+          LastScoreAt = (long)value;
+          break;
+        case "last_rank":
+          LastRank = (long)value;
+          break;
+        case "last_rank_at":
+          LastRankAt = (long)value;
+          break;
+        case "best_rank":
+          BestRank = (long)value;
+          break;
+        case "best_rank_at":
+          BestRankAt = (long)value;
+          break;
+        case "scoretags":
+          Scoretags = (IDictionary<string,object>)value;
+          break;
+        }
+      }
     }
   }
 }

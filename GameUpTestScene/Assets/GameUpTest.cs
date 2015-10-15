@@ -16,6 +16,7 @@ public class GameUpTest : MonoBehaviour
   readonly string achievementId = "70c99a8e6dff4a6fac7e517a8dd4e83f";
   readonly string leaderboardId = "6ded1e8dbf104faba384bb659069ea69";
   readonly string scriptId = "dd5cacf3da30415b891de1425444c6c2";
+  readonly string mailboxScriptId = "4be9ed1d444a46ca94bb94262712f9de";
   readonly string facebookToken = "invalid-token-1234";
   readonly string storage_key = "profile_info";
   readonly string shared_storage_key = "ArmyInfo";
@@ -246,6 +247,23 @@ public class GameUpTest : MonoBehaviour
     session.executeScript(scriptId, scriptData, (IDictionary<string, object> response) => {
       Debug.Log ("Executed script with result:" + GameUp.SimpleJson.SerializeObject(response));
     }, failure);
+
+    session.executeScript(mailboxScriptId, scriptData, (IDictionary<string, object> response) => {
+      Debug.Log ("Executed mailbox");
+      session.MessageList(false,(MessageList ms) => {
+        Debug.Log ("Got " + ms.Count + " messages back");
+        IEnumerator<Message> messages = ms.GetEnumerator();
+        messages.MoveNext();
+        session.MessageGet(messages.Current.MessageId, true, (Message message) => {
+          Debug.Log ("Got message with ID" + message.MessageId + " with subject: " + message.Subject);
+          session.MessageDelete(messages.Current.MessageId, () => {
+            Debug.Log ("Deleted message with ID" + message.MessageId);
+          }, failure);
+        }, failure);
+      }, failure);
+    }, failure);
+
+	
 
     #if UNITY_IOS
     UnityEngine.iOS.NotificationServices.RegisterForNotifications(UnityEngine.iOS.NotificationType.Alert |  UnityEngine.iOS.NotificationType.Badge |  UnityEngine.iOS.NotificationType.Sound);

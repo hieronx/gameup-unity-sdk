@@ -23,25 +23,63 @@ namespace GameUp
   public class Message
   {
     /// <summary> ID of the message. </summary>
-    public String MessageId { get ; set ; }
+    public readonly String MessageId ;
 
     /// <summary> Tags associated with this message. </summary>
-    public String[] Tags { get ; set ; }
+    public readonly String[] Tags ;
 
     /// <summary> Subject of the message. </summary>
-    public String Subject { get ; set ; }
+    public readonly String Subject ;
 
     /// <summary> Leaderboard creation unix time. </summary>
-    public long CreatedAt { get ; set ; }
+    public readonly long CreatedAt ;
 
     /// <summary> Message expiration unix time. </summary>
-    public long ExpiresAt { get ; set ; }
+    public readonly long ExpiresAt ;
 
     /// <summary> When the message was first read unix time. </summary>
-    public long ReadAt { get ; set ; }
+    public readonly long ReadAt ;
 
     /// <summary> Raw Key-Value representing the body of the message. </summary>
-    public IDictionary<String, Object> Body { get ; set ; }
+    public readonly IDictionary<String, Object> Body ;
+
+    internal Message (IDictionary<string, object> dict)
+    {
+      foreach (string key in dict.Keys) {
+        object value;
+        dict.TryGetValue (key, out value);
+        if (value == null) {
+          continue;
+        }
+        string valueString = value.ToString ();
+        
+        switch (key) {
+        case "message_id":
+          MessageId = valueString;
+          break;
+        case "tags":
+          List<string> tagList = new List<string> ();
+          JsonArray tagArray = (JsonArray)value;
+          foreach (string entryObject in tagArray) {
+            tagList.Add (entryObject);
+          }
+          Tags = tagList.ToArray ();
+          break;
+        case "subject":
+          Subject = valueString;
+          break;
+        case "created_at":
+          CreatedAt = (long)value;
+          break;
+        case "updated_at":
+          CreatedAt = (long)value;
+          break;
+        case "body":
+          Body = (IDictionary<string,object>)value;
+          break;
+        }
+      }
+    }
   }
 }
 

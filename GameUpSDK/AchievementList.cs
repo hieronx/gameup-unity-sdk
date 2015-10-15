@@ -24,17 +24,40 @@ namespace GameUp
   public class AchievementList : IEnumerable<Achievement>
   {
     /// <summary> The number of achievements returned as part of this response. </summary>
-    public int Count { get ; set ; }
+    public readonly long Count ;
 
     /// <summary> The achievements themselves. </summary>
-    public Achievement[] Achievements { get; set; }
+    public readonly Achievement[] Achievements ;
 
-    // Must also implement IEnumerable.GetEnumerator, but implement as a private method.
-    // When you implement IEnumerable(T), you must also implement IEnumerable and IEnumerator(T). 
-    // see https://msdn.microsoft.com/en-us/library/s793z9y2(v=vs.110).aspx
+    internal AchievementList (IDictionary<string, object> dict)
+    {
+      foreach (string key in dict.Keys) {
+        object value;
+        dict.TryGetValue (key, out value);
+        if (value == null) {
+          continue;
+        }
+        
+        switch (key) {
+        case "count":
+          Count = (long) value;
+          break;
+        case "achievements":
+          List<Achievement> aList = new List<Achievement> ();
+          JsonArray achievementArray = (JsonArray)value;
+          foreach (object achievementObject in achievementArray) {
+            Achievement achievement = new Achievement ((IDictionary<string, object>)achievementObject);
+            aList.Add (achievement);
+          }
+          Achievements = aList.ToArray ();
+          break;
+        }
+      }
+    }
+
     public IEnumerator<Achievement> GetEnumerator ()
     {
-      return (new List<Achievement>(Achievements)).GetEnumerator ();
+      return (new List<Achievement> (Achievements)).GetEnumerator ();
     }
 
     private IEnumerator GetEnumerator1 ()

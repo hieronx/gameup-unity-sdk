@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 using System;
+using System.Collections.Generic;
+using System.Collections;
 
 namespace GameUp
 {
@@ -25,9 +27,16 @@ namespace GameUp
     /// <summary>
     /// The current time in UTC milliseconds according to the GameUp service.
     /// Note: This represents the time as it was when the server processed this
-    ///	request and does not account for request round trip time.
+    /// request and does not account for request round trip time.
     /// </summary>
-    public long Time { get; set; }
+    public readonly long Time ;
+
+    internal ServerInfo (IDictionary<string, object> dict)
+    {
+      object value;
+      dict.TryGetValue ("time", out value);
+      Time = (long)value;
+    }
   }
 }
 

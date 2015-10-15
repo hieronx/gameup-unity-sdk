@@ -52,7 +52,6 @@
     <Compile Include="SimpleJson.cs" />
     <Compile Include="GameUpSDK\WWWRequest.cs" />
     <Compile Include="GameUpSDK\SingletonMonoBehaviour.cs" />
-    <Compile Include="GameUpSDK\GameUpPocoJsonSerializerStrategy.cs" />
     <Compile Include="GameUpSDK\Match.cs" />
     <Compile Include="GameUpSDK\MatchTurn.cs" />
     <Compile Include="GameUpSDK\MatchList.cs" />

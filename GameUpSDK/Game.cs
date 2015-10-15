@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 using System;
+using System.Collections.Generic;
+using System.Collections;
 
 namespace GameUp
 {
@@ -22,16 +24,44 @@ namespace GameUp
   public class Game
   {
     /// <summary> Game's registered display name. </summary>
-    public String Name { get ; set; }
-    
+    public readonly String Name ;
+
     /// <summary> Game description text. </summary>
-    public String Description { get ; set; }
-    
+    public readonly String Description ;
+
     /// <summary> Timestamp when the game was created. </summary>
-    public long CreatedAt { get ; set; }
-    
+    public readonly long CreatedAt ;
+
     /// <summary> Timestamp when game details were last changed or updated. </summary>
-    public long UpdatedAt { get ; set; } 
+    public readonly long UpdatedAt ;
+
+    internal Game (IDictionary<string, object> dict)
+    {
+      foreach (string key in dict.Keys) {
+        object value;
+        dict.TryGetValue (key, out value);
+        if (value == null) {
+          continue;
+        }
+        string valueString = value.ToString ();
+        
+        switch (key) {
+        case "name":
+          Name = valueString;
+          break;
+        case "description":
+          Description = valueString;
+          break;
+        case "created_at":
+          CreatedAt = (long)value;
+          break;
+        case "updated_at":
+          UpdatedAt = (long)value;
+          break;
+        }
+      }
+    }
   }
+
 }
 

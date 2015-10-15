@@ -23,24 +23,50 @@ namespace GameUp
   public class MessageList : IEnumerable<Message>
   {
     /// <summary> The number of messages returned as part of this response. </summary>
-    public int Count { get ; set ; }
+    public readonly long Count ;
 
     /// <summary> The messages themselves. </summary>
-    public Message[] Messages { get; set; }
+    public readonly Message[] Messages ;
 
     public IEnumerator<Message> GetEnumerator ()
     {
-      return (new List<Message>(Messages)).GetEnumerator ();
+      return (new List<Message> (Messages)).GetEnumerator ();
     }
-    
+
     private IEnumerator GetEnumerator1 ()
     {
       return this.GetEnumerator ();
     }
-    
+
     IEnumerator IEnumerable.GetEnumerator ()
     {
       return GetEnumerator1 ();
+    }
+
+    internal MessageList (IDictionary<string, object> dict)
+    {
+      foreach (string key in dict.Keys) {
+        object value;
+        dict.TryGetValue (key, out value);
+        if (value == null) {
+          continue;
+        }
+        
+        switch (key) {
+        case "count":
+          Count = (long) value;
+          break;
+        case "messages":
+          List<Message> mList = new List<Message> ();
+          JsonArray messageArray = (JsonArray)value;
+          foreach (object messageObject in messageArray) {
+            Message message = new Message ((IDictionary<string, object>)messageObject);
+            mList.Add (message);
+          }
+          Messages = mList.ToArray ();
+          break;
+        }
+      }
     }
   }
 }

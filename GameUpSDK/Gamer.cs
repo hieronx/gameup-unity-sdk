@@ -11,8 +11,9 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace GameUp
 {
@@ -21,25 +22,56 @@ namespace GameUp
   /// </summary>
   public class Gamer
   {
-
     /// <summary> Nickname, intended for easy public display. </summary>
-    public String Nickname { get ; set ; }
-    
-    /// <summary> A real name, if one was provided when the gamer signed up. </summary>
-    public String Name { get ; set ; }
-    
-    /// <summary> Time zone of the gamer. </summary>
-    public short Timezone { get ; set ; }
-    
-    /// <summary> Location of the gamer. </summary>
-    public String Location { get ; set ; }
-    
-    /// <summary> Locale string for this gamer. </summary>
-    public String Locale { get ; set ; }
-    
-    /// <summary> When the gamer first registered with GameUp. </summary>
-    public long CreatedAt { get ; set ; }
+    public readonly String Nickname;
 
+    /// <summary> A real name, if one was provided when the gamer signed up. </summary>
+    public readonly String Name;
+
+    /// <summary> Time zone of the gamer. </summary>
+    public readonly long Timezone;
+
+    /// <summary> Location of the gamer. </summary>
+    public readonly String Location;
+
+    /// <summary> Locale string for this gamer. </summary>
+    public readonly String Locale;
+
+    /// <summary> When the gamer first registered with GameUp. </summary>
+    public readonly long CreatedAt;
+
+    internal Gamer (IDictionary<string, object> dict)
+    {
+      foreach (string key in dict.Keys) {
+        object value;
+        dict.TryGetValue (key, out value);
+        if (value == null) {
+          continue;
+        }
+        string valueString = value.ToString ();
+
+        switch (key) {
+        case "nickname":
+          Nickname = valueString;
+          break;
+        case "name":
+          Name = valueString;
+          break;
+        case "timezone":
+          Timezone = (long) value;
+          break;
+        case "location":
+          Location = valueString;
+          break;
+        case "locale":
+          Locale = valueString;
+          break;
+        case "created_at":
+          CreatedAt = (long)value;
+          break;
+        }
+      }
+    }
   }
 }
 

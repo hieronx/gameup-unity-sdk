@@ -12,29 +12,60 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 using System;
+using System.Collections.Generic;
+using System.Collections;
 
 namespace GameUp
 {
-  
+
   /// <summary>
   /// Represents a response containing GameUp global and/or server instance info.
   /// </summary>
   public class MatchTurn
   {
     /// <summary> Turn type </summary>
-    public String Type { get ; set; }
-    
+    public readonly String Type ;
+
     /// <summary> Current turn number </summary>
-    public int TurnNumber { get ; set; }
+    public readonly long TurnNumber ;
 
     /// <summary> Name of gamer for this turn </summary>
-    public String Gamer { get ; set; }
+    public readonly String Gamer ;
 
     /// <summary> Data stored for this turn </summary>
-    public String Data { get ; set; }
-    
-    /// <summary> When the match was created </summary>
-    public long CreatedAt { get ; set; }
+    public readonly String Data ;
 
+    /// <summary> When the match was created </summary>
+    public readonly long CreatedAt ;
+
+    internal MatchTurn (IDictionary<string, object> dict)
+    {
+      foreach (string key in dict.Keys) {
+        object value;
+        dict.TryGetValue (key, out value);
+        if (value == null) {
+          continue;
+        }
+        string valueString = value.ToString ();
+        
+        switch (key) {
+        case "type":
+          Type = valueString;
+          break;
+        case "turn_number":
+          TurnNumber = (long)value;
+          break;
+        case "gamer":
+          Gamer = valueString;
+          break;
+        case "data":
+          Data = valueString;
+          break;
+        case "created_at":
+          CreatedAt = (long)value;
+          break;
+        }
+      }
+    }
   }
 }

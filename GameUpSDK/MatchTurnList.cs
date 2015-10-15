@@ -24,28 +24,51 @@ namespace GameUp
   public class MatchTurnList : IEnumerable<MatchTurn>
   {
     /// <summary> The number of match turns returned as part of this response. </summary>
-    public int Count { get ; set ; }
-    
+    public readonly long Count ;
+
     /// <summary> The match turns themselves. </summary>
-    public MatchTurn[] Turns { get; set; }
-    
-    // Must also implement IEnumerable.GetEnumerator, but implement as a private method.
-    // When you implement IEnumerable(T), you must also implement IEnumerable and IEnumerator(T). 
-    // see https://msdn.microsoft.com/en-us/library/s793z9y2(v=vs.110).aspx
+    public readonly MatchTurn[] Turns ;
+
+    internal MatchTurnList (IDictionary<string, object> dict)
+    {
+      foreach (string key in dict.Keys) {
+        object value;
+        dict.TryGetValue (key, out value);
+        if (value == null) {
+          continue;
+        }
+        
+        switch (key) {
+        case "count":
+          Count = (long) value;
+          break;
+        case "turns":
+          List<MatchTurn> tList = new List<MatchTurn> ();
+          JsonArray turnsArray = (JsonArray)value;
+          foreach (object turnObject in turnsArray) {
+            MatchTurn turn = new MatchTurn ((IDictionary<string, object>)turnObject);
+            tList.Add (turn);
+          }
+          Turns = tList.ToArray ();
+          break;
+        }
+      }
+    }
+
     public IEnumerator<MatchTurn> GetEnumerator ()
     {
-      return (new List<MatchTurn>(Turns)).GetEnumerator ();
+      return (new List<MatchTurn> (Turns)).GetEnumerator ();
     }
-    
+
     private IEnumerator GetEnumerator1 ()
     {
       return this.GetEnumerator ();
     }
-    
+
     IEnumerator IEnumerable.GetEnumerator ()
     {
       return GetEnumerator1 ();
     }
-    
+
   }
 }
