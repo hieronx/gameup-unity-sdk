@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.11.2
+
+* Send empty body on DELETE requests so `WWW` makes a POST request.
+
 ### 0.11.1
 
 * Use the SerializerStrategy with Message object deserialisation.
