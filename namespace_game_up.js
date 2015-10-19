@@ -5,7 +5,6 @@ var namespace_game_up =
     [ "Client", "class_game_up_1_1_client.html", "class_game_up_1_1_client" ],
     [ "Game", "class_game_up_1_1_game.html", "class_game_up_1_1_game" ],
     [ "Gamer", "class_game_up_1_1_gamer.html", "class_game_up_1_1_gamer" ],
-    [ "GameUpPocoJsonSerializerStrategy", "class_game_up_1_1_game_up_poco_json_serializer_strategy.html", "class_game_up_1_1_game_up_poco_json_serializer_strategy" ],
     [ "Leaderboard", "class_game_up_1_1_leaderboard.html", "class_game_up_1_1_leaderboard" ],
     [ "LeaderboardAndRank", "class_game_up_1_1_leaderboard_and_rank.html", "class_game_up_1_1_leaderboard_and_rank" ],
     [ "LeaderboardList", "class_game_up_1_1_leaderboard_list.html", "class_game_up_1_1_leaderboard_list" ],

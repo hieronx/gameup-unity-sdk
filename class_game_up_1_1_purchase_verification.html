@@ -33,7 +33,7 @@
   <td id="projectlogo"><img alt="Logo" src="GameUp_Logo_Small_fill.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GameUpSDK
-   &#160;<span id="projectnumber">0.11.0</span>
+   &#160;<span id="projectnumber">0.12.0</span>
    </div>
    <div id="projectbrief">Unity SDK for the GameUp service</div>
   </td>
@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('class_game_up_1_1_purchase_verificatio
 
 <div class="header">
   <div class="summary">
-<a href="#properties">Properties</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="class_game_up_1_1_purchase_verification-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">GameUp.PurchaseVerification Class Reference</div>  </div>
@@ -119,131 +119,91 @@ $(document).ready(function(){initNavTree('class_game_up_1_1_purchase_verificatio
 <p>Represents a response from a purchase verification.  
  <a href="class_game_up_1_1_purchase_verification.html#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
-Properties</h2></td></tr>
-<tr class="memitem:a6d5989c18747f41d1edc9d75c462eee6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_purchase_verification.html#a6d5989c18747f41d1edc9d75c462eee6">Success</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a6d5989c18747f41d1edc9d75c462eee6"><td class="mdescLeft">&#160;</td><td class="mdescRight">High level flag indicating verification success or failure.  <a href="#a6d5989c18747f41d1edc9d75c462eee6">More...</a><br /></td></tr>
-<tr class="separator:a6d5989c18747f41d1edc9d75c462eee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a8ea889db2aeb56baf545cfff884f06"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_purchase_verification.html#a6a8ea889db2aeb56baf545cfff884f06">SeenBefore</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a6a8ea889db2aeb56baf545cfff884f06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether this is a new transaction, or <a class="el" href="namespace_game_up.html">GameUp</a> had an existing record of it.  <a href="#a6a8ea889db2aeb56baf545cfff884f06">More...</a><br /></td></tr>
-<tr class="separator:a6a8ea889db2aeb56baf545cfff884f06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae23c3476102fbba924816e77934f35b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_purchase_verification.html#ae23c3476102fbba924816e77934f35b4">PurchaseProviderReachable</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ae23c3476102fbba924816e77934f35b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether or not the remote (Apple/Google) purchase provider responded to the verification request. If this is false the client should retry the request later.  <a href="#ae23c3476102fbba924816e77934f35b4">More...</a><br /></td></tr>
-<tr class="separator:ae23c3476102fbba924816e77934f35b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a511cd4d5519722f7597482713637bf9a"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_purchase_verification.html#a511cd4d5519722f7597482713637bf9a">Message</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a511cd4d5519722f7597482713637bf9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A message indicating the verification error reason, if applicable.  <a href="#a511cd4d5519722f7597482713637bf9a">More...</a><br /></td></tr>
-<tr class="separator:a511cd4d5519722f7597482713637bf9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84e1ff4a6915a63a11ab2ab077ba7ad2"><td class="memItemLeft" align="right" valign="top">IDictionary&lt; string, object &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_purchase_verification.html#a84e1ff4a6915a63a11ab2ab077ba7ad2">Data</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a84e1ff4a6915a63a11ab2ab077ba7ad2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The complete response from the remote (Apple/Google) purchase provider.  <a href="#a84e1ff4a6915a63a11ab2ab077ba7ad2">More...</a><br /></td></tr>
-<tr class="separator:a84e1ff4a6915a63a11ab2ab077ba7ad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:ae48023c8b4eb57344bae2bc71b7f1008"><td class="memItemLeft" align="right" valign="top">readonly bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_purchase_verification.html#ae48023c8b4eb57344bae2bc71b7f1008">Success</a></td></tr>
+<tr class="memdesc:ae48023c8b4eb57344bae2bc71b7f1008"><td class="mdescLeft">&#160;</td><td class="mdescRight">High level flag indicating verification success or failure.  <a href="#ae48023c8b4eb57344bae2bc71b7f1008">More...</a><br /></td></tr>
+<tr class="separator:ae48023c8b4eb57344bae2bc71b7f1008"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96be221cb045ae252255850ca5f46a0b"><td class="memItemLeft" align="right" valign="top">readonly bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_purchase_verification.html#a96be221cb045ae252255850ca5f46a0b">SeenBefore</a></td></tr>
+<tr class="memdesc:a96be221cb045ae252255850ca5f46a0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether this is a new transaction, or <a class="el" href="namespace_game_up.html">GameUp</a> had an existing record of it.  <a href="#a96be221cb045ae252255850ca5f46a0b">More...</a><br /></td></tr>
+<tr class="separator:a96be221cb045ae252255850ca5f46a0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14f406acb716e2270ed9c07c570235fd"><td class="memItemLeft" align="right" valign="top">readonly bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_purchase_verification.html#a14f406acb716e2270ed9c07c570235fd">PurchaseProviderReachable</a></td></tr>
+<tr class="memdesc:a14f406acb716e2270ed9c07c570235fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether or not the remote (Apple/Google) purchase provider responded to the verification request. If this is false the client should retry the request later.  <a href="#a14f406acb716e2270ed9c07c570235fd">More...</a><br /></td></tr>
+<tr class="separator:a14f406acb716e2270ed9c07c570235fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4dde592edbcbcd74e35aebb1e1006f6"><td class="memItemLeft" align="right" valign="top">readonly String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_purchase_verification.html#aa4dde592edbcbcd74e35aebb1e1006f6">Message</a></td></tr>
+<tr class="memdesc:aa4dde592edbcbcd74e35aebb1e1006f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">A message indicating the verification error reason, if applicable.  <a href="#aa4dde592edbcbcd74e35aebb1e1006f6">More...</a><br /></td></tr>
+<tr class="separator:aa4dde592edbcbcd74e35aebb1e1006f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf365f961bfa74fc0ec3c7d66a04ab26"><td class="memItemLeft" align="right" valign="top">readonly IDictionary&lt; string, object &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_purchase_verification.html#abf365f961bfa74fc0ec3c7d66a04ab26">Data</a></td></tr>
+<tr class="memdesc:abf365f961bfa74fc0ec3c7d66a04ab26"><td class="mdescLeft">&#160;</td><td class="mdescRight">The complete response from the remote (Apple/Google) purchase provider.  <a href="#abf365f961bfa74fc0ec3c7d66a04ab26">More...</a><br /></td></tr>
+<tr class="separator:abf365f961bfa74fc0ec3c7d66a04ab26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a response from a purchase verification. </p>
-</div><h2 class="groupheader">Property Documentation</h2>
-<a class="anchor" id="a84e1ff4a6915a63a11ab2ab077ba7ad2"></a>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="abf365f961bfa74fc0ec3c7d66a04ab26"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">IDictionary&lt;string, object&gt; GameUp.PurchaseVerification.Data</td>
+          <td class="memname">readonly IDictionary&lt;string, object&gt; GameUp.PurchaseVerification.Data</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>The complete response from the remote (Apple/Google) purchase provider. </p>
 
 </div>
 </div>
-<a class="anchor" id="a511cd4d5519722f7597482713637bf9a"></a>
+<a class="anchor" id="aa4dde592edbcbcd74e35aebb1e1006f6"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">String GameUp.PurchaseVerification.Message</td>
+          <td class="memname">readonly String GameUp.PurchaseVerification.Message</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>A message indicating the verification error reason, if applicable. </p>
 
 </div>
 </div>
-<a class="anchor" id="ae23c3476102fbba924816e77934f35b4"></a>
+<a class="anchor" id="a14f406acb716e2270ed9c07c570235fd"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool GameUp.PurchaseVerification.PurchaseProviderReachable</td>
+          <td class="memname">readonly bool GameUp.PurchaseVerification.PurchaseProviderReachable</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Whether or not the remote (Apple/Google) purchase provider responded to the verification request. If this is false the client should retry the request later. </p>
 
 </div>
 </div>
-<a class="anchor" id="a6a8ea889db2aeb56baf545cfff884f06"></a>
+<a class="anchor" id="a96be221cb045ae252255850ca5f46a0b"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool GameUp.PurchaseVerification.SeenBefore</td>
+          <td class="memname">readonly bool GameUp.PurchaseVerification.SeenBefore</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Whether this is a new transaction, or <a class="el" href="namespace_game_up.html">GameUp</a> had an existing record of it. </p>
 
 </div>
 </div>
-<a class="anchor" id="a6d5989c18747f41d1edc9d75c462eee6"></a>
+<a class="anchor" id="ae48023c8b4eb57344bae2bc71b7f1008"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool GameUp.PurchaseVerification.Success</td>
+          <td class="memname">readonly bool GameUp.PurchaseVerification.Success</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>High level flag indicating verification success or failure. </p>
@@ -259,7 +219,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_game_up.html">GameUp</a></li><li class="navelem"><a class="el" href="class_game_up_1_1_purchase_verification.html">PurchaseVerification</a></li>
-    <li class="footer">Generated on Tue Oct 13 2015 00:04:37 for GameUpSDK by
+    <li class="footer">Generated on Mon Oct 19 2015 16:53:00 for GameUpSDK by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
   </ul>

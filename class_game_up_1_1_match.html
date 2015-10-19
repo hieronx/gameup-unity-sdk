@@ -33,7 +33,7 @@
   <td id="projectlogo"><img alt="Logo" src="GameUp_Logo_Small_fill.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GameUpSDK
-   &#160;<span id="projectnumber">0.11.0</span>
+   &#160;<span id="projectnumber">0.12.0</span>
    </div>
    <div id="projectbrief">Unity SDK for the GameUp service</div>
   </td>
@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('class_game_up_1_1_match.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#properties">Properties</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="class_game_up_1_1_match-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">GameUp.Match Class Reference</div>  </div>
@@ -119,181 +119,125 @@ $(document).ready(function(){initNavTree('class_game_up_1_1_match.html','');});
 <p>Represents a response containing <a class="el" href="namespace_game_up.html">GameUp</a> Multiplayer <a class="el" href="class_game_up_1_1_match.html" title="Represents a response containing GameUp Multiplayer Match with its metadata. ">Match</a> with its metadata.  
  <a href="class_game_up_1_1_match.html#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
-Properties</h2></td></tr>
-<tr class="memitem:a67bb43700cfe715fd6ed78193af1e49d"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_match.html#a67bb43700cfe715fd6ed78193af1e49d">Whoami</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a67bb43700cfe715fd6ed78193af1e49d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nickname set for the current gamer in this given match If the current gamer's nickname is changed after the match is setup, the old nickname is still used hence the use of this 'whoami' field.  <a href="#a67bb43700cfe715fd6ed78193af1e49d">More...</a><br /></td></tr>
-<tr class="separator:a67bb43700cfe715fd6ed78193af1e49d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc47bf38392c053e9b97d81a5e25cc65"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_match.html#adc47bf38392c053e9b97d81a5e25cc65">MatchId</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:adc47bf38392c053e9b97d81a5e25cc65"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_up_1_1_match.html" title="Represents a response containing GameUp Multiplayer Match with its metadata. ">Match</a> ID  <a href="#adc47bf38392c053e9b97d81a5e25cc65">More...</a><br /></td></tr>
-<tr class="separator:adc47bf38392c053e9b97d81a5e25cc65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0fbe8baf40d248b7b42501a845629e7"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_match.html#ad0fbe8baf40d248b7b42501a845629e7">TurnCount</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ad0fbe8baf40d248b7b42501a845629e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current turn number  <a href="#ad0fbe8baf40d248b7b42501a845629e7">More...</a><br /></td></tr>
-<tr class="separator:ad0fbe8baf40d248b7b42501a845629e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80c5930c6417291b9a571ec24e093d77"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_match.html#a80c5930c6417291b9a571ec24e093d77">Turn</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a80c5930c6417291b9a571ec24e093d77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of gamer for the given turn  <a href="#a80c5930c6417291b9a571ec24e093d77">More...</a><br /></td></tr>
-<tr class="separator:a80c5930c6417291b9a571ec24e093d77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a257900b89e9e1feff3df28807d9a4c"><td class="memItemLeft" align="right" valign="top">String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_match.html#a6a257900b89e9e1feff3df28807d9a4c">Gamers</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a6a257900b89e9e1feff3df28807d9a4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nickname of all the gamers in the current match  <a href="#a6a257900b89e9e1feff3df28807d9a4c">More...</a><br /></td></tr>
-<tr class="separator:a6a257900b89e9e1feff3df28807d9a4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3fa86da8a381313c198c294474cb730"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_match.html#aa3fa86da8a381313c198c294474cb730">CreatedAt</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aa3fa86da8a381313c198c294474cb730"><td class="mdescLeft">&#160;</td><td class="mdescRight">When the match was created  <a href="#aa3fa86da8a381313c198c294474cb730">More...</a><br /></td></tr>
-<tr class="separator:aa3fa86da8a381313c198c294474cb730"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65af481e3ed1bb7564fe01f85b3434d6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_match.html#a65af481e3ed1bb7564fe01f85b3434d6">Active</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a65af481e3ed1bb7564fe01f85b3434d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks to see if the match is still ongoing or has ended.  <a href="#a65af481e3ed1bb7564fe01f85b3434d6">More...</a><br /></td></tr>
-<tr class="separator:a65af481e3ed1bb7564fe01f85b3434d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a2699cb2ba54293e5c2fe22c4dfa0f227"><td class="memItemLeft" align="right" valign="top">readonly String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_match.html#a2699cb2ba54293e5c2fe22c4dfa0f227">Whoami</a></td></tr>
+<tr class="memdesc:a2699cb2ba54293e5c2fe22c4dfa0f227"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nickname set for the current gamer in this given match If the current gamer's nickname is changed after the match is setup, the old nickname is still used hence the use of this 'whoami' field.  <a href="#a2699cb2ba54293e5c2fe22c4dfa0f227">More...</a><br /></td></tr>
+<tr class="separator:a2699cb2ba54293e5c2fe22c4dfa0f227"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ee09e1f26d4e4fbbe9acf82107ec1be"><td class="memItemLeft" align="right" valign="top">readonly String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_match.html#a0ee09e1f26d4e4fbbe9acf82107ec1be">MatchId</a></td></tr>
+<tr class="memdesc:a0ee09e1f26d4e4fbbe9acf82107ec1be"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_up_1_1_match.html" title="Represents a response containing GameUp Multiplayer Match with its metadata. ">Match</a> ID  <a href="#a0ee09e1f26d4e4fbbe9acf82107ec1be">More...</a><br /></td></tr>
+<tr class="separator:a0ee09e1f26d4e4fbbe9acf82107ec1be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eb8b9093c8b31bc10be358ceff14b9e"><td class="memItemLeft" align="right" valign="top">readonly long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_match.html#a2eb8b9093c8b31bc10be358ceff14b9e">TurnCount</a></td></tr>
+<tr class="memdesc:a2eb8b9093c8b31bc10be358ceff14b9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current turn number  <a href="#a2eb8b9093c8b31bc10be358ceff14b9e">More...</a><br /></td></tr>
+<tr class="separator:a2eb8b9093c8b31bc10be358ceff14b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac17b71653b9479bc46c8f79dededddf0"><td class="memItemLeft" align="right" valign="top">readonly String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_match.html#ac17b71653b9479bc46c8f79dededddf0">Turn</a></td></tr>
+<tr class="memdesc:ac17b71653b9479bc46c8f79dededddf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of gamer for the given turn  <a href="#ac17b71653b9479bc46c8f79dededddf0">More...</a><br /></td></tr>
+<tr class="separator:ac17b71653b9479bc46c8f79dededddf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1eb6929cfa85833ea31bd71870e1f98"><td class="memItemLeft" align="right" valign="top">readonly String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_match.html#aa1eb6929cfa85833ea31bd71870e1f98">Gamers</a></td></tr>
+<tr class="memdesc:aa1eb6929cfa85833ea31bd71870e1f98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nickname of all the gamers in the current match  <a href="#aa1eb6929cfa85833ea31bd71870e1f98">More...</a><br /></td></tr>
+<tr class="separator:aa1eb6929cfa85833ea31bd71870e1f98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0a7b72004d779959a7bbb5c0ffdcba7"><td class="memItemLeft" align="right" valign="top">readonly long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_match.html#ac0a7b72004d779959a7bbb5c0ffdcba7">CreatedAt</a></td></tr>
+<tr class="memdesc:ac0a7b72004d779959a7bbb5c0ffdcba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">When the match was created  <a href="#ac0a7b72004d779959a7bbb5c0ffdcba7">More...</a><br /></td></tr>
+<tr class="separator:ac0a7b72004d779959a7bbb5c0ffdcba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa121cc1247ea664f39cc0b698722802d"><td class="memItemLeft" align="right" valign="top">readonly bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_match.html#aa121cc1247ea664f39cc0b698722802d">Active</a></td></tr>
+<tr class="memdesc:aa121cc1247ea664f39cc0b698722802d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks to see if the match is still ongoing or has ended.  <a href="#aa121cc1247ea664f39cc0b698722802d">More...</a><br /></td></tr>
+<tr class="separator:aa121cc1247ea664f39cc0b698722802d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a response containing <a class="el" href="namespace_game_up.html">GameUp</a> Multiplayer <a class="el" href="class_game_up_1_1_match.html" title="Represents a response containing GameUp Multiplayer Match with its metadata. ">Match</a> with its metadata. </p>
-</div><h2 class="groupheader">Property Documentation</h2>
-<a class="anchor" id="a65af481e3ed1bb7564fe01f85b3434d6"></a>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="aa121cc1247ea664f39cc0b698722802d"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool GameUp.Match.Active</td>
+          <td class="memname">readonly bool GameUp.Match.Active</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Checks to see if the match is still ongoing or has ended. </p>
 
 </div>
 </div>
-<a class="anchor" id="aa3fa86da8a381313c198c294474cb730"></a>
+<a class="anchor" id="ac0a7b72004d779959a7bbb5c0ffdcba7"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">long GameUp.Match.CreatedAt</td>
+          <td class="memname">readonly long GameUp.Match.CreatedAt</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>When the match was created </p>
 
 </div>
 </div>
-<a class="anchor" id="a6a257900b89e9e1feff3df28807d9a4c"></a>
+<a class="anchor" id="aa1eb6929cfa85833ea31bd71870e1f98"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">String [] GameUp.Match.Gamers</td>
+          <td class="memname">readonly String [] GameUp.Match.Gamers</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Nickname of all the gamers in the current match </p>
 
 </div>
 </div>
-<a class="anchor" id="adc47bf38392c053e9b97d81a5e25cc65"></a>
+<a class="anchor" id="a0ee09e1f26d4e4fbbe9acf82107ec1be"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">String GameUp.Match.MatchId</td>
+          <td class="memname">readonly String GameUp.Match.MatchId</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p><a class="el" href="class_game_up_1_1_match.html" title="Represents a response containing GameUp Multiplayer Match with its metadata. ">Match</a> ID </p>
 
 </div>
 </div>
-<a class="anchor" id="a80c5930c6417291b9a571ec24e093d77"></a>
+<a class="anchor" id="ac17b71653b9479bc46c8f79dededddf0"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">String GameUp.Match.Turn</td>
+          <td class="memname">readonly String GameUp.Match.Turn</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Name of gamer for the given turn </p>
 
 </div>
 </div>
-<a class="anchor" id="ad0fbe8baf40d248b7b42501a845629e7"></a>
+<a class="anchor" id="a2eb8b9093c8b31bc10be358ceff14b9e"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">long GameUp.Match.TurnCount</td>
+          <td class="memname">readonly long GameUp.Match.TurnCount</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Current turn number </p>
 
 </div>
 </div>
-<a class="anchor" id="a67bb43700cfe715fd6ed78193af1e49d"></a>
+<a class="anchor" id="a2699cb2ba54293e5c2fe22c4dfa0f227"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">String GameUp.Match.Whoami</td>
+          <td class="memname">readonly String GameUp.Match.Whoami</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Nickname set for the current gamer in this given match If the current gamer's nickname is changed after the match is setup, the old nickname is still used hence the use of this 'whoami' field. </p>
@@ -309,7 +253,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_game_up.html">GameUp</a></li><li class="navelem"><a class="el" href="class_game_up_1_1_match.html">Match</a></li>
-    <li class="footer">Generated on Tue Oct 13 2015 00:04:37 for GameUpSDK by
+    <li class="footer">Generated on Mon Oct 19 2015 16:53:00 for GameUpSDK by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
   </ul>

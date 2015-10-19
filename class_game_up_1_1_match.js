@@ -1,10 +1,10 @@
 var class_game_up_1_1_match =
 [
-    [ "Active", "class_game_up_1_1_match.html#a65af481e3ed1bb7564fe01f85b3434d6", null ],
-    [ "CreatedAt", "class_game_up_1_1_match.html#aa3fa86da8a381313c198c294474cb730", null ],
-    [ "Gamers", "class_game_up_1_1_match.html#a6a257900b89e9e1feff3df28807d9a4c", null ],
-    [ "MatchId", "class_game_up_1_1_match.html#adc47bf38392c053e9b97d81a5e25cc65", null ],
-    [ "Turn", "class_game_up_1_1_match.html#a80c5930c6417291b9a571ec24e093d77", null ],
-    [ "TurnCount", "class_game_up_1_1_match.html#ad0fbe8baf40d248b7b42501a845629e7", null ],
-    [ "Whoami", "class_game_up_1_1_match.html#a67bb43700cfe715fd6ed78193af1e49d", null ]
+    [ "Active", "class_game_up_1_1_match.html#aa121cc1247ea664f39cc0b698722802d", null ],
+    [ "CreatedAt", "class_game_up_1_1_match.html#ac0a7b72004d779959a7bbb5c0ffdcba7", null ],
+    [ "Gamers", "class_game_up_1_1_match.html#aa1eb6929cfa85833ea31bd71870e1f98", null ],
+    [ "MatchId", "class_game_up_1_1_match.html#a0ee09e1f26d4e4fbbe9acf82107ec1be", null ],
+    [ "Turn", "class_game_up_1_1_match.html#ac17b71653b9479bc46c8f79dededddf0", null ],
+    [ "TurnCount", "class_game_up_1_1_match.html#a2eb8b9093c8b31bc10be358ceff14b9e", null ],
+    [ "Whoami", "class_game_up_1_1_match.html#a2699cb2ba54293e5c2fe22c4dfa0f227", null ]
 ];

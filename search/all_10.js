@@ -1,15 +1,15 @@
 var searchData=
 [
-  ['tags',['Tags',['../class_game_up_1_1_leaderboard.html#abb70fc3f626f792a5eec45034dd0ee29',1,'GameUp.Leaderboard.Tags()'],['../class_game_up_1_1_message.html#abd19b256bab9592854e8904bbc4140df',1,'GameUp.Message.Tags()']]],
-  ['time',['Time',['../class_game_up_1_1_ping_info.html#a2f7bd266ae09fb15ee2954c1e37ec4d3',1,'GameUp.PingInfo.Time()'],['../class_game_up_1_1_server_info.html#a15e5d6330fb9c6e3c4bd645a1fd165d9',1,'GameUp.ServerInfo.Time()']]],
-  ['timezone',['Timezone',['../class_game_up_1_1_gamer.html#a7e891d076c6544bf313fe35d351511e5',1,'GameUp::Gamer']]],
+  ['tags',['Tags',['../class_game_up_1_1_leaderboard.html#aac1cd5acb1a61e9f5046d0b1382b1f9c',1,'GameUp.Leaderboard.Tags()'],['../class_game_up_1_1_message.html#ad071797b4fce3ea870dec83aee146b55',1,'GameUp.Message.Tags()']]],
+  ['time',['Time',['../class_game_up_1_1_ping_info.html#a156ff7539c3493f8b70f1b6684e5d99a',1,'GameUp.PingInfo.Time()'],['../class_game_up_1_1_server_info.html#ab3ee546fdeafcf5a692c2e7cd8b41ee3',1,'GameUp.ServerInfo.Time()']]],
+  ['timezone',['Timezone',['../class_game_up_1_1_gamer.html#ac6ab118a247ab688bc21521009dd5c80',1,'GameUp::Gamer']]],
   ['token',['Token',['../class_game_up_1_1_session_client.html#a8df5b1b640553470d13f253566129eaf',1,'GameUp::SessionClient']]],
-  ['totalcount',['TotalCount',['../class_game_up_1_1_shared_storage_search_results.html#a75ea6726b1c1110beddddfa9bc2d309e',1,'GameUp::SharedStorageSearchResults']]],
-  ['turn',['Turn',['../class_game_up_1_1_match.html#a80c5930c6417291b9a571ec24e093d77',1,'GameUp::Match']]],
+  ['totalcount',['TotalCount',['../class_game_up_1_1_shared_storage_search_results.html#ae7f30a36057e313736ee2145f1a63c73',1,'GameUp::SharedStorageSearchResults']]],
+  ['turn',['Turn',['../class_game_up_1_1_match.html#ac17b71653b9479bc46c8f79dededddf0',1,'GameUp::Match']]],
   ['turncallback',['TurnCallback',['../class_game_up_1_1_session_client.html#a27953dab719d8d055c00bffc673d475c',1,'GameUp::SessionClient']]],
-  ['turncount',['TurnCount',['../class_game_up_1_1_match.html#ad0fbe8baf40d248b7b42501a845629e7',1,'GameUp::Match']]],
-  ['turnnumber',['TurnNumber',['../class_game_up_1_1_match_turn.html#a99ada3c498d8d202af9e674f1a1afeab',1,'GameUp::MatchTurn']]],
-  ['turns',['Turns',['../class_game_up_1_1_match_turn_list.html#aff89cedbbf3e232a357b194de3ffed81',1,'GameUp::MatchTurnList']]],
+  ['turncount',['TurnCount',['../class_game_up_1_1_match.html#a2eb8b9093c8b31bc10be358ceff14b9e',1,'GameUp::Match']]],
+  ['turnnumber',['TurnNumber',['../class_game_up_1_1_match_turn.html#aeb0ec92602b3749362224df4c8472d99',1,'GameUp::MatchTurn']]],
+  ['turns',['Turns',['../class_game_up_1_1_match_turn_list.html#adfaf8a0b2b1e4758c06ee9284b6353b0',1,'GameUp::MatchTurnList']]],
   ['turnsubmitsuccesscallback',['TurnSubmitSuccessCallback',['../class_game_up_1_1_session_client.html#a8f93abc106543f6f63234ac9a241a9a9',1,'GameUp::SessionClient']]],
-  ['type',['Type',['../class_game_up_1_1_achievement.html#ab7d89c22225c82f6655fe266fb5ce779',1,'GameUp.Achievement.Type()'],['../class_game_up_1_1_leaderboard.html#acf6471f9bb743848f2c5fadfacab1269',1,'GameUp.Leaderboard.Type()'],['../class_game_up_1_1_leaderboard_1_1_reset.html#ab7b0f7bf0eea1fff8a0108f88f28951f',1,'GameUp.Leaderboard.Reset.Type()'],['../class_game_up_1_1_match_turn.html#abe542e49c044e0b02eb1a1dcaab401b6',1,'GameUp.MatchTurn.Type()']]]
+  ['type',['Type',['../class_game_up_1_1_achievement.html#a20dfdd0e78a192fbc2e2f6021c646407',1,'GameUp.Achievement.Type()'],['../class_game_up_1_1_leaderboard.html#a36e55e1dae31a81308360e81d9d95213',1,'GameUp.Leaderboard.Type()'],['../class_game_up_1_1_leaderboard_1_1_reset.html#a4c9aa7a8e90d7126d84db0e6d1b8aad4',1,'GameUp.Leaderboard.Reset.Type()'],['../class_game_up_1_1_match_turn.html#ac9f9be16dccf444caffa339fa4391769',1,'GameUp.MatchTurn.Type()']]]
 ];

@@ -33,7 +33,7 @@
   <td id="projectlogo"><img alt="Logo" src="GameUp_Logo_Small_fill.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GameUpSDK
-   &#160;<span id="projectnumber">0.11.0</span>
+   &#160;<span id="projectnumber">0.12.0</span>
    </div>
    <div id="projectbrief">Unity SDK for the GameUp service</div>
   </td>
@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('class_game_up_1_1_message.html','');})
 
 <div class="header">
   <div class="summary">
-<a href="#properties">Properties</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="class_game_up_1_1_message-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">GameUp.Message Class Reference</div>  </div>
@@ -119,181 +119,125 @@ $(document).ready(function(){initNavTree('class_game_up_1_1_message.html','');})
 <p>Represents a message from the mailbox.  
  <a href="class_game_up_1_1_message.html#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
-Properties</h2></td></tr>
-<tr class="memitem:aaf0a1cc7966da86bb7632acec847ae4e"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_message.html#aaf0a1cc7966da86bb7632acec847ae4e">MessageId</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aaf0a1cc7966da86bb7632acec847ae4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID of the message.  <a href="#aaf0a1cc7966da86bb7632acec847ae4e">More...</a><br /></td></tr>
-<tr class="separator:aaf0a1cc7966da86bb7632acec847ae4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd19b256bab9592854e8904bbc4140df"><td class="memItemLeft" align="right" valign="top">String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_message.html#abd19b256bab9592854e8904bbc4140df">Tags</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:abd19b256bab9592854e8904bbc4140df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tags associated with this message.  <a href="#abd19b256bab9592854e8904bbc4140df">More...</a><br /></td></tr>
-<tr class="separator:abd19b256bab9592854e8904bbc4140df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af87f899d30e645e73a19489bb513f8a9"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_message.html#af87f899d30e645e73a19489bb513f8a9">Subject</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:af87f899d30e645e73a19489bb513f8a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subject of the message.  <a href="#af87f899d30e645e73a19489bb513f8a9">More...</a><br /></td></tr>
-<tr class="separator:af87f899d30e645e73a19489bb513f8a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53e6f35e60c7bef69c5957f40fae0bd5"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_message.html#a53e6f35e60c7bef69c5957f40fae0bd5">CreatedAt</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a53e6f35e60c7bef69c5957f40fae0bd5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_up_1_1_leaderboard.html" title="Represents a GameUp leaderboard metadata and top ranked gamers. ">Leaderboard</a> creation unix time.  <a href="#a53e6f35e60c7bef69c5957f40fae0bd5">More...</a><br /></td></tr>
-<tr class="separator:a53e6f35e60c7bef69c5957f40fae0bd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5995da164a40e7f9479961ae99c3882a"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_message.html#a5995da164a40e7f9479961ae99c3882a">ExpiresAt</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a5995da164a40e7f9479961ae99c3882a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_up_1_1_message.html" title="Represents a message from the mailbox. ">Message</a> expiration unix time.  <a href="#a5995da164a40e7f9479961ae99c3882a">More...</a><br /></td></tr>
-<tr class="separator:a5995da164a40e7f9479961ae99c3882a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2cd9880ae793c382ad4dd980a1a9a2c"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_message.html#aa2cd9880ae793c382ad4dd980a1a9a2c">ReadAt</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aa2cd9880ae793c382ad4dd980a1a9a2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">When the message was first read unix time.  <a href="#aa2cd9880ae793c382ad4dd980a1a9a2c">More...</a><br /></td></tr>
-<tr class="separator:aa2cd9880ae793c382ad4dd980a1a9a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4df0d8125098ccfffcc5cc743e9acccf"><td class="memItemLeft" align="right" valign="top">IDictionary&lt; String, Object &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_message.html#a4df0d8125098ccfffcc5cc743e9acccf">Body</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a4df0d8125098ccfffcc5cc743e9acccf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw Key-Value representing the body of the message.  <a href="#a4df0d8125098ccfffcc5cc743e9acccf">More...</a><br /></td></tr>
-<tr class="separator:a4df0d8125098ccfffcc5cc743e9acccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a6dae19bdd03688b58190aeda95136bd6"><td class="memItemLeft" align="right" valign="top">readonly String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_message.html#a6dae19bdd03688b58190aeda95136bd6">MessageId</a></td></tr>
+<tr class="memdesc:a6dae19bdd03688b58190aeda95136bd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID of the message.  <a href="#a6dae19bdd03688b58190aeda95136bd6">More...</a><br /></td></tr>
+<tr class="separator:a6dae19bdd03688b58190aeda95136bd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad071797b4fce3ea870dec83aee146b55"><td class="memItemLeft" align="right" valign="top">readonly String[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_message.html#ad071797b4fce3ea870dec83aee146b55">Tags</a></td></tr>
+<tr class="memdesc:ad071797b4fce3ea870dec83aee146b55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tags associated with this message.  <a href="#ad071797b4fce3ea870dec83aee146b55">More...</a><br /></td></tr>
+<tr class="separator:ad071797b4fce3ea870dec83aee146b55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e731fe4c73f3ce3ecdb9ae4fda00952"><td class="memItemLeft" align="right" valign="top">readonly String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_message.html#a5e731fe4c73f3ce3ecdb9ae4fda00952">Subject</a></td></tr>
+<tr class="memdesc:a5e731fe4c73f3ce3ecdb9ae4fda00952"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subject of the message.  <a href="#a5e731fe4c73f3ce3ecdb9ae4fda00952">More...</a><br /></td></tr>
+<tr class="separator:a5e731fe4c73f3ce3ecdb9ae4fda00952"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2948bc49121e23f4c2c8e0959fec11be"><td class="memItemLeft" align="right" valign="top">readonly long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_message.html#a2948bc49121e23f4c2c8e0959fec11be">CreatedAt</a></td></tr>
+<tr class="memdesc:a2948bc49121e23f4c2c8e0959fec11be"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_up_1_1_leaderboard.html" title="Represents a GameUp leaderboard metadata and top ranked gamers. ">Leaderboard</a> creation unix time.  <a href="#a2948bc49121e23f4c2c8e0959fec11be">More...</a><br /></td></tr>
+<tr class="separator:a2948bc49121e23f4c2c8e0959fec11be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd37b79820c4a316fc62f092ce5c7630"><td class="memItemLeft" align="right" valign="top">readonly long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_message.html#afd37b79820c4a316fc62f092ce5c7630">ExpiresAt</a></td></tr>
+<tr class="memdesc:afd37b79820c4a316fc62f092ce5c7630"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_game_up_1_1_message.html" title="Represents a message from the mailbox. ">Message</a> expiration unix time.  <a href="#afd37b79820c4a316fc62f092ce5c7630">More...</a><br /></td></tr>
+<tr class="separator:afd37b79820c4a316fc62f092ce5c7630"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7b812230609c55d15524b2bfffd4ae2"><td class="memItemLeft" align="right" valign="top">readonly long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_message.html#aa7b812230609c55d15524b2bfffd4ae2">ReadAt</a></td></tr>
+<tr class="memdesc:aa7b812230609c55d15524b2bfffd4ae2"><td class="mdescLeft">&#160;</td><td class="mdescRight">When the message was first read unix time.  <a href="#aa7b812230609c55d15524b2bfffd4ae2">More...</a><br /></td></tr>
+<tr class="separator:aa7b812230609c55d15524b2bfffd4ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a793b7338fd2ae71504602950b254092a"><td class="memItemLeft" align="right" valign="top">readonly IDictionary&lt; String, Object &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_message.html#a793b7338fd2ae71504602950b254092a">Body</a></td></tr>
+<tr class="memdesc:a793b7338fd2ae71504602950b254092a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw Key-Value representing the body of the message.  <a href="#a793b7338fd2ae71504602950b254092a">More...</a><br /></td></tr>
+<tr class="separator:a793b7338fd2ae71504602950b254092a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a message from the mailbox. </p>
-</div><h2 class="groupheader">Property Documentation</h2>
-<a class="anchor" id="a4df0d8125098ccfffcc5cc743e9acccf"></a>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a793b7338fd2ae71504602950b254092a"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">IDictionary&lt;String, Object&gt; GameUp.Message.Body</td>
+          <td class="memname">readonly IDictionary&lt;String, Object&gt; GameUp.Message.Body</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Raw Key-Value representing the body of the message. </p>
 
 </div>
 </div>
-<a class="anchor" id="a53e6f35e60c7bef69c5957f40fae0bd5"></a>
+<a class="anchor" id="a2948bc49121e23f4c2c8e0959fec11be"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">long GameUp.Message.CreatedAt</td>
+          <td class="memname">readonly long GameUp.Message.CreatedAt</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p><a class="el" href="class_game_up_1_1_leaderboard.html" title="Represents a GameUp leaderboard metadata and top ranked gamers. ">Leaderboard</a> creation unix time. </p>
 
 </div>
 </div>
-<a class="anchor" id="a5995da164a40e7f9479961ae99c3882a"></a>
+<a class="anchor" id="afd37b79820c4a316fc62f092ce5c7630"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">long GameUp.Message.ExpiresAt</td>
+          <td class="memname">readonly long GameUp.Message.ExpiresAt</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p><a class="el" href="class_game_up_1_1_message.html" title="Represents a message from the mailbox. ">Message</a> expiration unix time. </p>
 
 </div>
 </div>
-<a class="anchor" id="aaf0a1cc7966da86bb7632acec847ae4e"></a>
+<a class="anchor" id="a6dae19bdd03688b58190aeda95136bd6"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">String GameUp.Message.MessageId</td>
+          <td class="memname">readonly String GameUp.Message.MessageId</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>ID of the message. </p>
 
 </div>
 </div>
-<a class="anchor" id="aa2cd9880ae793c382ad4dd980a1a9a2c"></a>
+<a class="anchor" id="aa7b812230609c55d15524b2bfffd4ae2"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">long GameUp.Message.ReadAt</td>
+          <td class="memname">readonly long GameUp.Message.ReadAt</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>When the message was first read unix time. </p>
 
 </div>
 </div>
-<a class="anchor" id="af87f899d30e645e73a19489bb513f8a9"></a>
+<a class="anchor" id="a5e731fe4c73f3ce3ecdb9ae4fda00952"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">String GameUp.Message.Subject</td>
+          <td class="memname">readonly String GameUp.Message.Subject</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Subject of the message. </p>
 
 </div>
 </div>
-<a class="anchor" id="abd19b256bab9592854e8904bbc4140df"></a>
+<a class="anchor" id="ad071797b4fce3ea870dec83aee146b55"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">String [] GameUp.Message.Tags</td>
+          <td class="memname">readonly String [] GameUp.Message.Tags</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Tags associated with this message. </p>
@@ -309,7 +253,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_game_up.html">GameUp</a></li><li class="navelem"><a class="el" href="class_game_up_1_1_message.html">Message</a></li>
-    <li class="footer">Generated on Tue Oct 13 2015 00:04:37 for GameUpSDK by
+    <li class="footer">Generated on Mon Oct 19 2015 16:53:00 for GameUpSDK by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
   </ul>

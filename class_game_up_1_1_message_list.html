@@ -33,7 +33,7 @@
   <td id="projectlogo"><img alt="Logo" src="GameUp_Logo_Small_fill.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GameUpSDK
-   &#160;<span id="projectnumber">0.11.0</span>
+   &#160;<span id="projectnumber">0.12.0</span>
    </div>
    <div id="projectbrief">Unity SDK for the GameUp service</div>
   </td>
@@ -110,7 +110,7 @@ $(document).ready(function(){initNavTree('class_game_up_1_1_message_list.html','
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#properties">Properties</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="class_game_up_1_1_message_list-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">GameUp.MessageList Class Reference</div>  </div>
@@ -133,14 +133,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8fb3961cf309c0799c5cf5901a3fc59c"><td class="memItemLeft" align="right" valign="top">IEnumerator&lt; <a class="el" href="class_game_up_1_1_message.html">Message</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_message_list.html#a8fb3961cf309c0799c5cf5901a3fc59c">GetEnumerator</a> ()</td></tr>
 <tr class="separator:a8fb3961cf309c0799c5cf5901a3fc59c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
-Properties</h2></td></tr>
-<tr class="memitem:a37f76ef9c0ce8aa4c30698d80869faf8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_message_list.html#a37f76ef9c0ce8aa4c30698d80869faf8">Count</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a37f76ef9c0ce8aa4c30698d80869faf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of messages returned as part of this response.  <a href="#a37f76ef9c0ce8aa4c30698d80869faf8">More...</a><br /></td></tr>
-<tr class="separator:a37f76ef9c0ce8aa4c30698d80869faf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3575664099970c1aafc6bee0c9a56a51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_up_1_1_message.html">Message</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_message_list.html#a3575664099970c1aafc6bee0c9a56a51">Messages</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a3575664099970c1aafc6bee0c9a56a51"><td class="mdescLeft">&#160;</td><td class="mdescRight">The messages themselves.  <a href="#a3575664099970c1aafc6bee0c9a56a51">More...</a><br /></td></tr>
-<tr class="separator:a3575664099970c1aafc6bee0c9a56a51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:ab4222d5da5b9731d5cdd2896162cfe11"><td class="memItemLeft" align="right" valign="top">readonly long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_message_list.html#ab4222d5da5b9731d5cdd2896162cfe11">Count</a></td></tr>
+<tr class="memdesc:ab4222d5da5b9731d5cdd2896162cfe11"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of messages returned as part of this response.  <a href="#ab4222d5da5b9731d5cdd2896162cfe11">More...</a><br /></td></tr>
+<tr class="separator:ab4222d5da5b9731d5cdd2896162cfe11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a064e30896cea460e463212a9f5239b"><td class="memItemLeft" align="right" valign="top">readonly <a class="el" href="class_game_up_1_1_message.html">Message</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_message_list.html#a9a064e30896cea460e463212a9f5239b">Messages</a></td></tr>
+<tr class="memdesc:a9a064e30896cea460e463212a9f5239b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The messages themselves.  <a href="#a9a064e30896cea460e463212a9f5239b">More...</a><br /></td></tr>
+<tr class="separator:a9a064e30896cea460e463212a9f5239b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a list of message from the mailbox. </p>
@@ -160,45 +160,29 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Property Documentation</h2>
-<a class="anchor" id="a37f76ef9c0ce8aa4c30698d80869faf8"></a>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="ab4222d5da5b9731d5cdd2896162cfe11"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int GameUp.MessageList.Count</td>
+          <td class="memname">readonly long GameUp.MessageList.Count</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>The number of messages returned as part of this response. </p>
 
 </div>
 </div>
-<a class="anchor" id="a3575664099970c1aafc6bee0c9a56a51"></a>
+<a class="anchor" id="a9a064e30896cea460e463212a9f5239b"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_game_up_1_1_message.html">Message</a> [] GameUp.MessageList.Messages</td>
+          <td class="memname">readonly <a class="el" href="class_game_up_1_1_message.html">Message</a> [] GameUp.MessageList.Messages</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>The messages themselves. </p>
@@ -214,7 +198,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_game_up.html">GameUp</a></li><li class="navelem"><a class="el" href="class_game_up_1_1_message_list.html">MessageList</a></li>
-    <li class="footer">Generated on Tue Oct 13 2015 00:04:37 for GameUpSDK by
+    <li class="footer">Generated on Mon Oct 19 2015 16:53:00 for GameUpSDK by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
   </ul>

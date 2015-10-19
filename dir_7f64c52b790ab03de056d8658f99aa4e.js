@@ -16,9 +16,6 @@ var dir_7f64c52b790ab03de056d8658f99aa4e =
     [ "Gamer.cs", "_gamer_8cs.html", [
       [ "Gamer", "class_game_up_1_1_gamer.html", "class_game_up_1_1_gamer" ]
     ] ],
-    [ "GameUpPocoJsonSerializerStrategy.cs", "_game_up_poco_json_serializer_strategy_8cs.html", [
-      [ "GameUpPocoJsonSerializerStrategy", "class_game_up_1_1_game_up_poco_json_serializer_strategy.html", "class_game_up_1_1_game_up_poco_json_serializer_strategy" ]
-    ] ],
     [ "Leaderboard.cs", "_leaderboard_8cs.html", [
       [ "Leaderboard", "class_game_up_1_1_leaderboard.html", "class_game_up_1_1_leaderboard" ],
       [ "Entry", "class_game_up_1_1_leaderboard_1_1_entry.html", "class_game_up_1_1_leaderboard_1_1_entry" ],

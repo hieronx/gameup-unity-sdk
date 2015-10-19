@@ -1,9 +1,9 @@
 var class_game_up_1_1_gamer =
 [
-    [ "CreatedAt", "class_game_up_1_1_gamer.html#a0b088bc8350261ec9196fce7d00f7639", null ],
-    [ "Locale", "class_game_up_1_1_gamer.html#a3add3762b33843b6df433fa5155910df", null ],
-    [ "Location", "class_game_up_1_1_gamer.html#a3ec9373f1bfa8b3233de26aae1905d18", null ],
-    [ "Name", "class_game_up_1_1_gamer.html#a4ea4688de157c04d080eb7ff5a29314f", null ],
-    [ "Nickname", "class_game_up_1_1_gamer.html#aa8223e0e56f214c72bfd661a95de9edf", null ],
-    [ "Timezone", "class_game_up_1_1_gamer.html#a7e891d076c6544bf313fe35d351511e5", null ]
+    [ "CreatedAt", "class_game_up_1_1_gamer.html#a179315c2f184b8fab84627e6644e9158", null ],
+    [ "Locale", "class_game_up_1_1_gamer.html#aee9ab47a9ded09468c2be39a67853e21", null ],
+    [ "Location", "class_game_up_1_1_gamer.html#a2a114613599ee649315ae70813647fef", null ],
+    [ "Name", "class_game_up_1_1_gamer.html#a04beb600586231b5fb6380e07fb6e6c4", null ],
+    [ "Nickname", "class_game_up_1_1_gamer.html#a1d5960e02db8cb435ea9ce5c29067d5b", null ],
+    [ "Timezone", "class_game_up_1_1_gamer.html#ac6ab118a247ab688bc21521009dd5c80", null ]
 ];
