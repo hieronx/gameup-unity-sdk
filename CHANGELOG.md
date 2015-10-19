@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### 0.12.0
+
+* Do not use `SimpleJson` to deserialise directly into C# types.
+* BREAKING CHANGE: All of the SDK's POCOs were marked with setters to enable `SimpleJson` to deserialise directly into the types. The have now been removed and all POCOs are immutable (as always intended).
+
 ### 0.11.3
 
 * Send an empty object to trick `WWW` into a POST request.
