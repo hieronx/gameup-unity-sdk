@@ -342,7 +342,22 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void CreateGameUpAccount (string email, string password, string confirm_password, string name, LoginCallback success, ErrorCallback error)
     {
-      CreateGameUpAccount (email, password, confirm_password, name, null, success, error);
+      CreateGameUpAccount (email, password, confirm_password, name, "", null, success, error);
+    }
+
+    /// <summary>
+    /// Create a new account for the gamer using a GameUp Email / Password combination with a nickname.
+    /// </summary>
+    /// <param name="email">Gamer's Email.</param>
+    /// <param name="password">Gamer's Password.</param>
+    /// <param name="confirm_password">Gamer's Password Confirmation</param>
+    /// <param name="name">Gamer's Name - Optional</param>
+    /// <param name="nickname">Gamer's Nickname - Optional</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void CreateGameUpAccount (string email, string password, string confirm_password, string name, string nickname, LoginCallback success, ErrorCallback error)
+    {
+      CreateGameUpAccount (email, password, confirm_password, name, nickname, null, success, error);
     }
 
     /// <summary>
@@ -357,14 +372,35 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void CreateGameUpAccount (string email, string password, string confirm_password, string name, SessionClient session, LoginCallback success, ErrorCallback error)
     {
+      CreateGameUpAccount (email, password, confirm_password, name, "", session, success, error);
+    }
+
+    /// <summary>
+    /// Create a new account for the gamer using a GameUp Email / Password combination with a nickname and link an existing gamer token.
+    /// </summary>
+    /// <param name="email">Gamer's Email.</param>
+    /// <param name="password">Gamer's Password.</param>
+    /// <param name="confirm_password">Gamer's Password Confirmation</param>
+    /// <param name="name">Gamer's Name</param>
+    /// <param name="nickname">Gamer's Nickname - Optional</param>
+    /// <param name="session">An existing session client.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void CreateGameUpAccount (string email, string password, string confirm_password, string name, string nickname, SessionClient session, LoginCallback success, ErrorCallback error)
+    {
       UriBuilder b = new UriBuilder (SCHEME, ACCOUNTS_SERVER, PORT, "/v0/gamer/account/gameup/create");
       String token = session == null ? "" : session.Token;
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, token);
 
-      wwwRequest.SetBody ("{\"email\": \"" + email + "\", \"password\":\"" + password + "\", \"confirm_password\":\"" + confirm_password + "\"}");
-      if (name.Trim ().Length > 0) {
-        wwwRequest.SetBody ("{\"email\": \"" + email + "\", \"password\":\"" + password + "\", \"confirm_password\":\"" + confirm_password + "\", \"name\":\"" + name + "\"}");
+      string body = "{\"email\":\"" + email + "\", \"password\":\"" + password + "\", \"confirm_password\":\"" + confirm_password + "\"";
+      if (name != null && name.Trim ().Length > 0) {
+        body += ", \"name\":\"" + name + "\"";
       }
+      if (nickname != null && nickname.Trim ().Length > 0) {
+        body += ", \"nickname\":\"" + nickname + "\"";
+      }
+      body += "}";
+      wwwRequest.SetBody (body);
 
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success (createSessionClient (jsonResponse));
