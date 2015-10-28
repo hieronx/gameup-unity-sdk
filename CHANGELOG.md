@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.12.1
+
+* Set player nickname while registering a new account
+
 ### 0.12.0
 
 * Do not use `SimpleJson` to deserialise directly into C# types.
