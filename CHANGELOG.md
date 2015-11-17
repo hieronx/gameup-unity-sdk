@@ -1,9 +1,13 @@
 CHANGELOG
 =========
 
+### 0.13.0
+
+* Add support for filter criteria in turn-based multiplayer match setup.
+
 ### 0.12.1
 
-* Set player nickname while registering a new account
+* Set player nickname while registering a new account.
 
 ### 0.12.0
 
@@ -28,7 +32,7 @@ CHANGELOG
 
 ### 0.10.0
 
-* Add (unannounced) CloudScript feature for direct script execution.
+* Add (unannounced) Cloud Code feature for direct script execution.
 
 ### 0.9.3
 
