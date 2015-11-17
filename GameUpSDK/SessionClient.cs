@@ -571,13 +571,36 @@ namespace GameUp
     /// <param name="requiredGamers">The minimal required number of gamers needed to create a new match</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
-    public void CreateMatch (int requiredGamers, MatchCreateCallback success, MatchQueueCallback queued, Client.ErrorCallback error)
+    public void CreateMatch (int requiredGamers,  MatchCreateCallback success, MatchQueueCallback queued, Client.ErrorCallback error)
+    {
+      CreateMatch (requiredGamers, null, success, queued, error);
+    }
+
+    /// <summary>
+    /// Request a new match. If there are not enough waiting gamers, the current gamer will be added to the queue instead.
+    /// </summary>
+    /// <param name="requiredGamers">The minimal required number of gamers needed to create a new match</param>
+    /// <param name="matchFilters">
+    /// String list to filter on matches to create or join. Exact strings matching only. Up to 8 filters. 
+    /// Recommended to use values such as "[team,rank=7]" for team-based matches with players with ranks equal to 7.
+    /// </param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void CreateMatch (int requiredGamers, List<String> matchFilters, MatchCreateCallback success, MatchQueueCallback queued, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/match/";
       UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, Token);
       
-      wwwRequest.SetBody ("{\"players\":" + requiredGamers + "}");
+      string body = "{\"players\":" + requiredGamers + "}";
+      if (matchFilters != null && matchFilters.Count > 0) {
+        string filters = "\"" + matchFilters[0] + "\"";
+        for (int i = 1; i < matchFilters.Count; i++) {
+          filters += ",\"" + matchFilters[i] + "\"";
+        }
+        body = "{\"players\":" + requiredGamers + ", \"filters\":[" + filters + "]}";
+      }
+      wwwRequest.SetBody (body);
       
       wwwRequest.OnSuccess = (String jsonResponse) => {
         if (jsonResponse.Length == 0) {

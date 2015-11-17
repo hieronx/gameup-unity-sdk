@@ -20,7 +20,6 @@ public class GameUpTest : MonoBehaviour
   readonly string facebookToken = "invalid-token-1234";
   readonly string storage_key = "profile_info";
   readonly string shared_storage_key = "ArmyInfo";
-  
   SessionClient session;
   
   #if UNITY_IOS
@@ -52,7 +51,7 @@ public class GameUpTest : MonoBehaviour
       foreach (Leaderboard entry in list.Leaderboards) {
         Debug.LogFormat ("Name: " + entry.Name + " sort: " + entry.Sort);
         if (entry.LeaderboardReset != null) {
-          Debug.LogFormat ("Name: " + entry.Name + " reset type: " + entry.LeaderboardReset.Type + " reset hr: " + entry.LeaderboardReset.UtcHour );
+          Debug.LogFormat ("Name: " + entry.Name + " reset type: " + entry.LeaderboardReset.Type + " reset hr: " + entry.LeaderboardReset.UtcHour);
         } else {
           Debug.LogFormat ("Name: " + entry.Name + " has no reset!");
         }
@@ -62,7 +61,7 @@ public class GameUpTest : MonoBehaviour
     }, failure);
 
     Client.Leaderboard (leaderboardId, 10, 20, false, (Leaderboard l) => {
-	    foreach (Leaderboard.Entry en in l.Entries) {
+      foreach (Leaderboard.Entry en in l.Entries) {
         Debug.Log ("Leaderboard Name: " + l.Name + " " + l.PublicId + " " + l.Sort + " " + l.Type + " " + l.Entries.Length + " " + en.Name);
       }
     }, failure);
@@ -72,11 +71,11 @@ public class GameUpTest : MonoBehaviour
       session = s;
       Debug.Log ("Logged in anonymously: " + session.Token);
 
-      Client.CreateGameUpAccount("unitysdk@gameup.io", "password", "password", "UnitySDK Test", session, (SessionClient gus) => {
+      Client.CreateGameUpAccount ("unitysdk@gameup.io", "password", "password", "UnitySDK Test", session, (SessionClient gus) => {
         session = gus;
         Debug.Log ("Created GameUp Account: " + session.Token);
       }, (status, reason) => { 
-        Client.LoginGameUp("unitysdk@gameup.io", "password", session, (SessionClient gus) => {
+        Client.LoginGameUp ("unitysdk@gameup.io", "password", session, (SessionClient gus) => {
           session = gus;
           Debug.Log ("Logged in with GameUp Account: " + session.Token);
         }, failure);
@@ -90,19 +89,20 @@ public class GameUpTest : MonoBehaviour
 
       //Let's assume that we are about to save the session 
       //for later usage without having to re-login the user.
-      String serializedSession = session.Serialize();
+      String serializedSession = session.Serialize ();
       Debug.Log ("Saved session: " + serializedSession);
 
       //Let's assume that some time has passed and
       //that we are about to restore the session 
-      s = SessionClient.Deserialize(serializedSession);
+      s = SessionClient.Deserialize (serializedSession);
       Debug.Log ("Restored session: " + s.Token);
 
-      testSessionClientMethods(session);
+      testSessionClientMethods (session);
     }, failure);
   }
 
-  void testSessionClientMethods(SessionClient session) {
+  void testSessionClientMethods (SessionClient session)
+  {
     session.Gamer ((Gamer gamer) => {
       Debug.Log ("Gamer Name: " + gamer.Name);
     }, failure);
@@ -145,10 +145,10 @@ public class GameUpTest : MonoBehaviour
       Debug.Log ("Updated leaderboard. New rank " + r.Ranking + " for " + r.Name);
     }, failure);
     
-    ScoretagTest scoretagtest = new ScoretagTest();
+    ScoretagTest scoretagtest = new ScoretagTest ();
     scoretagtest.Datetime = DateTime.Now.Millisecond;
     session.UpdateLeaderboard (leaderboardId, DateTime.Now.Millisecond, scoretagtest, (Rank r) => {
-      Debug.Log ("Updated leaderboard with scoretags. New rank " + r.Ranking + " for " + r.Name + " with tags " + r.Scoretags.ToString());
+      Debug.Log ("Updated leaderboard with scoretags. New rank " + r.Ranking + " for " + r.Name + " with tags " + r.Scoretags.ToString ());
     }, failure);
     
     session.LeaderboardAndRank (leaderboardId, (LeaderboardAndRank lr) => {
@@ -161,7 +161,7 @@ public class GameUpTest : MonoBehaviour
       Debug.Log ("2-Retrieved Leaderboard and Rank: " + lr.Leaderboard.Name);
       Debug.Log ("2-Retrieved Leaderboard and Rank: " + lr.Rank.Name);
       if (lr.Rank.Scoretags != null) {
-        Debug.Log ("2-ScoreTags: " + lr.Rank.Scoretags.ToString());
+        Debug.Log ("2-ScoreTags: " + lr.Rank.Scoretags.ToString ());
       }
     }, failure);
     
@@ -170,7 +170,7 @@ public class GameUpTest : MonoBehaviour
       Debug.Log ("3-Retrieved Leaderboard and Rank: " + lr.Leaderboard.Name);
       Debug.Log ("3-Retrieved Leaderboard and Rank: " + lr.Rank.Name);
       if (lr.Rank.Scoretags != null) {
-        Debug.Log ("3-ScoreTags: " + lr.Rank.Scoretags.ToString());
+        Debug.Log ("3-ScoreTags: " + lr.Rank.Scoretags.ToString ());
       }
     }, failure);
     
@@ -178,15 +178,18 @@ public class GameUpTest : MonoBehaviour
       Debug.Log ("Retrieved Matches. Size: " + matches.Count);
     }, failure);
     
-    session.CreateMatch (2, (Match match) => {
+    List<String> matchFilters = new List<string> ();
+    matchFilters.Add ("device=ios");
+    matchFilters.Add ("rank=7");
+    session.CreateMatch (2, matchFilters, (Match match) => {
       Debug.Log ("New match created. Match ID: " + match.MatchId);
       String matchId = match.MatchId;
       session.GetMatch (matchId, (Match newMatch) => {
         Debug.Log ("Got match details. Match turn count: " + newMatch.TurnCount);
       }, failure);
       
-      if (match.Turn.Equals(match.Whoami)) {
-        Debug.Log ("Match details : " + match + ". Submitting a turn for " + match.Whoami);
+      if (match.Turn.Equals (match.Whoami)) {
+        Debug.Log ("Match details : " + match.MatchId + ". Submitting a turn for " + match.Whoami);
         session.SubmitTurn (matchId, (int)match.TurnCount, match.Whoami, "Unity SDK Turn Data", () => {
           session.GetTurnData (matchId, 0, (MatchTurnList turns) => {
             Debug.Log ("Got Turns. Count is: " + turns.Count);
@@ -195,14 +198,13 @@ public class GameUpTest : MonoBehaviour
               Debug.LogFormat ("User '{0}' played turn number '{1}'.", matchTurn.Gamer, matchTurn.TurnNumber);
               Debug.LogFormat ("Turn data: '{0}'.", matchTurn.Data);
             }
+            session.EndMatch (matchId, (String id) => {
+              Debug.Log ("Match ended: " + id);
+            }, failure);
           }, failure);
         }, failure);
-        
-        session.EndMatch(matchId, (String id) => {
-          Debug.Log ("Match ended: " + id);
-        }, failure);
       } else {
-        session.LeaveMatch(matchId, (String id) => {
+        session.LeaveMatch (matchId, (String id) => {
           Debug.Log ("Left match: " + id);
         }, failure);
       }
@@ -223,10 +225,10 @@ public class GameUpTest : MonoBehaviour
       Debug.Log ("Stored shared data: " + shared_storage_key);
       
       session.SharedStorageGet (shared_storage_key, (SharedStorageObject sso) => {
-        Debug.Log ("Retrieved shared storage: " + sso.ConvertPublic());
+        Debug.Log ("Retrieved shared storage: " + sso.ConvertPublic ());
         
-        armyData.Remove("soldiers");
-        armyData.Add("soldiers", 1);
+        armyData.Remove ("soldiers");
+        armyData.Add ("soldiers", 1);
         session.SharedStorageUpdate (shared_storage_key, armyData, () => {
           Debug.Log ("Updated shared data: " + shared_storage_key);
           
@@ -244,26 +246,26 @@ public class GameUpTest : MonoBehaviour
     IDictionary<string, object> scriptData = new Dictionary<string, object> ();
     scriptData.Add ("a", 1);
     scriptData.Add ("b", 2);
-    session.executeScript(scriptId, scriptData, (IDictionary<string, object> response) => {
-      Debug.Log ("Executed script with result:" + GameUp.SimpleJson.SerializeObject(response));
+    session.executeScript (scriptId, scriptData, (IDictionary<string, object> response) => {
+      Debug.Log ("Executed script with result:" + GameUp.SimpleJson.SerializeObject (response));
     }, failure);
 
-    session.executeScript(mailboxScriptId, scriptData, (IDictionary<string, object> response) => {
+    session.executeScript (mailboxScriptId, scriptData, (IDictionary<string, object> response) => {
       Debug.Log ("Executed mailbox");
-      session.MessageList(false,(MessageList ms) => {
+      session.MessageList (false, (MessageList ms) => {
         Debug.Log ("Got " + ms.Count + " messages back");
-        IEnumerator<Message> messages = ms.GetEnumerator();
-        messages.MoveNext();
-        session.MessageGet(messages.Current.MessageId, true, (Message message) => {
+        IEnumerator<Message> messages = ms.GetEnumerator ();
+        messages.MoveNext ();
+        session.MessageGet (messages.Current.MessageId, true, (Message message) => {
           Debug.Log ("Got message with ID" + message.MessageId + " with subject: " + message.Subject);
-          session.MessageDelete(messages.Current.MessageId, () => {
+          session.MessageDelete (messages.Current.MessageId, () => {
             Debug.Log ("Deleted message with ID" + message.MessageId);
           }, failure);
         }, failure);
       }, failure);
     }, failure);
 
-	
+  
 
     #if UNITY_IOS
     UnityEngine.iOS.NotificationServices.RegisterForNotifications(UnityEngine.iOS.NotificationType.Alert |  UnityEngine.iOS.NotificationType.Badge |  UnityEngine.iOS.NotificationType.Sound);
@@ -294,6 +296,7 @@ public class GameUpTest : MonoBehaviour
   #endif
 }
 
-class ScoretagTest {
+class ScoretagTest
+{
   public long Datetime { get ; set ; }
 }
