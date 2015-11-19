@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.13.1
+
+* Support `IDictionary` input in turn submissions and serialise to JSON internally.
+
 ### 0.13.0
 
 * Add support for filter criteria in turn-based multiplayer match setup.
