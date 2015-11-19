@@ -35,6 +35,9 @@ namespace GameUp
     public byte[] Body { get { return _body; } }
     public SuccessCallback OnSuccess;
     public FailureCallback OnFailure;
+
+    public static Boolean RETRY_REQUESTS = false;
+    private int retryCount = 0;
     
     public WWWRequest (Uri uri, string method, string username, string password)
     {
@@ -55,6 +58,9 @@ namespace GameUp
     
     public void AddHeader (string name, string val)
     {
+      if (headers.ContainsKey (name)) {
+        headers.Remove (name);
+      }
       headers.Add (name, val);
     }
 
@@ -69,7 +75,14 @@ namespace GameUp
 
     public void Execute ()
     {
-      WWWRequestExecutor.Execute (this);
+      if (retryCount == 0 || shouldRetry ()) {
+        retryCount++;
+        WWWRequestExecutor.Execute (this);
+      }
+    }
+
+    public bool shouldRetry () {
+      return (RETRY_REQUESTS && (retryCount <= 2));
     }
 
   }

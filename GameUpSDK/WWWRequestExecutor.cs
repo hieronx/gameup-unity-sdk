@@ -63,8 +63,14 @@ namespace GameUp
       yield return www;
 
       if (!String.IsNullOrEmpty (www.error)) {
-        if (req.OnFailure != null) {
-          req.OnFailure (500, www.error);
+        if (www.error.Contains("504 GATEWAY_TIMEOUT") && req.shouldRetry ()) {
+          float delay = UnityEngine.Random.Range (10F, 50F) / 100F;
+          yield return new WaitForSeconds(delay);
+          req.Execute ();
+        } else {
+          if (req.OnFailure != null) {
+            req.OnFailure (500, www.error); 
+          }
         }
       } else {
         if (www.text == null || www.text.Length == 0) {
