@@ -190,7 +190,8 @@ public class GameUpTest : MonoBehaviour
       
       if (match.Turn.Equals (match.Whoami)) {
         Debug.Log ("Match details : " + match.MatchId + ". Submitting a turn for " + match.Whoami);
-        session.SubmitTurn (matchId, (int)match.TurnCount, match.Whoami, "Unity SDK Turn Data", () => {
+        IDictionary turnData = new Dictionary<string, string> {{"turndata", "Unity SDK Turn Data"}};
+        session.SubmitTurn (matchId, (int)match.TurnCount, match.Whoami, turnData, () => {
           session.GetTurnData (matchId, 0, (MatchTurnList turns) => {
             Debug.Log ("Got Turns. Count is: " + turns.Count);
             foreach (MatchTurn matchTurn in turns) {

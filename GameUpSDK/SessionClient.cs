@@ -548,13 +548,43 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public void SubmitTurn (string matchId, int turn, string nextGamer, string turnData, Client.SuccessCallback success, Client.ErrorCallback error)
     {
+      string body = "{\"last_turn\":" + turn + "," +
+        "\"next_gamer\":\"" + nextGamer + "\"," +
+        "\"data\":\"" + turnData + "\"}";
+      submitTurn (matchId, body, success, error);
+    }
+
+    /// <summary>
+    /// Submit turn data to the specified match.
+    /// </summary>
+    /// <param name="matchId">The match identifier</param>
+    /// <param name="turn">Last seen turn number - this is used as a basic consistency check</param>
+    /// <param name="nextGamer">Which gamer the next turn goes to</param>
+    /// <param name="turnData">
+    /// Turn data to submit. The IDictionary<string, object> is serialised to a json string
+    /// and further escaped into a normal string. 
+    /// You need to double-deserialise if you would like to get the IDictionary back.
+    /// </param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void SubmitTurn (string matchId, int turn, string nextGamer, IDictionary turnData, Client.SuccessCallback success, Client.ErrorCallback error)
+    {
+      string json = SimpleJson.SerializeObject (turnData);
+      json = SimpleJson.SerializeObject (json);
+
+      string body = "{\"last_turn\":" + turn + "," +
+        "\"next_gamer\":\"" + nextGamer + "\"," +
+          "\"data\":" + json + "}";
+
+      submitTurn (matchId, body, success, error);
+    }
+
+    private void submitTurn(string matchId, string body, Client.SuccessCallback success, Client.ErrorCallback error) {
       string path = "/v0/gamer/match/" + matchId + "/turn";
       UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, Token);
       
-      wwwRequest.SetBody ("{\"last_turn\":" + turn + "," +
-        "\"next_gamer\":\"" + nextGamer + "\"," +
-        "\"data\":\"" + turnData + "\"}");
+      wwwRequest.SetBody (body);
       
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success ();
