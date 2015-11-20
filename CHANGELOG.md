@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.13.2
+
+* Add methods for raw JSON responses in `MakeRequest`.
+
 ### 0.13.1
 
 * Support `IDictionary` input in turn submissions and serialise to JSON internally.
