@@ -62,6 +62,8 @@ namespace GameUp
 
     public delegate void ScriptRawCallback (string data);
 
+    public delegate void RequestRawCallback (string data);
+
     /// <summary>
     /// Ping the GameUp service to check it is reachable.
     /// </summary>
@@ -511,11 +513,27 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void MakeRequest <T> (Uri uri, string method, string body, GenericSuccessCallback<T> success, ErrorCallback error)
     {
+      RequestRawCallback rawCallback = (string jsonResponse) => {
+        success (SimpleJson.DeserializeObject<T> (jsonResponse));
+      };
+      MakeRequest (uri, method, body, rawCallback, error);
+    }
+
+    /// <summary>
+    /// Make a generic request with pre-set ApiKey.
+    /// </summary>
+    /// <param name="uri">The URI for the request.</param>
+    /// <param name="method">The method for the request.</param>
+    /// <param name="body">The body for the request, may be null.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void MakeRequest (Uri uri, string method, string body, RequestRawCallback success, ErrorCallback error)
+    {
       WWWRequest wwwRequest = new WWWRequest (uri, method, ApiKey, "");
       wwwRequest.SetBody (body);
       
       wwwRequest.OnSuccess = (String jsonResponse) => {
-        success (SimpleJson.DeserializeObject<T> (jsonResponse));
+        success (jsonResponse);
       };
       wwwRequest.OnFailure = (int statusCode, string reason) => {
         error (statusCode, reason);

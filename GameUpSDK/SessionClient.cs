@@ -1161,11 +1161,27 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public void MakeRequest <T> (Uri uri, string method, string body, Client.GenericSuccessCallback<T> success, Client.ErrorCallback error)
     {
+      Client.RequestRawCallback rawCallback = (string jsonResponse) => {
+        success (SimpleJson.DeserializeObject<T> (jsonResponse));
+      };
+      this.MakeRequest (uri, method, body, rawCallback, error);
+    }
+
+    /// <summary>
+    /// Make a generic request with pre-set ApiKey and Token.
+    /// </summary>
+    /// <param name="uri">The URI to send request to.</param>
+    /// <param name="method">The method type of the request.</param>
+    /// <param name="body">The body of the request.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void MakeRequest (Uri uri, string method, string body, Client.RequestRawCallback success, Client.ErrorCallback error)
+    {
       WWWRequest wwwRequest = new WWWRequest (uri, method, ApiKey, Token);
       wwwRequest.SetBody (body);
       
       wwwRequest.OnSuccess = (String jsonResponse) => {
-        success (SimpleJson.DeserializeObject<T> (jsonResponse));
+        success (jsonResponse);
       };
       wwwRequest.OnFailure = (int statusCode, string reason) => {
         error (statusCode, reason);
