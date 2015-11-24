@@ -52,6 +52,8 @@ namespace GameUp
 
     public delegate void LoginCallback (SessionClient session);
 
+    public delegate void AccountCheckCallback (bool exists, bool isCurrentGamer);
+
     public delegate void SuccessCallback ();
 
     public delegate void GenericSuccessCallback<T> (T data);
@@ -275,65 +277,6 @@ namespace GameUp
     }
 
     /// <summary>
-    /// Use a unique ID to generate an account for a gamer. This ID should be cached on the
-    /// gaming device so it can be re-used to re-login the gamer to the same account. See
-    /// the documentation for more information.
-    /// </summary>
-    /// <param name="id">The unique ID used for the gamer (could be a device ID).</param>
-    /// <param name="success">The callback to execute on success.</param>
-    /// <param name="error">The callback to execute on error.</param>
-    public static void LoginAnonymous (string id, LoginCallback success, ErrorCallback error)
-    {
-      UriBuilder b = new UriBuilder (SCHEME, ACCOUNTS_SERVER, PORT, "/v0/gamer/login/anonymous");
-      WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, "");
-      wwwRequest.SetBody ("{\"id\": \"" + id + "\"}");
-      wwwRequest.OnSuccess = (String jsonResponse) => {
-        success (createSessionClient (jsonResponse));
-      };
-      wwwRequest.OnFailure = (int statusCode, string reason) => {
-        error (statusCode, reason);
-      };
-      wwwRequest.Execute ();
-    }
-
-    /// <summary>
-    /// Login a gamer using a GameUp Email / Password combination.
-    /// </summary>
-    /// <param name="email">Gamer's Email.</param>
-    /// <param name="password">Gamer's Password.</param>
-    /// <param name="success">The callback to execute on success.</param>
-    /// <param name="error">The callback to execute on error.</param>
-    public static void LoginGameUp (string email, string password, LoginCallback success, ErrorCallback error)
-    {
-      LoginGameUp (email, password, null, success, error);
-    }
-
-    /// <summary>
-    /// Login a gamer using a GameUp Email / Password combination and link an existing gamer token.
-    /// </summary>
-    /// <param name="email">Gamer's Email.</param>
-    /// <param name="password">Gamer's Password.</param>
-    /// <param name="session">An existing session client.</param>
-    /// <param name="success">The callback to execute on success.</param>
-    /// <param name="error">The callback to execute on error.</param>
-    public static void LoginGameUp (string email, string password, SessionClient session, LoginCallback success, ErrorCallback error)
-    {
-      UriBuilder b = new UriBuilder (SCHEME, ACCOUNTS_SERVER, PORT, "/v0/gamer/login/gameup");
-      String token = session == null ? "" : session.Token;
-      WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, token);
-
-      wwwRequest.SetBody ("{\"email\": \"" + email + "\", \"password\":\"" + password + "\"}");
-
-      wwwRequest.OnSuccess = (String jsonResponse) => {
-        success (createSessionClient (jsonResponse));
-      };
-      wwwRequest.OnFailure = (int statusCode, string reason) => {
-        error (statusCode, reason);
-      };
-      wwwRequest.Execute ();
-    }
-
-    /// <summary>
     /// Create a new account for the gamer using a GameUp Email / Password combination and link an existing gamer token.
     /// </summary>
     /// <param name="email">Gamer's Email.</param>
@@ -342,9 +285,24 @@ namespace GameUp
     /// <param name="name">Gamer's Name - Optional</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("CreateGameUpAccount is deprecated, use CreateEmailAccount instead.")]
     public static void CreateGameUpAccount (string email, string password, string confirm_password, string name, LoginCallback success, ErrorCallback error)
     {
-      CreateGameUpAccount (email, password, confirm_password, name, "", null, success, error);
+      CreateEmailAccount (email, password, confirm_password, name, "", null, success, error);
+    }
+
+    /// <summary>
+    /// Create a new account for the gamer using a Email / Password combination and link an existing gamer token.
+    /// </summary>
+    /// <param name="email">Gamer's Email.</param>
+    /// <param name="password">Gamer's Password.</param>
+    /// <param name="confirm_password">Gamer's Password Confirmation</param>
+    /// <param name="name">Gamer's Name - Optional</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void CreateEmailAccount (string email, string password, string confirm_password, string name, LoginCallback success, ErrorCallback error)
+    {
+      CreateEmailAccount (email, password, confirm_password, name, "", null, success, error);
     }
 
     /// <summary>
@@ -357,9 +315,25 @@ namespace GameUp
     /// <param name="nickname">Gamer's Nickname - Optional</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("CreateGameUpAccount is deprecated, use CreateEmailAccount instead.")]
     public static void CreateGameUpAccount (string email, string password, string confirm_password, string name, string nickname, LoginCallback success, ErrorCallback error)
     {
-      CreateGameUpAccount (email, password, confirm_password, name, nickname, null, success, error);
+      CreateEmailAccount (email, password, confirm_password, name, nickname, null, success, error);
+    }
+
+    /// <summary>
+    /// Create a new account for the gamer using a Email / Password combination with a nickname.
+    /// </summary>
+    /// <param name="email">Gamer's Email.</param>
+    /// <param name="password">Gamer's Password.</param>
+    /// <param name="confirm_password">Gamer's Password Confirmation</param>
+    /// <param name="name">Gamer's Name - Optional</param>
+    /// <param name="nickname">Gamer's Nickname - Optional</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void CreateEmailAccount (string email, string password, string confirm_password, string name, string nickname, LoginCallback success, ErrorCallback error)
+    {
+      CreateEmailAccount (email, password, confirm_password, name, nickname, null, success, error);
     }
 
     /// <summary>
@@ -372,6 +346,7 @@ namespace GameUp
     /// <param name="session">An existing session client.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("CreateGameUpAccount is deprecated, use CreateEmailAccount instead and explicitly link accounts.")]
     public static void CreateGameUpAccount (string email, string password, string confirm_password, string name, SessionClient session, LoginCallback success, ErrorCallback error)
     {
       CreateGameUpAccount (email, password, confirm_password, name, "", session, success, error);
@@ -388,9 +363,15 @@ namespace GameUp
     /// <param name="session">An existing session client.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("CreateGameUpAccount is deprecated, use CreateEmailAccount instead and explicitly link accounts.")]
     public static void CreateGameUpAccount (string email, string password, string confirm_password, string name, string nickname, SessionClient session, LoginCallback success, ErrorCallback error)
     {
-      UriBuilder b = new UriBuilder (SCHEME, ACCOUNTS_SERVER, PORT, "/v0/gamer/account/gameup/create");
+      CreateEmailAccount (email, password, confirm_password, name, nickname, session, success, error);
+    }
+
+    private static void CreateEmailAccount (string email, string password, string confirm_password, string name, string nickname, SessionClient session, LoginCallback success, ErrorCallback error)
+    {
+      UriBuilder b = new UriBuilder (SCHEME, ACCOUNTS_SERVER, PORT, "/v0/gamer/account/email/create");
       String token = session == null ? "" : session.Token;
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, token);
 
@@ -419,9 +400,21 @@ namespace GameUp
     /// <param name="email">Gamer's Email.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("ResetEmailGameUp is deprecated, use ResetEmailAccount instead.")]
     public static void ResetEmailGameUp (string email, SuccessCallback success, ErrorCallback error)
     {
-      UriBuilder b = new UriBuilder (SCHEME, ACCOUNTS_SERVER, PORT, "/v0/gamer/account/gameup/reset/send");
+      ResetEmailAccount (email, success, error);
+    }
+
+    /// <summary>
+    /// Send a password recovery email to the gamer
+    /// </summary>
+    /// <param name="email">Gamer's Email.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void ResetEmailAccount (string email, SuccessCallback success, ErrorCallback error)
+    {
+      UriBuilder b = new UriBuilder (SCHEME, ACCOUNTS_SERVER, PORT, "/v0/gamer/account/email/reset/send");
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, "");
 
       wwwRequest.SetBody ("{\"email\": \"" + email + "\"}");
@@ -435,6 +428,69 @@ namespace GameUp
       wwwRequest.Execute ();  
     }
 
+    /// <summary>
+    /// Use a unique ID to generate an account for a gamer. This ID should be cached on the
+    /// gaming device so it can be re-used to re-login the gamer to the same account. See
+    /// the documentation for more information.
+    /// </summary>
+    /// <param name="id">The unique ID used for the gamer (could be a device ID).</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void LoginAnonymous (string id, LoginCallback success, ErrorCallback error)
+    {
+      string body = "{\"id\": \"" + id + "\"}";
+      SendAccountRequest ("login", "anonymous", body, null, error, (String jsonResponse) => {
+        success (createSessionClient (jsonResponse));
+      });
+    }
+    
+    /// <summary>
+    /// Login a gamer using a GameUp Email / Password combination.
+    /// </summary>
+    /// <param name="email">Gamer's Email.</param>
+    /// <param name="password">Gamer's Password.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("LoginGameUp is deprecated, use LoginEmail instead.")]
+    public static void LoginGameUp (string email, string password, LoginCallback success, ErrorCallback error)
+    {
+      string body = "{\"email\": \"" + email + "\", \"password\":\"" + password + "\"}";
+      SendAccountRequest ("login", "email", body, null, error, (String jsonResponse) => {
+        success (createSessionClient (jsonResponse));
+      });
+    }
+    
+    /// <summary>
+    /// Login a gamer using a GameUp Email / Password combination and link an existing gamer token.
+    /// </summary>
+    /// <param name="email">Gamer's Email.</param>
+    /// <param name="password">Gamer's Password.</param>
+    /// <param name="session">An existing session client.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("LoginGameUp is deprecated, use LoginEmail instead.")]
+    public static void LoginGameUp (string email, string password, SessionClient session, LoginCallback success, ErrorCallback error)
+    {
+      string body = "{\"email\": \"" + email + "\", \"password\":\"" + password + "\"}";
+      SendAccountRequest ("login", "email", body, session, error, (String jsonResponse) => {
+        success (createSessionClient (jsonResponse));
+      });
+    }
+    
+    /// <summary>
+    /// Login a gamer using a Email / Password combination.
+    /// </summary>
+    /// <param name="email">Gamer's Email.</param>
+    /// <param name="password">Gamer's Password.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void LoginEmail (string email, string password, LoginCallback success, ErrorCallback error)
+    {
+      string body = "{\"email\": \"" + email + "\", \"password\":\"" + password + "\"}";
+      SendAccountRequest ("login", "email", body, null, error, (String jsonResponse) => {
+        success (createSessionClient (jsonResponse));
+      });
+    }
 
     /// <summary>
     /// Login a gamer using a Facebook OAuth Token. An OAuth token can be obtained from the
@@ -445,7 +501,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void LoginOAuthFacebook (string accessToken, LoginCallback success, ErrorCallback error)
     {
-      LoginOAuthFacebook (accessToken, null, success, error);
+      LoginOAuth ("facebook", accessToken, null, success, error);
     }
 
     /// <summary>
@@ -456,6 +512,7 @@ namespace GameUp
     /// <param name="session">An existing gamer session client.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("LoginOAuthFacebook with Linking is deprecated, use LoginOAuthFacebook instead and explicitly link accounts.")]
     public static void LoginOAuthFacebook (string accessToken, SessionClient session, LoginCallback success, ErrorCallback error)
     {
       LoginOAuth ("facebook", accessToken, session, success, error);
@@ -470,7 +527,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void LoginOAuthGoogle (string accessToken, LoginCallback success, ErrorCallback error)
     {
-      LoginOAuthGoogle (accessToken, null, success, error);
+      LoginOAuth ("google", accessToken, null, success, error);
     }
 
     /// <summary>
@@ -481,27 +538,244 @@ namespace GameUp
     /// <param name="session">An existing gamer session client.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("LoginOAuthGoogle with Linking is deprecated, use LoginOAuthGoogle instead and  link accounts.")]
     public static void LoginOAuthGoogle (string accessToken, SessionClient session, LoginCallback success, ErrorCallback error)
     {
       LoginOAuth ("google", accessToken, session, success, error);
     }
 
-    private static void LoginOAuth (string type, string accessToken, SessionClient session, LoginCallback success, ErrorCallback error)
+    /// <summary>
+    /// Login a gamer using a Tango Access Token.
+    /// </summary>
+    /// <param name="accessToken">The Tango Access Token.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void LoginTango (string accessToken, LoginCallback success, ErrorCallback error)
     {
-      UriBuilder b = new UriBuilder (SCHEME, ACCOUNTS_SERVER, PORT, "/v0/gamer/login/oauth2");
-      String token = session == null ? "" : session.Token;
-      WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, token);
-
-      wwwRequest.SetBody ("{\"type\": \"" + type + "\", \"access_token\":\"" + accessToken + "\"}");
-
-      wwwRequest.OnSuccess = (String jsonResponse) => {
-        success (createSessionClient (jsonResponse));
-      };
-      wwwRequest.OnFailure = (int statusCode, string reason) => {
-        error (statusCode, reason);
-      };
-      wwwRequest.Execute ();
+      LoginOAuth ("tango", accessToken, null, success, error);
     }
+
+    /// <summary>
+    /// Link an Anonymous ID to the given gamer session.
+    /// </summary>
+    /// <param name="session">Existing session to link to</param>
+    /// <param name="id">Anonymous ID to link</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void linkAnonymous(SessionClient session, string id, SuccessCallback success, ErrorCallback error) {
+      string body = "{\"id\":\"" + id + "\"}";
+      SendAccountRequest ("link", "anonymous", body, null, error, (String jsonResponse) => {
+        success ();
+      });
+    }
+
+    /// <summary>
+    /// Link a Facebook Profile to the given gamer session.
+    /// </summary>
+    /// <param name="session">Existing session to link to</param>
+    /// <param name="accessToken">Acccess Token of the Facebook account to link</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void linkFacebook(SessionClient session, string accessToken, SuccessCallback success, ErrorCallback error) {
+      string body = "{\"access_token\":\"" + accessToken + "\"}";
+      SendAccountRequest ("link", "facebook", body, null, error, (String jsonResponse) => {
+        success ();
+      });
+    }
+
+    /// <summary>
+    /// Link a Google Account to the given gamer session.
+    /// </summary>
+    /// <param name="session">Existing session to link to</param>
+    /// <param name="accessToken">Acccess Token of the Google account to link</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void linkGoogle(SessionClient session, string accessToken, SuccessCallback success, ErrorCallback error) {
+      string body = "{\"access_token\":\"" + accessToken + "\"}";
+      SendAccountRequest ("link", "google", body, null, error, (String jsonResponse) => {
+        success ();
+      });
+    }
+
+    /// <summary>
+    /// Link a Tango Account to the given gamer session.
+    /// </summary>
+    /// <param name="session">Existing session to link to</param>
+    /// <param name="accessToken">Acccess Token of the Tango account to link</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void linkTango(SessionClient session, string accessToken, SuccessCallback success, ErrorCallback error) {
+      string body = "{\"access_token\":\"" + accessToken + "\"}";
+      SendAccountRequest ("link", "tango", body, null, error, (String jsonResponse) => {
+        success ();
+      });
+    }
+
+    /// <summary>
+    /// Unlinks an Anonymous ID from the given gamer session.
+    /// </summary>
+    /// <param name="session">Existing session to unlink from</param>
+    /// <param name="accessToken">Anonymous ID to unlink</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void unlinkAnonymous(SessionClient session, string id, SuccessCallback success, ErrorCallback error) {
+      string body = "{\"id\":\"" + id + "\"}";
+      SendAccountRequest ("unlink", "anonymous", body, null, error, (String jsonResponse) => {
+        success ();
+      });
+    }
+
+    /// <summary>
+    /// Unlinks an email address from the given gamer session.
+    /// </summary>
+    /// <param name="session">Existing session to unlink from</param>
+    /// <param name="accessToken">Email address to unlink</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void unlinkEmail(SessionClient session, string email, SuccessCallback success, ErrorCallback error) {
+      string body = "{\"email\":\"" + email + "\"}";
+      SendAccountRequest ("unlink", "email", body, null, error, (String jsonResponse) => {
+        success ();
+      });
+    }
+
+    /// <summary>
+    /// Unlinks a Facebook Account from the given gamer session.
+    /// </summary>
+    /// <param name="session">Existing session to unlink from</param>
+    /// <param name="accessToken">Facebook profile ID to unlink</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void unlinkFacebook(SessionClient session, string facebookId, SuccessCallback success, ErrorCallback error) {
+      string body = "{\"id\":\"" + facebookId + "\"}";
+      SendAccountRequest ("unlink", "facebook", body, null, error, (String jsonResponse) => {
+        success ();
+      });
+    }
+
+    /// <summary>
+    /// Unlinks a Google Account from the given gamer session.
+    /// </summary>
+    /// <param name="session">Existing session to unlink from</param>
+    /// <param name="accessToken">Google account ID to unlink</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void unlinkGoogle(SessionClient session, string googleId, SuccessCallback success, ErrorCallback error) {
+      string body = "{\"id\":\"" + googleId + "\"}";
+      SendAccountRequest ("unlink", "google", body, null, error, (String jsonResponse) => {
+        success ();
+      });
+    }
+
+    /// <summary>
+    /// Unlinks a Tango Account from the given gamer session.
+    /// </summary>
+    /// <param name="session">Existing session to unlink from</param>
+    /// <param name="accessToken">Tango account ID to unlink</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void unlinkTango(SessionClient session, string tangoId, SuccessCallback success, ErrorCallback error) {
+      string body = "{\"id\":\"" + tangoId + "\"}";
+      SendAccountRequest ("unlink", "tango", body, null, error, (String jsonResponse) => {
+        success ();
+      });
+    }
+
+    /// <summary>
+    /// Checks to see if the given Anonymous ID is associated with a gamer account.
+    /// </summary>
+    /// <param name="session">Existing session to check against</param>
+    /// <param name="accessToken">Anonymous ID token to check</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void checkAnonymous(SessionClient session, string id, AccountCheckCallback success, ErrorCallback error) {
+      string body = "{\"id\":\"" + id + "\"}";
+      SendAccountRequest ("check", "anonymous", body, null, error, (String jsonResponse) => {
+        JsonObject result = SimpleJson.DeserializeObject<JsonObject> (jsonResponse);
+        object exists;
+        object currentGamer;
+        result.TryGetValue("exists", out exists);
+        result.TryGetValue("current_gamer", out currentGamer);
+        success ((Boolean) exists, (Boolean) currentGamer);
+      });
+    }
+
+    /// <summary>
+    /// Checks to see if the given email address is associated with a gamer account.
+    /// </summary>
+    /// <param name="session">Existing session to check against</param>
+    /// <param name="accessToken">Email address to check</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void checkEmail(SessionClient session, string email, AccountCheckCallback success, ErrorCallback error) {
+      string body = "{\"email\":\"" + email + "\"}";
+      SendAccountRequest ("check", "email", body, null, error, (String jsonResponse) => {
+        JsonObject result = SimpleJson.DeserializeObject<JsonObject> (jsonResponse);
+        object exists;
+        object currentGamer;
+        result.TryGetValue("exists", out exists);
+        result.TryGetValue("current_gamer", out currentGamer);
+        success ((Boolean) exists, (Boolean) currentGamer);
+      });
+    }
+
+    /// <summary>
+    /// Checks to see if the given Facebook Profile is associated with a gamer account.
+    /// </summary>
+    /// <param name="session">Existing session to check against</param>
+    /// <param name="accessToken">Facebook access token to check</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void checkFacebook(SessionClient session, string accessToken, AccountCheckCallback success, ErrorCallback error) {
+      string body = "{\"access_token\":\"" + accessToken + "\"}";
+      SendAccountRequest ("check", "facebook", body, null, error, (String jsonResponse) => {
+        JsonObject result = SimpleJson.DeserializeObject<JsonObject> (jsonResponse);
+        object exists;
+        object currentGamer;
+        result.TryGetValue("exists", out exists);
+        result.TryGetValue("current_gamer", out currentGamer);
+        success ((Boolean) exists, (Boolean) currentGamer);
+      });
+    }
+
+    /// <summary>
+    /// Checks to see if the given Google Account is associated with a gamer account.
+    /// </summary>
+    /// <param name="session">Existing session to check against</param>
+    /// <param name="accessToken">Google access token to check</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void checkGoogle(SessionClient session, string accessToken, AccountCheckCallback success, ErrorCallback error) {
+      string body = "{\"access_token\":\"" + accessToken + "\"}";
+      SendAccountRequest ("check", "google", body, null, error, (String jsonResponse) => {
+        JsonObject result = SimpleJson.DeserializeObject<JsonObject> (jsonResponse);
+        object exists;
+        object currentGamer;
+        result.TryGetValue("exists", out exists);
+        result.TryGetValue("current_gamer", out currentGamer);
+        success ((Boolean) exists, (Boolean) currentGamer);
+      });
+    }
+
+    /// <summary>
+    /// Checks to see if the given Tango Account is associated with a gamer account.
+    /// </summary>
+    /// <param name="session">Existing session to check against</param>
+    /// <param name="accessToken">Tango access token to check</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void checkTango(SessionClient session, string accessToken, AccountCheckCallback success, ErrorCallback error) {
+      string body = "{\"access_token\":\"" + accessToken + "\"}";
+      SendAccountRequest ("check", "tango", body, null, error, (String jsonResponse) => {
+        JsonObject result = SimpleJson.DeserializeObject<JsonObject> (jsonResponse);
+        object exists;
+        object currentGamer;
+        result.TryGetValue("exists", out exists);
+        result.TryGetValue("current_gamer", out currentGamer);
+        success ((Boolean) exists, (Boolean) currentGamer);
+      });
+    }
+
 
     /// <summary>
     /// Make a generic request with pre-set ApiKey.
@@ -535,6 +809,30 @@ namespace GameUp
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success (jsonResponse);
       };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    private static void LoginOAuth (string type, string accessToken, SessionClient session, LoginCallback success, ErrorCallback error)
+    {
+      string body = "{\"access_token\":\"" + accessToken + "\"}";
+      SendAccountRequest ("login", type, body, session, error, (String jsonResponse) => {
+        success (createSessionClient (jsonResponse));
+      });
+    }
+
+    private static void SendAccountRequest(string requestType, string accountType, string body, SessionClient session, ErrorCallback error, WWWRequest.SuccessCallback success) {
+      string endpoint = "/v0/gamer/" + requestType + "/" + accountType;
+      UriBuilder b = new UriBuilder (SCHEME, ACCOUNTS_SERVER, PORT, endpoint);
+      String token = session == null ? "" : session.Token;
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, token);
+
+      wwwRequest.SetBody (body);
+      if (success != null) {
+        wwwRequest.OnSuccess = success;
+      }
       wwwRequest.OnFailure = (int statusCode, string reason) => {
         error (statusCode, reason);
       };

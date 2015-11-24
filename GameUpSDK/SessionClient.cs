@@ -100,7 +100,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public void Gamer (GamerCallback success, Client.ErrorCallback error)
     {
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, "/v0/gamer");
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ACCOUNTS_SERVER, Client.PORT, "/v0/gamer");
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success (new Gamer (SimpleJson.DeserializeObject<JsonObject> (jsonResponse)));
