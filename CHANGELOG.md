@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### 0.14.0
+
+* Add support for explict account linking and unlinking.
+* Add support for checking account existance
+
 ### 0.13.2
 
 * Add methods for raw JSON responses in `MakeRequest`.
