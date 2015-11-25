@@ -538,7 +538,7 @@ namespace GameUp
     /// <param name="session">An existing gamer session client.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
-    [Obsolete("LoginOAuthGoogle with Linking is deprecated, use LoginOAuthGoogle instead and  link accounts.")]
+    [Obsolete("LoginOAuthGoogle with Linking is deprecated, use LoginOAuthGoogle instead and explicitly link accounts.")]
     public static void LoginOAuthGoogle (string accessToken, SessionClient session, LoginCallback success, ErrorCallback error)
     {
       LoginOAuth ("google", accessToken, session, success, error);
@@ -564,7 +564,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void linkAnonymous(SessionClient session, string id, SuccessCallback success, ErrorCallback error) {
       string body = "{\"id\":\"" + id + "\"}";
-      SendAccountRequest ("link", "anonymous", body, null, error, (String jsonResponse) => {
+      SendAccountRequest ("link", "anonymous", body, session, error, (String jsonResponse) => {
         success ();
       });
     }
@@ -578,7 +578,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void linkFacebook(SessionClient session, string accessToken, SuccessCallback success, ErrorCallback error) {
       string body = "{\"access_token\":\"" + accessToken + "\"}";
-      SendAccountRequest ("link", "facebook", body, null, error, (String jsonResponse) => {
+      SendAccountRequest ("link", "facebook", body, session, error, (String jsonResponse) => {
         success ();
       });
     }
@@ -592,7 +592,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void linkGoogle(SessionClient session, string accessToken, SuccessCallback success, ErrorCallback error) {
       string body = "{\"access_token\":\"" + accessToken + "\"}";
-      SendAccountRequest ("link", "google", body, null, error, (String jsonResponse) => {
+      SendAccountRequest ("link", "google", body, session, error, (String jsonResponse) => {
         success ();
       });
     }
@@ -606,7 +606,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void linkTango(SessionClient session, string accessToken, SuccessCallback success, ErrorCallback error) {
       string body = "{\"access_token\":\"" + accessToken + "\"}";
-      SendAccountRequest ("link", "tango", body, null, error, (String jsonResponse) => {
+      SendAccountRequest ("link", "tango", body, session, error, (String jsonResponse) => {
         success ();
       });
     }
@@ -620,7 +620,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void unlinkAnonymous(SessionClient session, string id, SuccessCallback success, ErrorCallback error) {
       string body = "{\"id\":\"" + id + "\"}";
-      SendAccountRequest ("unlink", "anonymous", body, null, error, (String jsonResponse) => {
+      SendAccountRequest ("unlink", "anonymous", body, session, error, (String jsonResponse) => {
         success ();
       });
     }
@@ -634,7 +634,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void unlinkEmail(SessionClient session, string email, SuccessCallback success, ErrorCallback error) {
       string body = "{\"email\":\"" + email + "\"}";
-      SendAccountRequest ("unlink", "email", body, null, error, (String jsonResponse) => {
+      SendAccountRequest ("unlink", "email", body, session, error, (String jsonResponse) => {
         success ();
       });
     }
@@ -648,7 +648,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void unlinkFacebook(SessionClient session, string facebookId, SuccessCallback success, ErrorCallback error) {
       string body = "{\"id\":\"" + facebookId + "\"}";
-      SendAccountRequest ("unlink", "facebook", body, null, error, (String jsonResponse) => {
+      SendAccountRequest ("unlink", "facebook", body, session, error, (String jsonResponse) => {
         success ();
       });
     }
@@ -662,7 +662,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void unlinkGoogle(SessionClient session, string googleId, SuccessCallback success, ErrorCallback error) {
       string body = "{\"id\":\"" + googleId + "\"}";
-      SendAccountRequest ("unlink", "google", body, null, error, (String jsonResponse) => {
+      SendAccountRequest ("unlink", "google", body, session, error, (String jsonResponse) => {
         success ();
       });
     }
@@ -676,7 +676,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void unlinkTango(SessionClient session, string tangoId, SuccessCallback success, ErrorCallback error) {
       string body = "{\"id\":\"" + tangoId + "\"}";
-      SendAccountRequest ("unlink", "tango", body, null, error, (String jsonResponse) => {
+      SendAccountRequest ("unlink", "tango", body, session, error, (String jsonResponse) => {
         success ();
       });
     }
