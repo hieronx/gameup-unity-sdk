@@ -50,6 +50,8 @@ namespace GameUp
 
     public delegate void MatchesCallback (MatchList matches);
 
+    public delegate void MatchChangeListCallback(MatchChangeList matchChanges);
+
     public delegate void MatchCallback (Match match);
 
     public delegate void TurnCallback (MatchTurnList turns);
@@ -538,6 +540,26 @@ namespace GameUp
     }
 
     /// <summary>
+    /// Retrieved the list of changed match along with turn data since a given timestamp.
+    /// </summary>
+    /// <param name="latestMatchUpdateTimestamp">The latest value of the UpdatedAt field of all matches</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void GetChangedMatches (long latestMatchUpdateTimestamp, MatchChangeListCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/gamer/matches/?since=" + latestMatchUpdateTimestamp;
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success (new MatchChangeList (SimpleJson.DeserializeObject<JsonObject> (jsonResponse)));
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
     /// Submit turn data to the specified match.
     /// </summary>
     /// <param name="matchId">The match identifier</param>
@@ -546,6 +568,7 @@ namespace GameUp
     /// <param name="turnData">Turn data to submit</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("SubmitTurn is deprecated, use SubmitTurnGamerId instead.")]
     public void SubmitTurn (string matchId, int turn, string nextGamer, string turnData, Client.SuccessCallback success, Client.ErrorCallback error)
     {
       string body = "{\"last_turn\":" + turn + "," +
@@ -567,6 +590,7 @@ namespace GameUp
     /// </param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("SubmitTurn is deprecated, use SubmitTurnGamerId instead.")]
     public void SubmitTurn (string matchId, int turn, string nextGamer, IDictionary turnData, Client.SuccessCallback success, Client.ErrorCallback error)
     {
       string json = SimpleJson.SerializeObject (turnData);
@@ -576,6 +600,48 @@ namespace GameUp
         "\"next_gamer\":\"" + nextGamer + "\"," +
           "\"data\":" + json + "}";
 
+      submitTurn (matchId, body, success, error);
+    }
+
+    /// <summary>
+    /// Submit turn data to the specified match.
+    /// </summary>
+    /// <param name="matchId">The match identifier</param>
+    /// <param name="turn">Last seen turn number - this is used as a basic consistency check</param>
+    /// <param name="nextGamerId">Which gamer ID the next turn goes to</param>
+    /// <param name="turnData">Turn data to submit</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void SubmitTurnGamerId (string matchId, int turn, string nextGamerId, string turnData, Client.SuccessCallback success, Client.ErrorCallback error)
+    {
+      string body = "{\"last_turn\":" + turn + "," +
+        "\"next_gamer_id\":\"" + nextGamerId + "\"," +
+          "\"data\":\"" + turnData + "\"}";
+      submitTurn (matchId, body, success, error);
+    }
+    
+    /// <summary>
+    /// Submit turn data to the specified match.
+    /// </summary>
+    /// <param name="matchId">The match identifier</param>
+    /// <param name="turn">Last seen turn number - this is used as a basic consistency check</param>
+    /// <param name="nextGamer">Which gamer ID the next turn goes to</param>
+    /// <param name="turnData">
+    /// Turn data to submit. The IDictionary<string, object> is serialised to a json string
+    /// and further escaped into a normal string. 
+    /// You need to double-deserialise if you would like to get the IDictionary back.
+    /// </param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void SubmitTurnGamerId (string matchId, int turn, string nextGamerId, IDictionary turnData, Client.SuccessCallback success, Client.ErrorCallback error)
+    {
+      string json = SimpleJson.SerializeObject (turnData);
+      json = SimpleJson.SerializeObject (json);
+      
+      string body = "{\"last_turn\":" + turn + "," +
+        "\"next_gamer_id\":\"" + nextGamerId + "\"," +
+          "\"data\":" + json + "}";
+      
       submitTurn (matchId, body, success, error);
     }
 

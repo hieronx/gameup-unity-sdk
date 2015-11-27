@@ -63,6 +63,7 @@
     <Compile Include="GameUpSDK\SharedStorageSearchResults.cs" />
     <Compile Include="GameUpSDK\Message.cs" />
     <Compile Include="GameUpSDK\MessageList.cs" />
+    <Compile Include="GameUpSDK\MatchChangeList.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

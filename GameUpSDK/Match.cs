@@ -32,17 +32,31 @@ namespace GameUp
     /// <summary> Match ID </summary>
     public readonly String MatchId ;
 
+    /// <summary> Match Filters </summary>
+    public readonly String[] Filters ;
+
     /// <summary> Current turn number </summary>
     public readonly long TurnCount ;
 
     /// <summary> Name of gamer for the given turn  </summary>
+    [Obsolete("Turn is deprecated, use TurnGamerId instead.")]
     public readonly String Turn ;
 
+    /// <summary> ID of gamer for the given turn  </summary>
+    public readonly String TurnGamerId ;
+
     /// <summary> Nickname of all the gamers in the current match </summary>
+    [Obsolete("Gamers is deprecated, use ActiveGamers instead.")]
     public readonly String[] Gamers ;
+
+    /// <summary> Map of Gamer Nickname to Gamer IDs </summary>
+    public readonly IDictionary<string, string> ActiveGamers ;
 
     /// <summary> When the match was created </summary>
     public readonly long CreatedAt ;
+
+    /// <summary> When the match was last updated </summary>
+    public readonly long UpdatedAt ;
 
     /// <summary> Checks to see if the match is still ongoing or has ended. </summary>
     public readonly bool Active ;
@@ -58,17 +72,22 @@ namespace GameUp
         string valueString = value.ToString ();
         
         switch (key) {
-        case "whoami":
-          Whoami = valueString;
-          break;
         case "match_id":
           MatchId = valueString;
           break;
-        case "turn_count":
-          TurnCount = (long)value;
+        case "filters":
+          List<string> filterList = new List<string> ();
+          JsonArray filterArray = (JsonArray)value;
+          foreach (string entryObject in filterArray) {
+            filterList.Add (entryObject);
+          }
+          Filters = filterList.ToArray ();
           break;
-        case "turn":
-          Turn = valueString;
+        case "created_at":
+          CreatedAt = (long)value;
+          break;
+        case "updated_at":
+          UpdatedAt = (long)value;
           break;
         case "gamers":
           List<string> gamerList = new List<string> ();
@@ -78,11 +97,31 @@ namespace GameUp
           }
           Gamers = gamerList.ToArray ();
           break;
-        case "created_at":
-          CreatedAt = (long)value;
+        case "active_gamers": 
+          JsonArray activeGamersArray = (JsonArray) value;
+          ActiveGamers = new Dictionary<string, string>();
+          foreach (JsonObject gamerPair in activeGamersArray) {
+            object nickname;
+            gamerPair.TryGetValue("nickname", out nickname);
+            object gamerId;
+            gamerPair.TryGetValue("gamer_id", out gamerId);
+            ActiveGamers.Add(nickname.ToString(), gamerId.ToString());
+          }
           break;
         case "active":
           Active = (Boolean)value;
+          break;
+        case "turn":
+          Turn = valueString;
+          break;
+        case "turn_gamer_id":
+          TurnGamerId = valueString;
+          break;
+        case "turn_count":
+          TurnCount = (long)value;
+          break;
+        case "whoami":
+          Whoami = valueString;
           break;
         }
       }

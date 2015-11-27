@@ -32,6 +32,9 @@ namespace GameUp
     /// <summary> Name of gamer for this turn </summary>
     public readonly String Gamer ;
 
+    /// <summary> Gamer ID for this turn </summary>
+    public readonly String GamerId ;
+
     /// <summary> Data stored for this turn </summary>
     public readonly String Data ;
 
@@ -57,6 +60,9 @@ namespace GameUp
           break;
         case "gamer":
           Gamer = valueString;
+          break;
+        case "gamer_id":
+          GamerId = valueString;
           break;
         case "data":
           Data = valueString;

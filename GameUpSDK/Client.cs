@@ -292,7 +292,7 @@ namespace GameUp
     }
 
     /// <summary>
-    /// Create a new account for the gamer using a Email / Password combination and link an existing gamer token.
+    /// Create a new account for the gamer using an Email / Password combination and link an existing gamer token.
     /// </summary>
     /// <param name="email">Gamer's Email.</param>
     /// <param name="password">Gamer's Password.</param>
@@ -322,7 +322,7 @@ namespace GameUp
     }
 
     /// <summary>
-    /// Create a new account for the gamer using a Email / Password combination with a nickname.
+    /// Create a new account for the gamer using an Email / Password combination with a nickname.
     /// </summary>
     /// <param name="email">Gamer's Email.</param>
     /// <param name="password">Gamer's Password.</param>
@@ -346,10 +346,25 @@ namespace GameUp
     /// <param name="session">An existing session client.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
-    [Obsolete("CreateGameUpAccount is deprecated, use CreateEmailAccount instead and explicitly link accounts.")]
+    [Obsolete("CreateGameUpAccount is deprecated, use CreateEmailAccount instead.")]
     public static void CreateGameUpAccount (string email, string password, string confirm_password, string name, SessionClient session, LoginCallback success, ErrorCallback error)
     {
       CreateGameUpAccount (email, password, confirm_password, name, "", session, success, error);
+    }
+
+    /// <summary>
+    /// Create a new account for the gamer using an Email / Password combination and link an existing gamer token.
+    /// </summary>
+    /// <param name="email">Gamer's Email.</param>
+    /// <param name="password">Gamer's Password.</param>
+    /// <param name="confirm_password">Gamer's Password Confirmation</param>
+    /// <param name="name">Gamer's Name</param>
+    /// <param name="session">An existing session client.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void CreateEmailAccount (string email, string password, string confirm_password, string name, SessionClient session, LoginCallback success, ErrorCallback error)
+    {
+      CreateEmailAccount (email, password, confirm_password, name, "", session, success, error);
     }
 
     /// <summary>
@@ -363,13 +378,24 @@ namespace GameUp
     /// <param name="session">An existing session client.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
-    [Obsolete("CreateGameUpAccount is deprecated, use CreateEmailAccount instead and explicitly link accounts.")]
+    [Obsolete("CreateGameUpAccount is deprecated, use CreateEmailAccount instead.")]
     public static void CreateGameUpAccount (string email, string password, string confirm_password, string name, string nickname, SessionClient session, LoginCallback success, ErrorCallback error)
     {
       CreateEmailAccount (email, password, confirm_password, name, nickname, session, success, error);
     }
 
-    private static void CreateEmailAccount (string email, string password, string confirm_password, string name, string nickname, SessionClient session, LoginCallback success, ErrorCallback error)
+    /// <summary>
+    /// Create a new account for the gamer using an Email / Password combination with a nickname and link an existing gamer token.
+    /// </summary>
+    /// <param name="email">Gamer's Email.</param>
+    /// <param name="password">Gamer's Password.</param>
+    /// <param name="confirm_password">Gamer's Password Confirmation</param>
+    /// <param name="name">Gamer's Name</param>
+    /// <param name="nickname">Gamer's Nickname - Optional</param>
+    /// <param name="session">An existing session client.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void CreateEmailAccount (string email, string password, string confirm_password, string name, string nickname, SessionClient session, LoginCallback success, ErrorCallback error)
     {
       UriBuilder b = new UriBuilder (SCHEME, ACCOUNTS_SERVER, PORT, "/v0/gamer/account/email/create");
       String token = session == null ? "" : session.Token;

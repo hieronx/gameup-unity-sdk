@@ -71,20 +71,19 @@ public class GameUpTest : MonoBehaviour
       session = s;
       Debug.Log ("Logged in anonymously: " + session.Token);
 
-      Client.CreateGameUpAccount ("unitysdk@gameup.io", "password", "password", "UnitySDK Test", session, (SessionClient gus) => {
+      Client.CreateEmailAccount ("unitysdk@gameup.io", "password", "password", "UnitySDK Test", session, (SessionClient gus) => {
         session = gus;
         Debug.Log ("Created GameUp Account: " + session.Token);
       }, (status, reason) => { 
-        Client.LoginGameUp ("unitysdk@gameup.io", "password", session, (SessionClient gus) => {
-          session = gus;
+        Client.LoginEmail ("unitysdk@gameup.io", "password", (SessionClient gus) => {
           Debug.Log ("Logged in with GameUp Account: " + session.Token);
         }, failure);
       });
 
-      Client.LoginOAuthFacebook (facebookToken, session, (SessionClient facebookSession) => {
-        Debug.Log ("Facebook Login Successful: " + facebookSession.Token);
+      Client.linkFacebook(session, facebookToken, () => {
+        Debug.Log ("Facebook Linking successful: ");
       }, (status, reason) => {
-        Debug.Log ("[Expected Failure] Facebook Login Failed: " + status + " " + reason);
+        Debug.Log ("[Expected Failure] Facebook Linking Failed: " + status + " " + reason);
       });
 
       //Let's assume that we are about to save the session 
@@ -105,6 +104,7 @@ public class GameUpTest : MonoBehaviour
   {
     session.Gamer ((Gamer gamer) => {
       Debug.Log ("Gamer Name: " + gamer.Name);
+      testMatch(gamer);
     }, failure);
     
     session.UpdateGamer ("UnitySDKTest", () => {
@@ -174,45 +174,7 @@ public class GameUpTest : MonoBehaviour
       }
     }, failure);
     
-    session.GetAllMatches ((MatchList matches) => {
-      Debug.Log ("Retrieved Matches. Size: " + matches.Count);
-    }, failure);
-    
-    List<String> matchFilters = new List<string> ();
-    matchFilters.Add ("device=ios");
-    matchFilters.Add ("rank=7");
-    session.CreateMatch (2, matchFilters, (Match match) => {
-      Debug.Log ("New match created. Match ID: " + match.MatchId);
-      String matchId = match.MatchId;
-      session.GetMatch (matchId, (Match newMatch) => {
-        Debug.Log ("Got match details. Match turn count: " + newMatch.TurnCount);
-      }, failure);
-      
-      if (match.Turn.Equals (match.Whoami)) {
-        Debug.Log ("Match details : " + match.MatchId + ". Submitting a turn for " + match.Whoami);
-        IDictionary turnData = new Dictionary<string, string> {{"turndata", "Unity SDK Turn Data"}};
-        session.SubmitTurn (matchId, (int)match.TurnCount, match.Whoami, turnData, () => {
-          session.GetTurnData (matchId, 0, (MatchTurnList turns) => {
-            Debug.Log ("Got Turns. Count is: " + turns.Count);
-            foreach (MatchTurn matchTurn in turns) {
-              // we can update the match state to sync it with the most recent turns
-              Debug.LogFormat ("User '{0}' played turn number '{1}'.", matchTurn.Gamer, matchTurn.TurnNumber);
-              Debug.LogFormat ("Turn data: '{0}'.", matchTurn.Data);
-            }
-            session.EndMatch (matchId, (String id) => {
-              Debug.Log ("Match ended: " + id);
-            }, failure);
-          }, failure);
-        }, failure);
-      } else {
-        session.LeaveMatch (matchId, (String id) => {
-          Debug.Log ("Left match: " + id);
-        }, failure);
-      }
-      
-    }, () => {
-      Debug.Log ("Gamer queued");
-    }, failure);
+
     
     session.StorageDelete (shared_storage_key, () => {
       Debug.Log ("Deleted shared storage: " + shared_storage_key);
@@ -271,6 +233,54 @@ public class GameUpTest : MonoBehaviour
     #if UNITY_IOS
     UnityEngine.iOS.NotificationServices.RegisterForNotifications(UnityEngine.iOS.NotificationType.Alert |  UnityEngine.iOS.NotificationType.Badge |  UnityEngine.iOS.NotificationType.Sound);
     #endif
+  }
+
+  void testMatch(Gamer gamer) {
+    session.GetAllMatches ((MatchList matches) => {
+      Debug.Log ("Retrieved Matches. Size: " + matches.Count);
+    }, failure);
+    
+    List<String> matchFilters = new List<string> ();
+    matchFilters.Add ("device=unity");
+    matchFilters.Add ("rank=7");
+    session.CreateMatch (2, matchFilters, (Match match) => {
+      Debug.Log ("New match created. Match ID: " + match.MatchId);
+      String matchId = match.MatchId;
+
+      session.GetMatch (matchId, (Match newMatch) => {
+        Debug.Log ("Got match details. Match turn count: " + newMatch.TurnCount);
+      }, failure);
+      
+      if (match.TurnGamerId.Equals (gamer.GamerId)) {
+        Debug.Log ("Match details : " + match.MatchId + ". Submitting a turn for " + match.Whoami);
+        IDictionary turnData = new Dictionary<string, string> {{"turndata", "Unity SDK Turn Data"}};
+        session.SubmitTurnGamerId (matchId, (int)match.TurnCount, gamer.GamerId, turnData, () => {
+          session.GetTurnData (matchId, 0, (MatchTurnList turns) => {
+            Debug.Log ("Got Turns. Count is: " + turns.Count);
+            foreach (MatchTurn matchTurn in turns) {
+              // we can update the match state to sync it with the most recent turns
+              Debug.LogFormat ("User '{0}' played turn number '{1}'.", matchTurn.Gamer, matchTurn.TurnNumber);
+              Debug.LogFormat ("Turn data: '{0}'.", matchTurn.Data);
+            }
+            session.EndMatch (matchId, (String id) => {
+              Debug.Log ("Match ended: " + id);
+            }, failure);
+          }, failure);
+        }, failure);
+      } else {
+        session.LeaveMatch (matchId, (String id) => {
+          Debug.Log ("Left match: " + id);
+        }, failure);
+      }
+      
+    }, () => {
+      Debug.Log ("Gamer queued");
+    }, failure);
+
+    //instead of '0' use Match.UpdatedAt ...
+    session.GetChangedMatches(0, (MatchChangeList list) => {
+      Debug.Log (list.Count + " matches have changed.");
+    }, failure);
   }
 
   void Update ()
