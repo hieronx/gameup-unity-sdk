@@ -1,5 +1,6 @@
 var class_game_up_1_1_client =
 [
+    [ "AccountCheckCallback", "class_game_up_1_1_client.html#a6ba975dc3cbab6de795b701d19259f71", null ],
     [ "AchievementsCallback", "class_game_up_1_1_client.html#a2f990874cd631a0bbd1f7a2e387a87ca", null ],
     [ "ErrorCallback", "class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878", null ],
     [ "executeScript", "class_game_up_1_1_client.html#a802b0f8babcfbff7f037d3533bcb9bec", null ],
@@ -11,6 +12,7 @@ var class_game_up_1_1_client =
     [ "LeaderboardsCallback", "class_game_up_1_1_client.html#a213774596821c8064bccaae8f371d7bb", null ],
     [ "LoginCallback", "class_game_up_1_1_client.html#a3723cffa494f5195a340ad4d382fa379", null ],
     [ "PingCallback", "class_game_up_1_1_client.html#a7050402e6f04bf8a69c43f11330d75dc", null ],
+    [ "RequestRawCallback", "class_game_up_1_1_client.html#a81ba58bfba24e92c02d4d6d23ad41cb8", null ],
     [ "ScriptCallback", "class_game_up_1_1_client.html#a2810c0a2cc1cd54c3fba29710b514efd", null ],
     [ "ScriptRawCallback", "class_game_up_1_1_client.html#a309e5850e59aaf5b583bcd99cfbaea7e", null ],
     [ "ServerCallback", "class_game_up_1_1_client.html#a1b088cb8ef5c105baba08b6d16faeec5", null ],

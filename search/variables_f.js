@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['whoami',['Whoami',['../class_game_up_1_1_match.html#a2699cb2ba54293e5c2fe22c4dfa0f227',1,'GameUp::Match']]]
+  ['updatedat',['UpdatedAt',['../class_game_up_1_1_game.html#a5f53ba032b4475b88929eb86cccbae5d',1,'GameUp.Game.UpdatedAt()'],['../class_game_up_1_1_gamer.html#aaf7362ae94efab4a374de23c4245774d',1,'GameUp.Gamer.UpdatedAt()'],['../class_game_up_1_1_match.html#ab9b31da1912a4e3aa5b1a4829602411a',1,'GameUp.Match.UpdatedAt()']]],
+  ['utchour',['UtcHour',['../class_game_up_1_1_leaderboard_1_1_reset.html#a30149cb5c4f4ffddfb52f9dd43e84894',1,'GameUp::Leaderboard::Reset']]]
 ];

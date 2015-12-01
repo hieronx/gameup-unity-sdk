@@ -1,7 +1,9 @@
 var searchData=
 [
+  ['makerequest',['MakeRequest',['../class_game_up_1_1_client.html#a1391c260ba090d413689bf9fd926670f',1,'GameUp.Client.MakeRequest()'],['../class_game_up_1_1_session_client.html#a0a87bccd821d6b2e7d8bbc495680ac32',1,'GameUp.SessionClient.MakeRequest()']]],
   ['makerequest_3c_20t_20_3e',['MakeRequest&lt; T &gt;',['../class_game_up_1_1_client.html#a11370cf8fcdd3853140ebf57a5829b03',1,'GameUp.Client.MakeRequest&lt; T &gt;()'],['../class_game_up_1_1_session_client.html#a1250c96f2b769dcbed7a92b92730692b',1,'GameUp.SessionClient.MakeRequest&lt; T &gt;()']]],
   ['matchcallback',['MatchCallback',['../class_game_up_1_1_session_client.html#ada16d6e7ebae9700784d44848717a9f3',1,'GameUp::SessionClient']]],
+  ['matchchangelistcallback',['MatchChangeListCallback',['../class_game_up_1_1_session_client.html#a1d4f3762820aa1ca575e73910b744351',1,'GameUp::SessionClient']]],
   ['matchcreatecallback',['MatchCreateCallback',['../class_game_up_1_1_session_client.html#a1531b8802b444bb0a73cb80e695b2e55',1,'GameUp::SessionClient']]],
   ['matchendcallback',['MatchEndCallback',['../class_game_up_1_1_session_client.html#abfd7fec810f20bf0160adac860eebb1e',1,'GameUp::SessionClient']]],
   ['matchescallback',['MatchesCallback',['../class_game_up_1_1_session_client.html#a5417c1a474fad8ccc77ab74a7551084d',1,'GameUp::SessionClient']]],

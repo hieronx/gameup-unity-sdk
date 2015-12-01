@@ -1,5 +1,10 @@
 var searchData=
 [
-  ['name',['Name',['../class_game_up_1_1_achievement.html#a0c72c1710a5f6555ae40c9dc040438b7',1,'GameUp.Achievement.Name()'],['../class_game_up_1_1_game.html#a2c71e89f81351ece132bc9e905c88dc4',1,'GameUp.Game.Name()'],['../class_game_up_1_1_gamer.html#a04beb600586231b5fb6380e07fb6e6c4',1,'GameUp.Gamer.Name()'],['../class_game_up_1_1_leaderboard.html#a761e4a9bfae70ffad719e9255804f8c6',1,'GameUp.Leaderboard.Name()'],['../class_game_up_1_1_leaderboard_1_1_entry.html#a987e90695f3f91993eff3116bd502b05',1,'GameUp.Leaderboard.Entry.Name()'],['../class_game_up_1_1_rank.html#a102989addc2ac4f3c7a829e665ee3122',1,'GameUp.Rank.Name()']]],
-  ['nickname',['Nickname',['../class_game_up_1_1_gamer.html#a1d5960e02db8cb435ea9ce5c29067d5b',1,'GameUp::Gamer']]]
+  ['match',['Match',['../class_game_up_1_1_match_change.html#ab41f0b1018da3c152d43f7c6412189a5',1,'GameUp::MatchChange']]],
+  ['matchchanges',['MatchChanges',['../class_game_up_1_1_match_change_list.html#ae02ff320782f9d26e5e448a8689e1fa2',1,'GameUp::MatchChangeList']]],
+  ['matches',['Matches',['../class_game_up_1_1_match_list.html#ab1d0b8f931909c5dc76f37d199b159d9',1,'GameUp::MatchList']]],
+  ['matchid',['MatchId',['../class_game_up_1_1_match.html#a0ee09e1f26d4e4fbbe9acf82107ec1be',1,'GameUp::Match']]],
+  ['message',['Message',['../class_game_up_1_1_purchase_verification.html#aa4dde592edbcbcd74e35aebb1e1006f6',1,'GameUp::PurchaseVerification']]],
+  ['messageid',['MessageId',['../class_game_up_1_1_message.html#a6dae19bdd03688b58190aeda95136bd6',1,'GameUp::Message']]],
+  ['messages',['Messages',['../class_game_up_1_1_message_list.html#a9a064e30896cea460e463212a9f5239b',1,'GameUp::MessageList']]]
 ];

@@ -33,7 +33,7 @@
   <td id="projectlogo"><img alt="Logo" src="GameUp_Logo_Small_fill.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GameUpSDK
-   &#160;<span id="projectnumber">0.12.0</span>
+   &#160;<span id="projectnumber">0.15.0</span>
    </div>
    <div id="projectbrief">Unity SDK for the GameUp service</div>
   </td>
@@ -139,6 +139,9 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 &#160;
 
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
+<li>AccountCheckCallback()
+: <a class="el" href="class_game_up_1_1_client.html#a6ba975dc3cbab6de795b701d19259f71">GameUp.Client</a>
+</li>
 <li>Achievement()
 : <a class="el" href="class_game_up_1_1_session_client.html#a38572d4027234acd21a42bf8589004dd">GameUp.SessionClient</a>
 </li>
@@ -162,6 +165,21 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 
 <h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
+<li>checkAnonymous()
+: <a class="el" href="class_game_up_1_1_client.html#a8e78fa4ba9595f99a09b8f3f8d5333e9">GameUp.Client</a>
+</li>
+<li>checkEmail()
+: <a class="el" href="class_game_up_1_1_client.html#a3b6c5b9ad7c7d5f459368b7050255863">GameUp.Client</a>
+</li>
+<li>checkFacebook()
+: <a class="el" href="class_game_up_1_1_client.html#a1ddb8a7536947a76f4e23e26769ff4ae">GameUp.Client</a>
+</li>
+<li>checkGoogle()
+: <a class="el" href="class_game_up_1_1_client.html#a8deddad7e5fca492c6b9113d9d6ddd41">GameUp.Client</a>
+</li>
+<li>checkTango()
+: <a class="el" href="class_game_up_1_1_client.html#ac626d752141d5a1819e47d12d4017c83">GameUp.Client</a>
+</li>
 <li>ConvertProtected()
 : <a class="el" href="class_game_up_1_1_shared_storage_object.html#a2e9f9078abc19bde23c1429e89a3c1cb">GameUp.SharedStorageObject</a>
 </li>
@@ -178,8 +196,11 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="class_game_up_1_1_leaderboard_1_1_entry.html#a88562e81997c93f78e23e5223aee16ab">GameUp.Leaderboard.Entry</a>
 , <a class="el" href="class_game_up_1_1_rank.html#ab18316be34af4dfc6de16856043c1fac">GameUp.Rank</a>
 </li>
+<li>CreateEmailAccount()
+: <a class="el" href="class_game_up_1_1_client.html#a0151e2ff5ae909f602d5f2653a34883f">GameUp.Client</a>
+</li>
 <li>CreateGameUpAccount()
-: <a class="el" href="class_game_up_1_1_client.html#a4e0e89d0d5616464cc3bb9118530cd4f">GameUp.Client</a>
+: <a class="el" href="class_game_up_1_1_client.html#ac8d346ddb2c5c713259bf3a0d94f35ed">GameUp.Client</a>
 </li>
 <li>CreateMatch()
 : <a class="el" href="class_game_up_1_1_session_client.html#a1dee1894e9d438afde3935cad1cda4df">GameUp.SessionClient</a>
@@ -241,10 +262,14 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>GetAllMatches()
 : <a class="el" href="class_game_up_1_1_session_client.html#afeb84e968423d250f23a0a448940190d">GameUp.SessionClient</a>
 </li>
+<li>GetChangedMatches()
+: <a class="el" href="class_game_up_1_1_session_client.html#a565db4d1ae8debfa02db70276b28b6bd">GameUp.SessionClient</a>
+</li>
 <li>GetEnumerator()
 : <a class="el" href="class_game_up_1_1_achievement_list.html#a6361b0b4d3e9b17fe05863c4bf68a44d">GameUp.AchievementList</a>
 , <a class="el" href="class_game_up_1_1_leaderboard.html#a159642ab8a207849fb220fa51bac5a0f">GameUp.Leaderboard</a>
 , <a class="el" href="class_game_up_1_1_leaderboard_list.html#a92db0542402337fe04e488a5c9dfb8f1">GameUp.LeaderboardList</a>
+, <a class="el" href="class_game_up_1_1_match_change_list.html#a2e8e250995477a345f104cd23c5ec3c0">GameUp.MatchChangeList</a>
 , <a class="el" href="class_game_up_1_1_match_list.html#a7d651b9ad5714b3c5618abe2cf40f335">GameUp.MatchList</a>
 , <a class="el" href="class_game_up_1_1_match_turn_list.html#ae4d45f42c2eb088f62241ea30385451d">GameUp.MatchTurnList</a>
 , <a class="el" href="class_game_up_1_1_message_list.html#a8fb3961cf309c0799c5cf5901a3fc59c">GameUp.MessageList</a>
@@ -306,31 +331,56 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>LeaveMatch()
 : <a class="el" href="class_game_up_1_1_session_client.html#a698e7d290bab628e91fb8754f58a1bd0">GameUp.SessionClient</a>
 </li>
+<li>linkAnonymous()
+: <a class="el" href="class_game_up_1_1_client.html#ac2aeffe27635a893989386793a71414f">GameUp.Client</a>
+</li>
+<li>linkFacebook()
+: <a class="el" href="class_game_up_1_1_client.html#affc3f5cdb92e1f7b2c86fb56bfa21029">GameUp.Client</a>
+</li>
+<li>linkGoogle()
+: <a class="el" href="class_game_up_1_1_client.html#a1c524aac3e2cfa389558588c5b47c622">GameUp.Client</a>
+</li>
+<li>linkTango()
+: <a class="el" href="class_game_up_1_1_client.html#a71899d5b084670286c39d83638d0e62d">GameUp.Client</a>
+</li>
 <li>LoginAnonymous()
 : <a class="el" href="class_game_up_1_1_client.html#a7968599517f9bced23d0be4f3f1daa42">GameUp.Client</a>
 </li>
 <li>LoginCallback()
 : <a class="el" href="class_game_up_1_1_client.html#a3723cffa494f5195a340ad4d382fa379">GameUp.Client</a>
 </li>
+<li>LoginEmail()
+: <a class="el" href="class_game_up_1_1_client.html#a12a6eda12732b1b90c83f96b511f280c">GameUp.Client</a>
+</li>
 <li>LoginGameUp()
-: <a class="el" href="class_game_up_1_1_client.html#a707d477be7f59b965640abd0eef6e30f">GameUp.Client</a>
+: <a class="el" href="class_game_up_1_1_client.html#a696daf06fc6c6a43b865fa09388cc2b4">GameUp.Client</a>
 </li>
 <li>LoginOAuthFacebook()
 : <a class="el" href="class_game_up_1_1_client.html#a9b04b0a38ea27c85de6fb36539393180">GameUp.Client</a>
 </li>
 <li>LoginOAuthGoogle()
-: <a class="el" href="class_game_up_1_1_client.html#ac6774be553693a13f768ca7b52538133">GameUp.Client</a>
+: <a class="el" href="class_game_up_1_1_client.html#a8c27644520a5c04a376baebf5e17c83d">GameUp.Client</a>
+</li>
+<li>LoginTango()
+: <a class="el" href="class_game_up_1_1_client.html#a4d2701fc8ecc28edb584039d40cf143a">GameUp.Client</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
+<li>MakeRequest()
+: <a class="el" href="class_game_up_1_1_client.html#a1391c260ba090d413689bf9fd926670f">GameUp.Client</a>
+, <a class="el" href="class_game_up_1_1_session_client.html#a0a87bccd821d6b2e7d8bbc495680ac32">GameUp.SessionClient</a>
+</li>
 <li>MakeRequest&lt; T &gt;()
 : <a class="el" href="class_game_up_1_1_client.html#a11370cf8fcdd3853140ebf57a5829b03">GameUp.Client</a>
 , <a class="el" href="class_game_up_1_1_session_client.html#a1250c96f2b769dcbed7a92b92730692b">GameUp.SessionClient</a>
 </li>
 <li>MatchCallback()
 : <a class="el" href="class_game_up_1_1_session_client.html#ada16d6e7ebae9700784d44848717a9f3">GameUp.SessionClient</a>
+</li>
+<li>MatchChangeListCallback()
+: <a class="el" href="class_game_up_1_1_session_client.html#a1d4f3762820aa1ca575e73910b744351">GameUp.SessionClient</a>
 </li>
 <li>MatchCreateCallback()
 : <a class="el" href="class_game_up_1_1_session_client.html#a1531b8802b444bb0a73cb80e695b2e55">GameUp.SessionClient</a>
@@ -389,6 +439,12 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 
 <h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
+<li>RequestRawCallback()
+: <a class="el" href="class_game_up_1_1_client.html#a81ba58bfba24e92c02d4d6d23ad41cb8">GameUp.Client</a>
+</li>
+<li>ResetEmailAccount()
+: <a class="el" href="class_game_up_1_1_client.html#a9697b15feb20f3dc0fcd55ff38fdaa01">GameUp.Client</a>
+</li>
 <li>ResetEmailGameUp()
 : <a class="el" href="class_game_up_1_1_client.html#a2ca0e36182a92ee6062917641d374acb">GameUp.Client</a>
 </li>
@@ -444,6 +500,9 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>SharedStorageUpdate&lt; T &gt;()
 : <a class="el" href="class_game_up_1_1_session_client.html#aa0f22a5af0433e58649ccfa0d2df67fc">GameUp.SessionClient</a>
 </li>
+<li>shouldRetry()
+: <a class="el" href="class_game_up_1_1_w_w_w_request.html#a990446011de1e56ca7f4097f634144e1">GameUp.WWWRequest</a>
+</li>
 <li>StorageDelete()
 : <a class="el" href="class_game_up_1_1_session_client.html#a266468bd2359ee8275e72c00bb65d741">GameUp.SessionClient</a>
 </li>
@@ -457,13 +516,16 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="class_game_up_1_1_session_client.html#af45eb613fc12cec6d8ed90e42f7f5991">GameUp.SessionClient</a>
 </li>
 <li>StoragePut()
-: <a class="el" href="class_game_up_1_1_session_client.html#a27bd6a589123b6b05ab9d12c8ac553cf">GameUp.SessionClient</a>
+: <a class="el" href="class_game_up_1_1_session_client.html#a78ad00a716d285333e773082b5797488">GameUp.SessionClient</a>
 </li>
 <li>StoragePut&lt; T &gt;()
 : <a class="el" href="class_game_up_1_1_session_client.html#a47ebda9bc336ba6460dfa78deb8464ea">GameUp.SessionClient</a>
 </li>
 <li>SubmitTurn()
 : <a class="el" href="class_game_up_1_1_session_client.html#acfe428b1b7fc4a9ce68920b6ba224e92">GameUp.SessionClient</a>
+</li>
+<li>SubmitTurnGamerId()
+: <a class="el" href="class_game_up_1_1_session_client.html#ae1d1447fc068fbaec199b00bb5640c21">GameUp.SessionClient</a>
 </li>
 <li>SubscribePush()
 : <a class="el" href="class_game_up_1_1_session_client.html#aea9f61c95d28b6192abd728cea53ddc7">GameUp.SessionClient</a>
@@ -486,6 +548,21 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 
 <h3><a class="anchor" id="index_u"></a>- u -</h3><ul>
+<li>unlinkAnonymous()
+: <a class="el" href="class_game_up_1_1_client.html#a5895fbadbcfb8b60f22c7f46447a55db">GameUp.Client</a>
+</li>
+<li>unlinkEmail()
+: <a class="el" href="class_game_up_1_1_client.html#aff4a3b95af6836de1f361ca16af06852">GameUp.Client</a>
+</li>
+<li>unlinkFacebook()
+: <a class="el" href="class_game_up_1_1_client.html#aab923778b260e3b7586d128ac8224a5d">GameUp.Client</a>
+</li>
+<li>unlinkGoogle()
+: <a class="el" href="class_game_up_1_1_client.html#a2f4c4cbf79743008bafda2eb4eb1419a">GameUp.Client</a>
+</li>
+<li>unlinkTango()
+: <a class="el" href="class_game_up_1_1_client.html#ad2c64d3c268cf98a5f6d21cdea59d804">GameUp.Client</a>
+</li>
 <li>UpdateGamer()
 : <a class="el" href="class_game_up_1_1_session_client.html#aa9eb9b6d026fa2050681faab1fe48e7d">GameUp.SessionClient</a>
 </li>
@@ -511,7 +588,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Oct 19 2015 17:01:47 for GameUpSDK by
+    <li class="footer">Generated on Tue Dec 1 2015 12:14:41 for GameUpSDK by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
   </ul>

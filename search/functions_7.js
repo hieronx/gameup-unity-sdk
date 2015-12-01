@@ -7,9 +7,15 @@ var searchData=
   ['leaderboards',['Leaderboards',['../class_game_up_1_1_client.html#a14e70126522e80a212d9d5e95699d77b',1,'GameUp::Client']]],
   ['leaderboardscallback',['LeaderboardsCallback',['../class_game_up_1_1_client.html#a213774596821c8064bccaae8f371d7bb',1,'GameUp::Client']]],
   ['leavematch',['LeaveMatch',['../class_game_up_1_1_session_client.html#a698e7d290bab628e91fb8754f58a1bd0',1,'GameUp::SessionClient']]],
+  ['linkanonymous',['linkAnonymous',['../class_game_up_1_1_client.html#ac2aeffe27635a893989386793a71414f',1,'GameUp::Client']]],
+  ['linkfacebook',['linkFacebook',['../class_game_up_1_1_client.html#affc3f5cdb92e1f7b2c86fb56bfa21029',1,'GameUp::Client']]],
+  ['linkgoogle',['linkGoogle',['../class_game_up_1_1_client.html#a1c524aac3e2cfa389558588c5b47c622',1,'GameUp::Client']]],
+  ['linktango',['linkTango',['../class_game_up_1_1_client.html#a71899d5b084670286c39d83638d0e62d',1,'GameUp::Client']]],
   ['loginanonymous',['LoginAnonymous',['../class_game_up_1_1_client.html#a7968599517f9bced23d0be4f3f1daa42',1,'GameUp::Client']]],
   ['logincallback',['LoginCallback',['../class_game_up_1_1_client.html#a3723cffa494f5195a340ad4d382fa379',1,'GameUp::Client']]],
+  ['loginemail',['LoginEmail',['../class_game_up_1_1_client.html#a12a6eda12732b1b90c83f96b511f280c',1,'GameUp::Client']]],
   ['logingameup',['LoginGameUp',['../class_game_up_1_1_client.html#a696daf06fc6c6a43b865fa09388cc2b4',1,'GameUp.Client.LoginGameUp(string email, string password, LoginCallback success, ErrorCallback error)'],['../class_game_up_1_1_client.html#a707d477be7f59b965640abd0eef6e30f',1,'GameUp.Client.LoginGameUp(string email, string password, SessionClient session, LoginCallback success, ErrorCallback error)']]],
   ['loginoauthfacebook',['LoginOAuthFacebook',['../class_game_up_1_1_client.html#a0fae6f42eefd0e81ce95409474e17db0',1,'GameUp.Client.LoginOAuthFacebook(string accessToken, LoginCallback success, ErrorCallback error)'],['../class_game_up_1_1_client.html#a9b04b0a38ea27c85de6fb36539393180',1,'GameUp.Client.LoginOAuthFacebook(string accessToken, SessionClient session, LoginCallback success, ErrorCallback error)']]],
-  ['loginoauthgoogle',['LoginOAuthGoogle',['../class_game_up_1_1_client.html#ac6774be553693a13f768ca7b52538133',1,'GameUp.Client.LoginOAuthGoogle(string accessToken, LoginCallback success, ErrorCallback error)'],['../class_game_up_1_1_client.html#a8c27644520a5c04a376baebf5e17c83d',1,'GameUp.Client.LoginOAuthGoogle(string accessToken, SessionClient session, LoginCallback success, ErrorCallback error)']]]
+  ['loginoauthgoogle',['LoginOAuthGoogle',['../class_game_up_1_1_client.html#ac6774be553693a13f768ca7b52538133',1,'GameUp.Client.LoginOAuthGoogle(string accessToken, LoginCallback success, ErrorCallback error)'],['../class_game_up_1_1_client.html#a8c27644520a5c04a376baebf5e17c83d',1,'GameUp.Client.LoginOAuthGoogle(string accessToken, SessionClient session, LoginCallback success, ErrorCallback error)']]],
+  ['logintango',['LoginTango',['../class_game_up_1_1_client.html#a4d2701fc8ecc28edb584039d40cf143a',1,'GameUp::Client']]]
 ];

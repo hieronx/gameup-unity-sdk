@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['offset',['Offset',['../class_game_up_1_1_leaderboard.html#aa3b152400b6a84e2db1e8bb15ae3f853',1,'GameUp::Leaderboard']]],
-  ['onfailure',['OnFailure',['../class_game_up_1_1_w_w_w_request.html#a5106266def161c9a18424a057f92c41d',1,'GameUp::WWWRequest']]],
-  ['onsuccess',['OnSuccess',['../class_game_up_1_1_w_w_w_request.html#a7d3cbc3a57b32243d7d723608ded0624',1,'GameUp::WWWRequest']]]
+  ['name',['Name',['../class_game_up_1_1_achievement.html#a0c72c1710a5f6555ae40c9dc040438b7',1,'GameUp.Achievement.Name()'],['../class_game_up_1_1_game.html#a2c71e89f81351ece132bc9e905c88dc4',1,'GameUp.Game.Name()'],['../class_game_up_1_1_gamer.html#a04beb600586231b5fb6380e07fb6e6c4',1,'GameUp.Gamer.Name()'],['../class_game_up_1_1_leaderboard.html#a761e4a9bfae70ffad719e9255804f8c6',1,'GameUp.Leaderboard.Name()'],['../class_game_up_1_1_leaderboard_1_1_entry.html#a987e90695f3f91993eff3116bd502b05',1,'GameUp.Leaderboard.Entry.Name()'],['../class_game_up_1_1_rank.html#a102989addc2ac4f3c7a829e665ee3122',1,'GameUp.Rank.Name()']]],
+  ['nickname',['Nickname',['../class_game_up_1_1_gamer.html#a1d5960e02db8cb435ea9ce5c29067d5b',1,'GameUp::Gamer']]],
+  ['normal',['NORMAL',['../class_game_up_1_1_achievement.html#aac2fdd66845a9fdfda9aaafa9da4a26ca1e23852820b9154316c7c06e2b7ba051',1,'GameUp::Achievement']]]
 ];

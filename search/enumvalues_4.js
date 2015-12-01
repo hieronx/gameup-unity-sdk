@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['monthly',['MONTHLY',['../class_game_up_1_1_leaderboard_1_1_reset.html#a02c1487babef053d6c7a20fb49b50ebeac107927c39e34b357b10099c2d852c75',1,'GameUp::Leaderboard::Reset']]]
+  ['facebook',['FACEBOOK',['../namespace_game_up.html#aef191273658d8ee0eb0a249a2e80d685a3667b4d8fffc4a51b5fa71ff226e4181',1,'GameUp']]]
 ];

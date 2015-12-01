@@ -1,9 +1,12 @@
 var searchData=
 [
-  ['rank',['Rank',['../class_game_up_1_1_leaderboard_1_1_entry.html#a2876831ab08dbdbb274c68477ceb39c3',1,'GameUp.Leaderboard.Entry.Rank()'],['../class_game_up_1_1_leaderboard_and_rank.html#a770b570f0c82050a945e8a4ef639c66a',1,'GameUp.LeaderboardAndRank.Rank()']]],
-  ['rankat',['RankAt',['../class_game_up_1_1_rank.html#a461df12a42a3f2073d6e345ab5163404',1,'GameUp::Rank']]],
-  ['ranking',['Ranking',['../class_game_up_1_1_rank.html#a77bcb9363dfd5938dc80e4831b1f8fae',1,'GameUp::Rank']]],
-  ['readat',['ReadAt',['../class_game_up_1_1_message.html#aa7b812230609c55d15524b2bfffd4ae2',1,'GameUp::Message']]],
-  ['requiredcount',['RequiredCount',['../class_game_up_1_1_achievement.html#af82fe8fdfcc92f10a3c2d0b74f834142',1,'GameUp::Achievement']]],
-  ['results',['Results',['../class_game_up_1_1_shared_storage_search_results.html#a09c2d8bed626137caf35ce7db949ba00',1,'GameUp::SharedStorageSearchResults']]]
+  ['points',['Points',['../class_game_up_1_1_achievement.html#af35f14f8ebe67f93ec752d68b8f0b123',1,'GameUp::Achievement']]],
+  ['port',['PORT',['../class_game_up_1_1_client.html#ac2fba0fd6cb665e4058c52737cd19b83',1,'GameUp::Client']]],
+  ['profileid',['ProfileId',['../class_game_up_1_1_gamer_profile.html#aa93a3345348fd7e6125d126d4a4356e6',1,'GameUp::GamerProfile']]],
+  ['profiles',['Profiles',['../class_game_up_1_1_gamer.html#a643cfe8d39a8acafd31f43565d88e877',1,'GameUp::Gamer']]],
+  ['progressat',['ProgressAt',['../class_game_up_1_1_achievement.html#a8709114ed2b13c6e4139ff15b1146efa',1,'GameUp::Achievement']]],
+  ['protected',['Protected',['../class_game_up_1_1_shared_storage_object.html#abe36c51293804c9caa9828a4ddf05088',1,'GameUp::SharedStorageObject']]],
+  ['public',['Public',['../class_game_up_1_1_shared_storage_object.html#af8cb6b5ea06836b71499b39677f317cc',1,'GameUp::SharedStorageObject']]],
+  ['publicid',['PublicId',['../class_game_up_1_1_achievement.html#a13e9a56da7eef265e8902cc8843a55c4',1,'GameUp.Achievement.PublicId()'],['../class_game_up_1_1_leaderboard.html#a89b2f81fd9164148d4f9986ce979f876',1,'GameUp.Leaderboard.PublicId()']]],
+  ['purchaseproviderreachable',['PurchaseProviderReachable',['../class_game_up_1_1_purchase_verification.html#a14f406acb716e2270ed9c07c570235fd',1,'GameUp::PurchaseVerification']]]
 ];

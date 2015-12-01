@@ -13,9 +13,7 @@ var dir_7f64c52b790ab03de056d8658f99aa4e =
     [ "Game.cs", "_game_8cs.html", [
       [ "Game", "class_game_up_1_1_game.html", "class_game_up_1_1_game" ]
     ] ],
-    [ "Gamer.cs", "_gamer_8cs.html", [
-      [ "Gamer", "class_game_up_1_1_gamer.html", "class_game_up_1_1_gamer" ]
-    ] ],
+    [ "Gamer.cs", "_gamer_8cs.html", "_gamer_8cs" ],
     [ "Leaderboard.cs", "_leaderboard_8cs.html", [
       [ "Leaderboard", "class_game_up_1_1_leaderboard.html", "class_game_up_1_1_leaderboard" ],
       [ "Entry", "class_game_up_1_1_leaderboard_1_1_entry.html", "class_game_up_1_1_leaderboard_1_1_entry" ],
@@ -29,6 +27,10 @@ var dir_7f64c52b790ab03de056d8658f99aa4e =
     ] ],
     [ "Match.cs", "_match_8cs.html", [
       [ "Match", "class_game_up_1_1_match.html", "class_game_up_1_1_match" ]
+    ] ],
+    [ "MatchChangeList.cs", "_match_change_list_8cs.html", [
+      [ "MatchChange", "class_game_up_1_1_match_change.html", "class_game_up_1_1_match_change" ],
+      [ "MatchChangeList", "class_game_up_1_1_match_change_list.html", "class_game_up_1_1_match_change_list" ]
     ] ],
     [ "MatchList.cs", "_match_list_8cs.html", [
       [ "MatchList", "class_game_up_1_1_match_list.html", "class_game_up_1_1_match_list" ]

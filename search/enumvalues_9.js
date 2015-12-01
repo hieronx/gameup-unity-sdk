@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['weekly',['WEEKLY',['../class_game_up_1_1_leaderboard_1_1_reset.html#a02c1487babef053d6c7a20fb49b50ebea35f20feb221d809190e45545c933c9dc',1,'GameUp::Leaderboard::Reset']]]
+  ['normal',['NORMAL',['../class_game_up_1_1_achievement.html#aac2fdd66845a9fdfda9aaafa9da4a26ca1e23852820b9154316c7c06e2b7ba051',1,'GameUp::Achievement']]]
 ];

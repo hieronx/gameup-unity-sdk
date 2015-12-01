@@ -2,7 +2,11 @@ var NAVTREE =
 [
   [ "GameUpSDK", "index.html", [
     [ "Packages", null, [
-      [ "Packages", "namespaces.html", "namespaces" ]
+      [ "Packages", "namespaces.html", "namespaces" ],
+      [ "Package Functions", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ]
+      ] ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -25,7 +29,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_achievement_8cs.html",
-"class_game_up_1_1_session_client.html#ae7bfb4b59e277bdb1bd195e4f31b2247"
+"class_game_up_1_1_session_client.html#a70091bc0a3c1a5cd131d87642a65bb15"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

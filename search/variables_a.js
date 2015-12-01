@@ -1,10 +1,6 @@
 var searchData=
 [
-  ['points',['Points',['../class_game_up_1_1_achievement.html#af35f14f8ebe67f93ec752d68b8f0b123',1,'GameUp::Achievement']]],
-  ['port',['PORT',['../class_game_up_1_1_client.html#ac2fba0fd6cb665e4058c52737cd19b83',1,'GameUp::Client']]],
-  ['progressat',['ProgressAt',['../class_game_up_1_1_achievement.html#a8709114ed2b13c6e4139ff15b1146efa',1,'GameUp::Achievement']]],
-  ['protected',['Protected',['../class_game_up_1_1_shared_storage_object.html#abe36c51293804c9caa9828a4ddf05088',1,'GameUp::SharedStorageObject']]],
-  ['public',['Public',['../class_game_up_1_1_shared_storage_object.html#af8cb6b5ea06836b71499b39677f317cc',1,'GameUp::SharedStorageObject']]],
-  ['publicid',['PublicId',['../class_game_up_1_1_achievement.html#a13e9a56da7eef265e8902cc8843a55c4',1,'GameUp.Achievement.PublicId()'],['../class_game_up_1_1_leaderboard.html#a89b2f81fd9164148d4f9986ce979f876',1,'GameUp.Leaderboard.PublicId()']]],
-  ['purchaseproviderreachable',['PurchaseProviderReachable',['../class_game_up_1_1_purchase_verification.html#a14f406acb716e2270ed9c07c570235fd',1,'GameUp::PurchaseVerification']]]
+  ['offset',['Offset',['../class_game_up_1_1_leaderboard.html#aa3b152400b6a84e2db1e8bb15ae3f853',1,'GameUp::Leaderboard']]],
+  ['onfailure',['OnFailure',['../class_game_up_1_1_w_w_w_request.html#a5106266def161c9a18424a057f92c41d',1,'GameUp::WWWRequest']]],
+  ['onsuccess',['OnSuccess',['../class_game_up_1_1_w_w_w_request.html#a7d3cbc3a57b32243d7d723608ded0624',1,'GameUp::WWWRequest']]]
 ];

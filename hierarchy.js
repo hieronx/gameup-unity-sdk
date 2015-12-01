@@ -5,10 +5,12 @@ var hierarchy =
     [ "GameUp.Leaderboard.Entry", "class_game_up_1_1_leaderboard_1_1_entry.html", null ],
     [ "GameUp.Game", "class_game_up_1_1_game.html", null ],
     [ "GameUp.Gamer", "class_game_up_1_1_gamer.html", null ],
+    [ "GameUp.GamerProfile", "class_game_up_1_1_gamer_profile.html", null ],
     [ "IEnumerable", null, [
       [ "GameUp.AchievementList", "class_game_up_1_1_achievement_list.html", null ],
       [ "GameUp.Leaderboard", "class_game_up_1_1_leaderboard.html", null ],
       [ "GameUp.LeaderboardList", "class_game_up_1_1_leaderboard_list.html", null ],
+      [ "GameUp.MatchChangeList", "class_game_up_1_1_match_change_list.html", null ],
       [ "GameUp.MatchList", "class_game_up_1_1_match_list.html", null ],
       [ "GameUp.MatchTurnList", "class_game_up_1_1_match_turn_list.html", null ],
       [ "GameUp.MessageList", "class_game_up_1_1_message_list.html", null ],
@@ -16,6 +18,7 @@ var hierarchy =
     ] ],
     [ "GameUp.LeaderboardAndRank", "class_game_up_1_1_leaderboard_and_rank.html", null ],
     [ "GameUp.Match", "class_game_up_1_1_match.html", null ],
+    [ "GameUp.MatchChange", "class_game_up_1_1_match_change.html", null ],
     [ "GameUp.MatchTurn", "class_game_up_1_1_match_turn.html", null ],
     [ "GameUp.Message", "class_game_up_1_1_message.html", null ],
     [ "MonoBehaviour", null, [
