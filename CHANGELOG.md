@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.15.1
+
+* Add ActiveGamers object with util methods.
+
 ### 0.15.0
 
 * Additional gamer profile fields.

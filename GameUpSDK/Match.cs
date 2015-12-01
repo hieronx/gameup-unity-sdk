@@ -18,6 +18,74 @@ using System.Collections;
 namespace GameUp
 {
 
+  /// <summary> Represents an active gamer in a match. </summary>
+  public class ActiveGamer
+  {
+    /// <summary> Gamer ID. </summary>
+    public readonly string GamerId;
+    
+    /// <summary> Gamer Nickname. </summary>
+    public readonly string Nickname;
+    
+    internal ActiveGamer (string gamerId, string nickname)
+    {
+      this.GamerId = gamerId;
+      this.Nickname = nickname;
+    }
+  }
+
+  /// <summary> Represents all active gamers. </summary>
+  public class ActiveGamers
+  {
+    /// <summary> List of all Active Gamers. </summary>
+    public readonly List<ActiveGamer> Gamers;
+    
+    internal ActiveGamers (JsonArray dict)
+    {
+      JsonArray activeGamersArray = (JsonArray) dict;
+      Gamers = new List<ActiveGamer>();
+      foreach (JsonObject gamerPair in activeGamersArray) {
+        object nickname;
+        gamerPair.TryGetValue("nickname", out nickname);
+        object gamerId;
+        gamerPair.TryGetValue("gamer_id", out gamerId);
+
+        ActiveGamer activeGamer = new ActiveGamer(nickname.ToString(), gamerId.ToString());
+        Gamers.Add(activeGamer);
+      }
+    }
+
+    /// <summary>
+    /// Finds the first gamer that has the matching GamerId and returns Nickname
+    /// </summary>
+    /// <param name="gamerId">GamerID of the gamer to look for.</param>
+    /// <param name="nickname">Nickname of the gamer if found, otherwise null</param>
+    public void getNickname(string gamerId, out string nickname) {
+      foreach (ActiveGamer gamer in Gamers) {
+        if (gamer.GamerId.Equals(gamerId)) {
+          nickname = gamer.Nickname;
+          return;
+        }
+      }
+      nickname = null;
+    }
+
+    /// <summary>
+    /// Finds the first gamer that has the matching Nickname and returns GamerId
+    /// </summary>
+    /// <param name="nickname">Nickname of the gamer to look for.</param>
+    /// <param name="gamerId">GamerId of the gamer if found, otherwise null</param>
+    public void getGamerId(string nickname, out string gamerId) {
+      foreach (ActiveGamer gamer in Gamers) {
+        if (gamer.Nickname.Equals(nickname)) {
+          gamerId = gamer.GamerId;
+          return;
+        }
+      }
+      gamerId = null;
+    }
+  }
+
   /// <summary>
   /// Represents a response containing GameUp Multiplayer Match with its metadata.
   /// </summary>
@@ -49,8 +117,8 @@ namespace GameUp
     [Obsolete("Gamers is deprecated, use ActiveGamers instead.")]
     public readonly String[] Gamers ;
 
-    /// <summary> List of Map of Gamer Nickname to Gamer IDs </summary>
-    public readonly List<IDictionary<string, string>> ActiveGamers ;
+    /// <summary> Active Gamers in this match. </summary>
+    public readonly ActiveGamers ActiveGamers ;
 
     /// <summary> When the match was created </summary>
     public readonly long CreatedAt ;
@@ -98,19 +166,7 @@ namespace GameUp
           Gamers = gamerList.ToArray ();
           break;
         case "active_gamers": 
-          JsonArray activeGamersArray = (JsonArray) value;
-          ActiveGamers = new List<IDictionary<string, string>>();
-          foreach (JsonObject gamerPair in activeGamersArray) {
-            IDictionary<string, string> nicknameIdPair = new Dictionary<string, string>();
-            object nickname;
-            gamerPair.TryGetValue("nickname", out nickname);
-            object gamerId;
-            gamerPair.TryGetValue("gamer_id", out gamerId);
-            nicknameIdPair.Add("nickname", nickname.ToString());
-            nicknameIdPair.Add("id", gamerId.ToString());
-
-            ActiveGamers.Add(nicknameIdPair);
-          }
+          ActiveGamers = new ActiveGamers((JsonArray) value);
           break;
         case "active":
           Active = (Boolean)value;
