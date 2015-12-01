@@ -1,13 +1,18 @@
 CHANGELOG
 =========
 
+### 0.15.0
+
+* Additional gamer profile fields.
+* Ability to request match updates from a point in time.
+
 ### 0.14.1
 
 * Fix unused session tokens for linking/unlinking
 
 ### 0.14.0
 
-* Add support for explict account linking and unlinking.
+* Add support for explicit account linking and unlinking.
 * Add support for checking account existance
 
 ### 0.13.2
