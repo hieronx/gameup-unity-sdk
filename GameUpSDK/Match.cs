@@ -49,8 +49,8 @@ namespace GameUp
     [Obsolete("Gamers is deprecated, use ActiveGamers instead.")]
     public readonly String[] Gamers ;
 
-    /// <summary> Map of Gamer Nickname to Gamer IDs </summary>
-    public readonly IDictionary<string, string> ActiveGamers ;
+    /// <summary> List of Map of Gamer Nickname to Gamer IDs </summary>
+    public readonly List<IDictionary<string, string>> ActiveGamers ;
 
     /// <summary> When the match was created </summary>
     public readonly long CreatedAt ;
@@ -99,13 +99,17 @@ namespace GameUp
           break;
         case "active_gamers": 
           JsonArray activeGamersArray = (JsonArray) value;
-          ActiveGamers = new Dictionary<string, string>();
+          ActiveGamers = new List<IDictionary<string, string>>();
           foreach (JsonObject gamerPair in activeGamersArray) {
+            IDictionary<string, string> nicknameIdPair = new Dictionary<string, string>();
             object nickname;
             gamerPair.TryGetValue("nickname", out nickname);
             object gamerId;
             gamerPair.TryGetValue("gamer_id", out gamerId);
-            ActiveGamers.Add(nickname.ToString(), gamerId.ToString());
+            nicknameIdPair.Add("nickname", nickname.ToString());
+            nicknameIdPair.Add("id", gamerId.ToString());
+
+            ActiveGamers.Add(nicknameIdPair);
           }
           break;
         case "active":
