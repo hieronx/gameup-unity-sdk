@@ -2,6 +2,8 @@ var namespace_game_up =
 [
     [ "Achievement", "class_game_up_1_1_achievement.html", "class_game_up_1_1_achievement" ],
     [ "AchievementList", "class_game_up_1_1_achievement_list.html", "class_game_up_1_1_achievement_list" ],
+    [ "ActiveGamer", "class_game_up_1_1_active_gamer.html", "class_game_up_1_1_active_gamer" ],
+    [ "ActiveGamers", "class_game_up_1_1_active_gamers.html", "class_game_up_1_1_active_gamers" ],
     [ "Client", "class_game_up_1_1_client.html", "class_game_up_1_1_client" ],
     [ "Game", "class_game_up_1_1_game.html", "class_game_up_1_1_game" ],
     [ "Gamer", "class_game_up_1_1_gamer.html", "class_game_up_1_1_gamer" ],

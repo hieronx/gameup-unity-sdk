@@ -1,7 +1,7 @@
 var searchData=
 [
   ['rank',['Rank',['../class_game_up_1_1_rank.html',1,'GameUp']]],
-  ['rank',['Rank',['../class_game_up_1_1_leaderboard_1_1_entry.html#a2876831ab08dbdbb274c68477ceb39c3',1,'GameUp.Leaderboard.Entry.Rank()'],['../class_game_up_1_1_leaderboard_and_rank.html#a770b570f0c82050a945e8a4ef639c66a',1,'GameUp.LeaderboardAndRank.Rank()'],['../class_game_up_1_1_leaderboard.html#adfc3e304c7e6deee35422d57359ba273a4405408e2b5d5cd5cd870ae4dc4fd023',1,'GameUp.Leaderboard.RANK()']]],
+  ['rank',['RANK',['../class_game_up_1_1_leaderboard.html#adfc3e304c7e6deee35422d57359ba273a4405408e2b5d5cd5cd870ae4dc4fd023',1,'GameUp.Leaderboard.RANK()'],['../class_game_up_1_1_leaderboard_1_1_entry.html#a2876831ab08dbdbb274c68477ceb39c3',1,'GameUp.Leaderboard.Entry.Rank()'],['../class_game_up_1_1_leaderboard_and_rank.html#a770b570f0c82050a945e8a4ef639c66a',1,'GameUp.LeaderboardAndRank.Rank()']]],
   ['rank_2ecs',['Rank.cs',['../_rank_8cs.html',1,'']]],
   ['rankat',['RankAt',['../class_game_up_1_1_rank.html#a461df12a42a3f2073d6e345ab5163404',1,'GameUp::Rank']]],
   ['ranking',['Ranking',['../class_game_up_1_1_rank.html#a77bcb9363dfd5938dc80e4831b1f8fae',1,'GameUp::Rank']]],

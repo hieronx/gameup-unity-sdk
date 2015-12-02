@@ -26,6 +26,8 @@ var dir_7f64c52b790ab03de056d8658f99aa4e =
       [ "LeaderboardList", "class_game_up_1_1_leaderboard_list.html", "class_game_up_1_1_leaderboard_list" ]
     ] ],
     [ "Match.cs", "_match_8cs.html", [
+      [ "ActiveGamer", "class_game_up_1_1_active_gamer.html", "class_game_up_1_1_active_gamer" ],
+      [ "ActiveGamers", "class_game_up_1_1_active_gamers.html", "class_game_up_1_1_active_gamers" ],
       [ "Match", "class_game_up_1_1_match.html", "class_game_up_1_1_match" ]
     ] ],
     [ "MatchChangeList.cs", "_match_change_list_8cs.html", [

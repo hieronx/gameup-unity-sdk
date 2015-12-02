@@ -1,6 +1,8 @@
 var hierarchy =
 [
     [ "GameUp.Achievement", "class_game_up_1_1_achievement.html", null ],
+    [ "GameUp.ActiveGamer", "class_game_up_1_1_active_gamer.html", null ],
+    [ "GameUp.ActiveGamers", "class_game_up_1_1_active_gamers.html", null ],
     [ "GameUp.Client", "class_game_up_1_1_client.html", null ],
     [ "GameUp.Leaderboard.Entry", "class_game_up_1_1_leaderboard_1_1_entry.html", null ],
     [ "GameUp.Game", "class_game_up_1_1_game.html", null ],

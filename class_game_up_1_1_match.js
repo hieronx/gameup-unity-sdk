@@ -1,7 +1,7 @@
 var class_game_up_1_1_match =
 [
     [ "Active", "class_game_up_1_1_match.html#aa121cc1247ea664f39cc0b698722802d", null ],
-    [ "ActiveGamers", "class_game_up_1_1_match.html#aa725a10b2694a02f8739057dd46c3d5a", null ],
+    [ "ActiveGamers", "class_game_up_1_1_match.html#a89f83e001446e6551bbc0bb45b16a61d", null ],
     [ "CreatedAt", "class_game_up_1_1_match.html#ac0a7b72004d779959a7bbb5c0ffdcba7", null ],
     [ "Filters", "class_game_up_1_1_match.html#a510d112a8f2410df2188613021a8b2e0", null ],
     [ "Gamers", "class_game_up_1_1_match.html#aa1eb6929cfa85833ea31bd71870e1f98", null ],
