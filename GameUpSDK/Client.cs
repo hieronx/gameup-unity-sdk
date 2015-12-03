@@ -716,7 +716,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void checkAnonymous(SessionClient session, string id, AccountCheckCallback success, ErrorCallback error) {
       string body = "{\"id\":\"" + id + "\"}";
-      SendAccountRequest ("check", "anonymous", body, null, error, (String jsonResponse) => {
+      SendAccountRequest ("check", "anonymous", body, session, error, (String jsonResponse) => {
         JsonObject result = SimpleJson.DeserializeObject<JsonObject> (jsonResponse);
         object exists;
         object currentGamer;
@@ -735,7 +735,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void checkEmail(SessionClient session, string email, AccountCheckCallback success, ErrorCallback error) {
       string body = "{\"email\":\"" + email + "\"}";
-      SendAccountRequest ("check", "email", body, null, error, (String jsonResponse) => {
+      SendAccountRequest ("check", "email", body, session, error, (String jsonResponse) => {
         JsonObject result = SimpleJson.DeserializeObject<JsonObject> (jsonResponse);
         object exists;
         object currentGamer;
@@ -754,7 +754,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void checkFacebook(SessionClient session, string accessToken, AccountCheckCallback success, ErrorCallback error) {
       string body = "{\"access_token\":\"" + accessToken + "\"}";
-      SendAccountRequest ("check", "facebook", body, null, error, (String jsonResponse) => {
+      SendAccountRequest ("check", "facebook", body, session, error, (String jsonResponse) => {
         JsonObject result = SimpleJson.DeserializeObject<JsonObject> (jsonResponse);
         object exists;
         object currentGamer;
@@ -773,7 +773,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void checkGoogle(SessionClient session, string accessToken, AccountCheckCallback success, ErrorCallback error) {
       string body = "{\"access_token\":\"" + accessToken + "\"}";
-      SendAccountRequest ("check", "google", body, null, error, (String jsonResponse) => {
+      SendAccountRequest ("check", "google", body, session, error, (String jsonResponse) => {
         JsonObject result = SimpleJson.DeserializeObject<JsonObject> (jsonResponse);
         object exists;
         object currentGamer;
@@ -792,7 +792,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void checkTango(SessionClient session, string accessToken, AccountCheckCallback success, ErrorCallback error) {
       string body = "{\"access_token\":\"" + accessToken + "\"}";
-      SendAccountRequest ("check", "tango", body, null, error, (String jsonResponse) => {
+      SendAccountRequest ("check", "tango", body, session, error, (String jsonResponse) => {
         JsonObject result = SimpleJson.DeserializeObject<JsonObject> (jsonResponse);
         object exists;
         object currentGamer;
