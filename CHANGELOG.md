@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.15.2
+
+* Fix bug where account checks would never match current gamer.
+
 ### 0.15.1
 
 * Add ActiveGamers object with util methods.
