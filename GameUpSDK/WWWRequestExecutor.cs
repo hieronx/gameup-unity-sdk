@@ -53,7 +53,10 @@ namespace GameUp
       }
 
       // Add necessary request headers
+#if (!UNITY_WEBPLAYER) 
+      // One of the forbidden keys to override for WebPlayer
       req.AddHeader ("User-Agent", USER_AGENT);
+#endif
       req.AddHeader ("Accept", "application/json");
       req.AddHeader ("Content-Type", "application/json");
       req.AddHeader ("Authorization", req.AuthHeader);
