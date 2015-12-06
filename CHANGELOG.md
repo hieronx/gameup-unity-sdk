@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.15.3
+
+* Set User-Agent if not using Unity Webplayer
+
 ### 0.15.2
 
 * Fix bug where account checks would never match current gamer.
