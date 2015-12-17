@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.15.4
+
+* Fix bug where nickname and gamer IDs were set other way around.
+
 ### 0.15.3
 
 * Set User-Agent if not using Unity Webplayer
