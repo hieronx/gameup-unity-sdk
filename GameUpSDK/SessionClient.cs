@@ -690,11 +690,7 @@ namespace GameUp
       
       string body = "{\"players\":" + requiredGamers + "}";
       if (matchFilters != null && matchFilters.Count > 0) {
-        string filters = "\"" + matchFilters[0] + "\"";
-        for (int i = 1; i < matchFilters.Count; i++) {
-          filters += ",\"" + matchFilters[i] + "\"";
-        }
-        body = "{\"players\":" + requiredGamers + ", \"filters\":[" + filters + "]}";
+        body = "{\"players\":" + requiredGamers + ", \"filters\":" + ListToString(matchFilters) + "}";
       }
       wwwRequest.SetBody (body);
       
@@ -704,6 +700,47 @@ namespace GameUp
         } else {
           success (new Match (SimpleJson.DeserializeObject<JsonObject> (jsonResponse)));
         }
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Request a new match with the given players. The current gamer is part of the match and will be set as the first turn taker.
+    /// </summary>
+    /// <param name="gamers">List of Gamer ID of other players</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void CreateMatch (List<String> gamers, MatchCreateCallback success, Client.ErrorCallback error)
+    {
+      CreateMatch (gamers, null, success, error);
+    }
+    
+    /// <summary>
+    /// Request a new match with the given players. The current gamer is part of the match and will be set as the first turn taker.
+    /// </summary>
+    /// <param name="gamers">List of Gamer ID of other players</param>
+    /// <param name="matchFilters">
+    /// String list to filter on matches to create or join. Exact strings matching only. Up to 8 filters. 
+    /// </param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void CreateMatch (List<String> gamers, List<String> matchFilters, MatchCreateCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/gamer/match/";
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "PUT", ApiKey, Token);
+      
+      string body = "{\"gamers\":" + ListToString(gamers) + "}";
+      if (matchFilters != null && matchFilters.Count > 0) {
+        body = "{\"gamers\":" + ListToString(gamers) + ", \"filters\":" + ListToString(matchFilters) + "}";
+      }
+      wwwRequest.SetBody (body);
+      
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success (new Match (SimpleJson.DeserializeObject<JsonObject> (jsonResponse)));
       };
       wwwRequest.OnFailure = (int statusCode, string reason) => {
         error (statusCode, reason);
@@ -1263,6 +1300,20 @@ namespace GameUp
     public static SessionClient Deserialize (string session)
     {
       return SimpleJson.DeserializeObject<SessionClient> (session);
+    }
+
+    static string ListToString(IList objects) {
+      if (objects.Count == 0) {
+        return "[]";
+      }
+
+      string result = "[\"" + objects[0].ToString() + "\"";
+      for (int i = 1; i < objects.Count; i++) {
+        result += ",\"" + objects[i].ToString() + "\"";
+      }
+
+      result += "]";
+      return result;
     }
   }
 }

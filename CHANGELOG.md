@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.16.0
+
+* Support for direct matchmaking with gamer IDs.
+
 ### 0.15.4
 
 * Fix bug where nickname and gamer IDs were set other way around.
