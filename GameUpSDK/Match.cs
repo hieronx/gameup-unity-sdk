@@ -50,7 +50,7 @@ namespace GameUp
         object gamerId;
         gamerPair.TryGetValue("gamer_id", out gamerId);
 
-        ActiveGamer activeGamer = new ActiveGamer(nickname.ToString(), gamerId.ToString());
+        ActiveGamer activeGamer = new ActiveGamer(gamerId.ToString(), nickname.ToString());
         Gamers.Add(activeGamer);
       }
     }
