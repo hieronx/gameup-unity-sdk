@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.16.1
+
+* Addition of Match.WhoamiGamerId
+
 ### 0.16.0
 
 * Support for direct matchmaking with gamer IDs.
