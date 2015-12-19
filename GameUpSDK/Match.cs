@@ -95,7 +95,11 @@ namespace GameUp
     /// If the current gamer's nickname is changed after the match is setup,
     /// the old nickname is still used hence the use of this 'whoami' field.
     /// </summary>
+    [Obsolete("Whoami is deprecated, use WhoamiGamerId instead.")]
     public readonly String Whoami ;
+
+    /// <summary> Gamer ID of the current player in this match. This is provided for convenience. </summary>
+    public readonly String WhoamiGamerId ;
 
     /// <summary> Match ID </summary>
     public readonly String MatchId ;
@@ -182,6 +186,9 @@ namespace GameUp
           break;
         case "whoami":
           Whoami = valueString;
+          break;
+        case "whoami_gamer_id":
+          WhoamiGamerId = valueString;
           break;
         }
       }
