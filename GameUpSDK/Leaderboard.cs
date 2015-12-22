@@ -103,7 +103,7 @@ namespace GameUp
         case "leaderboard_id":
           LeaderboardId = valueString;
           break;
-        case "Name":
+        case "name":
           Name = valueString;
           break;
         case "public_id":
