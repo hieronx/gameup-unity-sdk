@@ -1,9 +1,13 @@
 CHANGELOG
 =========
 
+### 0.16.2
+
+* Fix deserialisation bug with `Name` field in `Leaderboard` objects.
+
 ### 0.16.1
 
-* Addition of Match.WhoamiGamerId
+* Add `Match.WhoamiGamerId` to multiplayer `Match` objects.
 
 ### 0.16.0
 
@@ -11,11 +15,11 @@ CHANGELOG
 
 ### 0.15.4
 
-* Fix bug where nickname and gamer IDs were set other way around.
+* Fix bug where nickname and gamer IDs were constructed backwards in object.
 
 ### 0.15.3
 
-* Set User-Agent if not using Unity Webplayer
+* Don't set User-Agent header if build is for the Unity Webplayer.
 
 ### 0.15.2
 
