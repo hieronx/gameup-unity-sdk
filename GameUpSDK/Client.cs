@@ -25,8 +25,8 @@ namespace GameUp
   {
     public static readonly string SCHEME = "https";
     public static readonly int PORT = 443;
-    public static readonly string ACCOUNTS_SERVER = "accounts.gameup.io";
-    public static readonly string API_SERVER = "api.gameup.io";
+    public static string ACCOUNTS_SERVER = "accounts.gameup.io";
+    public static string API_SERVER = "api.gameup.io";
 
     /// <summary>
     /// Gets or sets the GameUp API key.
