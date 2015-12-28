@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.16.3
+
+* Set API and Accounts URLs public
+
 ### 0.16.2
 
 * Fix deserialisation bug with `Name` field in `Leaderboard` objects.
