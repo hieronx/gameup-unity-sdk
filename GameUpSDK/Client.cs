@@ -25,11 +25,27 @@ namespace GameUp
   {
     public static readonly string SCHEME = "https";
     public static readonly int PORT = 443;
+
+    [Obsolete("Use Client.AccountsServer to modify the Accounts server host.")]
     public static string ACCOUNTS_SERVER = "accounts.gameup.io";
+
+    [Obsolete("Use Client.ApiServer to modify the API server host.")]
     public static string API_SERVER = "api.gameup.io";
 
     /// <summary>
-    /// Gets or sets the GameUp API key.
+    /// Get or set the GameUp Accounts server host.
+    /// </summary>
+    /// <value>The GameUp Accounts server host.</value>
+    public static string AccountsServer = ACCOUNTS_SERVER;
+
+    /// <summary>
+    /// Get or set the GameUp API server host.
+    /// </summary>
+    /// <value>The GameUp API server host.</value>
+    public static string ApiServer = API_SERVER;
+
+    /// <summary>
+    /// Get or set the GameUp API key.
     /// </summary>
     /// <value>The GameUp API key.</value>
     public static string ApiKey { get; set; }
@@ -82,7 +98,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void Ping (SuccessCallback success, ErrorCallback error)
     {
-      UriBuilder b = new UriBuilder (SCHEME, API_SERVER, PORT, "/v0/");
+      UriBuilder b = new UriBuilder (SCHEME, ApiServer, PORT, "/v0/");
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, "");
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success ();
@@ -100,7 +116,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void Ping (PingCallback success, ErrorCallback error)
     {
-      UriBuilder b = new UriBuilder (SCHEME, API_SERVER, PORT, "/v0/");
+      UriBuilder b = new UriBuilder (SCHEME, ApiServer, PORT, "/v0/");
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, "");
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success (new PingInfo (SimpleJson.DeserializeObject<JsonObject> (jsonResponse)));
@@ -119,7 +135,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void Server (ServerCallback success, ErrorCallback error)
     {
-      UriBuilder b = new UriBuilder (SCHEME, API_SERVER, PORT, "/v0/server");
+      UriBuilder b = new UriBuilder (SCHEME, ApiServer, PORT, "/v0/server");
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, "");
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success (new ServerInfo (SimpleJson.DeserializeObject<JsonObject> (jsonResponse)));
@@ -138,7 +154,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void Game (GameCallback success, ErrorCallback error)
     {
-      UriBuilder b = new UriBuilder (SCHEME, API_SERVER, PORT, "/v0/game");
+      UriBuilder b = new UriBuilder (SCHEME, ApiServer, PORT, "/v0/game");
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, "");
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success (new Game (SimpleJson.DeserializeObject<JsonObject> (jsonResponse)));
@@ -158,7 +174,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void Achievements (AchievementsCallback success, ErrorCallback error)
     {
-      UriBuilder b = new UriBuilder (SCHEME, API_SERVER, PORT, "/v0/game/achievement");
+      UriBuilder b = new UriBuilder (SCHEME, ApiServer, PORT, "/v0/game/achievement");
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, "");
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success (new AchievementList (SimpleJson.DeserializeObject<JsonObject> (jsonResponse)));
@@ -176,7 +192,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void Leaderboards (LeaderboardsCallback success, ErrorCallback error)
     {
-      UriBuilder b = new UriBuilder (SCHEME, API_SERVER, PORT, "/v0/game/leaderboard");
+      UriBuilder b = new UriBuilder (SCHEME, ApiServer, PORT, "/v0/game/leaderboard");
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, "");
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success (new LeaderboardList (SimpleJson.DeserializeObject<JsonObject> (jsonResponse)));
@@ -214,7 +230,7 @@ namespace GameUp
       string path = "/v0/game/leaderboard/" + id;
       string queryParam = "?offset=" + offset + "&limit=" + limit + "&with_scoretags=" + withScoretags;
       // HttpUtility.ParseQueryString is not available in Unity.
-      UriBuilder b = new UriBuilder (SCHEME, API_SERVER, PORT, path, queryParam);
+      UriBuilder b = new UriBuilder (SCHEME, ApiServer, PORT, path, queryParam);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, "");
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success (new Leaderboard (SimpleJson.DeserializeObject<JsonObject> (jsonResponse)));
@@ -262,7 +278,7 @@ namespace GameUp
     public void executeScript (string scriptId, string payload, ScriptRawCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/game/script/" + Uri.EscapeUriString (scriptId);
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, "");
       if (payload != null && payload.Length != 0) {
         wwwRequest.SetBody (payload);
@@ -397,7 +413,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void CreateEmailAccount (string email, string password, string confirm_password, string name, string nickname, SessionClient session, LoginCallback success, ErrorCallback error)
     {
-      UriBuilder b = new UriBuilder (SCHEME, ACCOUNTS_SERVER, PORT, "/v0/gamer/account/email/create");
+      UriBuilder b = new UriBuilder (SCHEME, AccountsServer, PORT, "/v0/gamer/account/email/create");
       String token = session == null ? "" : session.Token;
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, token);
 
@@ -440,7 +456,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void ResetEmailAccount (string email, SuccessCallback success, ErrorCallback error)
     {
-      UriBuilder b = new UriBuilder (SCHEME, ACCOUNTS_SERVER, PORT, "/v0/gamer/account/email/reset/send");
+      UriBuilder b = new UriBuilder (SCHEME, AccountsServer, PORT, "/v0/gamer/account/email/reset/send");
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, "");
 
       wwwRequest.SetBody ("{\"email\": \"" + email + "\"}");
@@ -851,7 +867,7 @@ namespace GameUp
 
     private static void SendAccountRequest(string requestType, string accountType, string body, SessionClient session, ErrorCallback error, WWWRequest.SuccessCallback success) {
       string endpoint = "/v0/gamer/" + requestType + "/" + accountType;
-      UriBuilder b = new UriBuilder (SCHEME, ACCOUNTS_SERVER, PORT, endpoint);
+      UriBuilder b = new UriBuilder (SCHEME, AccountsServer, PORT, endpoint);
       String token = session == null ? "" : session.Token;
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, token);
 

@@ -84,7 +84,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public void Ping (Client.SuccessCallback success, Client.ErrorCallback error)
     {
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, "/v0/");
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, "/v0/");
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success ();
@@ -102,7 +102,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public void Gamer (GamerCallback success, Client.ErrorCallback error)
     {
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ACCOUNTS_SERVER, Client.PORT, "/v0/gamer");
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.AccountsServer, Client.PORT, "/v0/gamer");
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success (new Gamer (SimpleJson.DeserializeObject<JsonObject> (jsonResponse)));
@@ -121,7 +121,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public void UpdateGamer (string nickname, Client.SuccessCallback success, Client.ErrorCallback error)
     {
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ACCOUNTS_SERVER, Client.PORT, "/v0/gamer");
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.AccountsServer, Client.PORT, "/v0/gamer");
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, Token);
       wwwRequest.SetBody ("{\"nickname\":\"" + nickname + "\"}");
       wwwRequest.OnSuccess = (String jsonResponse) => {
@@ -168,7 +168,7 @@ namespace GameUp
     public void StoragePut (string key, string value, Client.SuccessCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/storage/" + Uri.EscapeUriString (key);
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "PUT", ApiKey, Token);
       wwwRequest.SetBody (value);
       wwwRequest.OnSuccess = (String jsonResponse) => {
@@ -219,7 +219,7 @@ namespace GameUp
     private WWWRequest BuildStorageGetRequest (string key, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/storage/" + Uri.EscapeUriString (key);
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
       wwwRequest.OnFailure = (int statusCode, string reason) => {
         error (statusCode, reason);
@@ -236,7 +236,7 @@ namespace GameUp
     public void StorageDelete (string key, Client.SuccessCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/storage/" + Uri.EscapeUriString (key);
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "DELETE", ApiKey, Token);
       wwwRequest.SetBody ("{}");
       wwwRequest.OnSuccess = (String jsonResponse) => {
@@ -271,7 +271,7 @@ namespace GameUp
     public void Achievement (string achievementId, int count, AchievementCallback success, AchievementUnlockedCallback successUnlock, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/achievement/" + achievementId;
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, Token);
       wwwRequest.SetBody ("{\"count\":" + count + "}");
       wwwRequest.OnSuccess = (String jsonResponse) => {
@@ -295,7 +295,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public void Achievements (Client.AchievementsCallback success, Client.ErrorCallback error)
     {
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, "/v0/gamer/achievement");
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, "/v0/gamer/achievement");
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success (new AchievementList (SimpleJson.DeserializeObject<JsonObject> (jsonResponse)));
@@ -353,7 +353,7 @@ namespace GameUp
     public void UpdateLeaderboard (string id, long score, string scoreTags, UpdateLeaderboardCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/leaderboard/" + id;
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, Token);
 
       if (scoreTags == null) {
@@ -469,7 +469,7 @@ namespace GameUp
     {
       string path = "/v0/gamer/leaderboard/" + id;
       string queryParam = "?offset=" + offset + "&limit=" + limit + "&auto_offset=" + autoOffset + "&with_scoretags=" + withScoretags;
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path, queryParam);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path, queryParam);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success (new LeaderboardAndRank (SimpleJson.DeserializeObject<JsonObject> (jsonResponse)));
@@ -487,7 +487,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public void GetAllMatches (MatchesCallback success, Client.ErrorCallback error)
     {
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, "/v0/gamer/match");
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, "/v0/gamer/match");
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success (new MatchList (SimpleJson.DeserializeObject<JsonObject> (jsonResponse)));
@@ -507,7 +507,7 @@ namespace GameUp
     public void GetMatch (string matchId, MatchCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/match/" + matchId;
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success (new Match (SimpleJson.DeserializeObject<JsonObject> (jsonResponse)));
@@ -528,7 +528,7 @@ namespace GameUp
     public void GetTurnData (string matchId, int turnNumber, TurnCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/match/" + matchId + "/turn/" + turnNumber;
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success (new MatchTurnList (SimpleJson.DeserializeObject<JsonObject> (jsonResponse)));
@@ -548,7 +548,7 @@ namespace GameUp
     public void GetChangedMatches (long latestMatchUpdateTimestamp, MatchChangeListCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/matches/?since=" + latestMatchUpdateTimestamp;
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success (new MatchChangeList (SimpleJson.DeserializeObject<JsonObject> (jsonResponse)));
@@ -647,7 +647,7 @@ namespace GameUp
 
     private void submitTurn(string matchId, string body, Client.SuccessCallback success, Client.ErrorCallback error) {
       string path = "/v0/gamer/match/" + matchId + "/turn";
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, Token);
       
       wwwRequest.SetBody (body);
@@ -685,7 +685,7 @@ namespace GameUp
     public void CreateMatch (int requiredGamers, List<String> matchFilters, MatchCreateCallback success, MatchQueueCallback queued, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/match/";
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, Token);
       
       string body = "{\"players\":" + requiredGamers + "}";
@@ -730,7 +730,7 @@ namespace GameUp
     public void CreateMatch (List<String> gamers, List<String> matchFilters, MatchCreateCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/match/";
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "PUT", ApiKey, Token);
       
       string body = "{\"gamers\":" + ListToString(gamers) + "}";
@@ -757,7 +757,7 @@ namespace GameUp
     public void EndMatch (string matchId, MatchEndCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/match/" + matchId;
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, Token);
       
       wwwRequest.SetBody ("{\"action\":\"end\"}");
@@ -780,7 +780,7 @@ namespace GameUp
     public void LeaveMatch (string matchId, MatchLeaveCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/match/" + matchId;
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, Token);
       
       wwwRequest.SetBody ("{\"action\":\"leave\"}");
@@ -805,7 +805,7 @@ namespace GameUp
     public void SubscribePush (String deviceToken, String[] segments, Client.SuccessCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/push/";
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "PUT", ApiKey, Token);
 
       String segmentsString = "[";
@@ -849,7 +849,7 @@ namespace GameUp
     public void PurchaseVerifyApple (string receipt, string productId, PurchaseVerifyCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/purchase/verify/apple";
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, Token);
       wwwRequest.SetBody ("{\"product_id\":\"" + productId + "\",\"receipt_data\":\"" + receipt + "\"}");
       wwwRequest.OnSuccess = (String jsonResponse) => {
@@ -871,7 +871,7 @@ namespace GameUp
     public void PurchaseVerifyGoogleProduct (string token, string productId, PurchaseVerifyCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/purchase/verify/google";
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, Token);
       wwwRequest.SetBody ("{\"product_id\":\"" + productId + "\",\"purchase_token\":\"" + token + "\",\"type\":\"product\"}");
       wwwRequest.OnSuccess = (String jsonResponse) => {
@@ -893,7 +893,7 @@ namespace GameUp
     public void PurchaseVerifyGoogleSubscription (string token, string subscriptionId, PurchaseVerifyCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/purchase/verify/google";
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, Token);
       wwwRequest.SetBody ("{\"product_id\":\"" + subscriptionId + "\",\"purchase_token\":\"" + token + "\",\"type\":\"subscription\"}");
       wwwRequest.OnSuccess = (String jsonResponse) => {
@@ -976,7 +976,7 @@ namespace GameUp
         queryParam += "&sort=" + Uri.EscapeUriString (sort);
       }
 
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path, queryParam);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path, queryParam);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
 
       wwwRequest.OnSuccess = (String jsonResponse) => {
@@ -997,7 +997,7 @@ namespace GameUp
     public void SharedStorageGet (string key, SharedStorageCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/shared/" + Uri.EscapeUriString (key);
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success (new SharedStorageObject (SimpleJson.DeserializeObject<JsonObject> (jsonResponse)));
@@ -1017,7 +1017,7 @@ namespace GameUp
     public void SharedStorageGet (string key, StorageGetRawCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/shared/" + Uri.EscapeUriString (key);
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success (jsonResponse);
@@ -1051,7 +1051,7 @@ namespace GameUp
     public void SharedStoragePut (string key, string data, Client.SuccessCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/shared/" + Uri.EscapeUriString (key) + "/public";
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "PUT", ApiKey, Token);
 
       wwwRequest.SetBody (data);
@@ -1094,7 +1094,7 @@ namespace GameUp
     public void SharedStorageUpdate (string key, string data, Client.SuccessCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/shared/" + Uri.EscapeUriString (key) + "/public";
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "PATCH", ApiKey, Token);
 
       wwwRequest.SetBody (data);
@@ -1117,7 +1117,7 @@ namespace GameUp
     public void SharedStorageDelete (string key, Client.SuccessCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/shared/" + Uri.EscapeUriString (key) + "/public";
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "DELETE", ApiKey, Token);
       wwwRequest.SetBody ("{}");
       wwwRequest.OnSuccess = (String jsonResponse) => {
@@ -1166,7 +1166,7 @@ namespace GameUp
     public void executeScript (string scriptId, string payload, Client.ScriptRawCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/game/script/" + Uri.EscapeUriString (scriptId);
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, Token);
       if (payload != null && payload.Length != 0) {
         wwwRequest.SetBody (payload);
@@ -1201,7 +1201,7 @@ namespace GameUp
     public void MessageList (Boolean fetchBody, long newerThanUtcMillis, MessageListCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/message/?with_body=" + Uri.EscapeUriString (fetchBody.ToString ()) + "&since=" + Uri.EscapeUriString (newerThanUtcMillis.ToString ());
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success (new MessageList (SimpleJson.DeserializeObject<JsonObject> (jsonResponse)));
@@ -1222,7 +1222,7 @@ namespace GameUp
     public void MessageGet (string messageId, Boolean fetchBody, MessageCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/message/" + Uri.EscapeUriString (messageId) + "/?with_body=" + Uri.EscapeUriString (fetchBody.ToString ());
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success (new Message (SimpleJson.DeserializeObject<JsonObject> (jsonResponse)));
@@ -1242,7 +1242,7 @@ namespace GameUp
     public void MessageDelete (string messageId, Client.SuccessCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/message/" + Uri.EscapeUriString (messageId);
-      UriBuilder b = new UriBuilder (Client.SCHEME, Client.API_SERVER, Client.PORT, path);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "DELETE", ApiKey, Token);
       wwwRequest.SetBody ("{}");
       wwwRequest.OnSuccess = (String jsonResponse) => {
