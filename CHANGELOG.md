@@ -1,9 +1,13 @@
 CHANGELOG
 =========
 
+### 0.16.4
+
+* Use recommended Pascal case with public static variables.
+
 ### 0.16.3
 
-* Set API and Accounts URLs public
+* Set API and Accounts URLs to be public.
 
 ### 0.16.2
 
@@ -45,7 +49,7 @@ CHANGELOG
 ### 0.14.0
 
 * Add support for explicit account linking and unlinking.
-* Add support for checking account existance
+* Add support for checking account existance.
 
 ### 0.13.2
 
@@ -107,7 +111,7 @@ CHANGELOG
 ### 0.8.0
 
 * BREAKING CHANGE: Due to limitations in SimpleJson, some fields in Achievement and Leaderboards had to be renamed so they could be parsed properly.
-* Add callback to get payload data from the Ping operation
+* Add callback to get payload data from the Ping operation.
 
 ### 0.7.0
 
