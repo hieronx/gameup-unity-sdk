@@ -107,7 +107,7 @@ namespace GameUp
     public readonly String Email;
 
     /// <summary> Time zone of the gamer. </summary>
-    public readonly long Timezone;
+    public readonly String Timezone;
 
     /// <summary> Location of the gamer. </summary>
     public readonly String Location;
@@ -151,7 +151,7 @@ namespace GameUp
           Email = valueString;
           break;
         case "timezone":
-          Timezone = (long) value;
+          Timezone = valueString;
           break;
         case "location":
           Location = valueString;
