@@ -212,7 +212,7 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void Leaderboard (string id, LeaderboardCallback success, ErrorCallback error)
     {
-      Leaderboard (id, 0, 50, false, success, error);
+      Leaderboard (id, 50, 0, false, success, error);
     }
 
     /// <summary>
