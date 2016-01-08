@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.16.6
+
+* Fix limit and offset defaults with `Client.Leaderboard` requests.
+
 ### 0.16.5
 
 * Change Timezone field to String
