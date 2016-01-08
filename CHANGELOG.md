@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.16.5
+
+* Change Timezone field to String
+
 ### 0.16.4
 
 * Use recommended Pascal case with public static variables.
