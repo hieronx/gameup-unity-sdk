@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.16.7
+
+* Make the `Client.executeScript` methods static.
+
 ### 0.16.6
 
 * Fix limit and offset defaults with `Client.Leaderboard` requests.
