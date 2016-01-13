@@ -248,7 +248,7 @@ namespace GameUp
     /// <param name="payload">Payload that your script expects. Will be serialised to Json automatically. Can be set to null</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
-    public void executeScript<T> (string scriptId, T payload, ScriptCallback success, Client.ErrorCallback error)
+    public static void executeScript<T> (string scriptId, T payload, ScriptCallback success, Client.ErrorCallback error)
     {
       string data = SimpleJson.SerializeObject (payload);
       executeScript (scriptId, data, success, error);
@@ -261,7 +261,7 @@ namespace GameUp
     /// <param name="payload">Payload that your script expects. Will be serialised to Json automatically. Can be set to null or an empty string</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
-    public void executeScript (string scriptId, string payload, ScriptCallback success, Client.ErrorCallback error)
+    public static void executeScript (string scriptId, string payload, ScriptCallback success, Client.ErrorCallback error)
     {
       executeScript (scriptId, payload, (string response) => {
         success (SimpleJson.DeserializeObject<JsonObject> (response));
@@ -275,7 +275,7 @@ namespace GameUp
     /// <param name="payload">Payload that your script expects. Will be serialised to Json automatically. Can be set to null or an empty string</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
-    public void executeScript (string scriptId, string payload, ScriptRawCallback success, Client.ErrorCallback error)
+    public static void executeScript (string scriptId, string payload, ScriptRawCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/game/script/" + Uri.EscapeUriString (scriptId);
       UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
