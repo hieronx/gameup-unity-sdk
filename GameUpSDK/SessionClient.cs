@@ -1168,9 +1168,13 @@ namespace GameUp
       string path = "/v0/game/script/" + Uri.EscapeUriString (scriptId);
       UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
       WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, Token);
+
       if (payload != null && payload.Length != 0) {
         wwwRequest.SetBody (payload);
+      } else {
+        wwwRequest.SetBody ("{}");
       }
+
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success (jsonResponse);
       };

@@ -13,10 +13,10 @@ public class GameUpTest : MonoBehaviour
       Debug.LogWarning (status + ": " + reason);
     }
   };
-  readonly string achievementId = "70c99a8e6dff4a6fac7e517a8dd4e83f";
-  readonly string leaderboardId = "6ded1e8dbf104faba384bb659069ea69";
-  readonly string scriptId = "dd5cacf3da30415b891de1425444c6c2";
-  readonly string mailboxScriptId = "4be9ed1d444a46ca94bb94262712f9de";
+  readonly string achievementId = "9fcd83327951475caf818d59156a23c2";
+  readonly string leaderboardId = "b540acd249384c1784a95912a3f157c0";
+  readonly string scriptId = "6ecc280b5b2b4c678eb53401c7133811";
+  readonly string mailboxScriptId = "567417e01bd64533bb4677d997cc98bf";
   readonly string facebookToken = "invalid-token-1234";
   readonly string storage_key = "profile_info";
   readonly string shared_storage_key = "ArmyInfo";
@@ -30,8 +30,31 @@ public class GameUpTest : MonoBehaviour
   {
 
     string deviceId = SystemInfo.deviceUniqueIdentifier;
-    Client.ApiKey = "9e87fc40a177490f95e734750f6b513e";
+    Client.ApiKey = "cd711f5ef5804365a11120897f5d137e";
     
+    testClientMethods ();
+
+    Debug.Log ("Anonymous Login with Id : " + deviceId + " ...");
+    Client.LoginAnonymous (deviceId, (SessionClient s) => {
+      session = s;
+      Debug.Log ("Logged in anonymously: " + session.Token);
+
+      //Let's assume that we are about to save the session 
+      //for later usage without having to re-login the user.
+      String serializedSession = session.Serialize ();
+      Debug.Log ("Saved session: " + serializedSession);
+
+      //Let's assume that some time has passed and
+      //that we are about to restore the session 
+      s = SessionClient.Deserialize (serializedSession);
+      Debug.Log ("Restored session: " + s.Token);
+
+      testSessionClientMethods (session);
+    }, failure);
+  }
+
+  void testClientMethods ()
+  {
     Client.Ping ((PingInfo server) => {
       Debug.Log ("Server Time: " + server.Time);
     }, failure);
@@ -65,46 +88,28 @@ public class GameUpTest : MonoBehaviour
         Debug.Log ("Leaderboard Name: " + l.Name + " " + l.PublicId + " " + l.Sort + " " + l.Type + " " + l.Entries.Length + " " + en.Name);
       }
     }, failure);
-    
-    Debug.Log ("Anonymous Login with Id : " + deviceId + " ...");
-    Client.LoginAnonymous (deviceId, (SessionClient s) => {
-      session = s;
-      Debug.Log ("Logged in anonymously: " + session.Token);
-
-      Client.CreateEmailAccount ("unitysdk@gameup.io", "password", "password", "UnitySDK Test", session, (SessionClient gus) => {
-        session = gus;
-        Debug.Log ("Created GameUp Account: " + session.Token);
-      }, (status, reason) => { 
-        Client.LoginEmail ("unitysdk@gameup.io", "password", (SessionClient gus) => {
-          Debug.Log ("Logged in with GameUp Account: " + session.Token);
-        }, failure);
-      });
-
-      Client.linkFacebook(session, facebookToken, () => {
-        Debug.Log ("Facebook Linking successful: ");
-      }, (status, reason) => {
-        Debug.Log ("[Expected Failure] Facebook Linking Failed: " + status + " " + reason);
-      });
-
-      //Let's assume that we are about to save the session 
-      //for later usage without having to re-login the user.
-      String serializedSession = session.Serialize ();
-      Debug.Log ("Saved session: " + serializedSession);
-
-      //Let's assume that some time has passed and
-      //that we are about to restore the session 
-      s = SessionClient.Deserialize (serializedSession);
-      Debug.Log ("Restored session: " + s.Token);
-
-      testSessionClientMethods (session);
-    }, failure);
   }
 
   void testSessionClientMethods (SessionClient session)
   {
+    Client.CreateEmailAccount ("unitysdk@gameup.io", "password", "password", "UnitySDK Test", session, (SessionClient gus) => {
+      session = gus;
+      Debug.Log ("Created GameUp Account: " + session.Token);
+    }, (status, reason) => { 
+      Client.LoginEmail ("unitysdk@gameup.io", "password", (SessionClient gus) => {
+        Debug.Log ("Logged in with GameUp Account: " + session.Token);
+      }, failure);
+    });
+    
+    Client.linkFacebook (session, facebookToken, () => {
+      Debug.Log ("Facebook Linking successful: ");
+    }, (status, reason) => {
+      Debug.Log ("[Expected Failure] Facebook Linking Failed: " + status + " " + reason);
+    });
+    
     session.Gamer ((Gamer gamer) => {
       Debug.Log ("Gamer Name: " + gamer.Name);
-      testMatch(gamer);
+      testMatch (gamer);
     }, failure);
     
     session.UpdateGamer ("UnitySDKTest", () => {
@@ -174,8 +179,6 @@ public class GameUpTest : MonoBehaviour
       }
     }, failure);
     
-
-    
     session.StorageDelete (shared_storage_key, () => {
       Debug.Log ("Deleted shared storage: " + shared_storage_key);
     }, failure);
@@ -235,7 +238,8 @@ public class GameUpTest : MonoBehaviour
     #endif
   }
 
-  void testMatch(Gamer gamer) {
+  void testMatch (Gamer gamer)
+  {
     session.GetAllMatches ((MatchList matches) => {
       Debug.Log ("Retrieved Matches. Size: " + matches.Count);
     }, failure);
@@ -252,7 +256,7 @@ public class GameUpTest : MonoBehaviour
       }, failure);
       
       if (match.TurnGamerId.Equals (gamer.GamerId)) {
-        Debug.Log ("Match details : " + match.MatchId + ". Submitting a turn for " + match.Whoami);
+        Debug.Log ("Match details : " + match.MatchId + ". Submitting a turn for " + match.WhoamiGamerId);
         IDictionary turnData = new Dictionary<string, string> {{"turndata", "Unity SDK Turn Data"}};
         session.SubmitTurnGamerId (matchId, (int)match.TurnCount, gamer.GamerId, turnData, () => {
           session.GetTurnData (matchId, 0, (MatchTurnList turns) => {
@@ -278,7 +282,7 @@ public class GameUpTest : MonoBehaviour
     }, failure);
 
     //instead of '0' use Match.UpdatedAt ...
-    session.GetChangedMatches(0, (MatchChangeList list) => {
+    session.GetChangedMatches (0, (MatchChangeList list) => {
       Debug.Log (list.Count + " matches have changed.");
     }, failure);
   }
