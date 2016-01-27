@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.16.8
+
+* Fix bug executing a script with no payload.
+
 ### 0.16.7
 
 * Make the `Client.executeScript` methods static.
