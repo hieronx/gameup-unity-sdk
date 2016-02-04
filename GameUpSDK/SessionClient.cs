@@ -216,6 +216,24 @@ namespace GameUp
       wwwRequest.Execute ();
     }
 
+    /// <summary>
+    /// Fetch the string object for the given key from Cloud Storage.
+    /// </summary>
+    /// <param name="key">The name of the key.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void StorageGet<T> (string key, Client.GenericSuccessCallback<T> success, Client.ErrorCallback error)
+    {
+      WWWRequest wwwRequest = BuildStorageGetRequest (key, error);
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        IDictionary<string, string> rawResponse = SimpleJson.DeserializeObject<IDictionary<String, string>> (jsonResponse);
+        string data;
+        rawResponse.TryGetValue ("value", out data);
+        success (SimpleJson.DeserializeObject<T> (data));
+      };
+      wwwRequest.Execute ();
+    }
+
     private WWWRequest BuildStorageGetRequest (string key, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/storage/" + Uri.EscapeUriString (key);
