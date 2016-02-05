@@ -33,7 +33,7 @@
   <td id="projectlogo"><img alt="Logo" src="GameUp_Logo_Small_fill.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GameUpSDK
-   &#160;<span id="projectnumber">0.11.0</span>
+   &#160;<span id="projectnumber">0.16.9</span>
    </div>
    <div id="projectbrief">Unity SDK for the GameUp service</div>
   </td>
@@ -152,15 +152,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a309e5850e59aaf5b583bcd99cfbaea7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81ba58bfba24e92c02d4d6d23ad41cb8"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a81ba58bfba24e92c02d4d6d23ad41cb8">RequestRawCallback</a> (string data)</td></tr>
 <tr class="separator:a81ba58bfba24e92c02d4d6d23ad41cb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96365808e57590b8c4c7c68e00772a0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a96365808e57590b8c4c7c68e00772a0e">executeScript&lt; T &gt;</a> (string scriptId, T payload, <a class="el" href="class_game_up_1_1_client.html#a2810c0a2cc1cd54c3fba29710b514efd">ScriptCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
-<tr class="memdesc:a96365808e57590b8c4c7c68e00772a0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a script on the server. Payload can be null or any object.  <a href="#a96365808e57590b8c4c7c68e00772a0e">More...</a><br /></td></tr>
-<tr class="separator:a96365808e57590b8c4c7c68e00772a0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a802b0f8babcfbff7f037d3533bcb9bec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a802b0f8babcfbff7f037d3533bcb9bec">executeScript</a> (string scriptId, string payload, <a class="el" href="class_game_up_1_1_client.html#a2810c0a2cc1cd54c3fba29710b514efd">ScriptCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
-<tr class="memdesc:a802b0f8babcfbff7f037d3533bcb9bec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a script on the server. Payload can be null or an empty string.  <a href="#a802b0f8babcfbff7f037d3533bcb9bec">More...</a><br /></td></tr>
-<tr class="separator:a802b0f8babcfbff7f037d3533bcb9bec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4358a26c048f825acabf20f83fc1198b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a4358a26c048f825acabf20f83fc1198b">executeScript</a> (string scriptId, string payload, <a class="el" href="class_game_up_1_1_client.html#a309e5850e59aaf5b583bcd99cfbaea7e">ScriptRawCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
-<tr class="memdesc:a4358a26c048f825acabf20f83fc1198b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a script on the server. Payload can be null or an empty string.  <a href="#a4358a26c048f825acabf20f83fc1198b">More...</a><br /></td></tr>
-<tr class="separator:a4358a26c048f825acabf20f83fc1198b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -191,6 +182,15 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a36f06487839ccea545a62df16ad7d4b6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a36f06487839ccea545a62df16ad7d4b6">Leaderboard</a> (string id, int limit, int offset, bool withScoretags, <a class="el" href="class_game_up_1_1_client.html#a1d6815fe9153f9127266c4e8cc9cf869">LeaderboardCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:a36f06487839ccea545a62df16ad7d4b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the leaderboard with the supplied ID; this will contain the top ranked gamers on the leaderboard.  <a href="#a36f06487839ccea545a62df16ad7d4b6">More...</a><br /></td></tr>
 <tr class="separator:a36f06487839ccea545a62df16ad7d4b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a236fbbb9e0f961878e68302d3bd6128b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a236fbbb9e0f961878e68302d3bd6128b">executeScript&lt; T &gt;</a> (string scriptId, T payload, <a class="el" href="class_game_up_1_1_client.html#a2810c0a2cc1cd54c3fba29710b514efd">ScriptCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:a236fbbb9e0f961878e68302d3bd6128b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a script on the server. Payload can be null or any object.  <a href="#a236fbbb9e0f961878e68302d3bd6128b">More...</a><br /></td></tr>
+<tr class="separator:a236fbbb9e0f961878e68302d3bd6128b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa65d1f9a64d7eb08e49aa2196b478372"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#aa65d1f9a64d7eb08e49aa2196b478372">executeScript</a> (string scriptId, string payload, <a class="el" href="class_game_up_1_1_client.html#a2810c0a2cc1cd54c3fba29710b514efd">ScriptCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:aa65d1f9a64d7eb08e49aa2196b478372"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a script on the server. Payload can be null or an empty string.  <a href="#aa65d1f9a64d7eb08e49aa2196b478372">More...</a><br /></td></tr>
+<tr class="separator:aa65d1f9a64d7eb08e49aa2196b478372"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c173a7ec1d6761b0ec32a17840755e7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a8c173a7ec1d6761b0ec32a17840755e7">executeScript</a> (string scriptId, string payload, <a class="el" href="class_game_up_1_1_client.html#a309e5850e59aaf5b583bcd99cfbaea7e">ScriptRawCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:a8c173a7ec1d6761b0ec32a17840755e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a script on the server. Payload can be null or an empty string.  <a href="#a8c173a7ec1d6761b0ec32a17840755e7">More...</a><br /></td></tr>
+<tr class="separator:a8c173a7ec1d6761b0ec32a17840755e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b13d98f6d1a73fa7915a1cb2c27546c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a3b13d98f6d1a73fa7915a1cb2c27546c">CreateGameUpAccount</a> (string email, string password, string confirm_password, string name, <a class="el" href="class_game_up_1_1_client.html#a3723cffa494f5195a340ad4d382fa379">LoginCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:a3b13d98f6d1a73fa7915a1cb2c27546c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new account for the gamer using a <a class="el" href="namespace_game_up.html">GameUp</a> Email / Password combination and link an existing gamer token.  <a href="#a3b13d98f6d1a73fa7915a1cb2c27546c">More...</a><br /></td></tr>
 <tr class="separator:a3b13d98f6d1a73fa7915a1cb2c27546c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -303,15 +303,21 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:a022e933fe57e2a7d0c61dac4ab48e2f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2fba0fd6cb665e4058c52737cd19b83"><td class="memItemLeft" align="right" valign="top">static readonly int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#ac2fba0fd6cb665e4058c52737cd19b83">PORT</a> = 443</td></tr>
 <tr class="separator:ac2fba0fd6cb665e4058c52737cd19b83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e64f0fc7ecf796f46c0b55b888ea896"><td class="memItemLeft" align="right" valign="top">static readonly string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a6e64f0fc7ecf796f46c0b55b888ea896">ACCOUNTS_SERVER</a> = &quot;accounts.gameup.io&quot;</td></tr>
-<tr class="separator:a6e64f0fc7ecf796f46c0b55b888ea896"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5514013b1d76161beda7734d5147be53"><td class="memItemLeft" align="right" valign="top">static readonly string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a5514013b1d76161beda7734d5147be53">API_SERVER</a> = &quot;api.gameup.io&quot;</td></tr>
-<tr class="separator:a5514013b1d76161beda7734d5147be53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4675457e1e1e5af77992db376b554f3"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#ad4675457e1e1e5af77992db376b554f3">ACCOUNTS_SERVER</a> = &quot;accounts.gameup.io&quot;</td></tr>
+<tr class="separator:ad4675457e1e1e5af77992db376b554f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b75f195176a44e1617e6c52b1b4d0d6"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a1b75f195176a44e1617e6c52b1b4d0d6">API_SERVER</a> = &quot;api.gameup.io&quot;</td></tr>
+<tr class="separator:a1b75f195176a44e1617e6c52b1b4d0d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8a04590787229322ff4044071c80861"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#ad8a04590787229322ff4044071c80861">AccountsServer</a> = <a class="el" href="class_game_up_1_1_client.html#ad4675457e1e1e5af77992db376b554f3">ACCOUNTS_SERVER</a></td></tr>
+<tr class="memdesc:ad8a04590787229322ff4044071c80861"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get or set the <a class="el" href="namespace_game_up.html">GameUp</a> Accounts server host.  <a href="#ad8a04590787229322ff4044071c80861">More...</a><br /></td></tr>
+<tr class="separator:ad8a04590787229322ff4044071c80861"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19439b62f248dbcf97ce580da9f8d6d8"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a19439b62f248dbcf97ce580da9f8d6d8">ApiServer</a> = <a class="el" href="class_game_up_1_1_client.html#a1b75f195176a44e1617e6c52b1b4d0d6">API_SERVER</a></td></tr>
+<tr class="memdesc:a19439b62f248dbcf97ce580da9f8d6d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get or set the <a class="el" href="namespace_game_up.html">GameUp</a> API server host.  <a href="#a19439b62f248dbcf97ce580da9f8d6d8">More...</a><br /></td></tr>
+<tr class="separator:a19439b62f248dbcf97ce580da9f8d6d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:ad79122d0be015291a24b168c501e4785"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#ad79122d0be015291a24b168c501e4785">ApiKey</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ad79122d0be015291a24b168c501e4785"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the <a class="el" href="namespace_game_up.html">GameUp</a> API key.  <a href="#ad79122d0be015291a24b168c501e4785">More...</a><br /></td></tr>
+<tr class="memdesc:ad79122d0be015291a24b168c501e4785"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get or set the <a class="el" href="namespace_game_up.html">GameUp</a> API key.  <a href="#ad79122d0be015291a24b168c501e4785">More...</a><br /></td></tr>
 <tr class="separator:ad79122d0be015291a24b168c501e4785"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -1337,12 +1343,15 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a802b0f8babcfbff7f037d3533bcb9bec"></a>
+<a class="anchor" id="aa65d1f9a64d7eb08e49aa2196b478372"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void GameUp.Client.executeScript </td>
+          <td class="memname">static void GameUp.Client.executeScript </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>scriptId</em>, </td>
@@ -1371,6 +1380,11 @@ Properties</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Executes a script on the server. Payload can be null or an empty string. </p>
@@ -1386,12 +1400,15 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4358a26c048f825acabf20f83fc1198b"></a>
+<a class="anchor" id="a8c173a7ec1d6761b0ec32a17840755e7"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void GameUp.Client.executeScript </td>
+          <td class="memname">static void GameUp.Client.executeScript </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>scriptId</em>, </td>
@@ -1420,6 +1437,11 @@ Properties</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Executes a script on the server. Payload can be null or an empty string. </p>
@@ -1435,12 +1457,15 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a96365808e57590b8c4c7c68e00772a0e"></a>
+<a class="anchor" id="a236fbbb9e0f961878e68302d3bd6128b"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_game_up_1_1_client.html#a802b0f8babcfbff7f037d3533bcb9bec">GameUp.Client.executeScript</a>&lt; T &gt; </td>
+          <td class="memname">static void <a class="el" href="class_game_up_1_1_client.html#aa65d1f9a64d7eb08e49aa2196b478372">GameUp.Client.executeScript</a>&lt; T &gt; </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>scriptId</em>, </td>
@@ -1469,6 +1494,11 @@ Properties</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Executes a script on the server. Payload can be null or any object. </p>
@@ -3261,7 +3291,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a6e64f0fc7ecf796f46c0b55b888ea896"></a>
+<a class="anchor" id="ad4675457e1e1e5af77992db376b554f3"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -3269,7 +3299,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">readonly string GameUp.Client.ACCOUNTS_SERVER = &quot;accounts.gameup.io&quot;</td>
+          <td class="memname">string GameUp.Client.ACCOUNTS_SERVER = &quot;accounts.gameup.io&quot;</td>
         </tr>
       </table>
   </td>
@@ -3281,7 +3311,7 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a5514013b1d76161beda7734d5147be53"></a>
+<a class="anchor" id="ad8a04590787229322ff4044071c80861"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -3289,7 +3319,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">readonly string GameUp.Client.API_SERVER = &quot;api.gameup.io&quot;</td>
+          <td class="memname">string GameUp.Client.AccountsServer = <a class="el" href="class_game_up_1_1_client.html#ad4675457e1e1e5af77992db376b554f3">ACCOUNTS_SERVER</a></td>
         </tr>
       </table>
   </td>
@@ -3298,6 +3328,52 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Get or set the <a class="el" href="namespace_game_up.html">GameUp</a> Accounts server host. </p>
+<p>The <a class="el" href="namespace_game_up.html">GameUp</a> Accounts server host.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1b75f195176a44e1617e6c52b1b4d0d6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string GameUp.Client.API_SERVER = &quot;api.gameup.io&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a19439b62f248dbcf97ce580da9f8d6d8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string GameUp.Client.ApiServer = <a class="el" href="class_game_up_1_1_client.html#a1b75f195176a44e1617e6c52b1b4d0d6">API_SERVER</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get or set the <a class="el" href="namespace_game_up.html">GameUp</a> API server host. </p>
+<p>The <a class="el" href="namespace_game_up.html">GameUp</a> API server host.</p>
 
 </div>
 </div>
@@ -3360,7 +3436,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Gets or sets the <a class="el" href="namespace_game_up.html">GameUp</a> API key. </p>
+<p>Get or set the <a class="el" href="namespace_game_up.html">GameUp</a> API key. </p>
 <p>The <a class="el" href="namespace_game_up.html">GameUp</a> API key.</p>
 
 </div>
@@ -3374,7 +3450,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_game_up.html">GameUp</a></li><li class="navelem"><a class="el" href="class_game_up_1_1_client.html">Client</a></li>
-    <li class="footer">Generated on Wed Dec 2 2015 17:10:59 for GameUpSDK by
+    <li class="footer">Generated on Fri Feb 5 2016 10:45:30 for GameUpSDK by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
   </ul>

@@ -33,7 +33,7 @@
   <td id="projectlogo"><img alt="Logo" src="GameUp_Logo_Small_fill.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GameUpSDK
-   &#160;<span id="projectnumber">0.11.0</span>
+   &#160;<span id="projectnumber">0.16.9</span>
    </div>
    <div id="projectbrief">Unity SDK for the GameUp service</div>
   </td>
@@ -191,6 +191,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8adc7271b698af4df2135ebd0eb005b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a8adc7271b698af4df2135ebd0eb005b2">StorageGet</a> (string key, <a class="el" href="class_game_up_1_1_session_client.html#af45eb613fc12cec6d8ed90e42f7f5991">StorageGetRawCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:a8adc7271b698af4df2135ebd0eb005b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch the string object for the given key from Cloud Storage.  <a href="#a8adc7271b698af4df2135ebd0eb005b2">More...</a><br /></td></tr>
 <tr class="separator:a8adc7271b698af4df2135ebd0eb005b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e1bd417584fcba33a86ef7d923f1c59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a1e1bd417584fcba33a86ef7d923f1c59">StorageGet&lt; T &gt;</a> (string key, Client.GenericSuccessCallback&lt; T &gt; success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:a1e1bd417584fcba33a86ef7d923f1c59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch the string object for the given key from Cloud Storage.  <a href="#a1e1bd417584fcba33a86ef7d923f1c59">More...</a><br /></td></tr>
+<tr class="separator:a1e1bd417584fcba33a86ef7d923f1c59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a266468bd2359ee8275e72c00bb65d741"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a266468bd2359ee8275e72c00bb65d741">StorageDelete</a> (string key, <a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">Client.SuccessCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:a266468bd2359ee8275e72c00bb65d741"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the object with the supplied key from Cloud Storage.  <a href="#a266468bd2359ee8275e72c00bb65d741">More...</a><br /></td></tr>
 <tr class="separator:a266468bd2359ee8275e72c00bb65d741"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -260,6 +263,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a22c7d7b5bb60a990d4af0b1945a1498c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a22c7d7b5bb60a990d4af0b1945a1498c">CreateMatch</a> (int requiredGamers, List&lt; String &gt; matchFilters, <a class="el" href="class_game_up_1_1_session_client.html#a1531b8802b444bb0a73cb80e695b2e55">MatchCreateCallback</a> success, <a class="el" href="class_game_up_1_1_session_client.html#a4a96fff8b23278b28fa1d623947ece01">MatchQueueCallback</a> queued, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:a22c7d7b5bb60a990d4af0b1945a1498c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request a new match. If there are not enough waiting gamers, the current gamer will be added to the queue instead.  <a href="#a22c7d7b5bb60a990d4af0b1945a1498c">More...</a><br /></td></tr>
 <tr class="separator:a22c7d7b5bb60a990d4af0b1945a1498c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a882ebce083237c622b6b9069b4debad1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a882ebce083237c622b6b9069b4debad1">CreateMatch</a> (List&lt; String &gt; gamers, <a class="el" href="class_game_up_1_1_session_client.html#a1531b8802b444bb0a73cb80e695b2e55">MatchCreateCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:a882ebce083237c622b6b9069b4debad1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request a new match with the given players. The current gamer is part of the match and will be set as the first turn taker.  <a href="#a882ebce083237c622b6b9069b4debad1">More...</a><br /></td></tr>
+<tr class="separator:a882ebce083237c622b6b9069b4debad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff0d36b8a3bbae94d8e20fbcfdf70290"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#aff0d36b8a3bbae94d8e20fbcfdf70290">CreateMatch</a> (List&lt; String &gt; gamers, List&lt; String &gt; matchFilters, <a class="el" href="class_game_up_1_1_session_client.html#a1531b8802b444bb0a73cb80e695b2e55">MatchCreateCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:aff0d36b8a3bbae94d8e20fbcfdf70290"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request a new match with the given players. The current gamer is part of the match and will be set as the first turn taker.  <a href="#aff0d36b8a3bbae94d8e20fbcfdf70290">More...</a><br /></td></tr>
+<tr class="separator:aff0d36b8a3bbae94d8e20fbcfdf70290"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3edd7376d79765be45521db20b7e7ccc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_session_client.html#a3edd7376d79765be45521db20b7e7ccc">EndMatch</a> (string matchId, <a class="el" href="class_game_up_1_1_session_client.html#abfd7fec810f20bf0160adac860eebb1e">MatchEndCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:a3edd7376d79765be45521db20b7e7ccc"><td class="mdescLeft">&#160;</td><td class="mdescRight">End match. This will only work if it's the current gamer's turn.  <a href="#a3edd7376d79765be45521db20b7e7ccc">More...</a><br /></td></tr>
 <tr class="separator:a3edd7376d79765be45521db20b7e7ccc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -643,6 +652,97 @@ Properties</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">requiredGamers</td><td>The minimal required number of gamers needed to create a new match</td></tr>
     <tr><td class="paramname">matchFilters</td><td>String list to filter on matches to create or join. Exact strings matching only. Up to 8 filters. Recommended to use values such as "[team,rank=7]" for team-based matches with players with ranks equal to 7. </td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a882ebce083237c622b6b9069b4debad1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUp.SessionClient.CreateMatch </td>
+          <td>(</td>
+          <td class="paramtype">List&lt; String &gt;&#160;</td>
+          <td class="paramname"><em>gamers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_session_client.html#a1531b8802b444bb0a73cb80e695b2e55">MatchCreateCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Request a new match with the given players. The current gamer is part of the match and will be set as the first turn taker. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gamers</td><td>List of <a class="el" href="class_game_up_1_1_gamer.html" title="Represents a gamer in the GameUp service. ">Gamer</a> ID of other players</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aff0d36b8a3bbae94d8e20fbcfdf70290"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameUp.SessionClient.CreateMatch </td>
+          <td>(</td>
+          <td class="paramtype">List&lt; String &gt;&#160;</td>
+          <td class="paramname"><em>gamers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">List&lt; String &gt;&#160;</td>
+          <td class="paramname"><em>matchFilters</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_session_client.html#a1531b8802b444bb0a73cb80e695b2e55">MatchCreateCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Request a new match with the given players. The current gamer is part of the match and will be set as the first turn taker. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gamers</td><td>List of <a class="el" href="class_game_up_1_1_gamer.html" title="Represents a gamer in the GameUp service. ">Gamer</a> ID of other players</td></tr>
+    <tr><td class="paramname">matchFilters</td><td>String list to filter on matches to create or join. Exact strings matching only. Up to 8 filters. </td></tr>
     <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
     <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
   </table>
@@ -2878,6 +2978,48 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a1e1bd417584fcba33a86ef7d923f1c59"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_game_up_1_1_session_client.html#ae477074d0f4d8edf3004f000ffe3a949">GameUp.SessionClient.StorageGet</a>&lt; T &gt; </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Client.GenericSuccessCallback&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">Client.ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fetch the string object for the given key from Cloud Storage. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The name of the key.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a21bc2e2146cd932662f0916e1fff3614"></a>
 <div class="memitem">
 <div class="memproto">
@@ -3678,7 +3820,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_game_up.html">GameUp</a></li><li class="navelem"><a class="el" href="class_game_up_1_1_session_client.html">SessionClient</a></li>
-    <li class="footer">Generated on Wed Dec 2 2015 17:10:59 for GameUpSDK by
+    <li class="footer">Generated on Fri Feb 5 2016 10:45:30 for GameUpSDK by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
   </ul>

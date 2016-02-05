@@ -10,5 +10,6 @@ var class_game_up_1_1_match =
     [ "TurnCount", "class_game_up_1_1_match.html#a2eb8b9093c8b31bc10be358ceff14b9e", null ],
     [ "TurnGamerId", "class_game_up_1_1_match.html#afdb3e2f9bfbd6090f14f58d14c002f87", null ],
     [ "UpdatedAt", "class_game_up_1_1_match.html#ab9b31da1912a4e3aa5b1a4829602411a", null ],
-    [ "Whoami", "class_game_up_1_1_match.html#a2699cb2ba54293e5c2fe22c4dfa0f227", null ]
+    [ "Whoami", "class_game_up_1_1_match.html#a2699cb2ba54293e5c2fe22c4dfa0f227", null ],
+    [ "WhoamiGamerId", "class_game_up_1_1_match.html#a0acaf0a528e3d29e54f83ae21e45a51a", null ]
 ];

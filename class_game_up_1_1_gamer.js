@@ -9,6 +9,6 @@ var class_game_up_1_1_gamer =
     [ "Name", "class_game_up_1_1_gamer.html#a04beb600586231b5fb6380e07fb6e6c4", null ],
     [ "Nickname", "class_game_up_1_1_gamer.html#a1d5960e02db8cb435ea9ce5c29067d5b", null ],
     [ "Profiles", "class_game_up_1_1_gamer.html#a643cfe8d39a8acafd31f43565d88e877", null ],
-    [ "Timezone", "class_game_up_1_1_gamer.html#ac6ab118a247ab688bc21521009dd5c80", null ],
+    [ "Timezone", "class_game_up_1_1_gamer.html#a538e998716d64c19f97cbd8b8de319bd", null ],
     [ "UpdatedAt", "class_game_up_1_1_gamer.html#aaf7362ae94efab4a374de23c4245774d", null ]
 ];
