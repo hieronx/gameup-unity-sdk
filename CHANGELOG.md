@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.16.9
+
+* Addition of Generic Storage Get.
+
 ### 0.16.8
 
 * Fix bug executing a script with no payload.
