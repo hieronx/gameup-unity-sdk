@@ -1,9 +1,14 @@
 CHANGELOG
 =========
 
+### 0.17.0
+
+* Add option to GZip requests.
+* Bundle [Unity.IO.Compression](https://github.com/Hitcents/Unity.IO.Compression) with the SDK.
+
 ### 0.16.9
 
-* Addition of Generic Storage Get.
+* Add generic storage get.
 
 ### 0.16.8
 
