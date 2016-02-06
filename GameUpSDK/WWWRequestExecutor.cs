@@ -17,6 +17,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
+using System.IO;
+using Unity.IO.Compression;
 
 namespace GameUp
 {
@@ -61,6 +63,26 @@ namespace GameUp
       req.AddHeader ("Content-Type", "application/json");
       req.AddHeader ("Authorization", req.AuthHeader);
 
+      if (Client.EnableGZip)
+      {
+        req.AddHeader ("Accept-Encoding", "gzip");
+
+        if (req.Body != null && req.Body.Length > 300)
+        {
+          req.AddHeader ("Content-Encoding", "gzip");
+
+          using (var msi = new MemoryStream(req.Body))
+          using (var mso = new MemoryStream())
+          {
+            using (var gs = new GZipStream(mso, CompressionMode.Compress))
+            {
+              CopyTo(msi, gs);
+            }
+            req.SetBody(System.Text.Encoding.UTF8.GetString(mso.ToArray()));
+          }
+        }
+      }
+
       WWW www = new WWW (b.Uri.AbsoluteUri, req.Body, req.GetHeaders());
 
       yield return www;
@@ -81,7 +103,23 @@ namespace GameUp
             req.OnSuccess ("");
           }
         } else {
-          Dictionary<string, object> json = SimpleJson.DeserializeObject<Dictionary<string, object>> (www.text);
+          var body = www.text;
+          var headerValue = "";
+          if (www.responseHeaders.TryGetValue("Content-Encoding", out headerValue)
+              && headerValue.Equals("gzip", StringComparison.InvariantCultureIgnoreCase))
+          {
+            var bodyBytes = System.Text.Encoding.UTF8.GetBytes(www.text);
+            using (var msi = new MemoryStream(bodyBytes))
+            using (var mso = new MemoryStream()) {
+              using (var gs = new GZipStream(msi, CompressionMode.Decompress)) {
+                CopyTo(gs, mso);
+              }
+
+              body = System.Text.Encoding.UTF8.GetString(mso.ToArray());
+            }
+          }
+
+          Dictionary<string, object> json = SimpleJson.DeserializeObject<Dictionary<string, object>> (body);
           // HACK: make sure that the error is checking for GameUp error message combinations
           if (json.ContainsKey ("status") && json.ContainsKey ("message") && json.ContainsKey ("request")) {
             int statusCode = int.Parse (System.Convert.ToString (json ["status"]));
@@ -94,6 +132,16 @@ namespace GameUp
             }
           }
         }
+      }
+    }
+
+    private static void CopyTo(Stream src, Stream dest)
+    {
+      byte[] bytes = new byte[4096];
+      int cnt;
+      while ((cnt = src.Read(bytes, 0, bytes.Length)) != 0)
+      {
+        dest.Write(bytes, 0, cnt);
       }
     }
   }

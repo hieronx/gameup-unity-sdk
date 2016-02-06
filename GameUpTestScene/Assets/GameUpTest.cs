@@ -13,6 +13,7 @@ public class GameUpTest : MonoBehaviour
       Debug.LogWarning (status + ": " + reason);
     }
   };
+
   readonly string achievementId = "9fcd83327951475caf818d59156a23c2";
   readonly string leaderboardId = "b540acd249384c1784a95912a3f157c0";
   readonly string scriptId = "6ecc280b5b2b4c678eb53401c7133811";
@@ -31,7 +32,8 @@ public class GameUpTest : MonoBehaviour
 
     string deviceId = SystemInfo.deviceUniqueIdentifier;
     Client.ApiKey = "cd711f5ef5804365a11120897f5d137e";
-    
+    Client.EnableGZip = true;
+
     testClientMethods ();
 
     Debug.Log ("Anonymous Login with Id : " + deviceId + " ...");

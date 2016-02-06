@@ -64,10 +64,37 @@
     <Compile Include="GameUpSDK\Message.cs" />
     <Compile Include="GameUpSDK\MessageList.cs" />
     <Compile Include="GameUpSDK\MatchChangeList.cs" />
+    <Compile Include="Unity.IO.Compression\BlockType.cs" />
+    <Compile Include="Unity.IO.Compression\CompressionMode.cs" />
+    <Compile Include="Unity.IO.Compression\CopyEncoder.cs" />
+    <Compile Include="Unity.IO.Compression\Crc32Helper.cs" />
+    <Compile Include="Unity.IO.Compression\DeflateInput.cs" />
+    <Compile Include="Unity.IO.Compression\DeflateStream.cs" />
+    <Compile Include="Unity.IO.Compression\DeflateStreamAsyncResult.cs" />
+    <Compile Include="Unity.IO.Compression\DeflaterManaged.cs" />
+    <Compile Include="Unity.IO.Compression\FastEncoder.cs" />
+    <Compile Include="Unity.IO.Compression\FastEncoderStatics.cs" />
+    <Compile Include="Unity.IO.Compression\FastEncoderWindow.cs" />
+    <Compile Include="Unity.IO.Compression\FileFormats.cs" />
+    <Compile Include="Unity.IO.Compression\GZipDecoder.cs" />
+    <Compile Include="Unity.IO.Compression\GZipStream.cs" />
+    <Compile Include="Unity.IO.Compression\GZipUtils.cs" />
+    <Compile Include="Unity.IO.Compression\HuffmanTree.cs" />
+    <Compile Include="Unity.IO.Compression\IDeflater.cs" />
+    <Compile Include="Unity.IO.Compression\Inflater.cs" />
+    <Compile Include="Unity.IO.Compression\InflaterState.cs" />
+    <Compile Include="Unity.IO.Compression\InputBuffer.cs" />
+    <Compile Include="Unity.IO.Compression\InvalidDataException.cs" />
+    <Compile Include="Unity.IO.Compression\Match.cs" />
+    <Compile Include="Unity.IO.Compression\MatchState.cs" />
+    <Compile Include="Unity.IO.Compression\OutputBuffer.cs" />
+    <Compile Include="Unity.IO.Compression\OutputWindow.cs" />
+    <Compile Include="Unity.IO.Compression\SR.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="GameUpSDK\" />
+    <Folder Include="Unity.IO.Compression\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
