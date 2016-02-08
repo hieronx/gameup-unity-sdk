@@ -63,27 +63,25 @@ namespace GameUp
       req.AddHeader ("Content-Type", "application/json");
       req.AddHeader ("Authorization", req.AuthHeader);
 
-      if (Client.EnableGZip)
-      {
+      byte[] reqBody = req.Body;
+      if (Client.EnableGZip) {
         req.AddHeader ("Accept-Encoding", "gzip");
 
-        if (req.Body != null && req.Body.Length > 300)
-        {
+        if (reqBody != null && reqBody.Length > 300) {
           req.AddHeader ("Content-Encoding", "gzip");
 
-          using (var msi = new MemoryStream(req.Body))
-          using (var mso = new MemoryStream())
-          {
-            using (var gs = new GZipStream(mso, CompressionMode.Compress))
-            {
-              CopyTo(msi, gs);
+          using (var msi = new MemoryStream (reqBody))
+          using (var mso = new MemoryStream ()) {
+            using (var gs = new GZipStream (mso, CompressionMode.Compress)) {
+              CopyTo (msi, gs);
             }
-            req.SetBody(System.Text.Encoding.UTF8.GetString(mso.ToArray()));
+
+            reqBody = mso.ToArray ();
           }
         }
       }
 
-      WWW www = new WWW (b.Uri.AbsoluteUri, req.Body, req.GetHeaders());
+      WWW www = new WWW (b.Uri.AbsoluteUri, reqBody, req.GetHeaders());
 
       yield return www;
 

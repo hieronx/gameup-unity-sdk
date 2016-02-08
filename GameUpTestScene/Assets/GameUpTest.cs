@@ -52,6 +52,7 @@ public class GameUpTest : MonoBehaviour
       Debug.Log ("Restored session: " + s.Token);
 
       testSessionClientMethods (session);
+
     }, failure);
   }
 
@@ -127,14 +128,16 @@ public class GameUpTest : MonoBehaviour
     data.Add ("coins_collected", "2000");
     session.StoragePut (storage_key, data, () => {
       Debug.Log ("Stored: " + storage_key);
-      
-      session.StorageGet (storage_key, (IDictionary<string, string> dic) => {
+
+      SessionClient.StorageGetCallback callback = (IDictionary<string, string> dic) => {
         string value;
         dic.TryGetValue ("coins_collected", out value);
         Debug.Log ("Retrieved storage coins_collected: " + value);
-      }, failure);
+      };
+
+      session.StorageGet (storage_key, callback, failure);
     }, failure);
-    
+
     session.Achievement (achievementId, 5, () => {
       Debug.Log ("Updated achievement");
     }, (Achievement a) => {
