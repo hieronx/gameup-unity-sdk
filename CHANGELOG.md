@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### 0.17.1
+
+* Fixed bug getting string of pre-gzipped data.
+* Update to Unity 5.3.1f1.
+
 ### 0.17.0
 
 * Add option to GZip requests.
