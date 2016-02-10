@@ -53,20 +53,22 @@ namespace GameUp
       } else {
         b.Query = query;
       }
-
-      // Add necessary request headers
-#if (!UNITY_WEBPLAYER) 
-      // One of the forbidden keys to override for WebPlayer
+        
+      // Forbidden key to override for WebPlayer
       req.AddHeader ("User-Agent", USER_AGENT);
-#endif
+
       req.AddHeader ("Accept", "application/json");
       req.AddHeader ("Content-Type", "application/json");
       req.AddHeader ("Authorization", req.AuthHeader);
 
       byte[] reqBody = req.Body;
-      if (Client.EnableGZip) {
-        req.AddHeader ("Accept-Encoding", "gzip");
 
+      if (Client.EnableGZipResponse) {
+        // Forbidden key to override for WebPlayer
+        req.AddHeader ("Accept-Encoding", "gzip");
+      }
+
+      if (Client.EnableGZipRequest) {
         if (reqBody != null && reqBody.Length > 300) {
           req.AddHeader ("Content-Encoding", "gzip");
 
@@ -82,7 +84,6 @@ namespace GameUp
       }
 
       WWW www = new WWW (b.Uri.AbsoluteUri, reqBody, req.GetHeaders());
-
       yield return www;
 
       if (!String.IsNullOrEmpty (www.error)) {
@@ -101,22 +102,7 @@ namespace GameUp
             req.OnSuccess ("");
           }
         } else {
-          var body = www.text;
-          var headerValue = "";
-          if (www.responseHeaders.TryGetValue("Content-Encoding", out headerValue)
-              && headerValue.Equals("gzip", StringComparison.InvariantCultureIgnoreCase))
-          {
-            var bodyBytes = System.Text.Encoding.UTF8.GetBytes(www.text);
-            using (var msi = new MemoryStream(bodyBytes))
-            using (var mso = new MemoryStream()) {
-              using (var gs = new GZipStream(msi, CompressionMode.Decompress)) {
-                CopyTo(gs, mso);
-              }
-
-              body = System.Text.Encoding.UTF8.GetString(mso.ToArray());
-            }
-          }
-
+          var body = GetBody (www);
           Dictionary<string, object> json = SimpleJson.DeserializeObject<Dictionary<string, object>> (body);
           // HACK: make sure that the error is checking for GameUp error message combinations
           if (json.ContainsKey ("status") && json.ContainsKey ("message") && json.ContainsKey ("request")) {
@@ -133,6 +119,28 @@ namespace GameUp
       }
     }
 
+    private static string GetBody(WWW www) {
+      var body = www.text;
+
+      if (Client.EnableGZipResponse) {
+        var headerValue = "";
+        if (www.responseHeaders.TryGetValue ("CONTENT-ENCODING", out headerValue)
+          && headerValue.Equals ("gzip", StringComparison.InvariantCultureIgnoreCase)) {
+          var bodyBytes = System.Text.Encoding.UTF8.GetBytes (www.text);
+          using (var msi = new MemoryStream (bodyBytes))
+          using (var mso = new MemoryStream ()) {
+            using (var gs = new GZipStream (msi, CompressionMode.Decompress)) {
+              CopyTo (gs, mso);
+            }
+
+            body = System.Text.Encoding.UTF8.GetString (mso.ToArray ());
+          }
+        }
+      }
+
+      return body;
+    }
+
     private static void CopyTo(Stream src, Stream dest)
     {
       byte[] bytes = new byte[4096];
@@ -142,6 +150,7 @@ namespace GameUp
         dest.Write(bytes, 0, cnt);
       }
     }
+      
   }
 }
 

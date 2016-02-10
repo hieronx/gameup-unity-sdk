@@ -32,7 +32,8 @@ namespace GameUp
     [Obsolete("Use Client.ApiServer to modify the API server host.")]
     public static string API_SERVER = "api.gameup.io";
 
-    public static bool EnableGZip = false;
+    public static bool EnableGZipRequest = false;
+    public static bool EnableGZipResponse = false;
 
     /// <summary>
     /// Get or set the GameUp Accounts server host.
