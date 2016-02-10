@@ -32,7 +32,8 @@ public class GameUpTest : MonoBehaviour
 
     string deviceId = SystemInfo.deviceUniqueIdentifier;
     Client.ApiKey = "cd711f5ef5804365a11120897f5d137e";
-    Client.EnableGZip = true;
+    Client.EnableGZipRequest = true;
+    Client.EnableGZipResponse = true;
 
     testClientMethods ();
 
