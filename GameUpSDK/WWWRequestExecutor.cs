@@ -38,7 +38,7 @@ namespace GameUp
       StartCoroutine (ExecuteRequest(req));
     }
 
-    private IEnumerator ExecuteRequest (WWWRequest req)
+    private static IEnumerator ExecuteRequest (WWWRequest req)
     {
       // Server hack for Unity's broken WWW module
       string query = "_status=200";
@@ -81,6 +81,7 @@ namespace GameUp
             reqBody = mso.ToArray ();
           }
         }
+          
       }
 
       WWW www = new WWW (b.Uri.AbsoluteUri, reqBody, req.GetHeaders());
@@ -97,7 +98,7 @@ namespace GameUp
           }
         }
       } else {
-        if (www.text == null || www.text.Length == 0) {
+        if (www.bytes == null || www.bytes.Length == 0) {
           if (req.OnSuccess != null) {
             req.OnSuccess ("");
           }
@@ -112,7 +113,7 @@ namespace GameUp
             }
           } else {
             if (req.OnSuccess != null) {
-              req.OnSuccess (www.text);
+              req.OnSuccess (body);
             }
           }
         }
@@ -120,25 +121,27 @@ namespace GameUp
     }
 
     private static string GetBody(WWW www) {
-      var body = www.text;
-
       if (Client.EnableGZipResponse) {
         var headerValue = "";
         if (www.responseHeaders.TryGetValue ("CONTENT-ENCODING", out headerValue)
           && headerValue.Equals ("gzip", StringComparison.InvariantCultureIgnoreCase)) {
-          var bodyBytes = System.Text.Encoding.UTF8.GetBytes (www.text);
-          using (var msi = new MemoryStream (bodyBytes))
-          using (var mso = new MemoryStream ()) {
-            using (var gs = new GZipStream (msi, CompressionMode.Decompress)) {
-              CopyTo (gs, mso);
-            }
 
-            body = System.Text.Encoding.UTF8.GetString (mso.ToArray ());
-          }
+          var bodyBytes = www.bytes;
+          // look for compression header
+          if (bodyBytes.Length >= 2 && bodyBytes [0] == 0x1f && bodyBytes [1] == 0x8b) {
+            using (var msi = new MemoryStream (bodyBytes))
+            using (var mso = new MemoryStream ()) {
+              using (var gs = new GZipStream (msi, CompressionMode.Decompress)) {
+                CopyTo (gs, mso);
+              }
+
+              return System.Text.Encoding.UTF8.GetString (mso.ToArray ());
+            }
+          }        
         }
       }
 
-      return body;
+      return www.text;
     }
 
     private static void CopyTo(Stream src, Stream dest)
