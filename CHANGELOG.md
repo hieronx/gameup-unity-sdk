@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+### 0.17.2
+
+* Rename EnableGZip to EnableGZipRequest.
+* Add separate flag EnableGZipResponse to enable SDK-level decompression of gzipped responses. Use static-ifs to enable based on target platform.
+* Fix bug looking up Content-Encoding header.
+
 ### 0.17.1
 
 * Fixed bug getting string of pre-gzipped data.
