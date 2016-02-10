@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.17.3
+
+* Fix to check gzip header on possibly gzipped content.
+
 ### 0.17.2
 
 * Rename EnableGZip to EnableGZipRequest.
