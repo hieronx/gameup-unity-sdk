@@ -605,6 +605,29 @@ namespace GameUp
     }
 
     /// <summary>
+    /// Login a gamer using a Game Center. 
+    /// NOTE: You cannot use UnityEngine.SocialPlatforms.GameCenter as it doesn't expose the relevant data needed.
+    /// </summary>
+    /// <param name="playerId">Game Center GKPlayer Player ID.</param>
+    /// <param name="bundleId">Application Bundle ID.</param>
+    /// <param name="timestamp">Timestamp returned in the iOS local GKPlayer identification callback.</param>
+    /// <param name="base64salt">Base64-encoded salt value returned in the iOS local GKPlayer identification callback.</param>
+    /// <param name="base64signature">Base64-encoded signature value returned in the iOS local GKPlayer identification callback.</param>
+    /// <param name="publicUrlKey">The Public Key URL returned in the iOS local GKPlayer identification callback.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void LoginGameCenter (string playerId, string bundleId, long timestamp, string base64salt, string base64signature, string publicKeyUrl, LoginCallback success, ErrorCallback error)
+    {
+      string body = "{\"player_id\":\"" + playerId + "\"," +
+        "\"bundle_id\":\"" + bundleId + "\"," +
+        "\"salt\":\"" + base64salt + "\"," +
+        "\"signature\":\"" + base64signature + "\"," +
+        "\"public_key_url\":\"" + publicKeyUrl + "\"," +
+        "\"timestamp\":" + timestamp + "}";
+      LoginOAuth ("gamecenter", body, null, success, error);
+    }
+
+    /// <summary>
     /// Link an Anonymous ID to the given gamer session.
     /// </summary>
     /// <param name="session">Existing session to link to</param>
@@ -656,6 +679,32 @@ namespace GameUp
     public static void linkTango(SessionClient session, string accessToken, SuccessCallback success, ErrorCallback error) {
       string body = "{\"access_token\":\"" + accessToken + "\"}";
       SendAccountRequest ("link", "tango", body, session, error, (String jsonResponse) => {
+        success ();
+      });
+    }
+
+    /// <summary>
+    /// Link a Game Center Account to the given gamer session.
+    /// NOTE: You cannot use UnityEngine.SocialPlatforms.GameCenter as it doesn't expose the relevant data needed.
+    /// </summary>
+    /// <param name="session">Existing session to link to.</param>
+    /// <param name="playerId">Game Center GKPlayer Player ID.</param>
+    /// <param name="bundleId">Application Bundle ID.</param>
+    /// <param name="timestamp">Timestamp returned in the iOS local GKPlayer identification callback.</param>
+    /// <param name="base64salt">Base64-encoded salt value returned in the iOS local GKPlayer identification callback.</param>
+    /// <param name="base64signature">Base64-encoded signature value returned in the iOS local GKPlayer identification callback.</param>
+    /// <param name="publicUrlKey">The Public Key URL returned in the iOS local GKPlayer identification callback.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void LinkGameCenter (SessionClient session, string playerId, string bundleId, long timestamp, string base64salt, string base64signature, string publicKeyUrl, SuccessCallback success, ErrorCallback error)
+    {
+      string body = "{\"player_id\":\"" + playerId + "\"," +
+        "\"bundle_id\":\"" + bundleId + "\"," +
+        "\"salt\":\"" + base64salt + "\"," +
+        "\"signature\":\"" + base64signature + "\"," +
+        "\"public_key_url\":\"" + publicKeyUrl + "\"," +
+        "\"timestamp\":" + timestamp + "}";
+      SendAccountRequest ("link", "gamecenter", body, session, error, (String jsonResponse) => {
         success ();
       });
     }
@@ -726,6 +775,20 @@ namespace GameUp
     public static void unlinkTango(SessionClient session, string tangoId, SuccessCallback success, ErrorCallback error) {
       string body = "{\"id\":\"" + tangoId + "\"}";
       SendAccountRequest ("unlink", "tango", body, session, error, (String jsonResponse) => {
+        success ();
+      });
+    }
+
+    /// <summary>
+    /// Unlinks a Game Center ID from the given gamer session.
+    /// </summary>
+    /// <param name="session">Existing session to unlink from</param>
+    /// <param name="playerId">Game Center Player ID to unlink</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void UnlinkGameCenter(SessionClient session, String playerId, SuccessCallback success, ErrorCallback error) {
+      string body = "{\"player_id\":\"" + playerId + "\"}";
+      SendAccountRequest ("unlink", "gamecenter", body, session, error, (String jsonResponse) => {
         success ();
       });
     }
@@ -825,6 +888,36 @@ namespace GameUp
       });
     }
 
+    /// <summary>
+    /// Checks to see if the given Game Center ID is associated with a gamer account.
+    /// NOTE: You cannot use UnityEngine.SocialPlatforms.GameCenter as it doesn't expose the relevant data needed.
+    /// </summary>
+    /// <param name="session">Existing session to check against.</param>
+    /// <param name="playerId">Game Center GKPlayer Player ID.</param>
+    /// <param name="bundleId">Application Bundle ID.</param>
+    /// <param name="timestamp">Timestamp returned in the iOS local GKPlayer identification callback.</param>
+    /// <param name="base64salt">Base64-encoded salt value returned in the iOS local GKPlayer identification callback.</param>
+    /// <param name="base64signature">Base64-encoded signature value returned in the iOS local GKPlayer identification callback.</param>
+    /// <param name="publicUrlKey">The Public Key URL returned in the iOS local GKPlayer identification callback.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public static void CheckGameCenter (SessionClient session, string playerId, string bundleId, long timestamp, string base64salt, string base64signature, string publicKeyUrl, AccountCheckCallback success, ErrorCallback error)
+    {
+      string body = "{\"player_id\":\"" + playerId + "\"," +
+        "\"bundle_id\":\"" + bundleId + "\"," +
+        "\"salt\":\"" + base64salt + "\"," +
+        "\"signature\":\"" + base64signature + "\"," +
+        "\"public_key_url\":\"" + publicKeyUrl + "\"," +
+        "\"timestamp\":" + timestamp + "}";
+      SendAccountRequest ("check", "gamecenter", body, session, error, (String jsonResponse) => {
+        JsonObject result = SimpleJson.DeserializeObject<JsonObject> (jsonResponse);
+        object exists;
+        object currentGamer;
+        result.TryGetValue("exists", out exists);
+        result.TryGetValue("current_gamer", out currentGamer);
+        success ((Boolean) exists, (Boolean) currentGamer);
+      });
+    }
 
     /// <summary>
     /// Make a generic request with pre-set ApiKey.
