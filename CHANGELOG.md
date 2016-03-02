@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.18.0
+
+* Add support for Game Center.
+
 ### 0.17.3
 
 * Fix to check gzip header on possibly gzipped content.
