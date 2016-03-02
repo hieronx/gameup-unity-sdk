@@ -3,6 +3,7 @@ var searchData=
   ['checkanonymous',['checkAnonymous',['../class_game_up_1_1_client.html#a8e78fa4ba9595f99a09b8f3f8d5333e9',1,'GameUp::Client']]],
   ['checkemail',['checkEmail',['../class_game_up_1_1_client.html#a3b6c5b9ad7c7d5f459368b7050255863',1,'GameUp::Client']]],
   ['checkfacebook',['checkFacebook',['../class_game_up_1_1_client.html#a1ddb8a7536947a76f4e23e26769ff4ae',1,'GameUp::Client']]],
+  ['checkgamecenter',['CheckGameCenter',['../class_game_up_1_1_client.html#a62ae24a28ebc15a9cf36a907e3b65819',1,'GameUp::Client']]],
   ['checkgoogle',['checkGoogle',['../class_game_up_1_1_client.html#a8deddad7e5fca492c6b9113d9d6ddd41',1,'GameUp::Client']]],
   ['checktango',['checkTango',['../class_game_up_1_1_client.html#ac626d752141d5a1819e47d12d4017c83',1,'GameUp::Client']]],
   ['convertprotected',['ConvertProtected',['../class_game_up_1_1_shared_storage_object.html#a2e9f9078abc19bde23c1429e89a3c1cb',1,'GameUp::SharedStorageObject']]],

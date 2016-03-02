@@ -33,7 +33,7 @@
   <td id="projectlogo"><img alt="Logo" src="GameUp_Logo_Small_fill.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GameUpSDK
-   &#160;<span id="projectnumber">0.16.9</span>
+   &#160;<span id="projectnumber">0.18.0</span>
    </div>
    <div id="projectbrief">Unity SDK for the GameUp service</div>
   </td>
@@ -248,6 +248,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a4d2701fc8ecc28edb584039d40cf143a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a4d2701fc8ecc28edb584039d40cf143a">LoginTango</a> (string accessToken, <a class="el" href="class_game_up_1_1_client.html#a3723cffa494f5195a340ad4d382fa379">LoginCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:a4d2701fc8ecc28edb584039d40cf143a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Login a gamer using a Tango Access Token.  <a href="#a4d2701fc8ecc28edb584039d40cf143a">More...</a><br /></td></tr>
 <tr class="separator:a4d2701fc8ecc28edb584039d40cf143a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38463d88e80321c8e8f72ea14834631d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a38463d88e80321c8e8f72ea14834631d">LoginGameCenter</a> (string playerId, string bundleId, long timestamp, string base64salt, string base64signature, string publicKeyUrl, <a class="el" href="class_game_up_1_1_client.html#a3723cffa494f5195a340ad4d382fa379">LoginCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:a38463d88e80321c8e8f72ea14834631d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Login a gamer using a <a class="el" href="class_game_up_1_1_game.html" title="Represents a game on the GameUp service. ">Game</a> Center. NOTE: You cannot use UnityEngine.SocialPlatforms.GameCenter as it doesn't expose the relevant data needed.  <a href="#a38463d88e80321c8e8f72ea14834631d">More...</a><br /></td></tr>
+<tr class="separator:a38463d88e80321c8e8f72ea14834631d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2aeffe27635a893989386793a71414f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#ac2aeffe27635a893989386793a71414f">linkAnonymous</a> (<a class="el" href="class_game_up_1_1_session_client.html">SessionClient</a> session, string id, <a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">SuccessCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:ac2aeffe27635a893989386793a71414f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Link an Anonymous ID to the given gamer session.  <a href="#ac2aeffe27635a893989386793a71414f">More...</a><br /></td></tr>
 <tr class="separator:ac2aeffe27635a893989386793a71414f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -260,6 +263,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a71899d5b084670286c39d83638d0e62d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a71899d5b084670286c39d83638d0e62d">linkTango</a> (<a class="el" href="class_game_up_1_1_session_client.html">SessionClient</a> session, string accessToken, <a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">SuccessCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:a71899d5b084670286c39d83638d0e62d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Link a Tango Account to the given gamer session.  <a href="#a71899d5b084670286c39d83638d0e62d">More...</a><br /></td></tr>
 <tr class="separator:a71899d5b084670286c39d83638d0e62d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37511a03e25b871ad43881a3f2d7d72d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a37511a03e25b871ad43881a3f2d7d72d">LinkGameCenter</a> (<a class="el" href="class_game_up_1_1_session_client.html">SessionClient</a> session, string playerId, string bundleId, long timestamp, string base64salt, string base64signature, string publicKeyUrl, <a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">SuccessCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:a37511a03e25b871ad43881a3f2d7d72d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Link a <a class="el" href="class_game_up_1_1_game.html" title="Represents a game on the GameUp service. ">Game</a> Center Account to the given gamer session. NOTE: You cannot use UnityEngine.SocialPlatforms.GameCenter as it doesn't expose the relevant data needed.  <a href="#a37511a03e25b871ad43881a3f2d7d72d">More...</a><br /></td></tr>
+<tr class="separator:a37511a03e25b871ad43881a3f2d7d72d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5895fbadbcfb8b60f22c7f46447a55db"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a5895fbadbcfb8b60f22c7f46447a55db">unlinkAnonymous</a> (<a class="el" href="class_game_up_1_1_session_client.html">SessionClient</a> session, string id, <a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">SuccessCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:a5895fbadbcfb8b60f22c7f46447a55db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlinks an Anonymous ID from the given gamer session.  <a href="#a5895fbadbcfb8b60f22c7f46447a55db">More...</a><br /></td></tr>
 <tr class="separator:a5895fbadbcfb8b60f22c7f46447a55db"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -275,6 +281,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ad2c64d3c268cf98a5f6d21cdea59d804"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#ad2c64d3c268cf98a5f6d21cdea59d804">unlinkTango</a> (<a class="el" href="class_game_up_1_1_session_client.html">SessionClient</a> session, string tangoId, <a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">SuccessCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:ad2c64d3c268cf98a5f6d21cdea59d804"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlinks a Tango Account from the given gamer session.  <a href="#ad2c64d3c268cf98a5f6d21cdea59d804">More...</a><br /></td></tr>
 <tr class="separator:ad2c64d3c268cf98a5f6d21cdea59d804"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f8503bff94030eb30cc5f8ad23026d5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a6f8503bff94030eb30cc5f8ad23026d5">UnlinkGameCenter</a> (<a class="el" href="class_game_up_1_1_session_client.html">SessionClient</a> session, String playerId, <a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">SuccessCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:a6f8503bff94030eb30cc5f8ad23026d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlinks a <a class="el" href="class_game_up_1_1_game.html" title="Represents a game on the GameUp service. ">Game</a> Center ID from the given gamer session.  <a href="#a6f8503bff94030eb30cc5f8ad23026d5">More...</a><br /></td></tr>
+<tr class="separator:a6f8503bff94030eb30cc5f8ad23026d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e78fa4ba9595f99a09b8f3f8d5333e9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a8e78fa4ba9595f99a09b8f3f8d5333e9">checkAnonymous</a> (<a class="el" href="class_game_up_1_1_session_client.html">SessionClient</a> session, string id, <a class="el" href="class_game_up_1_1_client.html#a6ba975dc3cbab6de795b701d19259f71">AccountCheckCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:a8e78fa4ba9595f99a09b8f3f8d5333e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks to see if the given Anonymous ID is associated with a gamer account.  <a href="#a8e78fa4ba9595f99a09b8f3f8d5333e9">More...</a><br /></td></tr>
 <tr class="separator:a8e78fa4ba9595f99a09b8f3f8d5333e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -290,6 +299,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ac626d752141d5a1819e47d12d4017c83"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#ac626d752141d5a1819e47d12d4017c83">checkTango</a> (<a class="el" href="class_game_up_1_1_session_client.html">SessionClient</a> session, string accessToken, <a class="el" href="class_game_up_1_1_client.html#a6ba975dc3cbab6de795b701d19259f71">AccountCheckCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:ac626d752141d5a1819e47d12d4017c83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks to see if the given Tango Account is associated with a gamer account.  <a href="#ac626d752141d5a1819e47d12d4017c83">More...</a><br /></td></tr>
 <tr class="separator:ac626d752141d5a1819e47d12d4017c83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62ae24a28ebc15a9cf36a907e3b65819"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a62ae24a28ebc15a9cf36a907e3b65819">CheckGameCenter</a> (<a class="el" href="class_game_up_1_1_session_client.html">SessionClient</a> session, string playerId, string bundleId, long timestamp, string base64salt, string base64signature, string publicKeyUrl, <a class="el" href="class_game_up_1_1_client.html#a6ba975dc3cbab6de795b701d19259f71">AccountCheckCallback</a> success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
+<tr class="memdesc:a62ae24a28ebc15a9cf36a907e3b65819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks to see if the given <a class="el" href="class_game_up_1_1_game.html" title="Represents a game on the GameUp service. ">Game</a> Center ID is associated with a gamer account. NOTE: You cannot use UnityEngine.SocialPlatforms.GameCenter as it doesn't expose the relevant data needed.  <a href="#a62ae24a28ebc15a9cf36a907e3b65819">More...</a><br /></td></tr>
+<tr class="separator:a62ae24a28ebc15a9cf36a907e3b65819"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11370cf8fcdd3853140ebf57a5829b03"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a11370cf8fcdd3853140ebf57a5829b03">MakeRequest&lt; T &gt;</a> (Uri uri, string method, string body, GenericSuccessCallback&lt; T &gt; success, <a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a> error)</td></tr>
 <tr class="memdesc:a11370cf8fcdd3853140ebf57a5829b03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a generic request with pre-set ApiKey.  <a href="#a11370cf8fcdd3853140ebf57a5829b03">More...</a><br /></td></tr>
 <tr class="separator:a11370cf8fcdd3853140ebf57a5829b03"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -307,6 +319,10 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:ad4675457e1e1e5af77992db376b554f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b75f195176a44e1617e6c52b1b4d0d6"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a1b75f195176a44e1617e6c52b1b4d0d6">API_SERVER</a> = &quot;api.gameup.io&quot;</td></tr>
 <tr class="separator:a1b75f195176a44e1617e6c52b1b4d0d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f86ac9249d0d5a31028d289b1647f35"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a7f86ac9249d0d5a31028d289b1647f35">EnableGZipRequest</a> = false</td></tr>
+<tr class="separator:a7f86ac9249d0d5a31028d289b1647f35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98547be378a5ccb93b4f3be6842cd97b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#a98547be378a5ccb93b4f3be6842cd97b">EnableGZipResponse</a> = false</td></tr>
+<tr class="separator:a98547be378a5ccb93b4f3be6842cd97b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8a04590787229322ff4044071c80861"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_up_1_1_client.html#ad8a04590787229322ff4044071c80861">AccountsServer</a> = <a class="el" href="class_game_up_1_1_client.html#ad4675457e1e1e5af77992db376b554f3">ACCOUNTS_SERVER</a></td></tr>
 <tr class="memdesc:ad8a04590787229322ff4044071c80861"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get or set the <a class="el" href="namespace_game_up.html">GameUp</a> Accounts server host.  <a href="#ad8a04590787229322ff4044071c80861">More...</a><br /></td></tr>
 <tr class="separator:ad8a04590787229322ff4044071c80861"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -571,6 +587,98 @@ Properties</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">session</td><td>Existing session to check against</td></tr>
     <tr><td class="paramname">accessToken</td><td>Facebook access token to check</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a62ae24a28ebc15a9cf36a907e3b65819"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void GameUp.Client.CheckGameCenter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_session_client.html">SessionClient</a>&#160;</td>
+          <td class="paramname"><em>session</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>playerId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>bundleId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>timestamp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>base64salt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>base64signature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>publicKeyUrl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#a6ba975dc3cbab6de795b701d19259f71">AccountCheckCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks to see if the given <a class="el" href="class_game_up_1_1_game.html" title="Represents a game on the GameUp service. ">Game</a> Center ID is associated with a gamer account. NOTE: You cannot use UnityEngine.SocialPlatforms.GameCenter as it doesn't expose the relevant data needed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">session</td><td>Existing session to check against.</td></tr>
+    <tr><td class="paramname">playerId</td><td><a class="el" href="class_game_up_1_1_game.html" title="Represents a game on the GameUp service. ">Game</a> Center GKPlayer Player ID.</td></tr>
+    <tr><td class="paramname">bundleId</td><td>Application Bundle ID.</td></tr>
+    <tr><td class="paramname">timestamp</td><td>Timestamp returned in the iOS local GKPlayer identification callback.</td></tr>
+    <tr><td class="paramname">base64salt</td><td>Base64-encoded salt value returned in the iOS local GKPlayer identification callback.</td></tr>
+    <tr><td class="paramname">base64signature</td><td>Base64-encoded signature value returned in the iOS local GKPlayer identification callback.</td></tr>
+    <tr><td class="paramname">publicUrlKey</td><td>The Public Key URL returned in the iOS local GKPlayer identification callback.</td></tr>
     <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
     <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
   </table>
@@ -1899,6 +2007,98 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a37511a03e25b871ad43881a3f2d7d72d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void GameUp.Client.LinkGameCenter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_session_client.html">SessionClient</a>&#160;</td>
+          <td class="paramname"><em>session</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>playerId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>bundleId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>timestamp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>base64salt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>base64signature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>publicKeyUrl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">SuccessCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Link a <a class="el" href="class_game_up_1_1_game.html" title="Represents a game on the GameUp service. ">Game</a> Center Account to the given gamer session. NOTE: You cannot use UnityEngine.SocialPlatforms.GameCenter as it doesn't expose the relevant data needed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">session</td><td>Existing session to link to.</td></tr>
+    <tr><td class="paramname">playerId</td><td><a class="el" href="class_game_up_1_1_game.html" title="Represents a game on the GameUp service. ">Game</a> Center GKPlayer Player ID.</td></tr>
+    <tr><td class="paramname">bundleId</td><td>Application Bundle ID.</td></tr>
+    <tr><td class="paramname">timestamp</td><td>Timestamp returned in the iOS local GKPlayer identification callback.</td></tr>
+    <tr><td class="paramname">base64salt</td><td>Base64-encoded salt value returned in the iOS local GKPlayer identification callback.</td></tr>
+    <tr><td class="paramname">base64signature</td><td>Base64-encoded signature value returned in the iOS local GKPlayer identification callback.</td></tr>
+    <tr><td class="paramname">publicUrlKey</td><td>The Public Key URL returned in the iOS local GKPlayer identification callback.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a1c524aac3e2cfa389558588c5b47c622"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2128,6 +2328,91 @@ Properties</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">email</td><td><a class="el" href="class_game_up_1_1_gamer.html" title="Represents a gamer in the GameUp service. ">Gamer</a>'s Email.</td></tr>
     <tr><td class="paramname">password</td><td><a class="el" href="class_game_up_1_1_gamer.html" title="Represents a gamer in the GameUp service. ">Gamer</a>'s Password.</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a38463d88e80321c8e8f72ea14834631d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void GameUp.Client.LoginGameCenter </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>playerId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>bundleId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>timestamp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>base64salt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>base64signature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>publicKeyUrl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#a3723cffa494f5195a340ad4d382fa379">LoginCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Login a gamer using a <a class="el" href="class_game_up_1_1_game.html" title="Represents a game on the GameUp service. ">Game</a> Center. NOTE: You cannot use UnityEngine.SocialPlatforms.GameCenter as it doesn't expose the relevant data needed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">playerId</td><td><a class="el" href="class_game_up_1_1_game.html" title="Represents a game on the GameUp service. ">Game</a> Center GKPlayer Player ID.</td></tr>
+    <tr><td class="paramname">bundleId</td><td>Application Bundle ID.</td></tr>
+    <tr><td class="paramname">timestamp</td><td>Timestamp returned in the iOS local GKPlayer identification callback.</td></tr>
+    <tr><td class="paramname">base64salt</td><td>Base64-encoded salt value returned in the iOS local GKPlayer identification callback.</td></tr>
+    <tr><td class="paramname">base64signature</td><td>Base64-encoded signature value returned in the iOS local GKPlayer identification callback.</td></tr>
+    <tr><td class="paramname">publicUrlKey</td><td>The Public Key URL returned in the iOS local GKPlayer identification callback.</td></tr>
     <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
     <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
   </table>
@@ -3176,6 +3461,63 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a6f8503bff94030eb30cc5f8ad23026d5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void GameUp.Client.UnlinkGameCenter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_session_client.html">SessionClient</a>&#160;</td>
+          <td class="paramname"><em>session</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>playerId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ab32c8f6685ddc086270ba2948122b6bc">SuccessCallback</a>&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_up_1_1_client.html#ae3bc248d211737e0e3aebbd0403ba878">ErrorCallback</a>&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Unlinks a <a class="el" href="class_game_up_1_1_game.html" title="Represents a game on the GameUp service. ">Game</a> Center ID from the given gamer session. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">session</td><td>Existing session to unlink from</td></tr>
+    <tr><td class="paramname">playerId</td><td><a class="el" href="class_game_up_1_1_game.html" title="Represents a game on the GameUp service. ">Game</a> Center Player ID to unlink</td></tr>
+    <tr><td class="paramname">success</td><td>The callback to execute on success.</td></tr>
+    <tr><td class="paramname">error</td><td>The callback to execute on error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a2f4c4cbf79743008bafda2eb4eb1419a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -3377,6 +3719,46 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a7f86ac9249d0d5a31028d289b1647f35"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GameUp.Client.EnableGZipRequest = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a98547be378a5ccb93b4f3be6842cd97b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GameUp.Client.EnableGZipResponse = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ac2fba0fd6cb665e4058c52737cd19b83"></a>
 <div class="memitem">
 <div class="memproto">
@@ -3450,7 +3832,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_game_up.html">GameUp</a></li><li class="navelem"><a class="el" href="class_game_up_1_1_client.html">Client</a></li>
-    <li class="footer">Generated on Fri Feb 5 2016 10:45:30 for GameUpSDK by
+    <li class="footer">Generated on Wed Mar 2 2016 11:53:33 for GameUpSDK by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
   </ul>
