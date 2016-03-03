@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.18.1
+
+* Catch argument exception when setting useragent, accept-encoding on Web player.
+
 ### 0.18.0
 
 * Add support for Game Center.
