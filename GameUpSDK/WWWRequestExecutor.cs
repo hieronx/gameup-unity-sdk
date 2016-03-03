@@ -54,8 +54,10 @@ namespace GameUp
         b.Query = query;
       }
         
-      // Forbidden key to override for WebPlayer
-      req.AddHeader ("User-Agent", USER_AGENT);
+      try {
+        // Forbidden key to override for WebPlayer
+        req.AddHeader ("User-Agent", USER_AGENT);
+      } catch (ArgumentException e) {}
 
       req.AddHeader ("Accept", "application/json");
       req.AddHeader ("Content-Type", "application/json");
@@ -64,8 +66,10 @@ namespace GameUp
       byte[] reqBody = req.Body;
 
       if (Client.EnableGZipResponse) {
-        // Forbidden key to override for WebPlayer
-        req.AddHeader ("Accept-Encoding", "gzip");
+        try {
+          // Forbidden key to override for WebPlayer
+          req.AddHeader ("Accept-Encoding", "gzip");
+        } catch (ArgumentException e) {}
       }
 
       if (Client.EnableGZipRequest) {
