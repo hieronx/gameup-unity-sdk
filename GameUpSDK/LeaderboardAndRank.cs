@@ -28,7 +28,7 @@ namespace GameUp
     /// <summary> The Leaderboard portion of the response. </summary>
     public readonly Leaderboard Leaderboard ;
 
-    internal LeaderboardAndRank (IDictionary<string, object> dict)
+    public LeaderboardAndRank (IDictionary<string, object> dict)
     {
       object value;
 
