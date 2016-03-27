@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.18.2
+
+* Make LeaderboardAndRank constructor public.
+
 ### 0.18.1
 
 * Catch argument exception when setting useragent, accept-encoding on Web player.
