@@ -61,6 +61,9 @@ namespace GameUp
     /// <summary> The current offset of the leaderboard entries. </summary>
     public readonly long Offset ;
 
+    /// <summary> The Total number of leaderboard entries. </summary>
+    public readonly long Total ;
+
     /// <summary>
     /// The top ranked gamers on this board, up to 50. Already sorted according
     /// to the leaderboard sort settings.
@@ -147,6 +150,9 @@ namespace GameUp
           break;
         case "offset":
           Offset = (long)value;
+          break;
+        case "total":
+          Total = (long)value;
           break;
         case "entries":
           List<Leaderboard.Entry> resultList = new List<Leaderboard.Entry> ();

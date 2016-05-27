@@ -60,6 +60,9 @@ namespace GameUp
     /// <summary> When the highest rank was recorded. </summary>
     public readonly long BestRankAt ;
 
+    /// <summary> The Total number of leaderboard ranks. Useful for displaying 'Ranking of TotalRanks'. </summary>
+    public readonly long TotalRanks ;
+
     ///<summary> Scoretags of this entry. </summary>
     public readonly IDictionary<String, Object> Scoretags ;
 
@@ -148,6 +151,9 @@ namespace GameUp
           break;
         case "best_rank_at":
           BestRankAt = (long)value;
+          break;
+        case "total_ranks":
+          TotalRanks = (long)value;
           break;
         case "scoretags":
           Scoretags = (IDictionary<string,object>)value;
