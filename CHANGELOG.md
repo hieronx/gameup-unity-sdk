@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.18.3
+
+* Add support for total leaderboard ranks.
+
 ### 0.18.2
 
 * Make LeaderboardAndRank constructor public.
