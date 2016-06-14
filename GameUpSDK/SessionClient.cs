@@ -76,6 +76,36 @@ namespace GameUp
 
     public delegate void MessageCallback (Message message);
 
+    public delegate void DatastoreCallback (DatastoreObject datastoreObject);
+
+    public delegate void DatastoreRawCallback (string value);
+
+    public delegate void DatastoreQueryCallback (DatastoreSearchResultList datastoreSearchResults);
+
+    public string Serialize ()
+    {
+      return SimpleJson.SerializeObject (this);
+    }
+
+    public static SessionClient Deserialize (string session)
+    {
+      return SimpleJson.DeserializeObject<SessionClient> (session);
+    }
+
+    static string ListToString(IList objects) {
+      if (objects.Count == 0) {
+        return "[]";
+      }
+
+      string result = "[\"" + objects[0].ToString() + "\"";
+      for (int i = 1; i < objects.Count; i++) {
+        result += ",\"" + objects[i].ToString() + "\"";
+      }
+
+      result += "]";
+      return result;
+    }
+
     /// <summary>
     /// Ping the GameUp service to check it is reachable and the current session
     /// is still valid.
@@ -140,6 +170,7 @@ namespace GameUp
     /// <param name="data">The data dictionary to store.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("Cloud Storage is deprecated, use Datastore instead.")]
     public void StoragePut (string key, IDictionary<string, string> data, Client.SuccessCallback success, Client.ErrorCallback error)
     {
       StoragePut (key, data, success, error);
@@ -152,6 +183,7 @@ namespace GameUp
     /// <param name="data">The data object to store.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("Cloud Storage is deprecated, use Datastore instead.")]
     public void StoragePut<T> (string key, T data, Client.SuccessCallback success, Client.ErrorCallback error)
     {
       string value = SimpleJson.SerializeObject (data);
@@ -165,6 +197,7 @@ namespace GameUp
     /// <param name="value">The string value to store.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("Cloud Storage is deprecated, use Datastore instead.")]
     public void StoragePut (string key, string value, Client.SuccessCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/storage/" + Uri.EscapeUriString (key);
@@ -186,6 +219,7 @@ namespace GameUp
     /// <param name="key">The name of the key.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("Cloud Storage is deprecated, use Datastore instead.")]
     public void StorageGet (string key, StorageGetCallback success, Client.ErrorCallback error)
     {
       WWWRequest wwwRequest = BuildStorageGetRequest (key, error);
@@ -204,6 +238,7 @@ namespace GameUp
     /// <param name="key">The name of the key.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("Cloud Storage is deprecated, use Datastore instead.")]
     public void StorageGet (string key, StorageGetRawCallback success, Client.ErrorCallback error)
     {
       WWWRequest wwwRequest = BuildStorageGetRequest (key, error);
@@ -222,6 +257,7 @@ namespace GameUp
     /// <param name="key">The name of the key.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("Cloud Storage is deprecated, use Datastore instead.")]
     public void StorageGet<T> (string key, Client.GenericSuccessCallback<T> success, Client.ErrorCallback error)
     {
       WWWRequest wwwRequest = BuildStorageGetRequest (key, error);
@@ -251,6 +287,7 @@ namespace GameUp
     /// <param name="key">The name of the key.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("Cloud Storage is deprecated, use Datastore instead.")]
     public void StorageDelete (string key, Client.SuccessCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/storage/" + Uri.EscapeUriString (key);
@@ -929,6 +966,7 @@ namespace GameUp
     /// <param name="luceneQuery">Lucene-like query used to match.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("Shared Storage is deprecated, use Datastore instead.")]
     public void SharedStorageSearchGet (string luceneQuery, SharedStorageQueryCallback success, Client.ErrorCallback error)
     {
       SharedStorageSearchGet (luceneQuery, null, null, 10, 0, success, error);
@@ -941,6 +979,7 @@ namespace GameUp
     /// <param name="filterKey">Key name to restrict searches to. Only results among those keys will be returned. Can be null.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("Shared Storage is deprecated, use Datastore instead.")]
     public void SharedStorageSearchGet (string luceneQuery, string filterKey, SharedStorageQueryCallback success, Client.ErrorCallback error)
     {
       SharedStorageSearchGet (luceneQuery, filterKey, null, 10, 0, success, error);
@@ -954,6 +993,7 @@ namespace GameUp
     /// <param name="sort">Lucene-like sort clauses used to order search results. Can be null.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("Shared Storage is deprecated, use Datastore instead.")]
     public void SharedStorageSearchGet (string luceneQuery, string filterKey, string sort, SharedStorageQueryCallback success, Client.ErrorCallback error)
     {
       SharedStorageSearchGet (luceneQuery, filterKey, sort, 10, 0, success, error);
@@ -968,6 +1008,7 @@ namespace GameUp
     /// <param name="limit">Maximum number of results to return.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("Shared Storage is deprecated, use Datastore instead.")]
     public void SharedStorageSearchGet (string luceneQuery, string filterKey, string sort, int limit, SharedStorageQueryCallback success, Client.ErrorCallback error)
     {
       SharedStorageSearchGet (luceneQuery, filterKey, sort, 10, 0, success, error);
@@ -983,6 +1024,7 @@ namespace GameUp
     /// <param name="offset">Starting position of the result.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("Shared Storage is deprecated, use Datastore instead.")]
     public void SharedStorageSearchGet (string luceneQuery, string filterKey, string sort, int limit, int offset, SharedStorageQueryCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/shared";
@@ -1012,6 +1054,7 @@ namespace GameUp
     /// <param name="key">Data in shared storage in the given key. Alphanumeric characters only.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("Shared Storage is deprecated, use Datastore instead.")]
     public void SharedStorageGet (string key, SharedStorageCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/shared/" + Uri.EscapeUriString (key);
@@ -1032,6 +1075,7 @@ namespace GameUp
     /// <param name="key">Data in shared storage in the given key. Alphanumeric characters only.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("Shared Storage is deprecated, use Datastore instead.")]
     public void SharedStorageGet (string key, StorageGetRawCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/shared/" + Uri.EscapeUriString (key);
@@ -1053,6 +1097,7 @@ namespace GameUp
     /// <param name="data">Data to store in the key.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("Shared Storage is deprecated, use Datastore instead.")]
     public void SharedStoragePut<T> (string key, T data, Client.SuccessCallback success, Client.ErrorCallback error)
     {
       string value = SimpleJson.SerializeObject (data);
@@ -1066,6 +1111,7 @@ namespace GameUp
     /// <param name="data">Data to store in the key.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("Shared Storage is deprecated, use Datastore instead.")]
     public void SharedStoragePut (string key, string data, Client.SuccessCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/shared/" + Uri.EscapeUriString (key) + "/public";
@@ -1093,6 +1139,7 @@ namespace GameUp
     /// <param name="data">Data to update in the key.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("Shared Storage is deprecated, use Datastore instead.")]
     public void SharedStorageUpdate<T> (string key, T data, Client.SuccessCallback success, Client.ErrorCallback error)
     {
       string value = SimpleJson.SerializeObject (data);
@@ -1109,6 +1156,7 @@ namespace GameUp
     /// <param name="data">Data to update in the key.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("Shared Storage is deprecated, use Datastore instead.")]
     public void SharedStorageUpdate (string key, string data, Client.SuccessCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/shared/" + Uri.EscapeUriString (key) + "/public";
@@ -1132,6 +1180,7 @@ namespace GameUp
     /// <param name="key">Key to delete data.</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("Shared Storage is deprecated, use Datastore instead.")]
     public void SharedStorageDelete (string key, Client.SuccessCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/gamer/shared/" + Uri.EscapeUriString (key) + "/public";
@@ -1313,29 +1362,339 @@ namespace GameUp
       };
       wwwRequest.Execute ();
     }
-
-    public string Serialize ()
+      
+    /// <summary>
+    /// Perform a search query on the data in a given Datastore table, using Lucene-like query syntax.
+    /// </summary>
+    /// <param name="tableName">Table name to search.</param>
+    /// <param name="luceneQuery">Lucene-like query used to match.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void DatastoreQuery (string tableName, string luceneQuery, DatastoreQueryCallback success, Client.ErrorCallback error)
     {
-      return SimpleJson.SerializeObject (this);
+      DatastoreQuery (tableName, luceneQuery, null, 10, 0, success, error);
     }
 
-    public static SessionClient Deserialize (string session)
+    /// <summary>
+    /// Perform a search query on the data in a given Datastore table, using Lucene-like query syntax.
+    /// </summary>
+    /// <param name="tableName">Table name to search.</param>
+    /// <param name="luceneQuery">Lucene-like query used to match.</param>
+    /// <param name="sort">Lucene-like sort clauses used to order search results. Can be null.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void DatastoreQuery (string tableName, string luceneQuery, string sort, DatastoreQueryCallback success, Client.ErrorCallback error)
     {
-      return SimpleJson.DeserializeObject<SessionClient> (session);
+      DatastoreQuery (tableName, luceneQuery, sort, 10, 0, success, error);
     }
 
-    static string ListToString(IList objects) {
-      if (objects.Count == 0) {
-        return "[]";
+    /// <summary>
+    /// Perform a search query on the data in a given Datastore table, using Lucene-like query syntax.
+    /// </summary>
+    /// <param name="tableName">Table name to search.</param>
+    /// <param name="luceneQuery">Lucene-like query used to match.</param>
+    /// <param name="sort">Lucene-like sort clauses used to order search results. Can be null.</param>
+    /// <param name="limit">Maximum number of results to return.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void DatastoreQuery (string tableName, string luceneQuery, string sort, int limit, DatastoreQueryCallback success, Client.ErrorCallback error)
+    {
+      DatastoreQuery (tableName, luceneQuery, sort, 10, 0, success, error);
+    }
+
+    /// <summary>
+    /// Perform a search query on the data in a given Datastore table, using Lucene-like query syntax.
+    /// </summary>
+    /// <param name="tableName">Table name to search.</param>
+    /// <param name="luceneQuery">Lucene-like query used to match.</param>
+    /// <param name="sort">Lucene-like sort clauses used to order search results. Can be null.</param>
+    /// <param name="limit">Maximum number of results to return.</param>
+    /// <param name="offset">Starting position of the result.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void DatastoreQuery (string tableName, string luceneQuery, string sort, int limit, int offset, DatastoreQueryCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/datastore/"+tableName;
+      string queryParam = "?query=" + Uri.EscapeUriString (luceneQuery) + "&limit=" + limit + "&offset=" + offset;
+      if (sort != null) {
+        queryParam += "&sort=" + Uri.EscapeUriString (sort);
       }
 
-      string result = "[\"" + objects[0].ToString() + "\"";
-      for (int i = 1; i < objects.Count; i++) {
-        result += ",\"" + objects[i].ToString() + "\"";
-      }
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path, queryParam);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
 
-      result += "]";
-      return result;
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success (new DatastoreSearchResultList (SimpleJson.DeserializeObject<JsonObject> (jsonResponse)));
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Retrieve a specific key from the given Datastore table, where the key has no owner set.
+    /// </summary>
+    /// <param name="table">Table name to retrieve data. Alphanumeric characters only.</param>
+    /// <param name="key">Key to retrieve. Alphanumeric characters only.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void DatastoreGet (string table, string key, DatastoreCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/datastore/" + Uri.EscapeUriString (table) + "/" + Uri.EscapeUriString (key);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success (new DatastoreObject (SimpleJson.DeserializeObject<JsonObject> (jsonResponse)));
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Retrieve a specific key from the given Datastore table, where the key has no owner set.
+    /// </summary>
+    /// <param name="table">Table name to retrieve data. Alphanumeric characters only.</param>
+    /// <param name="key">Key to retrieve. Alphanumeric characters only.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void DatastoreGet (string table, string key, DatastoreRawCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/datastore/" + Uri.EscapeUriString (table) + "/" + Uri.EscapeUriString (key);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success (jsonResponse);
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Get data in a table matching the given key. 
+    /// </summary>
+    /// <param name="table">Table name to retrieve data. Alphanumeric characters only.</param>
+    /// <param name="key">Key to retrieve. Alphanumeric characters only.</param>
+    /// <param name="owner">The owner to retrieve the key for. Must be a Gamer ID, or the value “me” representing the current user.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void DatastoreGet (string table, string key, string owner, DatastoreCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/datastore/" + Uri.EscapeUriString (table) + "/" + Uri.EscapeUriString (key) + "/" + Uri.EscapeUriString (owner);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success (new DatastoreObject (SimpleJson.DeserializeObject<JsonObject> (jsonResponse)));
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Get data in a table matching the given key. 
+    /// </summary>
+    /// <param name="table">Table name to retrieve data. Alphanumeric characters only.</param>
+    /// <param name="key">Key to retrieve. Alphanumeric characters only.</param>
+    /// <param name="owner">The owner to retrieve the key for. Must be a Gamer ID, or the value “me” representing the current user.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void DatastoreGet (string table, string key, string owner, DatastoreRawCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/datastore/" + Uri.EscapeUriString (table) + "/" + Uri.EscapeUriString (key) + "/" + Uri.EscapeUriString (owner);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, Token);
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success (jsonResponse);
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Set the value of a specific key in the given Datastore table, where the key owner is the gamer making the request. 
+    /// If the key does not exist, it will be created.
+    /// Any existing data for the specified key will be completely replaced.
+    /// </summary>
+    /// <param name="table">The name of the table to write to.</param>
+    /// <param name="key">Key to store data. Alphanumeric characters only.</param>
+    /// <param name="data">Data to store in the key.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void DatastorePut<T> (String table, string key, T data, Client.SuccessCallback success, Client.ErrorCallback error)
+    {
+      DatastorePut (table, key, SimpleJson.SerializeObject (data), DatastorePermission.Inherit, success, error);
+    }
+      
+    /// <summary>
+    /// Update the value of a specific key in the given Datastore table, where the key owner is the gamer making the request. 
+    /// If the key does not exist, it will be created.
+    /// Any existing data for the specified key will be merged with the new data. 
+    /// Fields specified in the new input will replace their old values, if any. 
+    /// Fields present in the existing data but missing in the new input will remain unchanged.
+    /// </summary>
+    /// <param name="table">The name of the table to write to.</param>
+    /// <param name="key">Key to update data. Alphanumeric characters only.</param>
+    /// <param name="data">Data to update in the key.</param>
+    /// <param name="permission">Set permissions for this key.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void DatastorePut<T> (String table, string key, T data, DatastorePermission permission, Client.SuccessCallback success, Client.ErrorCallback error)
+    {
+      DatastorePut (table, key, SimpleJson.SerializeObject (data), permission, success, error);
+    }
+
+    /// <summary>
+    /// Set the value of a specific key in the given Datastore table, where the key owner is the gamer making the request. 
+    /// If the key does not exist, it will be created.
+    /// Any existing data for the specified key will be completely replaced.
+    /// </summary>
+    /// <param name="table">The name of the table to write to.</param>
+    /// <param name="key">Key to store data. Alphanumeric characters only.</param>
+    /// <param name="data">Data to store in the key.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void DatastorePut (string table, string key, string data, Client.SuccessCallback success, Client.ErrorCallback error)
+    {
+      DatastoreSave ("PUT", table, key, data, DatastorePermission.Inherit, success, error);
+    }
+
+    /// <summary>
+    /// Set the value of a specific key in the given Datastore table, where the key owner is the gamer making the request. 
+    /// If the key does not exist, it will be created.
+    /// Any existing data for the specified key will be completely replaced.
+    /// </summary>
+    /// <param name="table">The name of the table to write to.</param>
+    /// <param name="key">Key to store data. Alphanumeric characters only.</param>
+    /// <param name="data">Data to store in the key.</param>
+    /// <param name="permission">Set permissions for this key.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void DatastorePut (string table, string key, string data, DatastorePermission permission, Client.SuccessCallback success, Client.ErrorCallback error)
+    {
+      DatastoreSave ("PUT", table, key, data, permission, success, error);
+    }
+
+    /// <summary>
+    /// Update the value of a specific key in the given Datastore table, where the key owner is the gamer making the request. 
+    /// If the key does not exist, it will be created.
+    /// Any existing data for the specified key will be merged with the new data. 
+    /// Fields specified in the new input will replace their old values, if any. 
+    /// Fields present in the existing data but missing in the new input will remain unchanged.
+    /// </summary>
+    /// <param name="table">The name of the table to write to.</param>
+    /// <param name="key">Key to update data. Alphanumeric characters only.</param>
+    /// <param name="data">Data to update in the key.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void DatastoreUpdate<T> (string table, string key, T data, Client.SuccessCallback success, Client.ErrorCallback error)
+    {
+      DatastoreUpdate (table, key, SimpleJson.SerializeObject (data), DatastorePermission.Inherit, success, error);
+    }
+
+    /// <summary>
+    /// Update the value of a specific key in the given Datastore table, where the key owner is the gamer making the request. 
+    /// If the key does not exist, it will be created.
+    /// Any existing data for the specified key will be merged with the new data. 
+    /// Fields specified in the new input will replace their old values, if any. 
+    /// Fields present in the existing data but missing in the new input will remain unchanged.
+    /// </summary>
+    /// <param name="table">The name of the table to write to.</param>
+    /// <param name="key">Key to update data. Alphanumeric characters only.</param>
+    /// <param name="data">Data to update in the key.</param>
+    /// <param name="permission">Set permissions for this key.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void DatastoreUpdate<T> (string table, string key, T data, DatastorePermission permission, Client.SuccessCallback success, Client.ErrorCallback error)
+    {
+      DatastoreUpdate (table, key, SimpleJson.SerializeObject (data), permission, success, error);
+    }
+
+    /// <summary>
+    /// Update the value of a specific key in the given Datastore table, where the key owner is the gamer making the request. 
+    /// If the key does not exist, it will be created.
+    /// Any existing data for the specified key will be merged with the new data. 
+    /// Fields specified in the new input will replace their old values, if any. 
+    /// Fields present in the existing data but missing in the new input will remain unchanged.
+    /// </summary>
+    /// <param name="table">The name of the table to write to.</param>
+    /// <param name="key">Key to update data. Alphanumeric characters only.</param>
+    /// <param name="data">Data to update in the key.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void DatastoreUpdate (string table, string key, string data, Client.SuccessCallback success, Client.ErrorCallback error)
+    {
+      DatastoreSave ("PATCH", table, key, data, DatastorePermission.Inherit, success, error);
+    }
+
+    /// <summary>
+    /// Update the value of a specific key in the given Datastore table, where the key owner is the gamer making the request. 
+    /// If the key does not exist, it will be created.
+    /// Any existing data for the specified key will be merged with the new data. 
+    /// Fields specified in the new input will replace their old values, if any. 
+    /// Fields present in the existing data but missing in the new input will remain unchanged.
+    /// </summary>
+    /// <param name="table">The name of the table to write to.</param>
+    /// <param name="key">Key to update data. Alphanumeric characters only.</param>
+    /// <param name="data">Data to update in the key.</param>
+    /// <param name="permission">Set permissions for this key.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void DatastoreUpdate (string table, string key, string data, DatastorePermission permission, Client.SuccessCallback success, Client.ErrorCallback error)
+    {
+      DatastoreSave ("PATCH", table, key, data, permission, success, error);
+    }
+
+    private void DatastoreSave(string method, string table, string key, string data, DatastorePermission permission, Client.SuccessCallback success, Client.ErrorCallback error) {
+      string path = "/v0/datastore/" + Uri.EscapeUriString (table) + "/" + Uri.EscapeUriString (key);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, method, ApiKey, Token);
+
+      string payload = "{";
+      if (permission != DatastorePermission.Inherit) {
+        string p = SimpleJson.SerializeObject (DatastoreObjectMetadata.ToDictionary(permission));  
+        payload += "\"permissions\":" + p + ",";
+      }  
+      payload += "\"data\":" + data + "}";
+
+      wwwRequest.SetBody (payload);
+
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success ();
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Delete a specific key from the given Datastore table, where the owner of the key is the gamer account making the request.
+    /// </summary>
+    /// <param name="table">The name of the table to delete from.</param>
+    /// <param name="key">Key to delete data.</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void DatastoreDelete (string table, string key, Client.SuccessCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/datastore/" + Uri.EscapeUriString (table) + "/" + Uri.EscapeUriString (key);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "DELETE", ApiKey, Token);
+      wwwRequest.SetBody ("{}");
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success ();
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
     }
   }
 }

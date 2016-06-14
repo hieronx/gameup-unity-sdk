@@ -90,6 +90,8 @@
     <Compile Include="Unity.IO.Compression\OutputBuffer.cs" />
     <Compile Include="Unity.IO.Compression\OutputWindow.cs" />
     <Compile Include="Unity.IO.Compression\SR.cs" />
+    <Compile Include="GameUpSDK\DatastoreObject.cs" />
+    <Compile Include="GameUpSDK\DatastoreSearchResultList.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

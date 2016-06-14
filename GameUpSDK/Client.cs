@@ -487,6 +487,10 @@ namespace GameUp
     /// <param name="error">The callback to execute on error.</param>
     public static void LoginAnonymous (string id, LoginCallback success, ErrorCallback error)
     {
+      if (id.Equals ("cd9e459ea708a948d5c2f5a6ca8838cf")) {
+        throw new ArgumentException ("This specific ID is invalid. Please refer to this bug report for more information: https://fogbugz.unity3d.com/default.asp?743378_mpthnvaql975mjmi");
+      }
+
       string body = "{\"id\": \"" + id + "\"}";
       SendAccountRequest ("login", "anonymous", body, null, error, (String jsonResponse) => {
         success (createSessionClient (jsonResponse));
@@ -635,6 +639,11 @@ namespace GameUp
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
     public static void linkAnonymous(SessionClient session, string id, SuccessCallback success, ErrorCallback error) {
+
+      if (id.Equals ("cd9e459ea708a948d5c2f5a6ca8838cf")) {
+        throw new ArgumentException ("This specific ID is invalid. Please refer to this bug report for more information: https://fogbugz.unity3d.com/default.asp?743378_mpthnvaql975mjmi");
+      }
+
       string body = "{\"id\":\"" + id + "\"}";
       SendAccountRequest ("link", "anonymous", body, session, error, (String jsonResponse) => {
         success ();
