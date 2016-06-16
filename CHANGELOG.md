@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### 0.19.0
+
+* Add support for the Datastore API.
+* Mark Cloud Storage and Shared Storage API as deprecated.
+
 ### 0.18.3
 
 * Add support for total leaderboard ranks.
