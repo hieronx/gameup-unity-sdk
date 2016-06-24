@@ -173,6 +173,24 @@ namespace GameUp
         }
       }
     }
+
+    /// <summary> Convert Data to the specified user defined data type. </summary>
+    public T ConvertData<T> ()
+    {
+      if (Data is JsonObject) {
+        return SimpleJson.DeserializeObject<T> (Data.ToString ());
+      }
+      return SimpleJson.DeserializeObject<T> (SimpleJson.SerializeObject (Data));
+    }
+
+    /// <summary> Convert Data to the string. </summary>
+    public string ConvertData ()
+    {
+      if (Data is JsonObject) {
+        return Data.ToString ();
+      }
+      return SimpleJson.SerializeObject (Data);
+    }
   }
 }
 
