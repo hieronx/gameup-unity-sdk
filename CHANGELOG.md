@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.19.1
+
+* Add convert methods to DatastoreObject.
+
 ### 0.19.0
 
 * Add support for the Datastore API.
