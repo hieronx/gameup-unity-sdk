@@ -251,6 +251,7 @@ namespace GameUp
     /// <param name="payload">Payload that your script expects. Will be serialised to Json automatically. Can be set to null</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("Execute Script is deprecated, use CloudCodeExecuteFunction instead.")]
     public static void executeScript<T> (string scriptId, T payload, ScriptCallback success, Client.ErrorCallback error)
     {
       string data = SimpleJson.SerializeObject (payload);
@@ -264,6 +265,7 @@ namespace GameUp
     /// <param name="payload">Payload that your script expects. Will be serialised to Json automatically. Can be set to null or an empty string</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("Execute Script is deprecated, use CloudCodeExecuteFunction instead.")]
     public static void executeScript (string scriptId, string payload, ScriptCallback success, Client.ErrorCallback error)
     {
       executeScript (scriptId, payload, (string response) => {
@@ -278,6 +280,7 @@ namespace GameUp
     /// <param name="payload">Payload that your script expects. Will be serialised to Json automatically. Can be set to null or an empty string</param>
     /// <param name="success">The callback to execute on success.</param>
     /// <param name="error">The callback to execute on error.</param>
+    [Obsolete("Execute Script is deprecated, use CloudCodeExecuteFunction instead.")]
     public static void executeScript (string scriptId, string payload, ScriptRawCallback success, Client.ErrorCallback error)
     {
       string path = "/v0/game/script/" + Uri.EscapeUriString (scriptId);
@@ -289,6 +292,100 @@ namespace GameUp
       } else {
         wwwRequest.SetBody ("{}");
       }
+
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success (jsonResponse);
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Executes a cloud code function on the server. Payload can be null or any object.
+    /// </summary>
+    /// <param name="module">Cloud Code Module name</param>
+    /// <param name="function">Cloud Code function to invoke which belongs to the Module</param>
+    /// <param name="payload">Payload that your script expects. Will be serialised to Json automatically. Can be set to null</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void executeCloudCodeFunction<T> (string module, string function, T payload, Client.ScriptCallback success, Client.ErrorCallback error)
+    {
+      string data = SimpleJson.SerializeObject (payload);
+      executeCloudCodeFunction (module, function, data, success, error);
+    }
+
+    /// <summary>
+    /// Executes a cloud code function on the server. Payload can be null or an empty string.
+    /// </summary>
+    /// <param name="module">Cloud Code Module name</param>
+    /// <param name="function">Cloud Code function to invoke which belongs to the Module</param>
+    /// <param name="payload">Payload that your script expects. Will be serialised to Json automatically. Can be set to null or an empty string</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void executeCloudCodeFunction (string module, string function, string payload, Client.ScriptCallback success, Client.ErrorCallback error)
+    {
+      executeCloudCodeFunction (module, function, payload, (string response) => {
+        success (SimpleJson.DeserializeObject<IDictionary<string, object>> (response));
+      }, error);
+    }
+
+    /// <summary>
+    /// Executes a cloud code function on the server. Payload can be null or an empty string.
+    /// </summary>
+    /// <param name="module">Cloud Code Module name</param>
+    /// <param name="function">Cloud Code function to invoke which belongs to the Module</param>
+    /// <param name="payload">Payload that your script expects. Will be serialised to Json automatically. Can be set to null or an empty string</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void executeCloudCodeFunction (string module, string function, string payload, Client.ScriptRawCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/cloudcode/" + Uri.EscapeUriString (module) + "/" + Uri.EscapeUriString (function);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "POST", ApiKey, "");
+
+      if (payload != null && payload.Length != 0) {
+        wwwRequest.SetBody (payload);
+      } else {
+        wwwRequest.SetBody ("{}");
+      }
+
+      wwwRequest.OnSuccess = (String jsonResponse) => {
+        success (jsonResponse);
+      };
+      wwwRequest.OnFailure = (int statusCode, string reason) => {
+        error (statusCode, reason);
+      };
+      wwwRequest.Execute ();
+    }
+
+    /// <summary>
+    /// Executes a cloud code function on the server.
+    /// </summary>
+    /// <param name="module">Cloud Code Module name</param>
+    /// <param name="function">Cloud Code function to invoke which belongs to the Module</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void executeCloudCodeFunction (string module, string function, Client.ScriptCallback success, Client.ErrorCallback error)
+    {
+      executeCloudCodeFunction (module, function, (string response) => {
+        success (SimpleJson.DeserializeObject<IDictionary<string, object>> (response));
+      }, error);
+    }
+
+    /// <summary>
+    /// Executes a cloud code function on the server.
+    /// </summary>
+    /// <param name="module">Cloud Code Module name</param>
+    /// <param name="function">Cloud Code function to invoke which belongs to the Module</param>
+    /// <param name="success">The callback to execute on success.</param>
+    /// <param name="error">The callback to execute on error.</param>
+    public void executeCloudCodeFunction (string module, string function, Client.ScriptRawCallback success, Client.ErrorCallback error)
+    {
+      string path = "/v0/cloudcode/" + Uri.EscapeUriString (module) + "/" + Uri.EscapeUriString (function);
+      UriBuilder b = new UriBuilder (Client.SCHEME, Client.ApiServer, Client.PORT, path);
+      WWWRequest wwwRequest = new WWWRequest (b.Uri, "GET", ApiKey, "");
 
       wwwRequest.OnSuccess = (String jsonResponse) => {
         success (jsonResponse);

@@ -15,7 +15,7 @@ public class GameUpTest : MonoBehaviour
   };
 
   readonly string apikey = "cd711f5ef5804365a11120897f5d137e";
-  readonly string achievementId = "9fcd83327951475caf818d59156a23c2";
+  readonly string achievementId = "c0b5ec14b0174f56bfae6f686c830c9a";
   readonly string leaderboardId = "b540acd249384c1784a95912a3f157c0";
   readonly string scriptId = "6ecc280b5b2b4c678eb53401c7133811";
   readonly string mailboxScriptId = "567417e01bd64533bb4677d997cc98bf";
@@ -98,8 +98,17 @@ public class GameUpTest : MonoBehaviour
       Debug.Log ("Achievements Count: " + a.Count + " " + en.Current.Name);
     }, failure);
 
-    session.Achievement (achievementId, 5, () => {
+    session.Achievement (achievementId, () => {
       Debug.Log ("Updated achievement");
+
+      session.Achievements ((AchievementList al) => {
+        Debug.Log ("Retrieved achievements " + al.Count);
+        foreach (Achievement entry in al.Achievements) {
+          Debug.LogFormat ("Name: " + entry.Name + " state: " + entry.State);
+          Debug.LogFormat ("iscompleted: " + entry.IsCompleted());
+        }
+      }, failure);
+
     }, (Achievement a) => {
       Debug.Log ("Unlocked achievement");
     }, failure);
@@ -267,6 +276,10 @@ public class GameUpTest : MonoBehaviour
           }, failure);
         }, failure);
       }, failure);
+    }, failure);
+      
+    session.executeCloudCodeFunction ("test", "log", scriptData, (IDictionary<string, object> response) => {
+      Debug.Log ("Executed cloud code with result:" + GameUp.SimpleJson.SerializeObject (response));
     }, failure);
   }
 
