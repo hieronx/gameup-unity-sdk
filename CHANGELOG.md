@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 0.20.0
+
+* Add support for Cloudcode 2.0.
+
 ### 0.19.1
 
 * Add convert methods to DatastoreObject.
